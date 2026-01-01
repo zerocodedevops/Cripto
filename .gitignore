@@ -67,3 +67,9 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Security
+FIREBASE KEY.txt
+*.pem
+*.key
+id_rsa
