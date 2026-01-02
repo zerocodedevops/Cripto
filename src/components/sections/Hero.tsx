@@ -16,9 +16,6 @@ const socialLinks = [
 
 export function Hero() {
   const { t } = useTranslation();
-  const scrollToAbout = () => {
-    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section

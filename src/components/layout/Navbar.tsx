@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// eslint-disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
@@ -15,9 +15,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  // eslint-disable-next-line
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub' },
-  // eslint-disable-next-line
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   { icon: Linkedin, href: 'https://www.linkedin.com/in/zerocode-devops', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
 ];
