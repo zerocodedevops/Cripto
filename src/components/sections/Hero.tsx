@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowDown, Sparkles, Bot } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
   // eslint-disable-next-line
@@ -14,6 +15,7 @@ const socialLinks = [
 ];
 
 export function Hero() {
+  const { t } = useTranslation();
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -44,7 +46,7 @@ export function Hero() {
           <motion.div variants={fadeInUp} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium">
               <Sparkles className="w-4 h-4" />
-              Disponible para nuevos proyectos
+              {t('hero.available', 'Disponible para nuevos proyectos')}
             </span>
           </motion.div>
 
@@ -53,9 +55,9 @@ export function Hero() {
             variants={fadeInUp}
             className="heading-1 text-dark-100 mb-6"
           >
-            Hola, soy{' '}
+            {t('hero.greeting')}{' '}
             <span className="bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_3s_linear_infinite]">
-              ZeroCode_DevOps
+              {t('hero.name')}
             </span>
           </motion.h1>
 
@@ -64,11 +66,11 @@ export function Hero() {
             variants={fadeInUp}
             className="flex flex-wrap items-center justify-center gap-2 text-xl md:text-2xl text-dark-400 mb-4"
           >
-            <span>Desarrollador Autodidacta</span>
+            <span>{t('hero.role', 'Desarrollador Autodidacta')}</span>
             <span className="text-dark-600">|</span>
             <span className="inline-flex items-center gap-2 text-accent-400">
               <Bot className="w-5 h-5" />
-              Potenciado por IA
+              {t('hero.aiPowered', 'Potenciado por IA')}
             </span>
           </motion.div>
 
@@ -77,11 +79,11 @@ export function Hero() {
             variants={fadeInUp}
             className="text-lg text-dark-500 max-w-2xl mx-auto mb-8"
           >
-            Sin formación tradicional, pero con pasión infinita.
+            {t('hero.description1', 'Sin formación tradicional, pero con pasión infinita.')}
             <br/>
-            Construyo proyectos reales con la IA como mi aliada.
+            {t('hero.description2', 'Construyo proyectos reales con la IA como mi aliada.')}
             <br/>
-            <span className="text-primary-400">Me involucro al 200% en cada proyecto.</span>
+            <span className="text-primary-400">{t('hero.description3', 'Me involucro al 200% en cada proyecto.')}</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,7 +97,7 @@ export function Hero() {
               rightIcon={<Mail className="w-5 h-5" />}
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Contáctame
+              {t('hero.cta.contact', 'Contáctame')}
             </Button>
             <Button
               variant="outline"
@@ -104,7 +106,7 @@ export function Hero() {
               rightIcon={<Github className="w-5 h-5" />}
               onClick={() => window.open('https://github.com/zerocodedevops', '_blank')}
             >
-              Ver GitHub
+              {t('hero.cta.github', 'Ver GitHub')}
             </Button>
 
           </motion.div>

@@ -8,13 +8,17 @@
     "contact": "Contact"
   },
   "hero": {
+    "available": "Available for new projects",
     "greeting": "Hi, I'm",
-    "name": "David G.",
-    "title": "AI-First Developer",
-    "subtitle": "I combine traditional development and Artificial Intelligence to build high-impact software.",
+    "name": "ZeroCode_DevOps",
+    "role": "Self-Taught Developer",
+    "aiPowered": "AI-Powered",
+    "description1": "No traditional training, but infinite passion.",
+    "description2": "I build real projects with AI as my ally.",
+    "description3": "I commit 200% to every project.",
     "cta": {
-      "projects": "View Projects",
-      "contact": "Get in Touch"
+      "contact": "Contact Me",
+      "github": "View GitHub"
     }
   },
   "about": {

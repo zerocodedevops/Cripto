@@ -157,7 +157,7 @@ export function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 aria-label="Cambiar a Español"
               >
-                🇪🇸
+                ES
               </motion.button>
               <motion.button
                 onClick={() => i18n.changeLanguage('en')}
@@ -170,7 +170,7 @@ export function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 aria-label="Switch to English"
               >
-                🇬🇧
+                EN
               </motion.button>
             </div>
 
