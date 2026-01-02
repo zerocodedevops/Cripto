@@ -5,15 +5,6 @@ import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
-const navLinks = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre mí', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Pensamientos', href: '#blog' },
-  { label: 'Contacto', href: '#contact' },
-];
-
 const socialLinks = [
   // eslint-disable-next-line @typescript-eslint/no-deprecated
   { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub' },
@@ -23,7 +14,7 @@ const socialLinks = [
 ];
 
 export function Navbar() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(() => {
@@ -31,6 +22,15 @@ export function Navbar() {
     const saved = localStorage.getItem('theme');
     return saved === 'light';
   });
+
+  const navLinks = [
+    { label: t('nav.home'), href: '#hero' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.skills'), href: '#skills' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.blog'), href: '#blog' },
+    { label: t('nav.contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
