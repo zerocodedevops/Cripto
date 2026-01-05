@@ -90,5 +90,50 @@ export const mockProducts: Product[] = [
     category: "ropa mujer",
     image: "/assets/projects/ecommerce/trench_coat.png",
     rating: { rate: 3.8, count: 679 }
+  },
+  {
+    id: 18,
+    title: "Reloj Inteligente 'Titanyum X'",
+    price: 199.5,
+    description: "Monitoreo de salud 24/7, GPS integrado y batería de 14 días. El compañero ideal para tus entrenamientos y tu vida conectada.",
+    category: "electronica",
+    image: "/assets/projects/ecommerce/smartwatch.png",
+    rating: { rate: 4.5, count: 120 }
+  },
+  {
+    id: 19,
+    title: "Teclado Mecánico RGB 60%",
+    price: 89.99,
+    description: "Switches mecánicos rojos silenciosos, iluminación RGB personalizable por tecla y chasis de aluminio. Perfecto para developers y gamers.",
+    category: "electronica",
+    image: "/assets/projects/ecommerce/keyboard.png",
+    rating: { rate: 4.8, count: 350 }
+  },
+  {
+    id: 20,
+    title: "Sudadera 'Debug Mode On'",
+    price: 34.95,
+    description: "Sudadera con capucha unisex. Material 80% algodón, 20% poliéster. Cálida, cómoda y con el código fuente impreso en la espalda.",
+    category: "ropa hombre",
+    image: "/assets/projects/ecommerce/hoodie_debug.png",
+    rating: { rate: 4.2, count: 85 }
+  },
+  {
+    id: 21,
+    title: "Auriculares Noise Cancelling Pro",
+    price: 249,
+    description: "Aíslate del mundo y concéntrate en tu código. Cancelación de ruido activa líder en la industria y 30 horas de reproducción.",
+    category: "electronica",
+    image: "/assets/projects/ecommerce/headphones.png",
+    rating: { rate: 4.9, count: 1100 }
+  },
+  {
+    id: 22,
+    title: "Mochila Antirrobo 'DevPack'",
+    price: 45,
+    description: "Diseño ergonómico, puerto de carga USB integrado y cremalleras ocultas. Protege tu equipo en el transporte público.",
+    category: "accesorios",
+    image: "/assets/projects/ecommerce/backpack_tech.png",
+    rating: { rate: 4.0, count: 210 }
   }
 ];

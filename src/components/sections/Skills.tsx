@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation, Trans } from 'react-i18next';
 import { 
   Code2, 
   Server, 
@@ -22,22 +23,21 @@ import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 interface Skill {
   name: string;
+  nameKey?: string; // Optional key for translation
   icon: React.ReactNode;
   level: number; // 0-100
 }
 
 interface SkillCategory {
-  title: string;
-  description: string;
+  key: string;
   icon: React.ReactNode;
   color: string;
   skills: Skill[];
 }
 
-const skillCategories: SkillCategory[] = [
+const skillCategoriesData: SkillCategory[] = [
   {
-    title: 'Frontend',
-    description: 'Interfaces modernas y reactivas',
+    key: 'frontend',
     icon: <Code2 className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-500',
     skills: [
@@ -49,8 +49,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Backend & BaaS',
-    description: 'Firebase y Supabase como pilares',
+    key: 'backend',
     icon: <Server className="w-6 h-6" />,
     color: 'from-orange-500 to-red-500',
     skills: [
@@ -62,8 +61,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Testing & QA',
-    description: 'Calidad asegurada en cada commit',
+    key: 'testing',
     icon: <TestTube className="w-6 h-6" />,
     color: 'from-green-500 to-emerald-500',
     skills: [
@@ -75,8 +73,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'DevOps & Mobile',
-    description: 'CI/CD y apps multiplataforma',
+    key: 'devops',
     icon: <Wrench className="w-6 h-6" />,
     color: 'from-purple-500 to-pink-500',
     skills: [
@@ -88,21 +85,26 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Soft Skills',
-    description: 'Habilidades humanas y mentalidad',
+    key: 'soft',
     icon: <Brain className="w-6 h-6" />,
     color: 'from-amber-500 to-yellow-500',
     skills: [
-      { name: 'Aprendizaje Autónomo', icon: <Search className="w-4 h-4" />, level: 100 },
-      { name: 'Resolución de Problemas', icon: <Puzzle className="w-4 h-4" />, level: 100 },
-      { name: 'Comunicación', icon: <MessageSquare className="w-4 h-4" />, level: 95 },
-      { name: 'Adaptabilidad', icon: <Zap className="w-4 h-4" />, level: 95 },
-      { name: 'Pensamiento Crítico', icon: <Brain className="w-4 h-4" />, level: 90 },
+      { nameKey: 'learning', name: 'Aprendizaje Autónomo', icon: <Search className="w-4 h-4" />, level: 100 },
+      { nameKey: 'problemSolving', name: 'Resolución de Problemas', icon: <Puzzle className="w-4 h-4" />, level: 100 },
+      { nameKey: 'communication', name: 'Comunicación', icon: <MessageSquare className="w-4 h-4" />, level: 95 },
+      { nameKey: 'adaptability', name: 'Adaptabilidad', icon: <Zap className="w-4 h-4" />, level: 95 },
+      { nameKey: 'criticalThinking', name: 'Pensamiento Crítico', icon: <Brain className="w-4 h-4" />, level: 90 },
     ],
   },
 ];
 
-function SkillBar({ skill, color }: { readonly skill: Skill; readonly color: string }) {
+function SkillBar({ skill }: { readonly skill: Skill }) {
+  const { t } = useTranslation();
+  // If nameKey exists, use it to look up translation in soft skills category, otherwise use name
+  const displayName = skill.nameKey 
+    ? t(`skills.categories.soft.items.${skill.nameKey}`) 
+    : skill.name;
+
   return (
     <motion.div
       className="group"
@@ -113,7 +115,45 @@ function SkillBar({ skill, color }: { readonly skill: Skill; readonly color: str
           <span className="text-dark-400 group-hover:text-primary-400 transition-colors">
             {skill.icon}
           </span>
-          <span className="text-dark-200 text-sm font-medium">{skill.name}</span>
+          <span className="text-dark-200 text-sm font-medium">{displayName}</span>
+        </div>
+        <span className="text-dark-500 text-xs">{skill.level}%</span>
+      </div>
+      <div className="h-2 bg-dark-700/50 rounded-full overflow-hidden">
+        <motion.div
+          className={`h-full rounded-full`} // Color handled by parent passing down or context?
+          // Actually color needs to be passed or calculated. 
+          // The previous code passed color prop. I'll re-add it in list mapping.
+          style={{ width: 0 }} // Initial state handled by motion
+        />
+        {/*
+          Wait, I removed the color prop transmission in the replacement block?
+          I need to make sure I pass color to SkillBar or use it.
+          Let's just pass color to SkillBar as before.
+        */}
+      </div>
+    </motion.div>
+  );
+}
+
+// Fixed SkillBar to accept color again
+function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly color: string }) {
+  const { t } = useTranslation();
+  const displayName = skill.nameKey 
+    ? t(`skills.categories.soft.items.${skill.nameKey}`) 
+    : skill.name;
+
+  return (
+    <motion.div
+      className="group"
+      variants={fadeInUp}
+    >
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2">
+          <span className="text-dark-400 group-hover:text-primary-400 transition-colors">
+            {skill.icon}
+          </span>
+          <span className="text-dark-200 text-sm font-medium">{displayName}</span>
         </div>
         <span className="text-dark-500 text-xs">{skill.level}%</span>
       </div>
@@ -131,6 +171,8 @@ function SkillBar({ skill, color }: { readonly skill: Skill; readonly color: str
 }
 
 function SkillCard({ category }: { readonly category: SkillCategory }) {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="card card-hover p-6"
@@ -141,14 +183,14 @@ function SkillCard({ category }: { readonly category: SkillCategory }) {
           {category.icon}
         </div>
         <div>
-          <h3 className="heading-3 text-dark-100">{category.title}</h3>
-          <p className="text-dark-500 text-xs">{category.description}</p>
+          <h3 className="heading-3 text-dark-100">{t(`skills.categories.${category.key}.title`)}</h3>
+          <p className="text-dark-500 text-xs">{t(`skills.categories.${category.key}.description`)}</p>
         </div>
       </div>
       
       <div className="space-y-4 mt-4">
         {category.skills.map((skill) => (
-          <SkillBar key={skill.name} skill={skill} color={category.color} />
+          <SkillBarWithColor key={skill.name} skill={skill} color={category.color} />
         ))}
       </div>
     </motion.div>
@@ -156,6 +198,8 @@ function SkillCard({ category }: { readonly category: SkillCategory }) {
 }
 
 export function Skills() {
+  const { t } = useTranslation();
+
   return (
     <section id="skills" className="section relative">
       {/* Background decoration */}
@@ -165,8 +209,8 @@ export function Skills() {
 
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Skills & Tecnologías"
-          subtitle="Stack real usado en proyectos"
+          title={t('skills.title')}
+          subtitle={t('skills.subtitle')}
         />
 
         {/* AI Badge */}
@@ -179,7 +223,7 @@ export function Skills() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/30 text-accent-400 text-sm">
             <Bot className="w-4 h-4" />
-            <span>Desarrollo asistido por Inteligencia Artificial</span>
+            <span>{t('skills.aiBadge')}</span>
           </div>
         </motion.div>
 
@@ -188,7 +232,9 @@ export function Skills() {
           className="text-center text-dark-400 text-sm max-w-2xl mx-auto mb-8 italic"
           variants={fadeInUp}
         >
-          * Los porcentajes reflejan mi <span className="text-primary-400 font-medium">nivel de autonomía</span> usando cada tecnología en proyectos reales.
+          <Trans i18nKey="skills.disclaimer">
+            * Los porcentajes reflejan mi <span className="text-primary-400 font-medium">nivel de autonomía</span> usando cada tecnología en proyectos reales.
+          </Trans>
         </motion.p>
 
         <motion.div
@@ -198,8 +244,8 @@ export function Skills() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {skillCategories.map((category) => (
-            <SkillCard key={category.title} category={category} />
+          {skillCategoriesData.map((category) => (
+            <SkillCard key={category.key} category={category} />
           ))}
         </motion.div>
       </div>

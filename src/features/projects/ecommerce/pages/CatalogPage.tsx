@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Search, Filter, Mic } from 'lucide-react';
 import { useGetProductsQuery, useGetCategoriesQuery } from '../services/productsApi';
 import ProductCard from '../components/ProductCard';
 
 export default function CatalogPage() {
+  const { t } = useTranslation();
   const { data: products, isLoading } = useGetProductsQuery();
   const { data: categories } = useGetCategoriesQuery();
   const [search, setSearch] = useState('');
@@ -11,7 +13,7 @@ export default function CatalogPage() {
   const [isListening, setIsListening] = useState(false);
 
   const handleVoiceSearch = () => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const SpeechRecognition = (globalThis as any).SpeechRecognition || (globalThis as any).webkitSpeechRecognition;
     
     if (SpeechRecognition) {
       const recognition = new SpeechRecognition();
@@ -43,8 +45,8 @@ export default function CatalogPage() {
       {/* Header & Filters */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 transition-colors">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Catálogo</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-1">Descubre nuestros productos destacados</p>
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{t('shop.catalog.title')}</h1>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">{t('shop.catalog.subtitle')}</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
@@ -52,7 +54,7 @@ export default function CatalogPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input 
               type="text" 
-              placeholder={isListening ? "Escuchando..." : "Buscar productos..."}
+              placeholder={isListening ? t('shop.catalog.voiceSearch') : t('shop.catalog.search')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className={`pl-10 pr-10 py-2 bg-slate-50 dark:bg-slate-800 border ${isListening ? 'border-indigo-500 ring-2 ring-indigo-500/20' : 'border-slate-200 dark:border-slate-700'} rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-64 transition-all dark:text-white dark:placeholder-slate-500`}
@@ -73,7 +75,7 @@ export default function CatalogPage() {
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="pl-10 pr-8 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none cursor-pointer capitalize w-full sm:w-48 dark:text-white"
             >
-              <option value="all">Todas las categorías</option>
+              <option value="all">{t('shop.catalog.category.all')}</option>
               {categories?.map((cat) => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
@@ -86,7 +88,7 @@ export default function CatalogPage() {
       {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800">
+            <div key={`skeleton-${i}`} className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800">
               <div className="w-full h-48 bg-slate-100 dark:bg-slate-800 rounded-xl mb-4" />
               <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded w-1/4 mb-2" />
               <div className="h-6 bg-slate-100 dark:bg-slate-800 rounded w-3/4 mb-4" />
@@ -105,7 +107,7 @@ export default function CatalogPage() {
           
           {filteredProducts?.length === 0 && (
              <div className="col-span-full py-20 text-center text-slate-400">
-               No se encontraron productos que coincidan con tu búsqueda.
+               {t('shop.catalog.noResults')}
              </div>
           )}
         </div>

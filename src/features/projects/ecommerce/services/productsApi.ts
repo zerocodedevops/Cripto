@@ -14,6 +14,8 @@ export interface Product {
   };
 }
 
+import { ShopService } from '../../../../services/shopService';
+
 // Using local mock data to ensure Spanish content
 export const productsApi = createApi({
   reducerPath: 'productsApi',
@@ -21,23 +23,47 @@ export const productsApi = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], void>({
       queryFn: async () => {
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 800));
-        return { data: mockProducts };
+        try {
+          const products = await ShopService.getProducts();
+          if (products.length === 0) {
+            console.warn('No products in DB, falling back to mock data');
+            return { data: mockProducts };
+          }
+          return { data: products };
+        } catch (error) {
+          console.error("API Error", error);
+          return { data: mockProducts };
+        }
       },
     }),
     getProductById: builder.query<Product, string>({
       queryFn: async (id) => {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const product = mockProducts.find(p => p.id === Number(id));
-        return { data: product || mockProducts[0] };
+        try {
+           const product = await ShopService.getProductById(id);
+           if (product) return { data: product };
+           
+           const mock = mockProducts.find(p => p.id === Number(id));
+           return { data: mock || mockProducts[0] };
+        } catch (error) {
+           // If Firestore fails or product doesn't exist, return default mock
+           console.error("Product fetch failed, using fallback:", error);
+           return { data: mockProducts[0] };
+        }
       },
     }),
     getCategories: builder.query<string[], void>({
        queryFn: async () => {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const categories = Array.from(new Set(mockProducts.map(p => p.category)));
-        return { data: categories };
+         try {
+            // Optimally we would have a separate collection for categories
+            const products = await ShopService.getProducts();
+            const source = products.length > 0 ? products : mockProducts;
+            const categories = Array.from(new Set(source.map(p => p.category)));
+            return { data: categories };
+         } catch(error) {
+            console.error("Error fetching categories, using fallback:", error);
+            const categories = Array.from(new Set(mockProducts.map(p => p.category)));
+            return { data: categories };
+         }
       },
     }),
   }),

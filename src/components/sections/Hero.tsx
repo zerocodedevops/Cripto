@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, ArrowDown, Sparkles, Bot } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { useTranslation } from 'react-i18next';
+import { trackEvent } from '@/lib/analytics';
 
 const socialLinks = [
   // eslint-disable-next-line
@@ -92,7 +93,10 @@ export function Hero() {
               variant="primary"
               size="lg"
               rightIcon={<Mail className="w-5 h-5" />}
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                trackEvent('Hero', 'Click', 'Contact');
+              }}
             >
               {t('hero.cta.contact', 'Contáctame')}
             </Button>
@@ -101,7 +105,10 @@ export function Hero() {
               size="lg"
               /* eslint-disable-next-line @typescript-eslint/no-deprecated */
               rightIcon={<Github className="w-5 h-5" />}
-              onClick={() => window.open('https://github.com/zerocodedevops', '_blank')}
+              onClick={() => {
+                window.open('https://github.com/zerocodedevops', '_blank');
+                trackEvent('Hero', 'Click', 'GitHub');
+              }}
             >
               {t('hero.cta.github', 'Ver GitHub')}
             </Button>

@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio E2E Strict Tests', () => {
+  test.use({ locale: 'es-ES' });
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });

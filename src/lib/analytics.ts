@@ -26,6 +26,8 @@ export const logEvent = (category: string, action: string, label?: string, value
   }
 };
 
+export const trackEvent = logEvent;
+
 // Eventos personalizados
 export const trackProjectClick = (projectName: string) => {
   logEvent('Project', 'Click', projectName);

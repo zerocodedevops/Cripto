@@ -8,10 +8,8 @@ import { initGA, logPageView } from './lib/analytics';
 import './i18n/config';
 
 // Initialize Google Analytics
-if (import.meta.env.PROD) {
-  initGA();
-  logPageView();
-}
+initGA();
+logPageView();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

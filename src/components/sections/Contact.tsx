@@ -1,56 +1,59 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import emailjs from '@emailjs/browser';
+import { useTranslation, Trans } from 'react-i18next';
 /* eslint-disable @typescript-eslint/no-deprecated */
 // eslint-disable-next-line
 import { Send, Mail, MapPin, CheckCircle, AlertCircle, Linkedin, Github } from 'lucide-react';
 import { Button, SectionTitle } from '@/components/ui';
 import { slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 
-const contactSchema = z.object({
-  name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
-  email: z.string().email('Email inválido'),
-  subject: z.string().min(5, 'El asunto debe tener al menos 5 caracteres'),
-  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
-
 const contactInfo = [
   {
     icon: Mail,
-    label: 'Email',
+    // label: 'Email', // Replaced by translation
+    labelKey: 'email',
     value: 'zerocode.devops@gmail.com',
     href: 'mailto:zerocode.devops@gmail.com',
   },
   {
     icon: MapPin,
-    label: 'Ubicación',
+    labelKey: 'location',
     value: 'Madrid, España',
     href: '#',
   },
   {
     // eslint-disable-next-line
     icon: Linkedin,
-    label: 'LinkedIn',
+    labelKey: 'linkedin',
     value: 'zerocode-devops',
     href: 'https://www.linkedin.com/in/zerocode-devops',
   },
   {
     // eslint-disable-next-line
     icon: Github,
-    label: 'GitHub',
+    labelKey: 'github',
     value: 'zerocodedevops',
     href: 'https://github.com/zerocodedevops',
   },
 ];
 
 export function Contact() {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const contactSchema = useMemo(() => z.object({
+    name: z.string().min(2, t('contact.form.validation.name')),
+    email: z.string().email(t('contact.form.validation.email')),
+    subject: z.string().min(5, t('contact.form.validation.subject')),
+    message: z.string().min(10, t('contact.form.validation.message')),
+  }), [t]);
+
+  type ContactFormData = z.infer<typeof contactSchema>;
 
   const {
     register,
@@ -95,7 +98,7 @@ export function Contact() {
       reset();
     } catch {
       setStatus('error');
-      setErrorMessage('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
+      setErrorMessage(t('contact.form.error'));
     }
   };
 
@@ -108,8 +111,8 @@ export function Contact() {
 
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Contacto"
-          subtitle="¿Tienes un proyecto en mente? ¡Hablemos!"
+          title={t('contact.title')}
+          subtitle={t('contact.subtitle')}
         />
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -121,16 +124,18 @@ export function Contact() {
             viewport={{ once: true }}
           >
             <h3 className="heading-3 text-dark-100 mb-6">
-              ¡Vamos a trabajar juntos!
+              {t('contact.cta.title')}
             </h3>
             <p className="text-dark-400 mb-8 leading-relaxed">
-              Estoy abierto a colaborar en proyectos que valoren la <span className="text-primary-400 font-medium">innovación</span>, la <span className="text-primary-400 font-medium">transparencia</span> y el uso estratégico de <span className="text-accent-400 font-medium">IA</span>.
+              <Trans i18nKey="contact.cta.description">
+                Estoy abierto a colaborar en proyectos que valoren la <span className="text-primary-400 font-medium">innovación</span>, la <span className="text-primary-400 font-medium">transparencia</span> y el uso estratégico de <span className="text-accent-400 font-medium">IA</span>.
+              </Trans>
             </p>
 
             <div className="space-y-4">
               {contactInfo.map((info) => (
                 <motion.a
-                  key={info.label}
+                  key={info.labelKey}
                   href={info.href}
                   target={info.href.startsWith('http') ? '_blank' : undefined}
                   rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -141,7 +146,12 @@ export function Contact() {
                     <info.icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-dark-500 text-sm">{info.label}</p>
+                    <p className="text-dark-500 text-sm">
+                      {/* Check if specific translation exists, otherwise use fallback logic or basic key if added to json */}
+                       {['email', 'linkedin', 'github'].includes(info.labelKey) 
+                          ? info.labelKey.charAt(0).toUpperCase() + info.labelKey.slice(1) 
+                          : t(`contact.info.${info.labelKey}`)}
+                    </p>
                     <p className="text-dark-200 font-medium">{info.value}</p>
                   </div>
                 </motion.a>
@@ -164,13 +174,13 @@ export function Contact() {
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="label">
-                    Nombre
+                    {t('contact.form.name')}
                   </label>
                   <input
                     id="name"
                     type="text"
                     className="input"
-                    placeholder="Tu nombre"
+                    placeholder={t('contact.form.placeholders.name')}
                     {...register('name')}
                     aria-invalid={errors.name ? 'true' : 'false'}
                     required={true}
@@ -185,13 +195,13 @@ export function Contact() {
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="label">
-                    Email
+                    {t('contact.form.email')}
                   </label>
                   <input
                     id="email"
                     type="email"
                     className="input"
-                    placeholder="tu@email.com"
+                    placeholder={t('contact.form.placeholders.email')}
                     {...register('email')}
                     aria-invalid={errors.email ? 'true' : 'false'}
                     required={true}
@@ -206,13 +216,13 @@ export function Contact() {
                 {/* Subject */}
                 <div>
                   <label htmlFor="subject" className="label">
-                    Asunto
+                    {t('contact.form.subject')}
                   </label>
                   <input
                     id="subject"
                     type="text"
                     className="input"
-                    placeholder="¿De qué quieres hablar?"
+                    placeholder={t('contact.form.placeholders.subject')}
                     {...register('subject')}
                     aria-invalid={errors.subject ? 'true' : 'false'}
                   />
@@ -226,12 +236,12 @@ export function Contact() {
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="label">
-                    Mensaje
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id="message"
                     className="textarea"
-                    placeholder="Tu mensaje..."
+                    placeholder={t('contact.form.placeholders.message')}
                     rows={5}
                     {...register('message')}
                     aria-invalid={errors.message ? 'true' : 'false'}
@@ -252,7 +262,7 @@ export function Contact() {
                   isLoading={status === 'loading'}
                   rightIcon={<Send className="w-5 h-5" />}
                 >
-                  {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
+                  {status === 'loading' ? t('contact.form.sending') : t('contact.form.submit')}
                 </Button>
 
                 {/* Status messages */}
@@ -265,7 +275,7 @@ export function Contact() {
                       className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400"
                     >
                       <CheckCircle className="w-5 h-5" />
-                      <p>¡Mensaje enviado con éxito! Te responderé pronto.</p>
+                      <p>{t('contact.form.success')}</p>
                     </motion.div>
                   )}
 

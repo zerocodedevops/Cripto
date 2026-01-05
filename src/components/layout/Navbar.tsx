@@ -5,6 +5,8 @@ import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
+import { trackEvent } from '@/lib/analytics';
+
 const socialLinks = [
   // eslint-disable-next-line @typescript-eslint/no-deprecated
   { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub' },
@@ -87,7 +89,7 @@ export function Navbar() {
               handleNavClick('#hero');
             }}
           >
-            &lt;DevPortfolio /&gt;
+            &lt;ZeroCode_Portfolio /&gt;
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -122,6 +124,7 @@ export function Navbar() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
+                  onClick={() => trackEvent('Social', `click_${social.label.toLowerCase()}`, 'navbar')}
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -130,7 +133,11 @@ export function Navbar() {
 
             {/* Theme toggle */}
             <motion.button
-              onClick={toggleTheme}
+              onClick={() => {
+                const newTheme = !isLightMode ? 'light' : 'dark';
+                toggleTheme();
+                trackEvent('UI', 'toggle_theme', newTheme);
+              }}
               className="p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -147,7 +154,10 @@ export function Navbar() {
             {/* Language switcher */}
             <div className="flex items-center gap-1 border border-dark-700 rounded-lg p-1">
               <motion.button
-                onClick={() => i18n.changeLanguage('es')}
+                onClick={() => {
+                  i18n.changeLanguage('es');
+                  trackEvent('UI', 'change_language', 'es');
+                }}
                 className={cn(
                   "px-2 py-1 text-xs font-medium rounded transition-colors",
                   i18n.language === 'es'
@@ -160,7 +170,10 @@ export function Navbar() {
                 ES
               </motion.button>
               <motion.button
-                onClick={() => i18n.changeLanguage('en')}
+                onClick={() => {
+                  i18n.changeLanguage('en');
+                  trackEvent('UI', 'change_language', 'en');
+                }}
                 className={cn(
                   "px-2 py-1 text-xs font-medium rounded transition-colors",
                   i18n.language === 'en'

@@ -1,18 +1,21 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SectionTitle, Card } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { articles } from '@/data/articles';
 
 export function Blog() {
+  const { t } = useTranslation();
+
   return (
     <section id="blog" className="section relative">
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Pensamientos"
-          subtitle="Reflexiones sobre el futuro del desarrollo de software"
+          title={t('blog.title')}
+          subtitle={t('blog.subtitle')}
         />
 
         <motion.div
@@ -31,13 +34,13 @@ export function Blog() {
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent z-10" />
                     <img 
                       src={article.image} 
-                      alt={article.title}
+                      alt={t(`blog.items.${article.id}.title`) || article.title}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4 z-20">
                       <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 backdrop-blur-sm">
-                        {article.category}
+                        {t(`blog.items.${article.id}.category`) || article.category}
                       </span>
                     </div>
                     <div className="absolute top-4 right-4 z-20 bg-dark-900/50 p-2 rounded-full backdrop-blur-sm border border-dark-700/50">
@@ -53,19 +56,19 @@ export function Blog() {
                         {article.date}
                       </div>
                       <span>•</span>
-                      <span>{article.readTime} lectura</span>
+                      <span>{article.readTime} {t('blog.readTime')}</span>
                     </div>
 
                     <h3 className="text-xl font-bold text-dark-100 mb-3 group-hover:text-primary-400 transition-colors">
-                      {article.title}
+                      {t(`blog.items.${article.id}.title`) || article.title}
                     </h3>
                     
                     <p className="text-dark-400 text-sm leading-relaxed mb-6 flex-1">
-                      {article.excerpt}
+                      {t(`blog.items.${article.id}.excerpt`) || article.excerpt}
                     </p>
 
                     <div className="flex items-center gap-2 text-primary-400 text-sm font-medium group-hover:gap-3 transition-all">
-                      Leer artículo <ArrowRight className="w-4 h-4" />
+                      {t('blog.readMore')} <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
                 </Card>

@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 // eslint-disable-next-line
 import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
   // eslint-disable-next-line
@@ -11,15 +12,17 @@ const socialLinks = [
   { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
 ];
 
-const footerLinks = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre mí', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Contacto', href: '#contact' },
-];
-
 export function Footer() {
+  const { t } = useTranslation();
+
+  const footerLinks = [
+    { label: t('nav.home'), href: '#hero' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.skills'), href: '#skills' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.contact'), href: '#contact' },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -34,7 +37,7 @@ export function Footer() {
         className="absolute -top-6 left-1/2 -translate-x-1/2 p-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-glow"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Volver arriba"
+        aria-label={t('footer.scrollButton')}
       >
         <ArrowUp className="w-5 h-5" />
       </motion.button>
@@ -50,7 +53,7 @@ export function Footer() {
               &lt;DevPortfolio /&gt;
             </a>
             <p className="mt-2 text-dark-400 text-sm">
-              Creando experiencias digitales únicas
+              {t('footer.tagline')}
             </p>
           </div>
 
@@ -90,9 +93,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-dark-700/50">
           <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-1">
-            © {currentYear} ZeroCode. Hecho con{' '}
-            <Heart className="w-4 h-4 text-accent-500 fill-accent-500" /> y mucha{' '}
-            <span className="text-primary-400">curiosidad + IA</span>
+            © {currentYear} ZeroCode. {t('footer.madeWith')}{' '}
+            <Heart className="w-4 h-4 text-accent-500 fill-accent-500" /> {t('footer.by')} {' '}
+            <span className="text-primary-400">{t('footer.curiosity')}</span>
           </p>
         </div>
       </div>

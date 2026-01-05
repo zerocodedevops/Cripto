@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { SectionTitle, TechBadge, Card } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { trackEvent } from '@/lib/analytics';
 
 interface Project {
   id: number;
   title: string;
-  description: string;
+  // description: string; // Removed as it will be translated
   image?: string;
   tags: string[];
   demoUrl?: string;
@@ -20,7 +22,6 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'DevOps Shop',
-    description: 'Tienda online completa con Auth simulado, carrito persistente y checkout.',
     image: '/assets/projects/thumbnails/ecommerce-preview.png',
     tags: ['React', 'Redux', 'Stripe', 'Tailwind'],
     demoUrl: '#/proyectos/ecommerce',
@@ -30,7 +31,6 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'AI Chat Assistant',
-    description: 'Asistente de chat inteligente con integración de OpenAI y memoria contextual.',
     image: '/assets/projects/thumbnails/ai-chat.png',
     tags: ['Next.js', 'TypeScript', 'OpenAI', 'Supabase'],
     demoUrl: 'https://example.com',
@@ -40,7 +40,6 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Task Management App',
-    description: 'Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones.',
     image: '/assets/projects/thumbnails/task-manager.png',
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
     demoUrl: 'https://example.com',
@@ -50,7 +49,6 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'Portfolio Dashboard',
-    description: 'Dashboard analítico para visualizar métricas de portafolio de inversiones.',
     image: '/assets/projects/thumbnails/dashboard.png',
     tags: ['React', 'TypeScript', 'Chart.js', 'Node.js'],
     repoUrl: 'https://github.com/zerocodedevops',
@@ -59,7 +57,6 @@ const projects: Project[] = [
   {
     id: 5,
     title: 'Weather App',
-    description: 'Aplicación del clima con pronósticos detallados y mapas interactivos.',
     image: '/assets/projects/thumbnails/weather.png',
     tags: ['React', 'TypeScript', 'API REST', 'Tailwind'],
     demoUrl: 'https://example.com',
@@ -68,7 +65,6 @@ const projects: Project[] = [
   {
     id: 6,
     title: 'Blog Platform',
-    description: 'Plataforma de blog con CMS headless, markdown y optimización SEO.',
     image: '/assets/projects/thumbnails/blog.png',
     tags: ['Next.js', 'MDX', 'Tailwind', 'Vercel'],
     demoUrl: 'https://example.com',
@@ -89,17 +85,6 @@ const getStatusStyles = (status: Project['status']) => {
   }
 };
 
-const getStatusLabel = (status: Project['status']) => {
-  switch (status) {
-    case 'Production':
-      return 'En Producción';
-    case 'Development':
-      return 'En Desarrollo';
-    default:
-      return 'Prototipo';
-  }
-};
-
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -117,6 +102,19 @@ const GithubIcon = ({ className }: { className?: string }) => (
 );
 
 function ProjectCard({ project }: { readonly project: Project }) {
+  const { t } = useTranslation();
+
+  const getStatusLabel = (status: Project['status']) => {
+    switch (status) {
+      case 'Production':
+        return t('projects.status.production');
+      case 'Development':
+        return t('projects.status.development');
+      default:
+        return t('projects.status.prototype');
+    }
+  };
+
   const thumbnailContent = (() => {
     if (!project.image) {
       return (
@@ -147,6 +145,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full h-full cursor-pointer"
+          onClick={() => trackEvent('Project', 'Click', project.title)}
         >
           {imageContent}
         </a>
@@ -177,7 +176,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
             )}
           </div>
           <p className="text-dark-400 text-sm mb-4 flex-1">
-            {project.description}
+            {t(`projects.items.${project.id}.description`)}
           </p>
 
           {/* Tags */}
@@ -196,9 +195,10 @@ function ProjectCard({ project }: { readonly project: Project }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
+                onClick={() => trackEvent('Project', 'Demo', project.title)}
               >
                 <ExternalLink className="w-4 h-4" />
-                Demo
+                {t('projects.links.demo')}
               </motion.a>
             )}
             {project.repoUrl && (
@@ -208,9 +208,10 @@ function ProjectCard({ project }: { readonly project: Project }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
+                onClick={() => trackEvent('Project', 'Repo', project.title)}
               >
                 <GithubIcon className="w-4 h-4" />
-                Código
+                {t('projects.links.code')}
               </motion.a>
             )}
           </div>
@@ -221,6 +222,8 @@ function ProjectCard({ project }: { readonly project: Project }) {
 }
 
 export function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="section relative">
       {/* Background decoration */}
@@ -230,8 +233,8 @@ export function Projects() {
 
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Proyectos"
-          subtitle="Una selección de mis trabajos más recientes"
+          title={t('projects.title')}
+          subtitle={t('projects.subtitle')}
         />
 
         <motion.div

@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { X, Plus, Minus, Trash2, CreditCard } from 'lucide-react';
 import { RootState } from '../store/store';
-import { toggleCart, removeFromCart, updateQuantity, clearCart } from '../store/cartSlice'; // Keep clearCart for checkout logic if needed
+import { toggleCart, removeFromCart, updateQuantity } from '../store/cartSlice';
 import { Link } from 'react-router-dom';
 
 export default function CartSidebar() {
@@ -66,7 +66,7 @@ export default function CartSidebar() {
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="font-medium text-slate-800 line-clamp-1">{item.title}</h3>
-                        <p className="text-slate-400 text-sm">${item.price}</p>
+                        <p className="text-slate-400 text-sm">{item.price}€</p>
                       </div>
                       <div className="flex justify-between items-center mt-2">
                         <div className="flex items-center gap-2 bg-slate-50 rounded-lg p-1">
@@ -101,7 +101,7 @@ export default function CartSidebar() {
               <div className="p-4 border-t border-slate-100 bg-slate-50/50">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-slate-500">Subtotal</span>
-                  <span className="text-xl font-bold text-slate-900">${total.toFixed(2)}</span>
+                  <span className="text-xl font-bold text-slate-900">{total.toFixed(2)}€</span>
                 </div>
                 <Link 
                   to="/proyectos/ecommerce/checkout"
