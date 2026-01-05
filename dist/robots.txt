@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://zerocode-devops.web.app/sitemap.xml
-
-# Crawl-delay for polite bots
-Crawl-delay: 1
