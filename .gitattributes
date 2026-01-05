@@ -1,0 +1,10 @@
+# Ignore build artifacts from language stats
+public/** linguist-vendored
+*.json linguist-vendored
+*.css linguist-vendored
+*.html linguist-vendored
+*.svg linguist-vendored
+
+# Keep source code as the only metric
+src/**/*.ts linguist-detectable
+src/**/*.tsx linguist-detectable
