@@ -32,7 +32,7 @@ persistencia y pasarela de pago.
 Crea un archivo `.env` en la raíz del proyecto (si no existe) y añade:
 
 ```env
-VITE_STRIPE_PUBLIC_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx
+VITE_STRIPE_PUBLIC_KEY=pk_test_placeholder
 ```
 
 > Nota: La clave pública incluida es de prueba estándar de Stripe.
