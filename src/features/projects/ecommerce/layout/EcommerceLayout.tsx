@@ -1,7 +1,8 @@
 import { Provider, useSelector, useDispatch } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Link, Outlet } from 'react-router-dom';
-import { ShoppingCart, Cpu, User, LogOut, X, Moon, Sun } from 'lucide-react';
-import { store, RootState } from '../store/store';
+import { ShoppingCart, Cpu, User, LogOut, Moon, Sun } from 'lucide-react';
+import { store, persistor, RootState } from '../store/store';
 import { toggleCart } from '../store/cartSlice';
 import { logout } from '../store/authSlice';
 import CartSidebar from '../components/CartSidebar';
@@ -110,14 +111,16 @@ export default function EcommerceLayout() {
 
   return (
     <Provider store={store}>
-      <ScrollToTop />
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors">
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Outlet />
-        </main>
-        <CartSidebar />
-      </div>
+      <PersistGate loading={null} persistor={persistor}>
+        <ScrollToTop />
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors">
+          <Navbar />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Outlet />
+          </main>
+          <CartSidebar />
+        </div>
+      </PersistGate>
     </Provider>
   );
 }

@@ -1,12 +1,13 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type BadgeVariant = 'default' | 'primary' | 'accent' | 'success' | 'warning';
 
-interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: BadgeVariant;
-  icon?: React.ReactNode;
+interface BadgeProps extends ComponentProps<typeof motion.span> {
+  readonly variant?: BadgeVariant;
+  readonly icon?: React.ReactNode;
+  readonly children?: React.ReactNode;
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
@@ -50,13 +51,13 @@ const techColors: Record<string, { bg: string; text: string; border: string }> =
   ai: { bg: 'bg-fuchsia-500/10', text: 'text-fuchsia-400', border: 'border-fuchsia-500/30' },
 };
 
-interface TechBadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  tech: string;
-  icon?: React.ReactNode;
+interface TechBadgeProps extends ComponentProps<typeof motion.span> {
+  readonly tech: string;
+  readonly icon?: React.ReactNode;
 }
 
 export function TechBadge({ tech, icon, className, ...props }: TechBadgeProps) {
-  const techKey = tech.toLowerCase().replace(/[.\s]/g, '');
+  const techKey = tech.toLowerCase().replaceAll(/[.\s]/g, '');
   const colors = techColors[techKey] || { bg: 'bg-dark-700/50', text: 'text-dark-200', border: 'border-dark-600/50' };
 
   return (

@@ -1,13 +1,13 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { fadeInUp } from '@/hooks/useScrollAnimation';
 
-interface SectionTitleProps extends HTMLAttributes<HTMLDivElement> {
-  title: string;
-  subtitle?: string;
-  centered?: boolean;
-  gradient?: boolean;
+interface SectionTitleProps extends ComponentProps<typeof motion.div> {
+  readonly title: string;
+  readonly subtitle?: string;
+  readonly centered?: boolean;
+  readonly gradient?: boolean;
 }
 
 export function SectionTitle({

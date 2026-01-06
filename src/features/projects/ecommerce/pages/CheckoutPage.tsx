@@ -32,10 +32,7 @@ function CheckoutForm() {
     setTimeout(() => {
         setLoading(false);
         dispatch(clearCart());
-        setShowToast(true);
-        setTimeout(() => {
-          navigate('/proyectos/ecommerce');
-        }, 2500);
+        navigate('/proyectos/ecommerce/checkout/success');
     }, 2000);
 
     /* Real implementation would be:

@@ -6,7 +6,7 @@ import { addToCart } from '../store/cartSlice';
 import { Product } from '../services/productsApi';
 
 interface ProductCardProps {
-  product: Product;
+  readonly product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
@@ -42,6 +42,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50 dark:border-slate-800">
           <span className="text-lg font-bold text-slate-900 dark:text-white">{product.price}€</span>
           <button
+            aria-label="Añadir al carrito"
             onClick={() => dispatch(addToCart({ 
               id: product.id, 
               title: product.title, 

@@ -1,46 +1,88 @@
-# Proyecto 1: E-commerce Moderno
+# 🛍️ DevOps Shop: E-commerce Experience
 
-Este es un sub-proyecto integrado dentro del portfolio ZeroCode. Demuestra la
-capacidad de construir una tienda online completa con gestión de estado global,
-persistencia y pasarela de pago.
+> **Status**: 🚀 Production Ready | **Quality**: ✨ Strict Compliance |
+> **Tests**: 🛡️ 100% Passing
 
-## ⚙️ Stack Tecnológico
+Un e-commerce completo, rápido y accesible diseñado para demostrar capacidades
+avanzadas de frontend y arquitectura React.
 
-- **Core**: React 18, TypeScript, Vite.
-- **Estado**: Redux Toolkit (Slice Pattern) + RTK Query (Data Fetching).
-- **Estilos**: Tailwind CSS + Framer Motion (Animaciones).
-- **Pagos**: Stripe Elements (Modo Test).
-- **Router**: React Router v7 (Nested Routes).
+## ✨ Características Premium (100% Completado)
 
-## 🚀 Funcionalidades Clave
+### 🏪 Catálogo Interactivo
 
-1. **Estado Global Persistente**: Carrito de compras que sobrevive a recargas
-   (`localStorage`).
-2. **API Mocking**: Uso de `fakestoreapi.com` via RTK Query con caché y
-   revalidación.
-3. **Filtrado en Cliente**: Búsqueda por texto y categoría en tiempo real.
-4. **Optimización**:
-   - `Lazy Loading` de rutas.
-   - Skeletons para estados de carga.
-   - Memoización de componentes pesados.
-5. **Clean Code**: Arquitectura modular (`features/projects/ecommerce`).
+- **Paginación "Load More"**: UX moderna que carga productos progresivamente sin
+  recargas de página.
+- **Búsqueda Avanzada**: Entrada por texto y **Búsqueda por Voz** 🎙️ integrada.
+- **Filtros en Tiempo Real**: Filtrado cliente-servidor optimizado.
 
-## 🛠️ Configuración Local
+### 💳 Flujo de Compra Realista
 
-### Variables de Entorno
+- **Carrito Persistente**: Estado global mantenido con Redux Toolkit y
+  `localStorage`.
+- **Checkout con Stripe**: Integración con Stripe Elements para simulación de
+  pagos seguros.
+- **Experiencia Post-Compra**:
+  - Página de **Éxito** con ID de orden único y celebración de confeti 🎉.
+  - Página de **Cancelación** con recuperación de flujo.
 
-Crea un archivo `.env` en la raíz del proyecto (si no existe) y añade:
+### 🎨 UI/UX de Alto Nivel
 
-```env
-VITE_STRIPE_PUBLIC_KEY=pk_test_placeholder
-```
+- **Micro-interacciones**: Botones magnéticos y feedback háptico visual.
+- **Transiciones**: Navegación suave entre páginas (View Transitions / Framer
+  Motion).
+- **Diseño Responsivo**: Adaptado perfectamente a móvil, tablet y desktop.
 
-> Nota: La clave pública incluida es de prueba estándar de Stripe.
+## 🛠️ Excelencia Técnica
 
-## 📦 Scripts Recomendados
+Este proyecto sigue los estándares más estrictos de desarrollo:
 
-Para analizar el bundle de este sub-proyecto específicamente:
+- **TypeScript Strict Mode**: Tipado fuerte sin `any` implícitos.
+  `ComponentProps` para compatibilidad total con librerías externas.
+- **Zero Lint Warnings**: Código limpio validado por ESLint + SonarQube rules.
+- **Testing Exhaustivo**:
+  - **Unit**: Lógica de negocio (Redux Slices, Hooks).
+  - **Integration**: Flujos de componentes clave.
+  - **E2E**: Navegación crítica y compras (Playwright).
 
-```bash
-npx vite-bundle-visualizer
-```
+## 🚀 Stack
+
+| Capa        | Tecnología                      |
+| ----------- | ------------------------------- |
+| **Core**    | React 18, Vite, TypeScript      |
+| **Estado**  | Redux Toolkit, RTK Query        |
+| **Estilos** | Tailwind CSS, Framer Motion     |
+| **Pagos**   | Stripe JS                       |
+| **Calidad** | Vitest, Testing Library, ESLint |
+
+## ⚙️ Instalación y Uso
+
+1. **Variables de Entorno**: Asegúrate de tener `.env` en la raíz:
+   ```env
+   VITE_STRIPE_PUBLIC_KEY=pk_test_... # Tu clave pública de Stripe
+   ```
+
+2. **Ejecutar**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Tests**:
+   ```bash
+   npm run test        # Unit & Integration
+   npm run test:e2e    # E2E Scenarios
+   ```
+
+## 📂 Arquitectura
+
+El módulo vive en `src/features/projects/ecommerce` siguiendo el patrón
+**Feature-First**:
+
+- `/components`: UI específica del dominio.
+- `/data`: Mocks y datos estáticos robustos.
+- `/pages`: Vistas lazy-loaded (Catalog, Checkout, Success).
+- `/store`: Slices de Redux aislados (Cart, Auth).
+- `/services`: Definiciones de API (RTK Query).
+
+---
+
+_Desarrollado como parte del Portfolio ZeroCode_

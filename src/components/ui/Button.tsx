@@ -1,16 +1,17 @@
-import { forwardRef } from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { forwardRef, ComponentProps } from 'react';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ButtonVariant = 'primary' | 'accent' | 'outline' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'size'> {
+interface ButtonProps extends ComponentProps<typeof motion.button> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -50,7 +51,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         whileTap={{ scale: 0.98 }}
         {...props}
       >
-        {isLoading ? (
+        {isLoading && (
           <svg
             className="animate-spin h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -71,11 +72,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             />
           </svg>
-        ) : leftIcon ? (
-          leftIcon
-        ) : null}
+        )}
+        {!isLoading && leftIcon && leftIcon}
         {children}
-        {rightIcon && !isLoading ? rightIcon : null}
+        {!isLoading && rightIcon && rightIcon}
       </motion.button>
     );
   }

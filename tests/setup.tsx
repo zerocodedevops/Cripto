@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 // Mock matchMedia
-Object.defineProperty(window, 'matchMedia', {
+Object.defineProperty(globalThis, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation((query) => ({
     matches: false,
@@ -42,7 +42,7 @@ const IntersectionObserverMock = vi.fn(() => ({
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
 // Mock scrollTo
-window.scrollTo = vi.fn();
+globalThis.scrollTo = vi.fn(() => {});
 Element.prototype.scrollIntoView = vi.fn();
 
 // Mock framer-motion
@@ -61,7 +61,7 @@ vi.mock('framer-motion', () => ({
     button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
     a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
     span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
-    img: ({ children, ...props }: any) => <img {...props} />,
+    img: ({ ...props }: any) => <img alt="" {...props} />,
     form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
     label: ({ children, ...props }: any) => <label {...props}>{children}</label>,
     input: ({ children, ...props }: any) => <input {...props}>{children} </input>,

@@ -98,43 +98,7 @@ const skillCategoriesData: SkillCategory[] = [
   },
 ];
 
-function SkillBar({ skill }: { readonly skill: Skill }) {
-  const { t } = useTranslation();
-  // If nameKey exists, use it to look up translation in soft skills category, otherwise use name
-  const displayName = skill.nameKey 
-    ? t(`skills.categories.soft.items.${skill.nameKey}`) 
-    : skill.name;
 
-  return (
-    <motion.div
-      className="group"
-      variants={fadeInUp}
-    >
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-dark-400 group-hover:text-primary-400 transition-colors">
-            {skill.icon}
-          </span>
-          <span className="text-dark-200 text-sm font-medium">{displayName}</span>
-        </div>
-        <span className="text-dark-500 text-xs">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-dark-700/50 rounded-full overflow-hidden">
-        <motion.div
-          className={`h-full rounded-full`} // Color handled by parent passing down or context?
-          // Actually color needs to be passed or calculated. 
-          // The previous code passed color prop. I'll re-add it in list mapping.
-          style={{ width: 0 }} // Initial state handled by motion
-        />
-        {/*
-          Wait, I removed the color prop transmission in the replacement block?
-          I need to make sure I pass color to SkillBar or use it.
-          Let's just pass color to SkillBar as before.
-        */}
-      </div>
-    </motion.div>
-  );
-}
 
 // Fixed SkillBar to accept color again
 function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly color: string }) {

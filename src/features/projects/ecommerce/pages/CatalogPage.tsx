@@ -10,6 +10,7 @@ export default function CatalogPage() {
   const { data: categories } = useGetCategoriesQuery();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(8);
   const [isListening, setIsListening] = useState(false);
 
   const handleVoiceSearch = () => {
@@ -100,17 +101,31 @@ export default function CatalogPage() {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredProducts?.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-          
-          {filteredProducts?.length === 0 && (
-             <div className="col-span-full py-20 text-center text-slate-400">
-               {t('shop.catalog.noResults')}
-             </div>
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredProducts?.slice(0, visibleCount).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+            
+            {filteredProducts?.length === 0 && (
+               <div className="col-span-full py-20 text-center text-slate-400">
+                 {t('shop.catalog.noResults')}
+               </div>
+            )}
+          </div>
+
+          {/* Load More Pagination */}
+          {filteredProducts && filteredProducts.length > visibleCount && (
+            <div className="flex justify-center mt-12 animate-fade-in">
+              <button
+                onClick={() => setVisibleCount(prev => prev + 4)}
+                className="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm hover:shadow-md active:scale-95"
+              >
+                Cargar Más Productos ({filteredProducts.length - visibleCount} restantes)
+              </button>
+            </div>
           )}
-        </div>
+        </>
       )}
     </div>
   );

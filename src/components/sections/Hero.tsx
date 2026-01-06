@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 // eslint-disable-next-line
 import { Github, Linkedin, Mail, ArrowDown, Sparkles, Bot } from 'lucide-react';
 import { Button } from '@/components/ui';
+import { MagneticButton } from '@/components/ui/MagneticButton';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
@@ -42,8 +43,11 @@ export function Hero() {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
               {t('hero.available', 'Disponible para nuevos proyectos')}
             </span>
           </motion.div>
@@ -89,22 +93,23 @@ export function Hero() {
             variants={fadeInUp}
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
           >
-            <Button
-              variant="primary"
-              size="lg"
-              rightIcon={<Mail className="w-5 h-5" />}
-              onClick={() => {
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                trackEvent('Hero', 'Click', 'Contact');
-              }}
-            >
-              {t('hero.cta.contact', 'Contáctame')}
-            </Button>
+            <MagneticButton>
+              <Button
+                variant="primary"
+                size="lg"
+                rightIcon={<Mail className="w-5 h-5" />}
+                onClick={() => {
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  trackEvent('Hero', 'Click', 'Contact');
+                }}
+              >
+                {t('hero.cta.contact', 'Contáctame')}
+              </Button>
+            </MagneticButton>
             <Button
               variant="outline"
               size="lg"
-              /* eslint-disable-next-line @typescript-eslint/no-deprecated */
-              rightIcon={<Github className="w-5 h-5" />}
+              rightIcon={<Github className="w-5 h-5" />} // NOSONAR
               onClick={() => {
                 window.open('https://github.com/zerocodedevops', '_blank');
                 trackEvent('Hero', 'Click', 'GitHub');

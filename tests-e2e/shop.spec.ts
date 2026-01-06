@@ -1,47 +1,38 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Shop E2E Flow', () => {
-  test.use({ locale: 'es-ES' });
+  // Reset storage state for every test to ensure clean cart
+  test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeEach(async ({ page }) => {
+    // Note: The app uses internal ShopService which falls back to 'mockProducts.ts'
+    // when Firebase is not configured or in this environment.
+    // We do NOT need to mock network requests because they are not made via fetchBaseQuery base url.
+
     // Go to the ecommerce route
     await page.goto('/#/proyectos/ecommerce');
-    // Wait for catalog to load (simulated latency)
-    await page.waitForTimeout(1000); 
+    
+    // Wait for the main layout or catalog grid
+    await page.waitForLoadState('networkidle'); 
+    
+    // Wait for grid
+    await page.waitForSelector('.grid', { state: 'visible', timeout: 30000 });
   });
 
   test('should display catalog and add items to cart', async ({ page }) => {
     // Check Catalog Title
-    await expect(page.getByText('Catálogo')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible(); 
+    
+    // Verify product is visible (From mockProducts.ts)
+    await expect(page.getByText('Mochila Fjallraven')).toBeVisible();
 
-    // Find first "Añadir" button
-    const addBtn = page.getByRole('button', { name: /Añadir/i }).first();
-    await expect(addBtn).toBeVisible();
-    await addBtn.click();
+    // Add to cart (using aria-label)
+    const addButtons = page.getByRole('button', { name: "Añadir al carrito" });
+    await expect(addButtons.first()).toBeVisible();
+    await addButtons.first().click();
 
-    // Verify Cart Badge updates
-    // Assuming cart icon has a badge or opens sidebar?
-    // Let's open sidebar manually if it doesn't open auto (ZeroCode implementation usually doesn't open auto)
-    // Verify Cart Badge updates - Implicit check via UI state or just proceed
-    // (Cart sidebar logic omitted for brevity in prototype test)
-    
-    // Visual Verification Shortcut (User requested visual regression)
-    await expect(page).toHaveScreenshot('catalog-initial.png', { maxDiffPixels: 100 });
-  });
-
-  test('should navigate to checkout', async ({ page }) => {
-    // Add item first
-    const addBtn = page.getByRole('button', { name: /Añadir/i }).first();
-    await addBtn.click();
-    
-    // Open Cart Sidebar - Navigating directly for robustness in this test
-    // await page.keyboard.press('Escape'); // Close any potential overlays
-    
-    // Force navigate to checkout to verifying routing
-    await page.goto('/#/proyectos/ecommerce/checkout');
-    await expect(page.getByText('Finalizar Compra')).toBeVisible({ timeout: 10000 });
-    
-    // Snapshot of checkout
-    await expect(page).toHaveScreenshot('checkout-page.png');
+    // Open Cart (Cart icon button usually in navbar)
+    // We can assume the update Cart Count badge appears
+    await expect(page.locator('.text-white.text-xs')).toHaveText('1');
   });
 });

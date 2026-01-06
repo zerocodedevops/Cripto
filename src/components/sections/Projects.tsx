@@ -101,7 +101,14 @@ const GithubIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-function ProjectCard({ project }: { readonly project: Project }) {
+import { ProjectDetailModal } from '../ProjectDetailModal';
+import { useState } from 'react';
+
+// ... (existing imports)
+
+// ... (existing helper functions)
+
+function ProjectCard({ project, onClick }: { readonly project: Project; readonly onClick: () => void }) {
   const { t } = useTranslation();
 
   const getStatusLabel = (status: Project['status']) => {
@@ -116,9 +123,10 @@ function ProjectCard({ project }: { readonly project: Project }) {
   };
 
   const thumbnailContent = (() => {
+    // ... (keep usage of project.image)
     if (!project.image) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800">
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800" onClick={onClick}>
           <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
         </div>
       );
@@ -132,32 +140,28 @@ function ProjectCard({ project }: { readonly project: Project }) {
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          {project.demoUrl && <ExternalLink className="w-8 h-8 text-white" />}
+        <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+           {/* Add View Case Study Button overlay */}
+           <button 
+             onClick={(e) => { e.stopPropagation(); onClick(); }}
+             className="px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg"
+           >
+             Ver Detalles
+           </button>
         </div>
       </>
     );
-
-    if (project.demoUrl) {
-      return (
-        <a
-          href={project.demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full h-full cursor-pointer"
-          onClick={() => trackEvent('Project', 'Click', project.title)}
-        >
-          {imageContent}
-        </a>
-      );
-    }
-
-    return imageContent;
+     // Removed direct link wrap to handle modal open
+     return (
+       <div className="w-full h-full cursor-pointer" onClick={onClick}>
+         {imageContent}
+       </div>
+     );
   })();
 
   return (
     <motion.div variants={fadeInUp}>
-      <Card className="h-full flex flex-col group overflow-hidden">
+      <Card className="h-full flex flex-col group overflow-hidden cursor-pointer hover:border-primary-500/30 transition-colors" onClick={onClick}>
         {/* Image thumbnail */}
         <div className="aspect-[16/10] bg-dark-900 rounded-lg mb-4 overflow-hidden relative group-hover:shadow-lg transition-all border border-dark-700/50">
           {thumbnailContent}
@@ -186,7 +190,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
             ))}
           </div>
 
-          {/* Links */}
+          {/* Links - Stop Propagation to prevent modal opening when clicking links? */}
           <div className="flex gap-3">
             {project.demoUrl && (
               <motion.a
@@ -195,7 +199,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
-                onClick={() => trackEvent('Project', 'Demo', project.title)}
+                onClick={(e) => { e.stopPropagation(); trackEvent('Project', 'Demo', project.title); }}
               >
                 <ExternalLink className="w-4 h-4" />
                 {t('projects.links.demo')}
@@ -208,7 +212,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
-                onClick={() => trackEvent('Project', 'Repo', project.title)}
+                onClick={(e) => { e.stopPropagation(); trackEvent('Project', 'Repo', project.title); }}
               >
                 <GithubIcon className="w-4 h-4" />
                 {t('projects.links.code')}
@@ -223,6 +227,7 @@ function ProjectCard({ project }: { readonly project: Project }) {
 
 export function Projects() {
   const { t } = useTranslation();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section id="projects" className="section relative">
@@ -245,10 +250,19 @@ export function Projects() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              onClick={() => setSelectedProject(project)}
+            />
           ))}
         </motion.div>
       </div>
+      
+      <ProjectDetailModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </section>
   );
 }

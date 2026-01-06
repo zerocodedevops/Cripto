@@ -17,6 +17,8 @@ fluidas, dark mode y despliegue automático en GitHub Pages.
 - ♿ **Accesible**: ARIA labels, navegación por teclado
 - 📧 **Formulario de Contacto**: Integración con EmailJS
 - 🧪 **Tests**: Vitest (Unit) + Playwright (E2E)
+- 🛍️ **E-commerce Demo**: "DevOps Shop" con Redux, Stripe y Paginación (Strict
+  Mode)
 - 🚀 **CI/CD**: GitHub Actions + GitHub Pages
 
 ## 📂 Estructura del Proyecto
@@ -57,8 +59,10 @@ ZeroCode/
 │   ├── context/
 │   │   └── ThemeContext.tsx
 │   ├── features/
-│   │   └── home/
-│   │       └── Home.tsx
+│   │   ├── home/
+│   │   │   └── Home.tsx
+│   │   └── projects/
+│   │       └── ecommerce/   # E-commerce Completo (Redux, Stripe)
 │   ├── hooks/
 │   │   └── useScrollAnimation.ts
 │   ├── lib/
@@ -217,8 +221,8 @@ Edita los arrays `socialLinks` en:
 
 ## 📝 Licencia
 
-MIT © 2024
+© 2026 ZeroCode
 
 ---
 
-Hecho con ❤️ y mucho código ☕
+Hecho con ❤️ por curiosidad + IA

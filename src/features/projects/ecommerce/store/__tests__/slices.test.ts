@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import authReducer, { login, logout } from '../authSlice';
-import cartReducer, { addToCart, removeFromCart, clearCart } from '../cartSlice';
+import cartReducer, { addToCart, removeFromCart } from '../cartSlice';
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -12,7 +12,7 @@ const localStorageMock = (() => {
     clear: () => { store = {}; }
   };
 })();
-Object.defineProperty(window, 'localStorage', { value: localStorageMock });
+Object.defineProperty(globalThis, 'localStorage', { value: localStorageMock });
 
 describe('Auth Slice', () => {
   const initialState = { user: null, isAuthenticated: false };
@@ -26,7 +26,7 @@ describe('Auth Slice', () => {
     const actual = authReducer(initialState, login(user));
     expect(actual.isAuthenticated).toEqual(true);
     expect(actual.user).toEqual(user);
-    expect(window.localStorage.getItem('ecommerce_user')).toContain('testuser');
+    expect(globalThis.localStorage.getItem('ecommerce_user')).toContain('testuser');
   });
 
   it('should handle logout', () => {

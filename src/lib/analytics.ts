@@ -5,7 +5,6 @@ const MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 export const initGA = () => {
   if (MEASUREMENT_ID && import.meta.env.PROD) {
     ReactGA.initialize(MEASUREMENT_ID);
-    console.log('Google Analytics initialized');
   }
 };
 
