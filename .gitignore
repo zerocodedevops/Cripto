@@ -82,3 +82,8 @@ dist-ssr/
 # Playwright
 playwright-report/
 test-results/
+test-output.txt
+
+# System
+desktop.ini
+Thumbs.db
