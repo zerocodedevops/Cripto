@@ -1,12 +1,15 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { PageTransition } from '@/components/ui/PageTransition';
-import { CurrencyProvider } from '@/features/crypto/context/CurrencyContext';
+import { CurrencyProvider } from '@/features/projects/crypto/context/CurrencyContext';
+
+// Lazy Load Components
+// Lazy Load Components
 const Home = lazy(() => import('@/features/home/Home'));
 const BlogPost = lazy(() => import('@/features/blog/BlogPost'));
 const EcommerceApp = lazy(() => import('@/features/projects/ecommerce/routes'));
 const AnalyticsApp = lazy(() => import('@/features/projects/analytics/routes'));
-const CryptoApp = lazy(() => import('@/features/crypto/pages/CryptoDashboard').then(m => ({ default: m.CryptoDashboard })));
+const CryptoApp = lazy(() => import('@/features/projects/crypto/pages/CryptoDashboard').then(m => ({ default: m.CryptoDashboard })));
 const NotFound = lazy(() => import('@/features/misc/NotFound'));
 
 const router = createHashRouter([

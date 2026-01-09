@@ -1,6 +1,6 @@
 # 🚀 ZeroCode Crypto Dashboard
 
-> **The Ultimate Real-Time Cryptocurrency Tracking Experience**
+> **La Experiencia Definitiva de Seguimiento de Criptomonedas en Tiempo Real**
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
@@ -9,92 +9,96 @@
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwind-css&logoColor=white)
 ![PWA](https://img.shields.io/badge/PWA-Ready-purple)
 
-**ZeroCode Crypto** is a bleeding-edge, high-performance cryptocurrency
-dashboard built for the modern web. Leveraging the power of **WebSockets** for
-real-time data, **PWA** capabilities for native-like experience, and a stunning
-**Glassmorphism** UI, it sets a new standard for personal finance trackers.
+**ZeroCode Crypto** es un dashboard de criptomonedas de vanguardia y alto
+rendimiento, construido para la web moderna. Aprovecha la potencia de
+**WebSockets** para datos en tiempo real, capacidades **PWA** para una
+experiencia nativa, y una interfaz **Glassmorphism** impresionante que establece
+un nuevo estándar.
 
 ---
 
-## ✨ Key Features
+## ✨ Características Principales
 
-### 🔥 Real-Time Data Engine
+### 🔥 Motor de Datos en Tiempo Real
 
-- **Live WebSocket Feed**: Direct connection to Binance streams for sub-second
-  price updates.
-- **Smart Fallback**: Seamless degradation to CoinGecko REST API if WebSockets
-  are unavailable.
-- **Optimized Performance**: Intelligent caching and batched updates to minimize
-  re-renders.
+- **Feed WebSocket en Vivo**: Conexión directa a streams de Binance para
+  actualizaciones de precio inferiores a un segundo.
+- **Fallback Inteligente**: Degradación elegante a la API REST de CoinGecko si
+  los WebSockets no están disponibles.
+- **Rendimiento Optimizado**: Caché inteligente y actualizaciones por lotes para
+  minimizar re-renderizados.
 
-### 📊 Professional Analytics
+### 📊 Analíticas Profesionales
 
-- **Interactive Charts**: Powered by `Recharts` with custom tooltips and
-  responsive behavior.
-- **Market Heatmap**: Visualize market dominance and trends at a glance.
-- **Advanced Comparators**: Side-by-side asset comparison with critical metrics
-  (Rank, Cap, Vol, supply).
+- **Gráficos Interactivos**: Potenciados por `Recharts` con tooltips
+  personalizados y comportamiento responsive.
+- **Mapa de Calor del Mercado**: Visualiza la dominancia del mercado y las
+  tendencias de un vistazo.
+- **Comparadores Avanzados**: Comparación de activos lado a lado con métricas
+  críticas (Rango, Cap, Vol, suministro).
 
-### 💼 Portfolio Management
+### 💼 Gestión de Portafolio
 
-- **Transaction Tracking**: Log Buys/Sells with automatic cost-basis
-  calculation.
-- **Holdings Summary**: Real-time evaluation of your total portfolio value.
-- **Local Persistence**: Secure, browser-based data storage (no server
-  required).
+- **Seguimiento de Transacciones**: Registra Compras/Ventas con cálculo
+  automático de base de costo.
+- **Resumen de Tenencias**: Evaluación en tiempo real del valor total de tu
+  portafolio.
+- **Persistencia Local**: Almacenamiento seguro en el navegador (sin necesidad
+  de servidor).
 
-### 🌍 Global & Accessible
+### 🌍 Global y Accesible
 
-- **Internationalization (i18n)**: Native support for 6 currencies/languages
-  (EN, ES, FR, DE, IT, PT).
-- **Accessibility First**: Semantic HTML, ARIA labels, and keyboard navigation
-  support.
-- **PWA Certified**: Installable on mobile/desktop, offline-capable code.
+- **Internacionalización (i18n)**: Soporte nativo para 6 monedas/idiomas (EN,
+  ES, FR, DE, IT, PT).
+- **Accesibilidad Primero**: HTML semántico, etiquetas ARIA y soporte de
+  navegación por teclado.
+- **Certificado PWA**: Instalable en móvil/escritorio, código capaz de funcionar
+  offline.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológico
 
 - **Core**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, Framer Motion (Animations)
-- **State/Logic**: Context API, Custom Hooks
-- **Data Visualization**: Recharts
-- **Icons**: Lucide React
+- **Estilos**: Tailwind CSS, Framer Motion (Animaciones)
+- **Estado/Lógica**: Context API, Custom Hooks
+- **Visualización de Datos**: Recharts
+- **Iconos**: Lucide React
 - **Utils**: date-fns, i18next
-- **Build**: ESNext target, Top-level await support
+- **Build**: Target ESNext, soporte Top-level await
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Inicio Rápido
 
-### Prerequisites
+### Prerrequisitos
 
 - Node.js 18+
-- npm or yarn
+- npm o yarn
 
-### Installation
+### Instalación
 
 ```bash
-# 1. Clone the repository
+# 1. Clonar el repositorio
 git clone https://github.com/zerocodedevops/Cripto.git
 
-# 2. Navigate to directory
+# 2. Navegar al directorio
 cd Cripto
 
-# 3. Install dependencies
+# 3. Instalar dependencias
 npm install
 
-# 4. Start Development Server
+# 4. Iniciar Servidor de Desarrollo
 npm run dev
 ```
 
-### Production Build
+### Build de Producción
 
 ```bash
-# Create optimized production build
+# Crear build optimizado para producción
 npm run build
 
-# Preview locally
+# Previsualizar localmente
 npm run preview
 ```
 
@@ -102,36 +106,38 @@ npm run preview
 
 ## 📱 Progressive Web App (PWA)
 
-This project is fully configured as a PWA.
+Este proyecto está totalmente configurado como una PWA.
 
-- **Installable**: Add to Home Screen on iOS/Android.
-- **Offline Support**: Service Workers cache critical assets.
-- **Manifest**: Full metadata support (Icons, Splash screens, Theme colors).
-
----
-
-## 🛡️ Code Quality ("Zero Tolerance")
-
-This repository maintains strict quality standards:
-
-- **Linting**: ESLint strict configuration (0 warnings tolerated).
-- **Type Safety**: Full TypeScript compliance (`noEmit` checks).
-- **Architecture**: Modular "Features" folder structure for scalability.
+- **Instalable**: Añadir a la Pantalla de Inicio en iOS/Android.
+- **Soporte Offline**: Service Workers almacenan en caché activos críticos.
+- **Manifest**: Soporte completo de metadatos (Iconos, Pantallas de carga,
+  Colores de tema).
 
 ---
 
-## 🤝 Contributing
+## 🛡️ Calidad de Código ("Tolerancia Cero")
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md)
-for details on our code of conduct, and the process for submitting pull
-requests.
+Este repositorio mantiene estándares de calidad estrictos:
 
-1. Fork it
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing-feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- **Linting**: Configuración estricta de ESLint (0 advertencias toleradas).
+- **Seguridad de Tipos**: Cumplimiento total de TypeScript (chequeos `noEmit`).
+- **Arquitectura**: Estructura de carpetas modular por "Features" para
+  escalabilidad.
 
 ---
 
-**Built with ❤️ by [ZeroCode DevOps](https://github.com/zerocodedevops)**
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas! Por favor lee el
+[CONTRIBUTING.md](CONTRIBUTING.md) para detalles sobre nuestro código de
+conducta y el proceso para enviar pull requests.
+
+1. Haz un Fork
+2. Crea tu rama (`git checkout -b feature/funcionalidad-increible`)
+3. Haz Commit de tus cambios (`git commit -m 'Añadir funcionalidad increíble'`)
+4. Haz Push a la rama (`git push origin feature/funcionalidad-increible`)
+5. Abre un Pull Request
+
+---
+
+**Creado con ❤️ por [ZeroCode DevOps](https://github.com/zerocodedevops)**

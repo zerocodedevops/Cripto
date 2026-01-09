@@ -1,9 +1,9 @@
 import { ReactNode, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
-import { CurrencyProvider } from '../features/crypto/context/CurrencyContext';
-import { WatchlistProvider } from '../features/crypto/context/WatchlistContext';
-import { PortfolioProvider } from '../features/crypto/context/PortfolioContext';
+import { CurrencyProvider } from '../features/projects/crypto/context/CurrencyContext';
+import { WatchlistProvider } from '../features/projects/crypto/context/WatchlistContext';
+import { PortfolioProvider } from '../features/projects/crypto/context/PortfolioContext';
 
 const queryClient = new QueryClient();
 
