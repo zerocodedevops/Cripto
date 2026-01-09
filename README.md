@@ -1,228 +1,137 @@
-# 🚀 Portfolio Moderno y Futurista
+# 🚀 ZeroCode Crypto Dashboard
 
-Portfolio de desarrollador profesional con diseño futurista, animaciones
-fluidas, dark mode y despliegue automático en GitHub Pages.
+> **The Ultimate Real-Time Cryptocurrency Tracking Experience**
 
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwindcss)
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwind-css&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-Ready-purple)
 
-## ✨ Características
-
-- 🎨 **Diseño Futurista**: Gradientes oscuros con acentos brillantes
-  (cyan/purple)
-- 🎭 **Animaciones**: Framer Motion para transiciones fluidas
-- 📱 **Responsive**: Diseño adaptable a todos los dispositivos
-- ♿ **Accesible**: ARIA labels, navegación por teclado
-- 📧 **Formulario de Contacto**: Integración con EmailJS
-- 🧪 **Tests**: Vitest (Unit) + Playwright (E2E)
-- 🛍️ **E-commerce Demo**: "DevOps Shop" con Redux, Stripe y Paginación (Strict
-  Mode)
-- 🚀 **CI/CD**: GitHub Actions + GitHub Pages
-
-## 📂 Estructura del Proyecto
-
-```
-ZeroCode/
-├── .env.example                 # Variables de entorno
-├── .github/
-│   └── workflows/
-│       └── deploy.yml           # CI/CD para GitHub Pages
-├── index.html
-├── package.json
-├── tailwind.config.ts           # Tema personalizado
-├── vite.config.ts
-├── vitest.config.ts
-├── src/
-│   ├── main.tsx
-│   ├── app/
-│   │   ├── providers.tsx        # React Query + Theme
-│   │   └── router.tsx           # HashRouter para GH Pages
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Footer.tsx
-│   │   │   ├── Layout.tsx
-│   │   │   └── Navbar.tsx
-│   │   ├── sections/
-│   │   │   ├── About.tsx
-│   │   │   ├── Contact.tsx
-│   │   │   ├── FeaturedProject.tsx
-│   │   │   ├── Hero.tsx
-│   │   │   ├── Projects.tsx
-│   │   │   └── Skills.tsx
-│   │   └── ui/
-│   │       ├── Badge.tsx
-│   │       ├── Button.tsx
-│   │       ├── Card.tsx
-│   │       └── SectionTitle.tsx
-│   ├── context/
-│   │   └── ThemeContext.tsx
-│   ├── features/
-│   │   ├── home/
-│   │   │   └── Home.tsx
-│   │   └── projects/
-│   │       └── ecommerce/   # E-commerce Completo (Redux, Stripe)
-│   ├── hooks/
-│   │   └── useScrollAnimation.ts
-│   ├── lib/
-│   │   └── utils.ts
-│   └── styles/
-│       └── index.css
-└── tests/
-    ├── accessibility.test.tsx
-    ├── sections.test.tsx
-    └── setup.ts
-├── tests-e2e/
-│   └── portfolio.spec.ts    # Tests E2E estrictos
-```
-
-## 🛠️ Instalación
-
-```bash
-# Clonar repositorio
-git clone https://github.com/tu-usuario/portfolio.git
-cd portfolio
-
-# Instalar dependencias
-npm install
-
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tus credenciales de EmailJS
-```
-
-## 🔧 Scripts Disponibles
-
-```bash
-# Desarrollo
-npm run dev          # Iniciar servidor de desarrollo
-
-# Build
-npm run build        # Crear build de producción
-npm run preview      # Previsualizar build
-
-# Tests
-# Unit Tests (Vitest)
-npm run test         # Ejecutar tests en modo watch
-npm run test -- --run # Ejecutar tests una vez
-
-# E2E Tests (Playwright)
-npm run test:e2e     # Ejecutar tests end-to-end
-
-# Linting
-npm run lint         # Verificar código
-npm run format       # Formatear código
-```
-
-## ⚙️ Configuración de EmailJS
-
-1. Crear cuenta en [EmailJS](https://www.emailjs.com/)
-2. Crear un servicio de email
-3. Crear un template con las variables: `from_name`, `from_email`, `subject`,
-   `message`
-4. Copiar los IDs y añadir al archivo `.env`:
-
-```env
-VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
-VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
-VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxx
-```
-
-## 🚀 Despliegue en GitHub Pages
-
-### Configuración Automática (Recomendado)
-
-1. **Habilitar GitHub Pages** en tu repositorio:
-   - Ve a `Settings > Pages`
-   - En "Build and deployment", selecciona `GitHub Actions`
-
-2. **Push a main**:
-   ```bash
-   git add .
-   git commit -m "Deploy portfolio"
-   git push origin main
-   ```
-
-3. El workflow `.github/workflows/deploy.yml` se ejecutará automáticamente:
-   - Instala dependencias
-   - Ejecuta tests
-   - Crea build de producción
-   - Despliega a GitHub Pages
-
-4. Tu portfolio estará disponible en:
-   ```
-   https://tu-usuario.github.io/nombre-repo/
-   ```
-
-### Configuración Manual (Alternativa)
-
-Si prefieres un despliegue manual:
-
-```bash
-# Build
-npm run build
-
-# El contenido de /dist está listo para subir a cualquier hosting
-```
-
-## 🧪 Tests
-
-El proyecto incluye 3 tipos de tests:
-
-1. **Render Tests** (`sections.test.tsx`): Verifican que todas las secciones se
-   renderizan correctamente
-2. **Accessibility Tests** (`accessibility.test.tsx`): Verifican aria-labels,
-   labels de formularios
-3. **E2E Tests** (`tests-e2e/`): Verifican flujos completos de usuario (strict
-   mode)
-   - Navegación entre secciones
-   - Validación de formularios
-   - Enlaces sociales
-   - Accesibilidad crítica
-
-```bash
-# Ejecutar todos los tests
-npm run test -- --run
-
-# Ver cobertura
-npm run test -- --coverage
-```
-
-## 🎨 Personalización
-
-### Colores
-
-Edita `tailwind.config.ts`:
-
-```ts
-colors: {
-  primary: { /* tus colores */ },
-  accent: { /* tus colores */ },
-}
-```
-
-### Contenido
-
-- **Hero**: `src/components/sections/Hero.tsx`
-- **About**: `src/components/sections/About.tsx`
-- **Skills**: `src/components/sections/Skills.tsx`
-- **Projects**: `src/components/sections/Projects.tsx`
-- **Featured**: `src/components/sections/FeaturedProject.tsx`
-- **Contact**: `src/components/sections/Contact.tsx`
-
-### Social Links
-
-Edita los arrays `socialLinks` en:
-
-- `Navbar.tsx`
-- `Footer.tsx`
-- `Hero.tsx`
-
-## 📝 Licencia
-
-© 2026 ZeroCode
+**ZeroCode Crypto** is a bleeding-edge, high-performance cryptocurrency
+dashboard built for the modern web. Leveraging the power of **WebSockets** for
+real-time data, **PWA** capabilities for native-like experience, and a stunning
+**Glassmorphism** UI, it sets a new standard for personal finance trackers.
 
 ---
 
-Hecho con ❤️ por curiosidad + IA
+## ✨ Key Features
+
+### 🔥 Real-Time Data Engine
+
+- **Live WebSocket Feed**: Direct connection to Binance streams for sub-second
+  price updates.
+- **Smart Fallback**: Seamless degradation to CoinGecko REST API if WebSockets
+  are unavailable.
+- **Optimized Performance**: Intelligent caching and batched updates to minimize
+  re-renders.
+
+### 📊 Professional Analytics
+
+- **Interactive Charts**: Powered by `Recharts` with custom tooltips and
+  responsive behavior.
+- **Market Heatmap**: Visualize market dominance and trends at a glance.
+- **Advanced Comparators**: Side-by-side asset comparison with critical metrics
+  (Rank, Cap, Vol, supply).
+
+### 💼 Portfolio Management
+
+- **Transaction Tracking**: Log Buys/Sells with automatic cost-basis
+  calculation.
+- **Holdings Summary**: Real-time evaluation of your total portfolio value.
+- **Local Persistence**: Secure, browser-based data storage (no server
+  required).
+
+### 🌍 Global & Accessible
+
+- **Internationalization (i18n)**: Native support for 6 currencies/languages
+  (EN, ES, FR, DE, IT, PT).
+- **Accessibility First**: Semantic HTML, ARIA labels, and keyboard navigation
+  support.
+- **PWA Certified**: Installable on mobile/desktop, offline-capable code.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, Framer Motion (Animations)
+- **State/Logic**: Context API, Custom Hooks
+- **Data Visualization**: Recharts
+- **Icons**: Lucide React
+- **Utils**: date-fns, i18next
+- **Build**: ESNext target, Top-level await support
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/zerocodedevops/Cripto.git
+
+# 2. Navigate to directory
+cd Cripto
+
+# 3. Install dependencies
+npm install
+
+# 4. Start Development Server
+npm run dev
+```
+
+### Production Build
+
+```bash
+# Create optimized production build
+npm run build
+
+# Preview locally
+npm run preview
+```
+
+---
+
+## 📱 Progressive Web App (PWA)
+
+This project is fully configured as a PWA.
+
+- **Installable**: Add to Home Screen on iOS/Android.
+- **Offline Support**: Service Workers cache critical assets.
+- **Manifest**: Full metadata support (Icons, Splash screens, Theme colors).
+
+---
+
+## 🛡️ Code Quality ("Zero Tolerance")
+
+This repository maintains strict quality standards:
+
+- **Linting**: ESLint strict configuration (0 warnings tolerated).
+- **Type Safety**: Full TypeScript compliance (`noEmit` checks).
+- **Architecture**: Modular "Features" folder structure for scalability.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md)
+for details on our code of conduct, and the process for submitting pull
+requests.
+
+1. Fork it
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing-feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+**Built with ❤️ by [ZeroCode DevOps](https://github.com/zerocodedevops)**

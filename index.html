@@ -8,20 +8,43 @@
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
-          "gtm.start": new Date().getTime(),
+          "gtm.start": Date.now(),
           event: "gtm.js",
         });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+          dl = l === "dataLayer" ? "" : "&l=" + l;
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-P8CDP9X6");
+      })(globalThis, document, "script", "dataLayer", "GTM-P8CDP9X6");
     </script>
     <!-- End Google Tag Manager -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https: blob:;
+        connect-src 'self' 
+          https://www.google-analytics.com 
+          https://analytics.google.com 
+          https://stats.g.doubleclick.net
+          https://api.coingecko.com
+          https://pro-api.coingecko.com
+          https://coin-images.coingecko.com
+          wss://stream.binance.com:443;
+        base-uri 'self';
+        form-action 'self';
+      "
+    />
+
     <meta
       name="description"
       content="Portfolio de David G. (ZeroCode). Desarrollador Fullstack que combina código tradicional con IA para crear soluciones robustas y escalables."
@@ -83,8 +106,13 @@
   </head>
   <body class="bg-dark-950 text-dark-100">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8CDP9X6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P8CDP9X6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        title="Google Tag Manager"
+      ></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

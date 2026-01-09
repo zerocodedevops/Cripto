@@ -19,6 +19,7 @@ interface Project {
 }
 
 const projects: Project[] = [
+  // PROTOTYPES - Functional demos
   {
     id: 1,
     title: 'DevOps Shop',
@@ -28,6 +29,26 @@ const projects: Project[] = [
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Prototype',
   },
+  {
+    id: 4,
+    title: 'Portfolio Dashboard',
+    image: '/assets/projects/thumbnails/dashboard.png',
+    tags: ['React', 'TanStack Query', 'Recharts', 'MSW'],
+    demoUrl: '#/proyectos/analytics/dashboard',
+    repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Prototype',
+  },
+  {
+    id: 7,
+    title: 'Crypto Analytics Dashboard',
+    image: '/assets/projects/thumbnails/crypto-dashboard.png',
+    tags: ['React', 'TypeScript', 'Recharts', 'CoinGecko API'],
+    demoUrl: '#/proyectos/crypto',
+    repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Prototype',
+  },
+  
+  // IN DEVELOPMENT - Coming soon
   {
     id: 2,
     title: 'AI Chat Assistant',
@@ -43,14 +64,6 @@ const projects: Project[] = [
     image: '/assets/projects/thumbnails/task-manager.png',
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
     demoUrl: 'https://example.com',
-    repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Development',
-  },
-  {
-    id: 4,
-    title: 'Portfolio Dashboard',
-    image: '/assets/projects/thumbnails/dashboard.png',
-    tags: ['React', 'TypeScript', 'Chart.js', 'Node.js'],
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
@@ -126,7 +139,9 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
     // ... (keep usage of project.image)
     if (!project.image) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800" onClick={onClick}>
+        <div 
+          className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800 cursor-pointer" 
+        >
           <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
         </div>
       );
@@ -151,9 +166,9 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
         </div>
       </>
     );
-     // Removed direct link wrap to handle modal open
+     // Use div instead of button to avoid nested button warning
      return (
-       <div className="w-full h-full cursor-pointer" onClick={onClick}>
+       <div className="w-full h-full cursor-pointer">
          {imageContent}
        </div>
      );

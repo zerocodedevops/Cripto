@@ -11,7 +11,38 @@ import './i18n/config';
 initGA();
 logPageView();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+async function enableMocking() {
+  const USE_WEBSOCKET = import.meta.env.VITE_USE_WEBSOCKET === 'true';
+  
+  // Enable MSW for HTTP mocking only (not WebSocket)
+  const { worker } = await import('./mocks/browser');
+  
+  if (import.meta.env.DEV) {
+    console.log('🎭 MSW enabled (Development)');
+  } else {
+    console.log('🎭 MSW enabled (Production)');
+  }
+  
+  if (USE_WEBSOCKET) {
+    console.log('🔌 WebSocket enabled - MSW will only mock HTTP, not WebSocket');
+  }
+  
+  return worker.start({ 
+    onUnhandledRequest: 'bypass',
+    serviceWorker: {
+      url: '/mockServiceWorker.js',
+    },
+    // IMPORTANT: Don't intercept WebSocket connections
+    quiet: false,
+  });
+}
+
+await enableMocking();
+
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Root element not found');
+
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ErrorBoundary>
       <Providers>

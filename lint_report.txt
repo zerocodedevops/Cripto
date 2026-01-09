@@ -1,0 +1,33 @@
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\components\CryptoComparator.tsx
+  6:10  warning  'CoinIcon' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\components\CryptoTicker.tsx
+  53:36  warning  'symbol' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\components\MarketHeatmap.tsx
+  2:40  warning  'Tooltip' is defined but never used            @typescript-eslint/no-unused-vars
+  4:10  warning  'formatLargeNumber' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\components\TransactionModal.tsx
+  15:11  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\context\PortfolioContext.tsx
+  95:9   warning  'totalInvested' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  95:25  warning  'mappings' is defined but never used                @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\context\WatchlistContext.tsx
+  51:3  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\hooks\useWebSocketPrice.ts
+  80:26  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\services\analytics.ts
+   3:9  error  'process' is not defined  no-undef
+  10:9  error  'process' is not defined  no-undef
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\crypto\utils\websocketClient.ts
+  180:36  warning  'coingeckoIds' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Ô£û 12 problems (3 errors, 9 warnings)
+

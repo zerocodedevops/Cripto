@@ -87,3 +87,4 @@ test-output.txt
 # System
 desktop.ini
 Thumbs.db
+.vercel

@@ -149,8 +149,41 @@
       },
       "6": {
         "description": "Blog platform with headless CMS, markdown and SEO optimization."
+      },
+      "7": {
+        "description": "Cryptocurrency analytics dashboard with real-time data, interactive charts and market heatmap."
       }
     }
+  },
+  "crypto": {
+    "title": "Crypto Analytics",
+    "subtitle": "Real-time cryptocurrency dashboard powered by CoinGecko",
+    "sections": {
+      "topGainers": "Top Gainers 24h",
+      "topLosers": "Top Losers 24h",
+      "trending": "Trending",
+      "quickStats": "Quick Stats",
+      "about": "About",
+      "overview": "Market Overview",
+      "priceChart": "Price Chart",
+      "marketHeatmap": "Market Heatmap",
+      "bitcoinPriceChart": "{coin} Price Chart",
+      "heatmapSizeBy": "Size by market cap",
+      "heatmapColorBy": "Color by 24h change"
+    },
+    "stats": {
+      "totalCryptos": "Total Cryptos",
+      "activeMarkets": "Active Markets",
+      "dataSource": "Data Source",
+      "marketCap": "Market Cap",
+      "volume24h": "24h Volume",
+      "btcDominance": "BTC Dominance",
+      "ethDominance": "ETH Dominance"
+    },
+    "about": {
+      "description": "This dashboard simulates live cryptocurrency market data with dynamic pricing that updates every 30 seconds. Prices vary realistically to demonstrate real-time data visualization and auto-refresh capabilities."
+    },
+    "footer": "Simulated live data • Auto-updates every 30 seconds • Built with React + TypeScript + Recharts"
   },
   "blog": {
     "title": "Thoughts",
