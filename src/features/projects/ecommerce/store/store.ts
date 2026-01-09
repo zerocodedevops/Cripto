@@ -4,6 +4,7 @@ import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 import storage from 'redux-persist/lib/storage';
 import cartReducer from './cartSlice';
 import authReducer from './authSlice';
+import wishlistReducer from './wishlistSlice'; // Added wishlistReducer import
 import { productsApi } from '../services/productsApi';
 
 const persistConfig = {
@@ -18,6 +19,7 @@ export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
     auth: authReducer,
+    wishlist: wishlistReducer, // Added wishlist reducer
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

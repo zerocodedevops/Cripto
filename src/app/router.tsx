@@ -4,7 +4,6 @@ import { PageTransition } from '@/components/ui/PageTransition';
 import { CurrencyProvider } from '@/features/projects/crypto/context/CurrencyContext';
 
 // Lazy Load Components
-// Lazy Load Components
 const Home = lazy(() => import('@/features/home/Home'));
 const BlogPost = lazy(() => import('@/features/blog/BlogPost'));
 const EcommerceApp = lazy(() => import('@/features/projects/ecommerce/routes'));

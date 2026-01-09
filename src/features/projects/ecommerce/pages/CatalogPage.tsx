@@ -1,16 +1,38 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, Filter, Mic } from 'lucide-react';
+import { Search, Filter, Mic, ArrowDown } from 'lucide-react';
 import { useGetProductsQuery, useGetCategoriesQuery } from '../services/productsApi';
 import ProductCard from '../components/ProductCard';
+import { useDebounce } from '../../../../hooks/useDebounce';
 
 export default function CatalogPage() {
   const { t } = useTranslation();
-  const { data: products, isLoading } = useGetProductsQuery();
-  const { data: categories } = useGetCategoriesQuery();
+  
+  // State for API Params
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [page, setPage] = useState(1);
+  const [sort] = useState<'price_asc' | 'price_desc' | 'newest' | undefined>(undefined);
+  
+  // Constant for skeleton keys to avoid index warning
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
+  
+  // Debounce search to prevent API spam
+  const debouncedSearch = useDebounce(search, 500);
+
+  // Fetch Data (simulating Server-Side)
+  const { data, isLoading, isFetching } = useGetProductsQuery({
+    page,
+    limit: 8,
+    search: debouncedSearch,
+    category: selectedCategory,
+    sort
+  });
+
+  const products = data?.data || [];
+  const total = data?.total || 0;
+  
+  const { data: categories } = useGetCategoriesQuery();
   const [isListening, setIsListening] = useState(false);
 
   const handleVoiceSearch = () => {
@@ -35,11 +57,16 @@ export default function CatalogPage() {
     }
   };
 
-  const filteredProducts = products?.filter((product) => {
-    const matchesSearch = product.title.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Reset page when filters change
+  const handleSearchChange = (val: string) => {
+    setSearch(val);
+    setPage(1);
+  };
+
+  const handleCategoryChange = (val: string) => {
+    setSelectedCategory(val);
+    setPage(1);
+  };
 
   return (
     <div className="space-y-8">
@@ -51,13 +78,14 @@ export default function CatalogPage() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+          {/* Search */}
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input 
               type="text" 
               placeholder={isListening ? t('shop.catalog.voiceSearch') : t('shop.catalog.search')}
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               className={`pl-10 pr-10 py-2 bg-slate-50 dark:bg-slate-800 border ${isListening ? 'border-indigo-500 ring-2 ring-indigo-500/20' : 'border-slate-200 dark:border-slate-700'} rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-64 transition-all dark:text-white dark:placeholder-slate-500`}
             />
             <button 
@@ -69,11 +97,12 @@ export default function CatalogPage() {
             </button>
           </div>
           
+          {/* Category Filter */}
           <div className="relative">
             <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <select
               value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
+              onChange={(e) => handleCategoryChange(e.target.value)}
               className="pl-10 pr-8 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none cursor-pointer capitalize w-full sm:w-48 dark:text-white"
             >
               <option value="all">{t('shop.catalog.category.all')}</option>
@@ -88,8 +117,8 @@ export default function CatalogPage() {
       {/* Grid */}
       {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={`skeleton-${i}`} className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800">
+          {skeletons.map((id) => (
+            <div key={`skeleton-${id}`} className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800">
               <div className="w-full h-48 bg-slate-100 dark:bg-slate-800 rounded-xl mb-4" />
               <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded w-1/4 mb-2" />
               <div className="h-6 bg-slate-100 dark:bg-slate-800 rounded w-3/4 mb-4" />
@@ -102,26 +131,33 @@ export default function CatalogPage() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredProducts?.slice(0, visibleCount).map((product) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {/* Loading Overlay for Refetching */}
+            {isFetching && !isLoading && (
+               <div className="absolute inset-0 bg-white/50 dark:bg-slate-900/50 z-10 backdrop-blur-[1px] rounded-2xl" />
+            )}
+
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
             
-            {filteredProducts?.length === 0 && (
+            {products.length === 0 && (
                <div className="col-span-full py-20 text-center text-slate-400">
                  {t('shop.catalog.noResults')}
                </div>
             )}
           </div>
 
-          {/* Load More Pagination */}
-          {filteredProducts && filteredProducts.length > visibleCount && (
+          {/* Simple Pagination Controls */}
+          {products.length > 0 && products.length < total && (
             <div className="flex justify-center mt-12 animate-fade-in">
               <button
-                onClick={() => setVisibleCount(prev => prev + 4)}
-                className="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm hover:shadow-md active:scale-95"
+                onClick={() => setPage(prev => prev + 1)}
+                 disabled={isFetching}
+                className="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm hover:shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                Cargar Más Productos ({filteredProducts.length - visibleCount} restantes)
+                {isFetching ? 'Cargando...' : `Cargar Más Productos (${total - (page * 8)} restantes)`}
+                {!isFetching && <ArrowDown className="w-4 h-4" />}
               </button>
             </div>
           )}
