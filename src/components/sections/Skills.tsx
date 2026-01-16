@@ -100,12 +100,30 @@ const skillCategoriesData: SkillCategory[] = [
 
 
 
+// Helper to get label key based on level
+const getSkillLabelKey = (level: number) => {
+  if (level >= 90) return 'skills.levels.expert';
+  if (level >= 80) return 'skills.levels.advanced';
+  if (level >= 70) return 'skills.levels.proficient';
+  return 'skills.levels.competent';
+};
+
+// Helper to get badge class based on level
+const getSkillBadgeClass = (level: number) => {
+  if (level >= 90) return 'bg-primary-500/10 border-primary-500/20 text-primary-400';
+  if (level >= 80) return 'bg-blue-500/10 border-blue-500/20 text-blue-400';
+  return 'bg-dark-700/50 border-dark-700 text-dark-400';
+};
+
 // Fixed SkillBar to accept color again
 function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly color: string }) {
   const { t } = useTranslation();
   const displayName = skill.nameKey 
     ? t(`skills.categories.soft.items.${skill.nameKey}`) 
     : skill.name;
+    
+  const labelKey = getSkillLabelKey(skill.level);
+  const badgeClass = getSkillBadgeClass(skill.level);
 
   return (
     <motion.div
@@ -113,22 +131,15 @@ function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly c
       variants={fadeInUp}
     >
       <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-dark-400 group-hover:text-primary-400 transition-colors">
+        <div className="flex items-center gap-3">
+          <span className="text-dark-400 group-hover:text-primary-400 transition-colors p-1.5 bg-dark-800/50 rounded-lg">
             {skill.icon}
           </span>
           <span className="text-dark-200 text-sm font-medium">{displayName}</span>
         </div>
-        <span className="text-dark-500 text-xs">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-dark-700/50 rounded-full overflow-hidden">
-        <motion.div
-          className={`h-full bg-gradient-to-r ${color} rounded-full`}
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-        />
+        <span className={`text-xs px-2 py-1 rounded-md font-medium border ${badgeClass}`}>
+          {t(labelKey)}
+        </span>
       </div>
     </motion.div>
   );

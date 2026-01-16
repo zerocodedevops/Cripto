@@ -28,10 +28,11 @@
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
         font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https: blob:;
+        img-src 'self' data: https: blob: https://*.stripe.com;
+        frame-src 'self' https://js.stripe.com https://hooks.stripe.com;
         connect-src 'self' 
           https://www.google-analytics.com 
           https://analytics.google.com 
@@ -39,6 +40,8 @@
           https://api.coingecko.com
           https://pro-api.coingecko.com
           https://coin-images.coingecko.com
+          https://api.stripe.com
+          https://m.stripe.network
           wss://stream.binance.com:443;
         base-uri 'self';
         form-action 'self';
@@ -47,11 +50,11 @@
 
     <meta
       name="description"
-      content="Portfolio de David G. (ZeroCode). Desarrollador Fullstack que combina código tradicional con IA para crear soluciones robustas y escalables."
+      content="Portfolio de David G. (ZeroCode). Desarrollador Fullstack & Especialista en IA. Transformando ideas en software robusto y escalable."
     />
     <meta
       name="keywords"
-      content="desarrollador, fullstack, react, typescript, portfolio, web developer, ai-first, zerocode, david g, javascript, tailwind"
+      content="desarrollador, fullstack, react, typescript, portfolio, web developer, ai-first, zerocode, david g, javascript, tailwind, devops"
     />
     <meta name="author" content="David G." />
     <meta name="theme-color" content="#0f172a" />

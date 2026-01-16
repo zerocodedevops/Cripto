@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, User, Lock, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 import { login } from '../store/authSlice';
+import { syncCartWithCloud } from '../store/cartSlice';
 
 interface AuthModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  readonly isOpen: boolean;
+  readonly onClose: () => void;
 }
 
 export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
@@ -25,6 +26,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     // Simulate API call
     setTimeout(() => {
       dispatch(login({ username }));
+      // Sync cart after login (ignore typescript error for thunk dispatch if any, as it's dynamic)
+      // @ts-ignore
+      dispatch(syncCartWithCloud(username));
+      
       setIsLoading(false);
       onClose();
       
@@ -76,37 +81,41 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700 ml-1">Usuario</label>
+                  <label htmlFor="username-input" className="text-sm font-medium text-slate-700 ml-1">Usuario</label>
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
                     <input 
+                      id="username-input"
                       type="text" 
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+                      className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium text-slate-900"
                       placeholder="Ej. daviddevops"
                       autoFocus
+                      required
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700 ml-1">Contraseña</label>
+                  <label htmlFor="password-input" className="text-sm font-medium text-slate-700 ml-1">Contraseña</label>
                   <div className="relative">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
                     <input 
+                      id="password-input"
                       type="password" 
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+                      className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium text-slate-900"
                       placeholder="••••••••"
+                      required
                     />
                   </div>
                 </div>
 
                 <button 
                   type="submit"
-                  disabled={isLoading || !username || !password}
+                  disabled={isLoading}
                   className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600 transition-all shadow-lg hover:shadow-indigo-500/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isLoading ? (

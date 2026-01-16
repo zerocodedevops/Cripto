@@ -27,24 +27,63 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
   if (!project) return null;
 
   // Hardcoded Case Study Data for DevOps Shop
-  // In a real app, this would come from a CMS or translations
-  const isDevOpsShop = project.title === 'DevOps Shop';
+  // Hardcoded Case Study Data
+  const getCaseStudy = (project: Project) => {
+    switch (project.id) {
+      case 1: // DevOps Shop
+        return {
+          problem: "Los e-commerce SPA tradicionales sufren de 'Flash of Missing Content' y mala gestión de estado del carrito.",
+          solution: "Implementé una arquitectura híbrida con persistencia local robusta y partición de código granular.",
+          architecture: [
+            { icon: Cpu, title: "Frontend", desc: "React + Redux Toolkit para gestión de estado predecible." },
+            { icon: Server, title: "Backend", desc: "Firebase (Serverless) para escalar sin mantenimiento." },
+            { icon: Shield, title: "Seguridad", desc: "Políticas CSP estrictas y validación Zod." },
+            { icon: Zap, title: "Performance", desc: "Lazy Loading y optimización de assets con Vite." }
+          ],
+          challenges: [
+            "Persistencia de carrito entre sesiones sin auth.",
+            "Optimización de carga inicial (LCP) bajo 1.5s.",
+            "Testing E2E estable en entorno CI/CD."
+          ]
+        };
+      case 4: // Portfolio Dashboard
+        return {
+          problem: "Los portafolios estáticos no demuestran capacidades reales de manejo de datos ni arquitecturas complejas de frontend.",
+          solution: "Construí un dashboard analítico integrado que consume APIs reales, demostrando dominio de React Query y visualización de datos.",
+          architecture: [
+            { icon: Cpu, title: "Data Fetching", desc: "TanStack Query para gestión de estado asíncrono y caché." },
+            { icon: Layers, title: "Visualización", desc: "Recharts para gráficos interactivos y responsivos." },
+            { icon: Server, title: "Mocking", desc: "MSW (Mock Service Worker) para simular endpoints en desarrollo." },
+            { icon: Zap, title: "Optimización", desc: "Code-splitting por rutas y memoización de componentes pesados." }
+          ],
+          challenges: [
+            "Integración fluida de un dashboard complejo dentro de un layout de portfolio existente.",
+            "Manejo de estados de carga y error granulares para mejor UX.",
+            "Diseño responsivo de gráficos de datos complejos."
+          ]
+        };
+      case 7: // Crypto Analytics Dashboard
+        return {
+          problem: "Seguir el mercado cripto requiere procesar flujos de datos masivos y volátiles en tiempo real sin congelar la UI.",
+          solution: "Desarrollé un dashboard profesional con actualizaciones en vivo, utilizando optimizaciones de React para renderizado de alta frecuencia.",
+          architecture: [
+            { icon: Cpu, title: "Core", desc: "React + TypeScript + Vite para un rendimiento máximo." },
+            { icon: Server, title: "API", desc: "Integración con CoinGecko API con estrategias de rate-limiting." },
+            { icon: Layers, title: "Estado Global", desc: "Context API + Custom Hooks para lógica de negocio encapsulada." },
+            { icon: Zap, title: "UI Dinámica", desc: "Framer Motion para transiciones de precios en tiempo real." }
+          ],
+          challenges: [
+            "Evitar re-renders innecesarios con actualizaciones de precios cada 30s.",
+            "Normalización de datos heterogéneos de múltiples endpoints.",
+            "Implementación de modo oscuro consistente en gráficos SVG."
+          ]
+        };
+      default:
+        return null;
+    }
+  };
 
-  const caseStudy = isDevOpsShop ? {
-    problem: "Los e-commerce SPA tradicionales sufren de 'Flash of Missing Content' y mala gestión de estado del carrito.",
-    solution: "Implementé una arquitectura híbrida con persistencia local robusta y partición de código granular.",
-    architecture: [
-      { icon: Cpu, title: "Frontend", desc: "React + Redux Toolkit para gestión de estado predecible." },
-      { icon: Server, title: "Backend", desc: "Firebase (Serverless) para escalar sin mantenimiento." },
-      { icon: Shield, title: "Seguridad", desc: "Políticas CSP estrictas y validación Zod." },
-      { icon: Zap, title: "Performance", desc: "Lazy Loading y optimización de assets con Vite." }
-    ],
-    challenges: [
-      "Persistencia de carrito entre sesiones sin auth.",
-      "Optimización de carga inicial (LCP) bajo 1.5s.",
-      "Testing E2E estable en entorno CI/CD."
-    ]
-  } : null;
+  const caseStudy = getCaseStudy(project);
 
   return (
     <AnimatePresence>

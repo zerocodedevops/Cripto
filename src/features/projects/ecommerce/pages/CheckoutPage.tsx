@@ -28,19 +28,13 @@ function CheckoutForm() {
 
     setLoading(true);
 
-    // Provide a fake delay to simulate processing
+    // Simulate API call for Demo purposes (Always succeeds)
     setTimeout(() => {
+        console.log('[Demo] Payment Successful');
         setLoading(false);
         dispatch(clearCart());
         navigate('/proyectos/ecommerce/checkout/success');
     }, 2000);
-
-    /* Real implementation would be:
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement)!,
-    });
-    */
   };
 
   if (items.length === 0) {
@@ -50,7 +44,7 @@ function CheckoutForm() {
   return (
     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-start">
       {/* Order Summary */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-slate-900">
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-indigo-600" />
             Resumen del Pedido
@@ -78,7 +72,7 @@ function CheckoutForm() {
       </div>
 
       {/* Payment For */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-slate-900">
          <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
             <Lock className="w-5 h-5 text-indigo-600" />
             Pago Seguro
@@ -86,15 +80,22 @@ function CheckoutForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
             <div>
                 <label htmlFor="card-element" className="block text-sm font-medium text-slate-700 mb-2">Información de la Tarjeta</label>
-                <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
+                <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 relative z-10" style={{ isolation: 'isolate' }}>
                     <CardElement id="card-element" options={{
+                        hidePostalCode: true,
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: '#0f172a',
+                                fontFamily: '"Inter", sans-serif',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#94a3b8',
                                 },
+                                iconColor: '#4f46e5',
+                            },
+                            invalid: {
+                                color: '#ef4444',
+                                iconColor: '#ef4444',
                             },
                         },
                     }}/>

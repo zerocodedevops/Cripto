@@ -56,7 +56,7 @@ describe('Cart Slice', () => {
       items: [{ id: 1, title: 'Test Product', price: 100, image: 'test.png', quantity: 1 }],
       isOpen: false
     };
-    const actual = cartReducer(stateWithItem, removeFromCart(1));
+    const actual = cartReducer(stateWithItem, removeFromCart({ id: 1 }));
     expect(actual.items.length).toEqual(0);
   });
 });

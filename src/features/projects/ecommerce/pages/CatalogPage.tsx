@@ -148,19 +148,34 @@ export default function CatalogPage() {
             )}
           </div>
 
-          {/* Simple Pagination Controls */}
-          {products.length > 0 && products.length < total && (
-            <div className="flex justify-center mt-12 animate-fade-in">
-              <button
-                onClick={() => setPage(prev => prev + 1)}
-                 disabled={isFetching}
-                className="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm hover:shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-              >
-                {isFetching ? 'Cargando...' : `Cargar Más Productos (${total - (page * 8)} restantes)`}
-                {!isFetching && <ArrowDown className="w-4 h-4" />}
-              </button>
-            </div>
-          )}
+          {/* Pagination Controls */}
+          <div className="flex justify-center items-center gap-4 mt-12 animate-fade-in pb-12">
+            <button
+              onClick={() => {
+                setPage(p => Math.max(1, p - 1));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={page === 1 || isFetching}
+              className="px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+            >
+              Anterior
+            </button>
+            
+            <span className="text-slate-600 dark:text-slate-400 font-medium">
+              Página {page} de {Math.ceil(total / 8)}
+            </span>
+
+            <button
+              onClick={() => {
+                setPage(p => p + 1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={products.length < 8 || (page * 8) >= total || isFetching}
+              className="px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full font-medium text-slate-600 dark:text-slate-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+            >
+              Siguiente
+            </button>
+          </div>
         </>
       )}
     </div>

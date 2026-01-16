@@ -1,7 +1,7 @@
 import { Provider, useSelector, useDispatch } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Link, Outlet } from 'react-router-dom';
-import { ShoppingCart, Cpu, User, LogOut, Moon, Sun } from 'lucide-react';
+import { ShoppingCart, Cpu, User, LogOut, Moon, Sun, Heart } from 'lucide-react';
 import { store, persistor, RootState } from '../store/store';
 import { toggleCart } from '../store/cartSlice';
 import { logout } from '../store/authSlice';
@@ -55,6 +55,17 @@ function Navbar() {
               >
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
+
+              {/* Wishlist Button */}
+              <Link 
+                to="/proyectos/ecommerce/wishlist"
+                className="p-2 text-slate-500 dark:text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-full transition-colors hidden sm:block"
+                title="Lista de Deseos"
+              >
+                <Heart className="w-5 h-5" />
+              </Link>
+
+              <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden md:block" />
 
               {/* Auth Button */}
               {isAuthenticated && user ? (

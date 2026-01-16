@@ -7,6 +7,8 @@ const CheckoutPage = lazy(() => import('./pages/CheckoutPage'));
 const CheckoutSuccessPage = lazy(() => import('./pages/CheckoutSuccessPage'));
 const CheckoutCancelPage = lazy(() => import('./pages/CheckoutCancelPage'));
 const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
+const WishlistPage = lazy(() => import('./pages/WishlistPage'));
+const AdminPage = lazy(() => import('./pages/AdminPage'));
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center h-96">
@@ -20,10 +22,12 @@ export default function EcommerceRoutes() {
       <Routes>
         <Route element={<EcommerceLayout />}>
           <Route index element={<CatalogPage />} />
+          <Route path="wishlist" element={<WishlistPage />} />
           <Route path="producto/:id" element={<ProductDetailPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
           <Route path="checkout/success" element={<CheckoutSuccessPage />} />
           <Route path="checkout/cancel" element={<CheckoutCancelPage />} />
+          <Route path="admin" element={<AdminPage />} /> {/* Added AdminPage route */}
           <Route path="*" element={<div>Página no encontrada en tienda</div>} />
         </Route>
       </Routes>

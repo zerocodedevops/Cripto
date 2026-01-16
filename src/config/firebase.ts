@@ -1,6 +1,7 @@
 import { initializeApp, FirebaseApp, getApp, getApps } from 'firebase/app';
 import { getFirestore, Firestore } from 'firebase/firestore';
 import { getAuth, Auth } from 'firebase/auth';
+import { getStorage, FirebaseStorage } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,10 +19,11 @@ const app = (() => {
 
 const db = firebaseConfig.apiKey ? getFirestore(app) : ({} as Firestore);
 const auth = firebaseConfig.apiKey ? getAuth(app) : ({} as Auth);
+const storage = firebaseConfig.apiKey ? getStorage(app) : ({} as FirebaseStorage);
 
 if (!firebaseConfig.apiKey) {
   console.warn('Firebase config missing (VITE_FIREBASE_API_KEY). Using mock mode.');
 }
 
-export { app, db, auth };
+export { app, db, auth, storage };
 export default app;

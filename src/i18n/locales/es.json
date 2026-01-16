@@ -9,8 +9,8 @@
   },
   "hero": {
     "available": "Disponible para nuevos proyectos",
-    "greeting": "Hola, soy",
-    "name": "ZeroCode_DevOps",
+    "greeting": "Hola, soy David G.",
+    "name": "(ZeroCode_DevOps)",
     "role": "Desarrollador Autodidacta",
     "aiPowered": "Potenciado por IA",
     "description1": "Sin formación tradicional, pero con pasión infinita.",
@@ -50,20 +50,20 @@
   },
   "about": {
     "title": "Sobre mí",
-    "subtitle": "Un enfoque diferente al desarrollo",
-    "role": "Desarrollador autodidacta potenciado por IA",
+    "subtitle": "Menos fricción, más impacto",
+    "role": "AI-First Developer | Calidad Excepcional a Velocidad Radical",
     "description": {
-      "p1": "No vengo del camino clásico del desarrollo y no pretendo aparentarlo. Mi fortaleza no está en memorizar sintaxis, sino en <1>entender problemas, diseñar soluciones</1> y apoyarme en <3>herramientas de Inteligencia Artificial</3> para <5>convertir ideas en aplicaciones reales</5>.",
-      "boxTitle": "Trabajo con IA como un <1>colaborador técnico</1> que:",
+      "p1": "No vengo del camino clásico del desarrollo y no pretendo aparentarlo. \nMi fortaleza no está en memorizar sintaxis, sino en <1>entender problemas, diseñar soluciones</1> y apoyarme en <3>herramientas de Inteligencia Artificial</3> para <5>convertir ideas en aplicaciones reales</5>. \n\nAplico el principio de la <1>Navaja de Ockham</1> al desarrollo de software moderno. \nSi una tarea puede ser resuelta instantáneamente por la IA, hacerla manualmente es multiplicar el esfuerzo sin necesidad.",
+      "boxTitle": "Mi perfil es una fusión de <1>ingeniería experta</1> y dominio de la IA generativa que:",
       "boxList": {
-        "item1": "Me guía en la parte de código",
-        "item2": "Me ayuda a validar decisiones",
-        "item3": "Me permite aprender mientras construyo",
-        "item4": "Me da velocidad sin sacrificar comprensión"
+        "item1": "Elimina la complejidad técnica intermedia",
+        "item2": "Va directamente de la intención al resultado",
+        "item3": "Garantiza un código final limpio y escalable",
+        "item4": "Genera soluciones de nivel superior"
       },
-      "p2": "Mi enfoque es práctico: no soy un programador tradicional, pero sí soy alguien capaz de <1>llevar un proyecto desde la idea hasta un producto funcional</1>, entendiendo cada paso del proceso y mejorando con cada iteración.",
-      "p3": "Creo en la <1>transparencia</1>, en el <3>aprendizaje continuo</3> y en aprovechar la tecnología para <5>crear valor</5>.",
-      "p4": "Mi verdadera fortaleza es el <1>compromiso absoluto</1> con cada proyecto. Me involucro al 200%, obsesionándome con los detalles y no descansando hasta que el resultado supera las expectativas. Cada reto es una oportunidad de aprendizaje, y cada error es un paso hacia la mejora."
+      "p2": "Mi enfoque es práctico: no soy un programador tradicional, pero sí soy alguien capaz de <1>llevar un proyecto desde la idea hasta un producto funcional</1>, entendiendo cada paso del proceso y mejorando con cada iteración. No se trata solo de escribir código, sino de <1>orquestar soluciones inteligentes</1>.",
+      "p3": "Mi verdadera fortaleza es el <1>compromiso absoluto</1> con cada proyecto. Me involucro al 200%, obsesionándome con los detalles y no descansando hasta que el resultado supera las expectativas.",
+      "p4": "Cada reto es una oportunidad de aprendizaje, y cada error es un paso hacia la mejora."
     },
     "highlights": {
       "passion": {
@@ -88,7 +88,13 @@
     "title": "Skills & Tecnologías",
     "subtitle": "Stack real usado en proyectos",
     "aiBadge": "Desarrollo asistido por Inteligencia Artificial",
-    "disclaimer": "* Los porcentajes reflejan mi <1>nivel de autonomía</1> usando cada tecnología en proyectos reales.",
+    "disclaimer": "* Las etiquetas reflejan mi <1>nivel de autonomía</1> usando cada tecnología en proyectos reales.",
+    "levels": {
+      "expert": "Experto",
+      "advanced": "Avanzado",
+      "proficient": "Productivo",
+      "competent": "Competente"
+    },
     "categories": {
       "frontend": {
         "title": "Frontend",

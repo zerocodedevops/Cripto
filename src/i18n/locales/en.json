@@ -9,8 +9,8 @@
   },
   "hero": {
     "available": "Available for new projects",
-    "greeting": "Hi, I'm",
-    "name": "ZeroCode_DevOps",
+    "greeting": "Hi, I'm David G.",
+    "name": "(ZeroCode_DevOps)",
     "role": "Self-Taught Developer",
     "aiPowered": "AI-Powered",
     "description1": "No traditional training, but infinite passion.",
@@ -88,7 +88,13 @@
     "title": "Skills & Technologies",
     "subtitle": "Real stack used in projects",
     "aiBadge": "Artificial Intelligence Assisted Development",
-    "disclaimer": "* Percentages reflect my <1>level of autonomy</1> using each technology in real projects.",
+    "disclaimer": "* Labels reflect my <1>level of autonomy</1> using each technology in real projects.",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "proficient": "Proficient",
+      "competent": "Competent"
+    },
     "categories": {
       "frontend": {
         "title": "Frontend",

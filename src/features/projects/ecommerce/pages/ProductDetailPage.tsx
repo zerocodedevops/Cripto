@@ -1,15 +1,45 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useGetProductByIdQuery } from '../services/productsApi';
-import { ShoppingBag, Star, ArrowLeft, Truck, ShieldCheck, RefreshCw, Home, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Star, Heart, Share2, Truck, ShieldCheck, ArrowLeft, Home, ChevronRight, ShoppingBag, RefreshCw } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
+import { motion } from 'framer-motion';
+import OptimizedImage from '../components/OptimizedImage';
+import ReviewForm from '../components/ReviewForm';
+import ReviewList from '../components/ReviewList';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { data: product, isLoading } = useGetProductByIdQuery(id || '');
+  const { data: product, isLoading } = useGetProductByIdQuery(id!);
+  
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [refreshReviews, setRefreshReviews] = useState(0);
+  const [showSizeError, setShowSizeError] = useState(false);
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    
+    const isClothing = product.category.toLowerCase().includes('clothing') || 
+                      product.category.toLowerCase().includes('ropa') || 
+                      product.category.toLowerCase().includes('shirt') ||
+                      product.category.toLowerCase().includes('jacket');
+
+    if (isClothing && !selectedSize) {
+      setShowSizeError(true);
+      return;
+    }
+
+    dispatch(addToCart({
+       ...product,
+       size: selectedSize || undefined
+    }));
+    
+    // Optional: Show success feedback or navigate
+    setSelectedSize(null);
+  };
 
   useEffect(() => {
     if (product) {
@@ -72,14 +102,41 @@ export default function ProductDetailPage() {
 
           <div className="text-4xl font-bold text-slate-900 dark:text-white mb-6">${product.price}</div>
 
+          {/* Size Selector for Detail Page */}
+          {(product.category.toLowerCase().includes('clothing') || 
+            product.category.toLowerCase().includes('ropa') || 
+            product.category.toLowerCase().includes('shirt') ||
+            product.category.toLowerCase().includes('jacket')) && (
+            <div className="mb-8">
+              <h3 className="text-sm font-medium text-slate-900 dark:text-white mb-4">Selecciona Talla</h3>
+              <div className="flex gap-3">
+                {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => { setSelectedSize(size); setShowSizeError(false); }}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center font-medium transition-all
+                      ${selectedSize === size 
+                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 scale-110' 
+                        : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-indigo-500 hover:text-indigo-500'
+                      }
+                    `}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+              {showSizeError && <p className="text-sm text-red-500 mt-2 font-medium animate-fade-in">⚠️ Por favor selecciona una talla</p>}
+            </div>
+          )}
+
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 border-t border-b border-slate-100 dark:border-slate-800 py-6">
             {product.description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <button 
-              onClick={() => dispatch(addToCart({ ...product }))}
-              className="flex-1 bg-slate-900 dark:bg-indigo-600 text-white py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/30 active:scale-95 text-lg font-medium"
+              onClick={handleAddToCart}
+              className={`flex-1 bg-slate-900 dark:bg-indigo-600 text-white py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/30 active:scale-95 text-lg font-medium ${showSizeError ? 'bg-red-500 hover:bg-red-600' : ''}`}
             >
               <ShoppingBag className="w-5 h-5" />
               Añadir a la Cesta
@@ -104,22 +161,25 @@ export default function ProductDetailPage() {
         </div>
       </div>
 
-      {/* Mock Reviews */}
-      <div className="mt-16 sm:mt-24">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Reseñas de Clientes</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
-              <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                {[1, 2, 3, 4, 5].map((starId) => <Star key={starId} className="w-4 h-4 fill-current" />)}
-              </div>
-              <p className="text-slate-600 dark:text-slate-300 mb-4">"Excelente calidad y envío súper rápido. Definitivamente volveré a comprar aquí."</p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700" />
-                <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Usuario Verificado</span>
-              </div>
+      {/* Reviews Section */}
+      <div className="mt-16 border-t border-slate-200 dark:border-slate-800 pt-16">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div className="md:col-span-1">
+            <div className="sticky top-24">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <span>Reseñas Reales</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full font-medium">Fotos</span>
+              </h2>
+              <ReviewForm 
+                  productId={product.id} 
+                  onReviewAdded={() => setRefreshReviews(prev => prev + 1)} 
+              />
             </div>
-          ))}
+          </div>
+          
+          <div className="md:col-span-2">
+             <ReviewList productId={product.id} refreshTrigger={refreshReviews} />
+          </div>
         </div>
       </div>
     </div>

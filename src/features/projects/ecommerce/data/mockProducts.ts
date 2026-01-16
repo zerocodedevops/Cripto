@@ -4,9 +4,9 @@ export const mockProducts: Product[] = [
   {
     id: 1,
     title: "Mochila Fjallraven - Foldsack No. 1",
-    price: 109.95,
+    price: 49.95,
     description: "Tu compañera perfecta para el día a día. Fabricada con materiales duraderos y ecológicos, esta mochila ofrece espacio suficiente para tu portátil (hasta 15 pulgadas) y todos tus esenciales diarios.",
-    category: "ropa hombre",
+    category: "accesorios",
     image: "/assets/projects/ecommerce/backpack.png",
     rating: { rate: 3.9, count: 120 }
   },

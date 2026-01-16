@@ -77,7 +77,7 @@ export function About() {
             </motion.h3>
             
             <motion.div variants={fadeInUp} className="space-y-6 text-dark-400 text-lg leading-relaxed">
-              <p>
+              <p className="whitespace-pre-line">
                 <Trans i18nKey="about.description.p1">
                   No vengo del camino clásico del desarrollo y no pretendo aparentarlo. Mi fortaleza no está en memorizar sintaxis, sino en <span className="text-primary-400 font-medium">entender problemas, diseñar soluciones</span> y apoyarme en <span className="text-accent-400 font-medium">herramientas de Inteligencia Artificial</span> para <span className="text-primary-400 font-medium">convertir ideas en aplicaciones reales</span>.
                 </Trans>

@@ -50,7 +50,7 @@ export function Footer() {
               href="#hero"
               className="text-xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
             >
-              &lt;DevPortfolio /&gt;
+              &lt;ZeroCode_Portfolio /&gt;
             </a>
             <p className="mt-2 text-dark-400 text-sm">
               {t('footer.tagline')}
