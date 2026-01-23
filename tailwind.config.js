@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', '!./src/**/node_modules/**'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -40,7 +40,7 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-          950: '#020617',
+          950: '#030712', // Exact match from reference
         },
         light: {
           50: '#020617',
@@ -56,26 +56,27 @@ export default {
           950: '#f8fafc',
         },
         neon: {
-          cyan: '#00f5ff',
-          purple: '#bf00ff',
-          pink: '#ff00f5',
+          cyan: '#06b6d4', // Reference primary
+          purple: '#8b5cf6', // Reference secondary
+          pink: '#ff00f5', // Kept as extra
           blue: '#0080ff',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 8px 24px rgba(0,0,0,0.08)',
-        glow: '0 0 20px rgba(0, 245, 255, 0.3)',
-        'glow-purple': '0 0 20px rgba(191, 0, 255, 0.3)',
-        'glow-lg': '0 0 40px rgba(0, 245, 255, 0.4)',
+        glow: '0 0 20px rgba(6, 182, 212, 0.3)', // Updated to Cyan match
+        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.3)', // Updated to Purple match
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.4)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)',
-        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #030712 0%, #0f172a 50%, #030712 100%)', // Reference background mix
+        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

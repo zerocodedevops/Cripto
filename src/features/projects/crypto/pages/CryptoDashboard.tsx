@@ -23,24 +23,26 @@ import { useCurrency } from '../context/CurrencyContext';
 
 const USE_WEBSOCKET = import.meta.env.VITE_USE_WEBSOCKET === 'true';
 
+import { Seo } from '@/components/common/SEO';
+
 export function CryptoDashboard() {
   const { t, i18n } = useTranslation();
   const { currency, setCurrency, currencySymbol } = useCurrency();
-  
+
   // WebSocket for real-time prices (Binance)
   const wsData = useWebSocketPrice({
     coingeckoIds: ['bitcoin'],
     enabled: USE_WEBSOCKET,
   });
-  
+
   // ALWAYS fetch MSW data as fallback
   const rqData = useCryptoPrice({ per_page: 10 });
-  
+
   // Use WebSocket data if connected, otherwise use MSW
-  const markets = (USE_WEBSOCKET && wsData.isConnected && wsData.data.length > 0) 
-    ? wsData.data 
+  const markets = (USE_WEBSOCKET && wsData.isConnected && wsData.data.length > 0)
+    ? wsData.data
     : rqData.data;
-  
+
   const isConnected = USE_WEBSOCKET ? wsData.isConnected : false;
   const bitcoin = markets?.[0];
   const [langMenuOpen, setLangMenuOpen] = useState(false);
@@ -58,6 +60,11 @@ export function CryptoDashboard() {
 
   return (
     <div className="min-h-screen" style={{ background: cryptoTheme.colors.bg.primary }}>
+      <Seo
+        title="Crypto Dashboard"
+        description="Real-time cryptocurrency tracking dashboard with live prices, interactive charts, and market analysis."
+        keywords="crypto, dashboard, bitcoin, ethereum, prices, charts, analysis"
+      />
       {/* Crypto Ticker Tape */}
       <CryptoTicker />
 
@@ -91,7 +98,7 @@ export function CryptoDashboard() {
               </p>
             </div>
           </div>
-          
+
           {/* Selectors Container */}
           <div className="flex items-center gap-3 flex-wrap w-full md:w-auto justify-end">
             <WalletConnect />
@@ -111,7 +118,7 @@ export function CryptoDashboard() {
                 <span className="text-base font-bold">{currencySymbol}</span>
                 <span className="text-sm font-medium">{currency}</span>
               </button>
-              
+
               {currencyMenuOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -147,51 +154,51 @@ export function CryptoDashboard() {
                 </motion.div>
               )}
             </div>
-            
-          {/* Language Selector */}
-          <div className="relative">
-            <button
-              onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="h-10 px-3 rounded-xl transition-all duration-200 hover:scale-105 flex items-center gap-2"
-              style={{
-                background: cryptoTheme.colors.bg.tertiary,
-                borderColor: cryptoTheme.colors.border.primary,
-                border: '1px solid',
-                color: cryptoTheme.colors.text.primary,
-              }}
-            >
-              <Globe className="w-5 h-5" />
-              <span className="text-sm font-medium">{i18n.language.toUpperCase()}</span>
-            </button>
-            
-            {langMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute right-0 mt-2 py-2 rounded-xl min-w-[120px] z-50"
+
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className="h-10 px-3 rounded-xl transition-all duration-200 hover:scale-105 flex items-center gap-2"
                 style={{
                   background: cryptoTheme.colors.bg.tertiary,
                   borderColor: cryptoTheme.colors.border.primary,
                   border: '1px solid',
+                  color: cryptoTheme.colors.text.primary,
                 }}
               >
-                <button
-                  onClick={() => changeLanguage('es')}
-                  className="w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors"
-                  style={{ color: cryptoTheme.colors.text.primary }}
+                <Globe className="w-5 h-5" />
+                <span className="text-sm font-medium">{i18n.language.toUpperCase()}</span>
+              </button>
+
+              {langMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute right-0 mt-2 py-2 rounded-xl min-w-[120px] z-50"
+                  style={{
+                    background: cryptoTheme.colors.bg.tertiary,
+                    borderColor: cryptoTheme.colors.border.primary,
+                    border: '1px solid',
+                  }}
                 >
-                  🇪🇸 Español
-                </button>
-                <button
-                  onClick={() => changeLanguage('en')}
-                  className="w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors"
-                  style={{ color: cryptoTheme.colors.text.primary }}
-                >
-                  🇬🇧 English
-                </button>
-              </motion.div>
-            )}
-          </div>
+                  <button
+                    onClick={() => changeLanguage('es')}
+                    className="w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors"
+                    style={{ color: cryptoTheme.colors.text.primary }}
+                  >
+                    🇪🇸 Español
+                  </button>
+                  <button
+                    onClick={() => changeLanguage('en')}
+                    className="w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors"
+                    style={{ color: cryptoTheme.colors.text.primary }}
+                  >
+                    🇬🇧 English
+                  </button>
+                </motion.div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -212,7 +219,7 @@ export function CryptoDashboard() {
               />
             )}
           </div>
-          
+
           {/* Personal Sidebar (4 cols) - Flex column to handle height properly */}
           <div className="lg:col-span-4 flex flex-col gap-6 h-full">
             <div className="flex-none">
@@ -233,12 +240,12 @@ export function CryptoDashboard() {
 
         {/* ROW 3: Tools Section (Comparator & Alerts) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-8">
-                <CryptoComparator />
-            </div>
-            <div className="lg:col-span-4">
-                <PriceAlerts />
-            </div>
+          <div className="lg:col-span-8">
+            <CryptoComparator />
+          </div>
+          <div className="lg:col-span-4">
+            <PriceAlerts />
+          </div>
         </div>
 
         {/* ROW 4: Deep Analysis (Heatmap) */}

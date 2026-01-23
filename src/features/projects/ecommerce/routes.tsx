@@ -16,9 +16,16 @@ const LoadingSpinner = () => (
   </div>
 );
 
+import { Seo } from '@/components/common/SEO';
+
 export default function EcommerceRoutes() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
+      <Seo
+        title="DevOps Shop"
+        description="Premium E-commerce for Developer Swag. Built with React, Redux Toolkit, and Stripe."
+        keywords="devops, shop, ecommerce, react, redux, stripe"
+      />
       <Routes>
         <Route element={<EcommerceLayout />}>
           <Route index element={<CatalogPage />} />

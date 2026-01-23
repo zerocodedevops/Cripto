@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { setupServer } from 'msw/node';
 import { HttpResponse, http } from 'msw';
@@ -9,15 +9,27 @@ import { handlers } from '@/mocks/handlers';
 const server = setupServer(...handlers);
 
 beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
+import { MemoryRouter } from 'react-router-dom';
+
+// Mock language context to avoid provider issues
+const MockLanguageProvider = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+// Mock useLanguage
+vi.mock('../i18n/LanguageContext', () => ({
+  useLanguage: () => ({ t: (key: string) => key }),
+  LanguageProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
 
 const createWrapper = () => {
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false } },
   });
   return ({ children }: { children: React.ReactNode }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter>
+        {children}
+      </MemoryRouter>
+    </QueryClientProvider>
   );
 };
 
@@ -32,12 +44,12 @@ describe('DashboardPage', () => {
 
   it('renders dashboard title and kpis', async () => {
     render(<DashboardPage />, { wrapper: createWrapper() });
-    
-    expect(screen.getByText('Dashboard Analítico')).toBeInTheDocument();
-    
+
+    expect(screen.getByText('Overview')).toBeInTheDocument();
+
     // Check loading state
     // expect(screen.getAllByRole('status')).toHaveLength(1); // Skeletons usually don't have rol status unless added
-    
+
     // Check loaded data (mock data from handlers.ts)
     await waitFor(() => {
       expect(screen.getByText('Ventas Totales')).toBeInTheDocument();
@@ -47,7 +59,7 @@ describe('DashboardPage', () => {
 
   it('renders all charts', async () => {
     render(<DashboardPage />, { wrapper: createWrapper() });
-    
+
     await waitFor(() => {
       expect(screen.getByText('Tendencia de Ventas')).toBeInTheDocument();
       expect(screen.getByText('Ingresos por Dispositivo')).toBeInTheDocument();
@@ -57,10 +69,10 @@ describe('DashboardPage', () => {
 
   it('filters invoke new data fetch', async () => {
     render(<DashboardPage />, { wrapper: createWrapper() });
-    
+
     const rangeSelect = await screen.findByRole('combobox'); // Assuming select has role combobox or we look by display value
     fireEvent.change(rangeSelect, { target: { value: '30d' } });
-    
+
     // In a real integration test we might spy on the network or check if different data loads.
     // Since our mock returns random data or static data, we just verify the interaction doesn't crash
     // and potentially spy on the request if possible, but for now simple render check is fine.

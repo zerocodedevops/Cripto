@@ -1,0 +1,304 @@
+{
+    "categories": [
+        {
+            "name": "Corte y Estilismo",
+            "services": [
+                {
+                    "name": "Corte de mujer",
+                    "price": 25,
+                    "duration": 45
+                },
+                {
+                    "name": "Corte de hombre",
+                    "price": 15,
+                    "duration": 30
+                },
+                {
+                    "name": "Corte infantil",
+                    "price": 12,
+                    "duration": 20
+                },
+                {
+                    "name": "Peinado básico",
+                    "price": 15,
+                    "duration": 30
+                },
+                {
+                    "name": "Peinado con plancha/rizos",
+                    "price": 25,
+                    "duration": 45
+                },
+                {
+                    "name": "Recogido sencillo",
+                    "price": 30,
+                    "duration": 45
+                },
+                {
+                    "name": "Recogido elaborado",
+                    "price": 60,
+                    "duration": 90
+                },
+                {
+                    "name": "Lavado + secado",
+                    "price": 12,
+                    "duration": 20
+                },
+                {
+                    "name": "Lavado + masaje capilar",
+                    "price": 15,
+                    "duration": 20
+                }
+            ]
+        },
+        {
+            "name": "Coloración",
+            "services": [
+                {
+                    "name": "Tinte raíz",
+                    "price": 30,
+                    "duration": 60
+                },
+                {
+                    "name": "Tinte completo",
+                    "price": 45,
+                    "duration": 90
+                },
+                {
+                    "name": "Baño de color",
+                    "price": 25,
+                    "duration": 45
+                },
+                {
+                    "name": "Mechas clásicas",
+                    "price": 60,
+                    "duration": 120
+                },
+                {
+                    "name": "Mechas balayage",
+                    "price": 110,
+                    "duration": 180
+                },
+                {
+                    "name": "Mechas babylights",
+                    "price": 130,
+                    "duration": 210
+                },
+                {
+                    "name": "Decoloración completa",
+                    "price": 80,
+                    "duration": 150
+                },
+                {
+                    "name": "Matiz / Toner",
+                    "price": 20,
+                    "duration": 20
+                },
+                {
+                    "name": "Color fantasía",
+                    "price": 90,
+                    "duration": 180
+                }
+            ]
+        },
+        {
+            "name": "Tratamientos Capilares",
+            "services": [
+                {
+                    "name": "Hidratación profunda",
+                    "price": 20,
+                    "duration": 30
+                },
+                {
+                    "name": "Keratina / Alisado brasileño",
+                    "price": 150,
+                    "duration": 180
+                },
+                {
+                    "name": "Botox capilar",
+                    "price": 60,
+                    "duration": 90
+                },
+                {
+                    "name": "Tratamiento anticaída",
+                    "price": 30,
+                    "duration": 30
+                },
+                {
+                    "name": "Tratamiento reconstructor",
+                    "price": 40,
+                    "duration": 45
+                },
+                {
+                    "name": "Exfoliación del cuero cabelludo",
+                    "price": 20,
+                    "duration": 30
+                }
+            ]
+        },
+        {
+            "name": "Cejas y Pestañas",
+            "services": [
+                {
+                    "name": "Diseño de cejas",
+                    "price": 12,
+                    "duration": 15
+                },
+                {
+                    "name": "Depilación de cejas",
+                    "price": 8,
+                    "duration": 10
+                },
+                {
+                    "name": "Tinte de cejas",
+                    "price": 10,
+                    "duration": 15
+                },
+                {
+                    "name": "Lifting de pestañas",
+                    "price": 40,
+                    "duration": 60
+                },
+                {
+                    "name": "Tinte de pestañas",
+                    "price": 12,
+                    "duration": 15
+                },
+                {
+                    "name": "Extensiones clásicas",
+                    "price": 70,
+                    "duration": 120
+                },
+                {
+                    "name": "Extensiones volumen 2D–6D",
+                    "price": 110,
+                    "duration": 150
+                },
+                {
+                    "name": "Relleno de extensiones",
+                    "price": 35,
+                    "duration": 60
+                }
+            ]
+        },
+        {
+            "name": "Manicura y Pedicura",
+            "services": [
+                {
+                    "name": "Manicura básica",
+                    "price": 12,
+                    "duration": 30
+                },
+                {
+                    "name": "Manicura semipermanente",
+                    "price": 22,
+                    "duration": 60
+                },
+                {
+                    "name": "Retirada de semipermanente",
+                    "price": 8,
+                    "duration": 15
+                },
+                {
+                    "name": "Uñas acrílicas",
+                    "price": 45,
+                    "duration": 90
+                },
+                {
+                    "name": "Relleno acrílico",
+                    "price": 25,
+                    "duration": 60
+                },
+                {
+                    "name": "Pedicura básica",
+                    "price": 20,
+                    "duration": 45
+                },
+                {
+                    "name": "Pedicura spa",
+                    "price": 35,
+                    "duration": 60
+                },
+                {
+                    "name": "Pedicura semipermanente",
+                    "price": 30,
+                    "duration": 60
+                }
+            ]
+        },
+        {
+            "name": "Estética Facial y Corporal",
+            "services": [
+                {
+                    "name": "Limpieza facial básica",
+                    "price": 30,
+                    "duration": 60
+                },
+                {
+                    "name": "Limpieza facial profunda",
+                    "price": 55,
+                    "duration": 90
+                },
+                {
+                    "name": "Peeling químico",
+                    "price": 70,
+                    "duration": 45
+                },
+                {
+                    "name": "Masaje facial",
+                    "price": 20,
+                    "duration": 20
+                },
+                {
+                    "name": "Depilación labio superior",
+                    "price": 6,
+                    "duration": 5
+                },
+                {
+                    "name": "Depilación facial completa",
+                    "price": 20,
+                    "duration": 20
+                },
+                {
+                    "name": "Depilación corporal",
+                    "price": 15,
+                    "duration": 20
+                },
+                {
+                    "name": "Masaje relajante",
+                    "price": 40,
+                    "duration": 60
+                },
+                {
+                    "name": "Masaje descontracturante",
+                    "price": 50,
+                    "duration": 60
+                }
+            ]
+        },
+        {
+            "name": "Barbería",
+            "services": [
+                {
+                    "name": "Arreglo de barba",
+                    "price": 12,
+                    "duration": 20
+                },
+                {
+                    "name": "Afeitado clásico",
+                    "price": 15,
+                    "duration": 30
+                },
+                {
+                    "name": "Perfilado barba + navaja",
+                    "price": 14,
+                    "duration": 30
+                },
+                {
+                    "name": "Pack corte + barba",
+                    "price": 25,
+                    "duration": 50
+                }
+            ]
+        }
+    ]
+}

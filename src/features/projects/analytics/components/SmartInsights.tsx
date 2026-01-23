@@ -6,6 +6,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 interface SmartInsightsProps {
   readonly data: DashboardData;
+  readonly isLoading?: boolean;
 }
 
 interface Insight {
@@ -19,7 +20,7 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
   const insights: Insight[] = [];
   const upTrends = Object.values(data.kpi).filter(kpi => kpi.trend === 'up').length;
   const downTrends = Object.values(data.kpi).filter(kpi => kpi.trend === 'down').length;
-  
+
   if (upTrends >= 3) {
     insights.push({
       type: 'success',
@@ -28,7 +29,7 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
       icon: TrendingUp,
     });
   }
-  
+
   if (downTrends >= 2) {
     insights.push({
       type: 'warning',
@@ -37,11 +38,11 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
       icon: TrendingDown,
     });
   }
-  
+
   const funnelData = data.conversionFunnel;
   const highestDropOff = Math.max(...funnelData.map(step => step.dropOff || 0));
   const criticalStep = funnelData.find(step => step.dropOff === highestDropOff);
-  
+
   if (highestDropOff > 30 && criticalStep) {
     insights.push({
       type: 'warning',
@@ -50,7 +51,7 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
       icon: AlertTriangle,
     });
   }
-  
+
   const mobileRevenue = data.revenueByDevice.find(d => d.device.toLowerCase().includes('mobile'));
   if (mobileRevenue && mobileRevenue.value > 60) {
     insights.push({
@@ -60,12 +61,12 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
       icon: Lightbulb,
     });
   }
-  
+
   const recentSales = data.salesTrend.slice(-3);
   const avgRecent = recentSales.reduce((sum, item) => sum + item.sales, 0) / recentSales.length;
   const olderSales = data.salesTrend.slice(0, 3);
   const avgOlder = olderSales.reduce((sum, item) => sum + item.sales, 0) / olderSales.length;
-  
+
   if (avgRecent > avgOlder * 1.2) {
     insights.push({
       type: 'success',
@@ -74,16 +75,30 @@ const generateInsights = (data: DashboardData, t: (key: string) => string): Insi
       icon: TrendingUp,
     });
   }
-  
+
   return insights;
 };
 
-export function SmartInsights({ data }: SmartInsightsProps) {
+export function SmartInsights({ data, isLoading = false }: SmartInsightsProps) {
   const { t } = useLanguage();
+
+  if (isLoading) {
+    return (
+      <div className="mb-8 p-6 rounded-2xl border border-white/5 bg-white/5 animate-pulse h-48">
+        <div className="h-6 w-1/3 bg-white/10 rounded mb-6" />
+        <div className="grid grid-cols-3 gap-4">
+          <div className="h-24 bg-white/10 rounded" />
+          <div className="h-24 bg-white/10 rounded" />
+          <div className="h-24 bg-white/10 rounded" />
+        </div>
+      </div>
+    );
+  }
+
   const insights = generateInsights(data, t);
-  
+
   if (insights.length === 0) return null;
-  
+
   const getInsightColor = (type: Insight['type']) => {
     switch (type) {
       case 'success':
@@ -94,14 +109,14 @@ export function SmartInsights({ data }: SmartInsightsProps) {
         return premiumColors.brand.primary;
     }
   };
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       className="mb-8"
     >
-      <div 
+      <div
         className="p-6"
         style={{
           ...premiumEffects.glassmorphism,
@@ -110,9 +125,9 @@ export function SmartInsights({ data }: SmartInsightsProps) {
       >
         <div className="flex items-center gap-4 mb-6">
           <div className="w-1 h-6 rounded-full" style={{ backgroundColor: premiumColors.brand.quaternary }}></div>
-          <h3 
+          <h3
             className="text-lg font-semibold tracking-tight"
-            style={{ 
+            style={{
               color: premiumColors.accent.white,
               fontFamily: premiumTypography.fontFamily.display,
             }}
@@ -120,12 +135,12 @@ export function SmartInsights({ data }: SmartInsightsProps) {
             {t('smartInsights')}
           </h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {insights.map((insight, idx) => {
             const Icon = insight.icon;
             const color = getInsightColor(insight.type);
-            
+
             return (
               <motion.div
                 key={`${insight.type}-${idx}`}
@@ -139,7 +154,7 @@ export function SmartInsights({ data }: SmartInsightsProps) {
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                 }}
               >
-                <div 
+                <div
                   className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-2xl"
                   style={{
                     backgroundColor: `${color}15`,
@@ -147,20 +162,20 @@ export function SmartInsights({ data }: SmartInsightsProps) {
                 >
                   <Icon className="w-5 h-5" style={{ color }} />
                 </div>
-                
+
                 <div className="flex-1 min-w-0">
-                  <h4 
+                  <h4
                     className="text-sm font-semibold mb-1"
-                    style={{ 
+                    style={{
                       color: premiumColors.accent.white,
                       fontFamily: premiumTypography.fontFamily.display,
                     }}
                   >
                     {insight.title}
                   </h4>
-                  <p 
+                  <p
                     className="text-xs leading-relaxed opacity-60"
-                    style={{ 
+                    style={{
                       color: premiumColors.accent.grey,
                       fontFamily: premiumTypography.fontFamily.body,
                     }}

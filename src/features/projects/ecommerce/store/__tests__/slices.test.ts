@@ -38,9 +38,10 @@ describe('Auth Slice', () => {
 });
 
 describe('Cart Slice', () => {
-  const initialState = { items: [], isOpen: false };
+  const initialState = { items: [], isOpen: false, status: 'idle' as const };
 
   it('should handle initial state', () => {
+    // @ts-ignore
     expect(cartReducer(undefined, { type: 'unknown' })).toEqual(initialState);
   });
 
@@ -49,12 +50,15 @@ describe('Cart Slice', () => {
     const actual = cartReducer(initialState, addToCart(product));
     expect(actual.items.length).toEqual(1);
     expect(actual.items[0].quantity).toEqual(1);
+    // @ts-ignore
+    expect(actual.items[0].size).toBeUndefined();
   });
 
   it('should handle removeFromCart', () => {
     const stateWithItem = {
-      items: [{ id: 1, title: 'Test Product', price: 100, image: 'test.png', quantity: 1 }],
-      isOpen: false
+      items: [{ id: 1, title: 'Test Product', price: 100, image: 'test.png', quantity: 1, category: 'test', description: 'desc', rating: { rate: 5, count: 10 } }],
+      isOpen: false,
+      status: 'idle' as const
     };
     const actual = cartReducer(stateWithItem, removeFromCart({ id: 1 }));
     expect(actual.items.length).toEqual(0);

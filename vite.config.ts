@@ -33,6 +33,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+    dedupe: ['react', 'react-dom'],
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
@@ -41,5 +42,21 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            // Isolate Firebase - it's huge and independent
+            if (id.includes('firebase')) return 'firebase';
+
+            // Isolate Recharts - it's also big
+            if (id.includes('recharts')) return 'charts';
+
+            // Everything else in vendor to ensure safe dependency resolution (React, Framer, UI libs)
+            return 'vendor';
+          }
+        },
+      },
+    },
   },
 });

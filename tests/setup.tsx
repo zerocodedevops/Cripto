@@ -42,7 +42,7 @@ const IntersectionObserverMock = vi.fn(() => ({
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
 // Mock scrollTo
-globalThis.scrollTo = vi.fn(() => {});
+globalThis.scrollTo = vi.fn(() => { });
 Element.prototype.scrollIntoView = vi.fn();
 
 // Mock framer-motion
@@ -66,6 +66,7 @@ vi.mock('framer-motion', () => ({
     label: ({ children, ...props }: any) => <label {...props}>{children}</label>,
     input: ({ children, ...props }: any) => <input {...props}>{children} </input>,
     textarea: ({ children, ...props }: any) => <textarea {...props}>{children}</textarea>,
+    path: ({ children, ...props }: any) => <path {...props}>{children}</path>,
   },
   useAnimation: () => ({ start: vi.fn(), set: vi.fn() }),
   useInView: () => true,

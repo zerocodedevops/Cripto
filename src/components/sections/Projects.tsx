@@ -2,9 +2,18 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { SectionTitle, TechBadge, Card } from '@/components/ui';
+import { TechBadge, Card } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { trackEvent } from '@/lib/analytics';
+
+import projectDevOps from '@/assets/projects/project-devops-shop.jpg';
+import projectPortfolio from '@/assets/projects/project-portfolio-dashboard.jpg';
+import projectCrypto from '@/assets/projects/project-crypto-dashboard.jpg';
+import projectAiChat from '@/assets/projects/project-ai-chat.jpg';
+import projectTask from '@/assets/projects/project-task-management.jpg';
+import projectSalon from '@/assets/projects/project-salon.jpg';
+import projectWeather from '@/assets/projects/project-weather.jpg';
+import projectBlog from '@/assets/projects/project-blog.jpg';
 
 interface Project {
   id: number;
@@ -23,7 +32,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'DevOps Shop',
-    image: '/assets/projects/thumbnails/ecommerce-preview.png',
+    image: projectDevOps,
     tags: ['React', 'Redux', 'Stripe', 'Tailwind'],
     demoUrl: '#/proyectos/ecommerce',
     repoUrl: 'https://github.com/zerocodedevops',
@@ -32,7 +41,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'Portfolio Dashboard',
-    image: '/assets/projects/thumbnails/dashboard.png',
+    image: projectPortfolio,
     tags: ['React', 'TanStack Query', 'Recharts', 'MSW'],
     demoUrl: '#/proyectos/analytics/dashboard',
     repoUrl: 'https://github.com/zerocodedevops',
@@ -41,18 +50,18 @@ const projects: Project[] = [
   {
     id: 7,
     title: 'Crypto Analytics Dashboard',
-    image: '/assets/projects/thumbnails/crypto-dashboard.png',
+    image: projectCrypto,
     tags: ['React', 'TypeScript', 'Recharts', 'CoinGecko API'],
     demoUrl: '#/proyectos/crypto',
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Prototype',
   },
-  
+
   // IN DEVELOPMENT - Coming soon
   {
     id: 2,
     title: 'AI Chat Assistant',
-    image: '/assets/projects/thumbnails/ai-chat.png',
+    image: projectAiChat,
     tags: ['Next.js', 'TypeScript', 'OpenAI', 'Supabase'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
@@ -61,16 +70,24 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Task Management App',
-    image: '/assets/projects/thumbnails/task-manager.png',
+    image: projectTask,
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
   {
+    id: 8,
+    title: 'Salón de Belleza',
+    image: projectSalon,
+    tags: ['React', 'Tailwind', 'Vite'],
+    demoUrl: '#/proyectos/salon',
+    status: 'Development',
+  },
+  {
     id: 5,
     title: 'Weather App',
-    image: '/assets/projects/thumbnails/weather.png',
+    image: projectWeather,
     tags: ['React', 'TypeScript', 'API REST', 'Tailwind'],
     demoUrl: 'https://example.com',
     status: 'Development',
@@ -78,7 +95,7 @@ const projects: Project[] = [
   {
     id: 6,
     title: 'Blog Platform',
-    image: '/assets/projects/thumbnails/blog.png',
+    image: projectBlog,
     tags: ['Next.js', 'MDX', 'Tailwind', 'Vercel'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
@@ -94,11 +111,11 @@ const getStatusStyles = (status: Project['status']) => {
     case 'Development':
       return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
     default:
-      return 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20';
+      return 'bg-amber-500/10 text-amber-500 border-amber-500/20'; // Changed to match "Prototype" orange/amber look
   }
 };
 
-const GithubIcon = ({ className }: { className?: string }) => (
+const GithubIcon = ({ className }: { readonly className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -131,7 +148,8 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
       case 'Development':
         return t('projects.status.development');
       default:
-        return t('projects.status.prototype');
+        // Use translation but fallback to Prototype for now
+        return 'PROTOTYPE';
     }
   };
 
@@ -139,8 +157,8 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
     // ... (keep usage of project.image)
     if (!project.image) {
       return (
-        <div 
-          className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800 cursor-pointer" 
+        <div
+          className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800 cursor-pointer"
         >
           <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
         </div>
@@ -154,24 +172,25 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
           alt={project.title}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-           {/* Add View Case Study Button overlay */}
-           <button 
-             onClick={(e) => { e.stopPropagation(); onClick(); }}
-             className="px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg"
-           >
-             Ver Detalles
-           </button>
+          {/* Add View Case Study Button overlay */}
+          <button
+            onClick={(e) => { e.stopPropagation(); onClick(); }}
+            className="px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg"
+          >
+            Ver Detalles
+          </button>
         </div>
       </>
     );
-     // Use div instead of button to avoid nested button warning
-     return (
-       <div className="w-full h-full cursor-pointer">
-         {imageContent}
-       </div>
-     );
+    // Use div instead of button to avoid nested button warning
+    return (
+      <div className="w-full h-full cursor-pointer">
+        {imageContent}
+      </div>
+    );
   })();
 
   return (
@@ -241,7 +260,6 @@ function ProjectCard({ project, onClick }: { readonly project: Project; readonly
 }
 
 export function Projects() {
-  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
@@ -252,10 +270,16 @@ export function Projects() {
       </div>
 
       <div className="container-custom relative z-10">
-        <SectionTitle
-          title={t('projects.title')}
-          subtitle={t('projects.subtitle')}
-        />
+        <div className="text-center mb-16">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            <span className="text-gradient">Productos Digitales</span>
+          </h2>
+          <p className="text-xl text-dark-300 font-medium mb-12">
+            Una selección de proyectos que demuestran mis habilidades
+          </p>
+
+          {/* Section for Featured / SaaS if needed, or just part of the flow */}
+        </div>
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -265,18 +289,18 @@ export function Projects() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {projects.map((project) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
+            <ProjectCard
+              key={project.id}
+              project={project}
               onClick={() => setSelectedProject(project)}
             />
           ))}
         </motion.div>
       </div>
-      
-      <ProjectDetailModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+
+      <ProjectDetailModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </section>
   );

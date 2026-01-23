@@ -29,32 +29,50 @@ export function PriceAlerts() {
     localStorage.setItem('crypto-alerts', JSON.stringify(alerts));
   }, [alerts]);
 
-  // Check alerts logic (Simulation)
-  // In a real app this would run in a service worker or backend
+  // Check alerts logic
   useEffect(() => {
     if (!coins) return;
+
+    // Check permission on mount
+    if (Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
 
     alerts.forEach(alert => {
       if (!alert.isActive) return;
       const coin = coins.find(c => c.id === alert.coinId);
+
       if (coin) {
-        if (
-          (alert.condition === 'above' && coin.current_price >= alert.targetPrice) ||
-          (alert.condition === 'below' && coin.current_price <= alert.targetPrice)
-        ) {
-          // Trigger notification (Mock)
-          // alert(`PRICE ALERT: ${coin.name} is ${alert.condition} ${alert.targetPrice}`);
-          // Disable after trigger to avoid spam
-          // toggleAlert(alert.id);
+        const isAbove = alert.condition === 'above' && coin.current_price >= alert.targetPrice;
+        const isBelow = alert.condition === 'below' && coin.current_price <= alert.targetPrice;
+
+        if (isAbove || isBelow) {
+          // Trigger notification
+          if (Notification.permission === 'granted') {
+            new Notification(`🚨 Alerta Crypto: ${coin.name}`, {
+              body: `${coin.name} ha ${isAbove ? 'superado' : 'bajado de'} ${formatCurrency(alert.targetPrice)}. Precio actual: ${formatCurrency(coin.current_price)}`,
+              icon: coin.image,
+              silent: false,
+            });
+          }
+
+          // Disable alert to prevent notification spam
+          toggleAlert(alert.id);
         }
       }
     });
-  }, [coins, alerts]);
+  }, [coins, alerts, formatCurrency]);
+
+  const toggleAlert = (id: string) => {
+    setAlerts(prev => prev.map(a =>
+      a.id === id ? { ...a, isActive: !a.isActive } : a
+    ));
+  };
 
   const addAlert = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newAlertPrice) return;
-    
+
     const coin = coins?.find(c => c.id === newAlertCoin);
     const currentPrice = coin?.current_price || 0;
     const target = Number.parseFloat(newAlertPrice);
@@ -85,6 +103,12 @@ export function PriceAlerts() {
         borderColor: cryptoTheme.colors.border.primary,
       }}
     >
+      {Notification.permission === 'denied' && (
+        <div className="mb-4 text-xs text-red-400 bg-red-500/10 p-2 rounded border border-red-500/20">
+          ⚠️ Notificaciones bloqueadas. Habilítalas en tu navegador para recibir alertas.
+        </div>
+      )}
+
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div
@@ -98,8 +122,14 @@ export function PriceAlerts() {
           </h3>
         </div>
         <button
-          onClick={() => setIsFormOpen(!isFormOpen)}
+          onClick={() => {
+            if (Notification.permission === 'default') {
+              Notification.requestPermission();
+            }
+            setIsFormOpen(!isFormOpen);
+          }}
           className="p-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 transition-colors"
+          title={Notification.permission === 'granted' ? 'Crear Alerta' : 'Habilitar Notificaciones'}
         >
           <Plus className="w-4 h-4 text-blue-400" />
         </button>
@@ -127,6 +157,7 @@ export function PriceAlerts() {
               onChange={(e) => setNewAlertPrice(e.target.value)}
               placeholder="Precio Objetivo ($)"
               className="w-full p-2 rounded-lg bg-black/20 border border-white/10 text-sm"
+              step="any"
               required
             />
             <button
@@ -156,12 +187,24 @@ export function PriceAlerts() {
                   {alert.condition === 'above' ? 'Subir de' : 'Bajar de'} {formatCurrency(alert.targetPrice)}
                 </div>
               </div>
-              <button
-                onClick={() => removeAlert(alert.id)}
-                className="p-2 hover:bg-red-500/20 rounded-lg group"
-              >
-                <Trash2 className="w-4 h-4 text-red-500 opacity-50 group-hover:opacity-100" />
-              </button>
+              <div className="flex items-center">
+                <button
+                  onClick={() => toggleAlert(alert.id)}
+                  className={`mr-2 w-8 h-4 rounded-full transition-colors relative ${alert.isActive ? 'bg-green-500' : 'bg-gray-600'}`}
+                  title={alert.isActive ? 'Desactivar' : 'Activar'}
+                >
+                  <div
+                    className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all`}
+                    style={{ left: alert.isActive ? '18px' : '2px' }}
+                  />
+                </button>
+                <button
+                  onClick={() => removeAlert(alert.id)}
+                  className="p-2 hover:bg-red-500/20 rounded-lg group"
+                >
+                  <Trash2 className="w-4 h-4 text-red-500 opacity-50 group-hover:opacity-100" />
+                </button>
+              </div>
             </div>
           ))
         )}

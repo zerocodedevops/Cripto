@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 // eslint-disable-next-line
-import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, Heart, Code2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
@@ -46,15 +46,27 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
-            <a
-              href="#hero"
-              className="text-xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
-            >
-              &lt;ZeroCode_Portfolio /&gt;
-            </a>
-            <p className="mt-2 text-dark-400 text-sm">
-              {t('footer.tagline')}
-            </p>
+            <div className="mb-6 md:mb-0 w-full">
+              <motion.a
+                href="#hero"
+                className="flex items-center justify-center md:justify-start gap-2 mb-2 group w-fit mx-auto md:mx-0"
+                whileHover={{ scale: 1.05 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
+                  <Code2 className="w-6 h-6 text-white" />
+                </div>
+                <span className="font-outfit font-bold text-xl text-white">
+                  Zero<span className="text-neon-cyan">Code</span>
+                </span>
+              </motion.a>
+              <p className="text-dark-400 mt-2 text-sm mx-auto md:mx-0 whitespace-nowrap">
+                {t('footer.tagline')}
+              </p>
+            </div>
           </div>
 
           {/* Navigation links */}

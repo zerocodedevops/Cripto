@@ -1,16 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-primary: #14b8a6;
-  --color-accent: #a855f7;
-  --color-neon-cyan: #00f5ff;
-  --color-neon-purple: #bf00ff;
-  --bg-dark: #0f172a;
-  --bg-dark-secondary: #1e293b;
+  --color-primary: #06b6d4;
+  --color-accent: #8b5cf6;
+  --color-neon-cyan: #06b6d4;
+  --color-neon-purple: #8b5cf6;
+  --bg-dark: #030712;
+  --bg-dark-secondary: #0f172a;
 }
 
 /* Base styles */
@@ -21,7 +21,7 @@
 
   body {
     @apply bg-dark-950 text-dark-100 font-sans antialiased;
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    background: linear-gradient(135deg, #030712 0%, #0f172a 50%, #030712 100%);
     background-attachment: fixed;
     min-height: 100vh;
   }

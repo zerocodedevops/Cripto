@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // eslint-disable-next-line @typescript-eslint/no-deprecated
-import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
-
 import { trackEvent } from '@/lib/analytics';
 
 const socialLinks = [
@@ -82,14 +81,19 @@ export function Navbar() {
           {/* Logo */}
           <motion.a
             href="#hero"
-            className="text-xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+            className="flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#hero');
             }}
           >
-            &lt;ZeroCode_Portfolio /&gt;
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
+              <Code2 className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-outfit font-bold text-xl text-white">
+              Zero<span className="text-neon-cyan">Code</span>
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -134,7 +138,7 @@ export function Navbar() {
             {/* Theme toggle */}
             <motion.button
               onClick={() => {
-                const newTheme = !isLightMode ? 'light' : 'dark';
+                const newTheme = isLightMode ? 'dark' : 'light';
                 toggleTheme();
                 trackEvent('UI', 'toggle_theme', newTheme);
               }}
@@ -228,7 +232,7 @@ export function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              
+
               <div className="flex items-center gap-4 pt-4 border-t border-dark-700/50">
                 {socialLinks.map((social) => (
                   <a

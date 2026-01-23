@@ -1,6 +1,7 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { PageTransition } from '@/components/ui/PageTransition';
+import { PageLoader } from '@/components/ui/PageLoader';
 import { CurrencyProvider } from '@/features/projects/crypto/context/CurrencyContext';
 
 // Lazy Load Components
@@ -12,21 +13,21 @@ const CryptoApp = lazy(() => import('@/features/projects/crypto/pages/CryptoDash
 const NotFound = lazy(() => import('@/features/misc/NotFound'));
 
 const router = createHashRouter([
-  { 
-    path: '/', 
+  {
+    path: '/',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-dark-950 text-dark-400">Cargando…</div>}>
+        <Suspense fallback={<PageLoader text="Initializing Core..." />}>
           <Home />
         </Suspense>
       </PageTransition>
-    ) 
+    )
   },
   {
     path: '/proyectos/ecommerce/*',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-800">Cargando Tienda...</div>}>
+        <Suspense fallback={<PageLoader text="Loading Store..." />}>
           <EcommerceApp />
         </Suspense>
       </PageTransition>
@@ -36,7 +37,7 @@ const router = createHashRouter([
     path: '/proyectos/analytics/*',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-900 text-slate-300">Cargando Dashboard...</div>}>
+        <Suspense fallback={<PageLoader text="Loading Analytics..." />}>
           <AnalyticsApp />
         </Suspense>
       </PageTransition>
@@ -46,7 +47,7 @@ const router = createHashRouter([
     path: '/proyectos/crypto',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0A0A0A] text-gray-300">Loading Crypto Dashboard...</div>}>
+        <Suspense fallback={<PageLoader text="Connecting to Exchange..." />}>
           <CurrencyProvider>
             <CryptoApp />
           </CurrencyProvider>
@@ -54,21 +55,21 @@ const router = createHashRouter([
       </PageTransition>
     )
   },
-  { 
-    path: '/blog/:id', 
+  {
+    path: '/blog/:id',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-dark-950 text-dark-400">Cargando…</div>}>
+        <Suspense fallback={<PageLoader text="Loading Post..." />}>
           <BlogPost />
         </Suspense>
       </PageTransition>
-    ) 
+    )
   },
   {
     path: '*',
     element: (
       <PageTransition>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-dark-950 text-dark-400">Cargando…</div>}>
+        <Suspense fallback={<PageLoader />}>
           <NotFound />
         </Suspense>
       </PageTransition>
@@ -80,6 +81,6 @@ const router = createHashRouter([
   }
 });
 
-export function Router() { 
-  return <RouterProvider router={router} />; 
+export function Router() {
+  return <RouterProvider router={router} />;
 }

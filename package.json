@@ -1,5 +1,5 @@
 {
-  "name": "zerocode-crypto-dashboard",
+  "name": "zerocode-portfolio",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -46,6 +46,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.11.0",
     "react-sparklines": "^1.7.0",
+    "react-type-animation": "^3.2.0",
     "recharts": "^3.6.0",
     "recharts-to-png": "^3.0.1",
     "redux-persist": "^6.0.0",

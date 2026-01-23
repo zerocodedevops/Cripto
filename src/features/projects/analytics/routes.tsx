@@ -12,10 +12,17 @@ const LoadingSpinner = () => (
   </div>
 );
 
+import { Seo } from '@/components/common/SEO';
+
 export default function AnalyticsRoutes() {
   return (
     <LanguageProvider>
       <Suspense fallback={<LoadingSpinner />}>
+        <Seo
+          title="Portfolio Analytics"
+          description="Interactive Dashboard visualizing portfolio metrics, user engagement, and revenue data."
+          keywords="analytics, dashboard, visualization, metrics, react, charts"
+        />
         <Routes>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="*" element={<Navigate to="/proyectos/analytics/dashboard" replace />} />

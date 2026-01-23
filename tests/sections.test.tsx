@@ -24,7 +24,7 @@ describe('Portfolio Sections Render', () => {
         <Hero />
       </TestWrapper>
     );
-    
+
     expect(screen.getByText(/Hola, soy/i)).toBeInTheDocument();
     expect(screen.getByText(/ZeroCode_DevOps/i)).toBeInTheDocument();
     expect(screen.getByText(/Desarrollador Autodidacta/i)).toBeInTheDocument();
@@ -38,9 +38,9 @@ describe('Portfolio Sections Render', () => {
         <About />
       </TestWrapper>
     );
-    
+
     expect(screen.getByText(/Sobre mí/i)).toBeInTheDocument();
-    expect(screen.getByText(/Desarrollador autodidacta potenciado por IA/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI-First Developer/i)).toBeInTheDocument();
   });
 
   it('Skills section renders with all categories', () => {
@@ -49,7 +49,7 @@ describe('Portfolio Sections Render', () => {
         <Skills />
       </TestWrapper>
     );
-    
+
     expect(screen.getByRole('heading', { level: 2, name: /Skills/i })).toBeInTheDocument();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
     expect(screen.getByText('Backend & BaaS')).toBeInTheDocument();
@@ -63,7 +63,7 @@ describe('Portfolio Sections Render', () => {
         <Projects />
       </TestWrapper>
     );
-    
+
     expect(screen.getByText(/DevOps Shop/i)).toBeInTheDocument();
     expect(screen.getByText(/AI Chat Assistant/i)).toBeInTheDocument();
   });
@@ -74,7 +74,7 @@ describe('Portfolio Sections Render', () => {
         <Contact />
       </TestWrapper>
     );
-    
+
     expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Asunto/i)).toBeInTheDocument();

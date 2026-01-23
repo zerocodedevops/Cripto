@@ -1,31 +1,14 @@
 import { motion } from 'framer-motion';
-import { useTranslation, Trans } from 'react-i18next';
-import { 
-  Code2, 
-  Server, 
-  TestTube,
-  Wrench,
-  Smartphone,
-  FileCode2,
-  Cloud,
-  Palette,
-  GitBranch,
-  Terminal,
-  Zap,
-  Bot,
-  Brain,
-  MessageSquare,
-  Puzzle,
-  Search
-} from 'lucide-react';
-import { SectionTitle } from '@/components/ui';
+import { Bot, Code2, Server, TestTube, Wrench, Brain, Zap, Palette, FileCode2, Terminal, Cloud, Smartphone, GitBranch } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Tooltip } from 'recharts';
 
 interface Skill {
   name: string;
-  nameKey?: string; // Optional key for translation
+  nameKey?: string;
   icon: React.ReactNode;
-  level: number; // 0-100
+  level: number;
 }
 
 interface SkillCategory {
@@ -34,6 +17,25 @@ interface SkillCategory {
   color: string;
   skills: Skill[];
 }
+
+// Radar Chart Data
+const radarData = [
+  { subject: 'Frontend', A: 95, fullMark: 100 },
+  { subject: 'Backend', A: 80, fullMark: 100 },
+  { subject: 'Testing', A: 85, fullMark: 100 },
+  { subject: 'DevOps', A: 80, fullMark: 100 },
+  { subject: 'AI Tools', A: 95, fullMark: 100 },
+  { subject: 'Soft Skills', A: 95, fullMark: 100 },
+];
+
+const softSkills = [
+  { name: 'Aprendizaje Autónomo', level: 100 },
+  { name: 'Resolución de Problemas', level: 100 },
+  { name: 'Comunicación', level: 95 },
+  { name: 'Adaptabilidad', level: 95 },
+  { name: 'Pensamiento Crítico', level: 90 },
+  { name: 'Trabajo en Equipo', level: 90 },
+];
 
 const skillCategoriesData: SkillCategory[] = [
   {
@@ -56,8 +58,8 @@ const skillCategoriesData: SkillCategory[] = [
       { name: 'Firebase', icon: <Cloud className="w-4 h-4" />, level: 95 },
       { name: 'Supabase', icon: <Server className="w-4 h-4" />, level: 70 },
       { name: 'Node.js', icon: <Terminal className="w-4 h-4" />, level: 75 },
-      { name: 'Deno', icon: <Terminal className="w-4 h-4" />, level: 60 },
-      { name: 'Upstash Redis', icon: <Server className="w-4 h-4" />, level: 65 },
+      { name: 'FastAPI', icon: <Terminal className="w-4 h-4" />, level: 70 },
+      { name: 'MongoDB', icon: <Server className="w-4 h-4" />, level: 65 },
     ],
   },
   {
@@ -80,25 +82,11 @@ const skillCategoriesData: SkillCategory[] = [
       { name: 'Git', icon: <GitBranch className="w-4 h-4" />, level: 95 },
       { name: 'GitHub Actions', icon: <Zap className="w-4 h-4" />, level: 85 },
       { name: 'Firebase CLI', icon: <Terminal className="w-4 h-4" />, level: 90 },
-      { name: 'Capacitor', icon: <Smartphone className="w-4 h-4" />, level: 75 },
       { name: 'PWA/Workbox', icon: <Smartphone className="w-4 h-4" />, level: 80 },
-    ],
-  },
-  {
-    key: 'soft',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-amber-500 to-yellow-500',
-    skills: [
-      { nameKey: 'learning', name: 'Aprendizaje Autónomo', icon: <Search className="w-4 h-4" />, level: 100 },
-      { nameKey: 'problemSolving', name: 'Resolución de Problemas', icon: <Puzzle className="w-4 h-4" />, level: 100 },
-      { nameKey: 'communication', name: 'Comunicación', icon: <MessageSquare className="w-4 h-4" />, level: 95 },
-      { nameKey: 'adaptability', name: 'Adaptabilidad', icon: <Zap className="w-4 h-4" />, level: 95 },
-      { nameKey: 'criticalThinking', name: 'Pensamiento Crítico', icon: <Brain className="w-4 h-4" />, level: 90 },
+      { name: 'Docker', icon: <Server className="w-4 h-4" />, level: 60 },
     ],
   },
 ];
-
-
 
 // Helper to get label key based on level
 const getSkillLabelKey = (level: number) => {
@@ -118,10 +106,10 @@ const getSkillBadgeClass = (level: number) => {
 // Fixed SkillBar to accept color again
 function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly color: string }) {
   const { t } = useTranslation();
-  const displayName = skill.nameKey 
-    ? t(`skills.categories.soft.items.${skill.nameKey}`) 
+  const displayName = skill.nameKey
+    ? t(`skills.categories.soft.items.${skill.nameKey}`)
     : skill.name;
-    
+
   const labelKey = getSkillLabelKey(skill.level);
   const badgeClass = getSkillBadgeClass(skill.level);
 
@@ -141,6 +129,16 @@ function SkillBarWithColor({ skill, color }: { readonly skill: Skill; readonly c
           {t(labelKey)}
         </span>
       </div>
+      {/* Progress Bar */}
+      <div className="h-1.5 w-full bg-dark-800 rounded-full overflow-hidden">
+        <motion.div
+          className={`h-full bg-gradient-to-r ${color}`}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${skill.level}%` }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+      </div>
     </motion.div>
   );
 }
@@ -153,17 +151,17 @@ function SkillCard({ category }: { readonly category: SkillCategory }) {
       className="card card-hover p-6"
       variants={fadeInUp}
     >
-      <div className="flex items-center gap-3 mb-2">
-        <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white`}>
+      <div className="flex items-center gap-3 mb-6">
+        <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white shadow-lg`}>
           {category.icon}
         </div>
         <div>
           <h3 className="heading-3 text-dark-100">{t(`skills.categories.${category.key}.title`)}</h3>
-          <p className="text-dark-500 text-xs">{t(`skills.categories.${category.key}.description`)}</p>
+          <p className="text-dark-400 text-xs font-medium tracking-wide uppercase">{t(`skills.categories.${category.key}.description`)}</p>
         </div>
       </div>
-      
-      <div className="space-y-4 mt-4">
+
+      <div className="space-y-5">
         {category.skills.map((skill) => (
           <SkillBarWithColor key={skill.name} skill={skill} color={category.color} />
         ))}
@@ -177,41 +175,108 @@ export function Skills() {
 
   return (
     <section id="skills" className="section relative">
-      {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-primary-500/5 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-dark-800/50 via-dark-950 to-dark-950" />
       </div>
 
       <div className="container-custom relative z-10">
-        <SectionTitle
-          title={t('skills.title')}
-          subtitle={t('skills.subtitle')}
-        />
+        <div className="text-center mb-16">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            Habilidades <span className="text-gradient">& Tecnologías</span>
+          </h2>
+          <p className="text-xl text-dark-300 font-medium mb-8">
+            {t('skills.subtitle')}
+          </p>
 
-        {/* AI Badge */}
-        <motion.div 
-          className="flex justify-center mb-12"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/30 text-accent-400 text-sm">
-            <Bot className="w-4 h-4" />
-            <span>{t('skills.aiBadge')}</span>
-          </div>
-        </motion.div>
+          <motion.div
+            className="inline-flex justify-center"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-dark-800/80 border border-neon-purple/30 text-neon-purple shadow-lg shadow-neon-purple/10 backdrop-blur-sm transition-all hover:scale-105">
+              <Bot className="w-5 h-5" />
+              <span className="font-medium tracking-wide">{t('skills.aiBadge')}</span>
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Percentage Note */}
-        <motion.p 
-          className="text-center text-dark-400 text-sm max-w-2xl mx-auto mb-8 italic"
-          variants={fadeInUp}
-        >
-          <Trans i18nKey="skills.disclaimer">
-            * Los porcentajes reflejan mi <span className="text-primary-400 font-medium">nivel de autonomía</span> usando cada tecnología en proyectos reales.
-          </Trans>
-        </motion.p>
+        {/* Top Section: Radar & Soft Skills */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          {/* Radar Chart */}
+          <motion.div
+            className="bg-dark-900/50 border border-dark-700/50 rounded-3xl p-6 min-h-[400px] flex items-center justify-center relative overflow-hidden"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="absolute inset-0 bg-gradient-radial from-primary-500/5 to-transparent opacity-50" />
+            <div className="w-full h-[350px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
+                  <PolarGrid stroke="#334155" strokeDasharray="3 3" />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 500 }} />
+                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                  <Radar
+                    name="Skills"
+                    dataKey="A"
+                    stroke="#06b6d4"
+                    strokeWidth={2}
+                    fill="#06b6d4"
+                    fillOpacity={0.2}
+                  />
+                  <Tooltip
+                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', borderRadius: '0.75rem', color: '#f1f5f9' }}
+                    itemStyle={{ color: '#06b6d4' }}
+                  />
+                </RadarChart>
+              </ResponsiveContainer>
+            </div>
+          </motion.div>
 
+          {/* Soft Skills */}
+          <motion.div
+            className="bg-dark-900/50 border border-dark-700/50 rounded-3xl p-8"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-500">
+                <Brain className="w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white font-outfit">Soft Skills</h3>
+                <p className="text-dark-400">Habilidades que me diferencian</p>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6">
+              {softSkills.map((skill) => (
+                <div key={skill.name}>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-dark-200 font-medium">{skill.name}</span>
+                    <span className="text-amber-500 font-bold">{skill.level}%</span>
+                  </div>
+                  <div className="h-2 w-full bg-dark-800 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-gradient-to-r from-amber-500 to-yellow-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Technical Skills Grid */}
         <motion.div
           className="grid md:grid-cols-2 gap-6"
           variants={staggerContainer}

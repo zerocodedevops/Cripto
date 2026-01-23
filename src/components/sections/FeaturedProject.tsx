@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ExternalLink, Star, Users, FileCode, GitCommit, Github as GithubIcon } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Button, TechBadge, SectionTitle } from '@/components/ui';
+import { Button, TechBadge } from '@/components/ui';
 import { fadeInUp, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 
 const featuredProject = {
@@ -28,20 +28,11 @@ const featuredProject = {
   repoUrl: 'https://github.com/zerocodedevops',
 };
 
-import { useState, useEffect } from 'react';
 
-const projectImages = Array.from({ length: 9 }, (_, i) => `/assets/projects/j-barranco/${i + 1}.png`);
+import featuredProjectImage from '@/assets/projects/featured_project_dashboard.jpg';
 
 export function FeaturedProject() {
   const { t } = useTranslation();
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % projectImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section className="section relative overflow-hidden">
@@ -52,10 +43,14 @@ export function FeaturedProject() {
       </div>
 
       <div className="container-custom relative z-10">
-        <SectionTitle
-          title={t('featuredProject.title')}
-          subtitle={t('featuredProject.subtitle')}
-        />
+        <div className="mb-12 text-center">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
+            Proyectos <span className="text-gradient">Destacados</span>
+          </h2>
+          <p className="text-xl text-dark-300 font-medium max-w-2xl mx-auto">
+            SaaS empresarial real en producción
+          </p>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Visual side - Code Preview */}
@@ -69,35 +64,15 @@ export function FeaturedProject() {
             <div className="relative group">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
-              
-              {/* Main frame - Slideshow */}
-              <div className="relative bg-dark-900 border border-dark-700/50 rounded-2xl overflow-hidden shadow-2xl aspect-[16/10]">
-                <AnimatePresence mode="wait">
-                  <motion.img 
-                    key={projectImages[currentImage]}
-                    src={projectImages[currentImage]}
-                    alt={`ZeroCode Project Demo Slide ${currentImage + 1}`}
-                    className="absolute inset-0 w-full h-full object-fill"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </AnimatePresence>
 
-                {/* Progress Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 bg-dark-900/50 px-3 py-1.5 rounded-full backdrop-blur-sm border border-dark-700/30">
-                  {projectImages.map((img, idx) => (
-                    <button
-                      key={img}
-                      onClick={() => setCurrentImage(idx)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        idx === currentImage ? 'bg-primary-400 w-4' : 'bg-dark-500 hover:bg-dark-300'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
+              {/* Main frame - Single Image */}
+              <div className="relative bg-dark-900 border border-dark-700/50 rounded-2xl overflow-hidden shadow-2xl aspect-[16/10]">
+                <img
+                  src={featuredProjectImage}
+                  alt="ZeroCode Project Dashboard"
+                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
           </motion.div>
