@@ -4,13 +4,14 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Ash Gray Palette */
+    --background: 220 15% 10%; /* Dark Ash Gray */
+    --foreground: 220 10% 98%;
     
-    --card: 240 10% 6%; /* Deep Charcoal */
+    --card: 220 15% 13%; /* Lighter Ash */
     --card-foreground: 0 0% 98%;
  
-    --popover: 240 10% 3.9%;
+    --popover: 220 15% 10%;
     --popover-foreground: 0 0% 98%;
  
     --primary: 46 83% 58%; /* Rich Gold */
@@ -60,7 +61,7 @@
   }
   
   .glass-card {
-    @apply bg-black/40 backdrop-blur-xl border border-white/5 shadow-2xl;
+    @apply bg-[#1a1c23]/60 backdrop-blur-xl border border-white/5 shadow-2xl;
     box-shadow: 0 0 0 1px rgba(191, 149, 63, 0.1), 0 20px 40px -20px rgba(0, 0, 0, 0.7);
   }
 }

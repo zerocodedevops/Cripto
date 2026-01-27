@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { X, Save, Calendar as CalIcon, Clock, User, Scissors } from 'lucide-react'
-import { BookingService } from '@/services/mockData'
+import { BookingService } from '@salon/services/mockData'
 import { format } from 'date-fns'
 
 interface EditModalProps {

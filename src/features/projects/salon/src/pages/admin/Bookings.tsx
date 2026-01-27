@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import BookingActions from '@/components/admin/BookingActions';
-import { BookingService, Booking } from '@/services/mockData';
+import BookingActions from '@salon/components/admin/BookingActions';
+import { BookingService, Booking } from '@salon/services/mockData';
 import { format } from 'date-fns';
 
 export default function Bookings() {

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getAdminBookings } from "@/features/admin/actions";
-import BookingCalendar from "@/components/admin/BookingCalendar";
+import { getAdminBookings } from "@salon/features/admin/actions";
+import BookingCalendar from "@salon/components/admin/BookingCalendar";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 

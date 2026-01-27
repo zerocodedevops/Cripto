@@ -78,10 +78,11 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    title: 'Salón de Belleza',
+    title: 'Zero Vanity',
     image: projectSalon,
-    tags: ['React', 'Tailwind', 'Vite'],
+    tags: ['React', 'Tailwind', 'Vite', 'Framer Motion'],
     demoUrl: '#/proyectos/salon',
+    repoUrl: 'https://github.com/zerocodedevops/ZeroVanity',
     status: 'Development',
   },
   {

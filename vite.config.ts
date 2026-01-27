@@ -32,6 +32,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@salon': fileURLToPath(new URL('./src/features/projects/salon/src', import.meta.url)),
     },
     dedupe: ['react', 'react-dom'],
   },
@@ -42,17 +43,22 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // Isolate Firebase - it's huge and independent
+            // STRATEGY: Denylist (Safer)
+            // Put everything in vendor by default to ensure all tiny dependencies (scheduler, object-assign, etc.)
+            // are bundled with React. Only explicitly extract large, independent libraries.
+
+            // Large independent libs to split
             if (id.includes('firebase')) return 'firebase';
-
-            // Isolate Recharts - it's also big
             if (id.includes('recharts')) return 'charts';
+            if (id.includes('jspdf') || id.includes('html2canvas') || id.includes('canvas-confetti')) return 'utils';
 
-            // Everything else in vendor to ensure safe dependency resolution (React, Framer, UI libs)
+            // Everything else stays in vendor (React, Framer, Router, i18n, etc.)
+            // This guarantees the app boots correctly.
             return 'vendor';
           }
         },

@@ -1,14 +1,14 @@
 "use client"
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 
 // Step Components (Inline for now or imported later)
-import CategoryStep from '@/components/booking/steps/CategoryStep'
-import ServiceStep from '@/components/booking/steps/ServiceStep'
-import StaffStep from '@/components/booking/steps/StaffStep'
-import DateStep from '@/components/booking/steps/DateStep'
-import ConfirmationStep from '@/components/booking/steps/ConfirmationStep'
+import CategoryStep from '@salon/components/booking/steps/CategoryStep'
+import ServiceStep from '@salon/components/booking/steps/ServiceStep'
+import StaffStep from '@salon/components/booking/steps/StaffStep'
+import DateStep from '@salon/components/booking/steps/DateStep'
+import ConfirmationStep from '@salon/components/booking/steps/ConfirmationStep'
 
 export default function BookingWizard({ services, staff }: Readonly<{ services: any[], staff: any[] }>) {
     const { step } = useBookingStore()

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { ArrowLeft } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@salon/components/ui/button'
 
 export default function StaffStep({ staff }: Readonly<{ staff: any[] }>) {
     const t = useTranslations('Booking')

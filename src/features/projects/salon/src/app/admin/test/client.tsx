@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { getAvailableSlots, createBooking } from '@/features/booking/actions'
+import { Button } from '@salon/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@salon/components/ui/card'
+import { Input } from '@salon/components/ui/input'
+import { getAvailableSlots, createBooking } from '@salon/features/booking/actions'
 import {
     Select,
     SelectContent,
@@ -12,7 +12,7 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
+} from "@salon/components/ui/select"
 import { Label } from "@radix-ui/react-label"
 
 export default function BookingDebugger({ services, staff }: Readonly<{ services: any[], staff: any[] }>) {

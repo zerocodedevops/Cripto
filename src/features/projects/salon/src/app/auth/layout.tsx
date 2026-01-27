@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "../globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "@salon/lib/utils";
 
 const playfair = Playfair_Display({
     subsets: ["latin"],

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import BookingCalendar from '@/components/admin/BookingCalendar';
-import { BookingService, Booking } from '@/services/mockData';
+import BookingCalendar from '@salon/components/admin/BookingCalendar';
+import { BookingService, Booking } from '@salon/services/mockData';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 

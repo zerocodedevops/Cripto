@@ -1,7 +1,7 @@
-import { getAdminBookings } from "@/features/admin/actions";
+import { getAdminBookings } from "@salon/features/admin/actions";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import BookingActions from "@/components/admin/BookingActions";
+import BookingActions from "@salon/components/admin/BookingActions";
 
 export default async function AdminBookingsPage() {
     const bookings = await getAdminBookings();

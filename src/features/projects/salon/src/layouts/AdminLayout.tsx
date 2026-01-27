@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Calendar, Users, Settings, LogOut } from 'lucide-react';
-import { cn } from '@/lib/utils'; // Assuming utils still exists or I need to recreate it
+import { cn } from '@salon/lib/utils'; // Assuming utils still exists or I need to recreate it
 
 export default function AdminLayout() {
     const location = useLocation();
@@ -14,9 +14,9 @@ export default function AdminLayout() {
     ];
 
     return (
-        <div className="flex min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-[#BF953F] selection:text-black">
+        <div className="flex min-h-screen bg-background text-foreground font-sans selection:bg-[#BF953F] selection:text-black">
             {/* Sidebar */}
-            <aside className="w-64 border-r border-white/10 bg-black/40 hidden md:flex flex-col">
+            <aside className="w-64 border-r border-white/10 bg-card/40 hidden md:flex flex-col">
                 <div className="p-6 border-b border-white/10">
                     <h1 className="text-xl font-heading text-[#d4af37] tracking-wider">ZERO | Admin</h1>
                 </div>
@@ -55,7 +55,7 @@ export default function AdminLayout() {
             {/* Main Content */}
             <main className="flex-1 flex flex-col h-screen overflow-hidden">
                 <div className="flex-1 overflow-auto bg-[url('https://res.cloudinary.com/dnggn27qg/image/upload/v1714050000/noise_p0x1yq.png')] bg-repeat opacity-100">
-                    <div className="bg-black/20 min-h-full">
+                    <div className="bg-background/20 min-h-full">
                         <Outlet />
                     </div>
                 </div>

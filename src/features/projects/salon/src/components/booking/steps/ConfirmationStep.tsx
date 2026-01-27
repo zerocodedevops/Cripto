@@ -1,11 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { CheckCircle, Loader2 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { createBooking } from '@/features/booking/actions'
+import { Button } from '@salon/components/ui/button'
+import { createBooking } from '@salon/features/booking/actions'
 import Link from 'next/link'
 
 export default function ConfirmationStep() {

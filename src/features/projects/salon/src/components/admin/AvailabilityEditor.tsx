@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { updateAvailability } from '@/features/admin/staffActions'
+import { updateAvailability } from '@salon/features/admin/staffActions'
 import { Save, Clock, Trash } from 'lucide-react'
 
 const DAYS = [

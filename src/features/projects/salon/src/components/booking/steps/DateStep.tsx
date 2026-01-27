@@ -1,11 +1,11 @@
 "use client"
 import { useState, ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { ArrowLeft, Clock } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { getAvailableSlots } from '@/features/booking/actions'
+import { Button } from '@salon/components/ui/button'
+import { getAvailableSlots } from '@salon/features/booking/actions'
 
 export default function DateStep() {
     const t = useTranslations('Booking')

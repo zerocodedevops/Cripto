@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { LayoutDashboard, Users, Calendar, Settings, LogOut } from 'lucide-react'
 import { Playfair_Display, Lato } from "next/font/google";
 import "../globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "@salon/lib/utils";
 
 const playfair = Playfair_Display({
     subsets: ["latin"],

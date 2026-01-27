@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Trash2, MoreHorizontal, CheckCircle, XCircle, Edit } from 'lucide-react'
-import { BookingService } from '@/services/mockData'
+import { BookingService } from '@salon/services/mockData'
 import BookingEditModal from './BookingEditModal'
 
 export default function BookingActions({ booking }: { readonly booking: any }) {

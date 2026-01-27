@@ -1,6 +1,6 @@
 'use server'
 
-import prisma from '@/lib/prisma'
+import prisma from '@salon/lib/prisma'
 import { startOfDay, endOfDay } from 'date-fns'
 
 export interface TimeSlot {

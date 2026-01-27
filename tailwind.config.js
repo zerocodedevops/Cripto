@@ -55,6 +55,17 @@ export default {
           900: '#f1f5f9',
           950: '#f8fafc',
         },
+        // Theme variables for Salon project (Ash Gray support)
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: "hsl(var(--card))",
+        "card-foreground": "hsl(var(--card-foreground))",
+        popover: "hsl(var(--popover))",
+        "popover-foreground": "hsl(var(--popover-foreground))",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+
         neon: {
           cyan: '#06b6d4', // Reference primary
           purple: '#8b5cf6', // Reference secondary
@@ -65,6 +76,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         outfit: ['Outfit', 'sans-serif'],
+        // Salon Theme Fonts
+        heading: ['var(--font-heading)', 'serif'],
+        body: ['var(--font-body)', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 8px 24px rgba(0,0,0,0.08)',

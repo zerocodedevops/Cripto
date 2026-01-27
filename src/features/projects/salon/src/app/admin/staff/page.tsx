@@ -1,5 +1,5 @@
-import { getAdminStaff } from "@/features/admin/staffActions";
-import StaffList from "@/components/admin/StaffList";
+import { getAdminStaff } from "@salon/features/admin/staffActions";
+import StaffList from "@salon/components/admin/StaffList";
 
 export default async function AdminStaffPage() {
     const staff = await getAdminStaff();

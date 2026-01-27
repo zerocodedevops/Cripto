@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma'
+import prisma from '@salon/lib/prisma'
 import BookingDebugger from './client'
 
 export default async function TestPage() {

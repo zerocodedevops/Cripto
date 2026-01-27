@@ -13,21 +13,22 @@ logPageView();
 
 async function enableMocking() {
   const USE_WEBSOCKET = import.meta.env.VITE_USE_WEBSOCKET === 'true';
-  
+
+  // Disable MSW in production to prevent CSP errors and performance impact
+  if (import.meta.env.PROD) {
+    return;
+  }
+
   // Enable MSW for HTTP mocking only (not WebSocket)
   const { worker } = await import('./mocks/browser');
-  
-  if (import.meta.env.DEV) {
-    console.log('🎭 MSW enabled (Development)');
-  } else {
-    console.log('🎭 MSW enabled (Production)');
-  }
-  
+
+  console.log('🎭 MSW enabled (Development)');
+
   if (USE_WEBSOCKET) {
     console.log('🔌 WebSocket enabled - MSW will only mock HTTP, not WebSocket');
   }
-  
-  return worker.start({ 
+
+  return worker.start({
     onUnhandledRequest: 'bypass',
     serviceWorker: {
       url: '/mockServiceWorker.js',
@@ -47,8 +48,8 @@ ReactDOM.createRoot(rootElement).render(
     <ErrorBoundary>
       <Providers>
         {/* Skip Link for Accessibility */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg"
         >
           Saltar al contenido principal

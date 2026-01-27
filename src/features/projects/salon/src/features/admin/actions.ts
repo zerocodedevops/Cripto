@@ -1,6 +1,6 @@
 'use server'
 
-import prisma from '@/lib/prisma'
+import prisma from '@salon/lib/prisma'
 import { revalidatePath } from 'next/cache'
 
 export async function getAdminBookings() {

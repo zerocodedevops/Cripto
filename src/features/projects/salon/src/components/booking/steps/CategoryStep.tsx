@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { Scissors, Palette, Sparkles, User } from 'lucide-react'
 

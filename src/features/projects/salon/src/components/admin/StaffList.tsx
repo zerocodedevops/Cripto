@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { toggleStaffStatus } from '@/features/admin/staffActions'
+import { toggleStaffStatus } from '@salon/features/admin/staffActions'
 import { Check, X, User } from 'lucide-react'
 
 interface StaffListProps {

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { useBookingStore } from '@/store/useBookingStore'
+import { useBookingStore } from '@salon/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { Check, ArrowLeft } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@salon/components/ui/button'
 
 export default function ServiceStep({ services }: Readonly<{ services: any[] }>) {
     const t = useTranslations('Booking')
