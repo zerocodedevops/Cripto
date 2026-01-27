@@ -158,6 +158,9 @@
       },
       "7": {
         "description": "Cryptocurrency analytics dashboard with real-time data, interactive charts and market heatmap."
+      },
+      "8": {
+        "description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite."
       }
     }
   },

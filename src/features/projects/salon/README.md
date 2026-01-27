@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 💎 Zero Vanity | Luxury Salon Platform
 
-First, run the development server:
+![Zero Vanity Banner](src/assets/logo-zerovanity-hero.webp)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> *Donde la estética de vanguardia se une al lujo atemporal.*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-purple?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Status](https://img.shields.io/badge/Status-Development-yellow?style=for-the-badge)](https://github.com/zerocodedevops/ZeroVanity)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 Descripción
 
-## Learn More
+**Zero Vanity** es una plataforma web de alto rendimiento diseñada para salones de belleza de élite. Fusiona un diseño visual impactante con una arquitectura técnica robusta para ofrecer una experiencia de usuario premium desde el primer clic.
 
-To learn more about Next.js, take a look at the following resources:
+Este proyecto se centra en la **velocidad**, la **estética** y la **funcionalidad**, eliminando cualquier fricción entre el cliente y su próxima cita.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Características Principales
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🎨 Experiencia Visual (Frontend)
+- **Diseño Luxury Dark-Mode**: Interfaz sofisticada con paleta de colores dorado/negro.
+- **Micro-interacciones Fluidas**: Animaciones con `framer-motion` para una navegación suave.
+- **Galería Dinámica**: Showcase de estilos con imágenes generadas por IA de alta fidelidad.
+- **Responsive 100%**: Adaptación perfecta a móviles, tablets y escritorio.
 
-## Deploy on Vercel
+### ⚡ Rendimiento & Tecnología
+- **Optimización WebP**: Todos los activos visuales (imágenes de servicios, equipo, logos) optimizados para carga instantánea.
+- **Vite Powered**: Tiempos de arranque y Hot Module Replacement (HMR) ultrarrápidos.
+- **Type-Safe**: Base de código robusta en TypeScript.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Stack Tecnológico
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Capa | Tecnología |
+|Data | Propósito |
+|---|---|---|
+| **Core** | React 18 | Biblioteca de UI componente-céntrica |
+| **Build** | Vite | Bundler de última generación |
+| **Estilos** | Tailwind CSS | Utility-first CSS framework |
+| **Lenguaje** | TypeScript | Tipado estático para robustez |
+| **Iconos** | Lucide React | Iconografía moderna y ligera |
+| **Animación** | Framer Motion | Biblioteca de animación declarativa |
+
+## 🚀 Instalación y Despliegue
+
+### Requisitos Previos
+- Node.js 18+
+- npm o yarn
+
+### Pasos
+1.  **Clonar el repositorio**
+    ```bash
+    git clone https://github.com/zerocodedevops/ZeroVanity.git
+    cd ZeroVanity
+    ```
+
+2.  **Instalar dependencias**
+    ```bash
+    npm install
+    ```
+
+3.  **Iniciar servidor de desarrollo**
+    ```bash
+    npm run dev
+    ```
+    Visita `http://localhost:5173` para ver la aplicación.
+
+4.  **Construir para producción**
+    ```bash
+    npm run build
+    ```
+
+## 📸 Capturas de Pantalla
+
+| Landing Page | Servicios |
+|---|---|
+| ![Landing](src/assets/logo-zerovanity-hero.webp) | ![Servicios](src/assets/services/service-manicura.webp) |
+
+## 🤝 Contribución
+
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir lo que te gustaría cambiar.
+
+---
+
+<p align="center">
+  Hecho con ❤️ por <a href="https://github.com/zerocodedevops">ZeroCode DevOps</a>
+</p>

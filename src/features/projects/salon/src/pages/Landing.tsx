@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Calendar, Scissors, Sparkles, Star } from 'lucide-react'
+import { Calendar, Scissors, Sparkles, Star, X, ArrowRight, Clock, User } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import logoHero from '@salon/assets/logo-zerovanity-hero.webp'
 import logoNavbar from '@salon/assets/logo-zerovanity-navbar.webp'
 import teamImage from '@salon/assets/team-zerovanity.webp'
@@ -23,7 +25,19 @@ import galleryLook2 from '@salon/assets/gallery/gallery-look-2.webp'
 import galleryLook3 from '@salon/assets/gallery/gallery-look-3.webp'
 import galleryLook4 from '@salon/assets/gallery/gallery-look-4.webp'
 
+// Blog Images
+import blogBalayage from '@salon/assets/blog/blog-balayage.png'
+import blogHaircut from '@salon/assets/blog/blog-haircut-myth.png'
+import blogTreatment from '@salon/assets/blog/blog-treatment.png'
+import blogVisagism from '@salon/assets/blog/blog-visagism.png'
+import blogWash from '@salon/assets/blog/blog-wash.png'
+
+import { BookingModal } from '../components/BookingModal'
+
 export default function Landing() {
+    const [selectedPost, setSelectedPost] = useState<typeof BLOG_POSTS[0] | null>(null);
+    const [isBookingOpen, setIsBookingOpen] = useState(false);
+
     return (
         <div className="min-h-screen bg-background text-[#FCF6BA] font-body selection:bg-[#BF953F] selection:text-black">
             {/* Background Effects */}
@@ -95,12 +109,15 @@ export default function Landing() {
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-                    <Link to="auth/login" className="group relative px-8 py-4 bg-[#BF953F] text-black font-bold uppercase tracking-widest overflow-hidden rounded-sm hover:scale-105 transition-transform duration-300">
+                    <button
+                        onClick={() => setIsBookingOpen(true)}
+                        className="group relative px-8 py-4 bg-[#BF953F] text-black font-bold uppercase tracking-widest overflow-hidden rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    >
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         <span className="relative flex items-center gap-3">
                             RESERVAR CITA <Calendar size={18} />
                         </span>
-                    </Link>
+                    </button>
                 </div>
 
                 {/* About Section */}
@@ -154,7 +171,7 @@ export default function Landing() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full">
                         {SERVICES.map((service, index) => (
                             <ServiceCard key={service.title} {...service} delay={index * 100} />
                         ))}
@@ -183,16 +200,36 @@ export default function Landing() {
                 {/* Blog Section */}
                 <section id="blog" className="w-full mt-40 scroll-mt-32">
                     <h2 className="font-heading text-4xl text-[#FCF6BA] mb-12 text-center">Últimas Novedades</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[1, 2, 3].map(i => (
-                            <div key={i} className="border border-white/5 bg-background p-6">
-                                <div className="aspect-video bg-neutral-900 mb-4">
-                                    <img src={`https://placehold.co/600x400/1a1a1a/BF953F?text=Articulo+${i}`} alt="Blog" className="w-full h-full object-cover" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {BLOG_POSTS.map((post, index) => (
+                            <button
+                                key={post.id}
+                                className="group w-full text-left cursor-pointer border border-white/5 bg-background hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col h-full"
+                                onClick={() => setSelectedPost(post)}
+                            >
+                                <div className="aspect-video w-full overflow-hidden">
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
                                 </div>
-                                <span className="text-[#BF953F] text-xs uppercase tracking-widest">Tendencias</span>
-                                <h3 className="font-heading text-xl text-white mt-2 mb-2">Secretos de Belleza {2026}</h3>
-                                <p className="text-neutral-500 text-sm">Descubre los tratamientos que marcarán la temporada...</p>
-                            </div>
+                                <div className="p-6 flex-1 flex flex-col">
+                                    <div className="flex items-center gap-4 mb-3">
+                                        <span className="text-[#BF953F] text-xs uppercase tracking-widest font-bold">{post.category}</span>
+                                        <span className="text-neutral-600 text-xs flex items-center gap-1">• <Clock size={10} /> {post.readTime}</span>
+                                    </div>
+                                    <h3 className="font-heading text-xl text-[#FCF6BA] mb-3 group-hover:text-white transition-colors line-clamp-2 leading-tight">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-neutral-400 text-sm leading-relaxed line-clamp-3 mb-6 flex-1 font-light">
+                                        {post.excerpt}
+                                    </p>
+                                    <div className="flex items-center text-[#BF953F] text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-300">
+                                        Leer Artículo <ArrowRight size={12} className="ml-2" />
+                                    </div>
+                                </div>
+                            </button>
                         ))}
                     </div>
                 </section>
@@ -222,7 +259,9 @@ export default function Landing() {
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 border border-[#BF953F] flex items-center justify-center">
-                                        <Calendar size={18} className="text-[#BF953F]" />
+                                        <div className="w-10 h-10 border border-[#BF953F] flex items-center justify-center">
+                                            <Calendar size={18} className="text-[#BF953F]" />
+                                        </div>
                                     </div>
                                     <div>
                                         <p className="text-xs uppercase tracking-widest text-[#BF953F]">Horario</p>
@@ -243,6 +282,16 @@ export default function Landing() {
             <footer className="relative z-10 w-full border-t border-white/5 mt-32 py-8 text-center">
                 <p className="text-neutral-600 text-xs uppercase tracking-widest">© 2026 Zero Salon. The Art of Coding.</p>
             </footer>
+
+            {/* Render Blog Modal if selected */}
+            <AnimatePresence>
+                {selectedPost && (
+                    <BlogModal post={selectedPost} onClose={() => setSelectedPost(null)} />
+                )}
+                {isBookingOpen && (
+                    <BookingModal onClose={() => setIsBookingOpen(false)} />
+                )}
+            </AnimatePresence>
         </div>
     )
 }
@@ -260,7 +309,7 @@ function FeatureCard({ icon, title, desc, delay }: Readonly<{ icon: any, title: 
 function ServiceCard({ title, desc, image, delay }: Readonly<{ title: string, desc: string, image: string, delay: number }>) {
     return (
         <div
-            className="group relative overflow-hidden rounded-sm border border-white/5 bg-background hover:border-[#BF953F]/30 transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 fill-mode-backwards"
+            className="group relative overflow-hidden rounded-sm border border-[#BF953F]/40 bg-background hover:border-[#BF953F] hover:shadow-[0_0_20px_rgba(191,149,63,0.2)] hover:scale-[1.02] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 fill-mode-backwards"
             style={{ animationDelay: `${delay}ms` }}
         >
             <div className="aspect-[4/3] w-full overflow-hidden">
@@ -279,9 +328,248 @@ function ServiceCard({ title, desc, image, delay }: Readonly<{ title: string, de
     )
 }
 
+function BlogModal({ post, onClose }: Readonly<{ post: typeof BLOG_POSTS[0], onClose: () => void }>) {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-md"
+            onClick={onClose}
+        >
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 50, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="bg-[#121212] w-full max-w-4xl max-h-full md:max-h-[90vh] overflow-y-auto rounded-sm border border-white/10 shadow-2xl relative flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Header Image */}
+                <div className="relative w-full h-64 md:h-96 shrink-0">
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121212] to-transparent opacity-90" />
+
+                    <button
+                        onClick={onClose}
+                        className="absolute top-6 right-6 p-2 bg-black/50 hover:bg-[#BF953F] text-white rounded-full transition-colors z-20"
+                    >
+                        <X size={20} />
+                    </button>
+
+                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-12">
+                        <span className="inline-block px-3 py-1 mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-black bg-[#BF953F]">
+                            {post.category}
+                        </span>
+                        <h2 className="font-heading text-3xl md:text-5xl text-[#FCF6BA] mb-4 leading-tight max-w-3xl">
+                            {post.title}
+                        </h2>
+                        <div className="flex items-center gap-6 text-sm text-neutral-400 font-light">
+                            <span className="flex items-center gap-2"><User size={14} /> Equipo Estilistas</span>
+                            <span className="flex items-center gap-2"><Clock size={14} /> {post.readTime} de lectura</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-8 md:p-16 flex justify-center">
+                    <div className="prose prose-invert prose-lg max-w-2xl font-light text-neutral-300 leading-relaxed">
+                        <div className="first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:mt-[-5px] first-letter:font-heading first-letter:text-[#BF953F]">
+                            {post.content}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Footer CTA */}
+                <div className="border-t border-white/5 p-8 text-center bg-white/[0.02]">
+                    <p className="text-[#FCF6BA] font-heading text-xl mb-4">¿Te gustaría probar este servicio?</p>
+                    <Link
+                        to="auth/login"
+                        className="inline-block px-8 py-3 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-colors uppercase text-xs font-bold tracking-widest"
+                    >
+                        Reservar Cita Ahora
+                    </Link>
+                </div>
+            </motion.div>
+        </motion.div>
+    )
+}
+
+const BLOG_POSTS = [
+    {
+        id: 1,
+        title: "Balayage, Babylights o Melting: La guía definitiva para saber qué rubio pedirle a tu estilista",
+        category: "Color & Tendencias",
+        readTime: "4 min",
+        image: blogBalayage,
+        excerpt: "¿Confundida con la terminología? No eres la única. Muchos clientes no saben la diferencia técnica entre estos servicios. Esta guía promete claridad y te ayuda a tomar una decisión informada antes de tu cita.",
+        content: (
+            <>
+                <p>
+                    En el mundo de la peluquería, los términos técnicos pueden resultar abrumadores. ¿Buscas un degradado sutil o un contraste marcado?
+                    La diferencia entre un resultado espectacular y uno decepcionante suele estar en la comunicación.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Balayage: El arte de la "mano alzada"</h3>
+                <p>
+                    El <strong>Balayage</strong> no es un look específico, sino una técnica francesa que significa "barrer". El colorista pinta el aclarado a mano alzada directamente sobre el cabello, creando un efecto degradado natural, como si el sol hubiera aclarado tus puntas. Es perfecto si buscas un mantenimiento bajo y un crecimiento sin líneas marcadas.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Babylights: Sutileza extrema</h3>
+                <p>
+                    Las <strong>Babylights</strong> son micro-mechas tejidas muy finas, diseñadas para imitar los reflejos naturales que tienen los niños en el cabello. Aportan una luminosidad global y vibrante desde la raíz, ideal para rubios nórdicos o para iluminar bases castañas sin cambiar drásticamente el tono.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Color Melting: La fusión perfecta</h3>
+                <p>
+                    Si odias el "efecto raíz", el <strong>Color Melting</strong> es para ti. Esta técnica funde el color base con las mechas utilizando uno o varios tonos intermedios, eliminando cualquier línea de demarcación visible. El resultado es un flujo de color orgánico y lujoso.
+                </p>
+                <div className="bg-[#BF953F]/10 border-l-2 border-[#BF953F] p-6 my-8 italic text-neutral-200">
+                    "La clave está en no pedir una técnica, sino mostrar el resultado que deseas. Trae fotos y déjanos asesorarte sobre qué técnica (o combinación) es la ideal para tu tipo de cabello."
+                </div>
+            </>
+        )
+    },
+    {
+        id: 2,
+        title: "¿Cortar las puntas realmente hace que el pelo crezca más rápido? 5 Mitos de peluquería desmentidos",
+        category: "Mitos & Realidades",
+        readTime: "3 min",
+        image: blogHaircut,
+        excerpt: "Hay mucha desinformación sobre el cuidado capilar. Los mitos generan curiosidad inmediata, pero aquí nos posicionamos como los expertos para revelarte la verdad sobre el crecimiento y salud de tu cabello.",
+        content: (
+            <>
+                <p>
+                    Todos hemos escuchado consejos de abuelas o trucos de internet que prometen melenas de Rapunzel en una semana.
+                    Es hora de separar la ciencia de la ficción.
+                </p>
+                <ul className="list-none space-y-6 mt-6">
+                    <li>
+                        <strong className="text-[#FCF6BA] block mb-1">Mito 1: Cortar las puntas acelera el crecimiento.</strong>
+                        <span className="block pl-4 border-l border-neutral-700">
+                            <strong>Falso.</strong> El cabello crece desde la raíz (folículo), no desde las puntas. Cortarlo no envía ninguna señal mágica a la raíz.
+                            Sin embargo, sanear las puntas evita que se abran (orzuela) y se rompan hacia arriba, lo que hace que tu melena <em>parezca</em> más larga y densa porque no pierde longitud por rotura.
+                        </span>
+                    </li>
+                    <li>
+                        <strong className="text-[#FCF6BA] block mb-1">Mito 2: Arrancarse una cana hace que salgan siete.</strong>
+                        <span className="block pl-4 border-l border-neutral-700">
+                            <strong>Falso.</strong> Cada cabello tiene su propio folículo. Arrancar uno no afecta a los de alrededor. Pero cuidado: puedes dañar el folículo permanentemente y que deje de crecer pelo ahí.
+                        </span>
+                    </li>
+                    <li>
+                        <strong className="text-[#FCF6BA] block mb-1">Mito 3: Lavarse el pelo todos los días es malo.</strong>
+                        <span className="block pl-4 border-l border-neutral-700">
+                            <strong>Depende.</strong> No es intrínsecamente malo si usas el champú adecuado. La higiene del cuero cabelludo es vital. Si tienes grasa, debes lavarlo; si es seco, espacia los lavados.
+                        </span>
+                    </li>
+                </ul>
+            </>
+        )
+    },
+    {
+        id: 3,
+        title: "SOS Cabello Dañado: La rutina de 3 pasos para recuperar el brillo después del verano",
+        category: "Cuidado & Salud",
+        readTime: "5 min",
+        image: blogTreatment,
+        excerpt: "¿Tu pelo pide auxilio? Este artículo ataca un punto de dolor muy específico. Te ofrecemos una solución práctica y sencilla para devolver la vida a tu melena tras los estragos del sol o decoloraciones.",
+        content: (
+            <>
+                <p>
+                    El sol, el cloro, la sal y las herramientas de calor son los jinetes del apocalipsis capilar.
+                    Si tu cabello se siente como paja, se enreda con mirarlo y ha perdido su brillo espejo, no necesitas cortarlo todo (todavía).
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Paso 1: Detox y Limpieza Profunda</h3>
+                <p>
+                    Antes de nutrir, hay que limpiar. Los residuos de siliconas y minerales impiden que los tratamientos penetren.
+                    Utiliza un champú clarificante suave o realiza un <strong>peeling capilar</strong> en el salón para oxigenar el cuero cabelludo y preparar la fibra.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Paso 2: Reconstrucción de Enlaces (Bond Builder)</h3>
+                <p>
+                    La hidratación (agua) no es suficiente si la estructura interna está rota. Necesitas proteínas y  multiplicadores de enlaces (tipo Olaplex o K18).
+                    Estos tratamientos reparan los puentes disulfuro rotos, devolviendo la fuerza y elasticidad.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Paso 3: Sellado de Cutícula (Acidificación)</h3>
+                <p>
+                    El paso olvidado. Un cabello dañado tiene la cutícula abierta (perdida de brillo). Finaliza siempre con un acondicionador o mascarilla de pH ácido para sellar la fibra y atrapar los nutrientes.
+                    Y por favor, ¡usa siempre protector térmico!
+                </p>
+            </>
+        )
+    },
+    {
+        id: 4,
+        title: "Dime qué forma tiene tu rostro y te diré qué corte te favorece (Guía de Visagismo)",
+        category: "Estilo & Visagismo",
+        readTime: "6 min",
+        image: blogVisagism,
+        excerpt: "La personalización es la clave del lujo. No se trata de qué corte está de moda, sino de qué corte armoniza contigo. Esta guía de visagismo es contenido esencial para encontrar tu estilo ideal.",
+        content: (
+            <>
+                <p>
+                    ¿Alguna vez has llevado una foto de una celebridad a la peluquería y el resultado no te gustó? No fue culpa del peluquero, probablemente fue la geometría.
+                    El visagismo es el estudio de las proporciones del rostro para potenciar tus rasgos.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="bg-white/[0.03] p-6 border border-white/5">
+                        <h4 className="text-[#BF953F] font-bold mb-2">Rostro Redondo</h4>
+                        <p className="text-sm">Busca verticalidad. Cortes a capas largas, flequillos ladeados y volumen en la coronilla (tipo Pixie con tupé) alargan visualmente las facciones. Evita el Bob a la altura de la mandíbula.</p>
+                    </div>
+                    <div className="bg-white/[0.03] p-6 border border-white/5">
+                        <h4 className="text-[#BF953F] font-bold mb-2">Rostro Cuadrado</h4>
+                        <p className="text-sm">El objetivo es suavizar ángulos. Ondas suaves, capas desfiladas alrededor de la cara y el corte "Shag" funcionan de maravilla. Evita flequillos rectos y cortes geométricos duros.</p>
+                    </div>
+                    <div className="bg-white/[0.03] p-6 border border-white/5">
+                        <h4 className="text-[#BF953F] font-bold mb-2">Rostro Alargado</h4>
+                        <p className="text-sm">Necesitas volumen lateral. Un Bob ondulado, flequillos rectos o cortina acortan el rostro. Evita el pelo muy largo y liso sin forma.</p>
+                    </div>
+                    <div className="bg-white/[0.03] p-6 border border-white/5">
+                        <h4 className="text-[#BF953F] font-bold mb-2">Rostro Ovalado</h4>
+                        <p className="text-sm">¡El comodín! Tienes la "proporción áurea". Casi todo te queda bien. Atrévete con cortes radicales o tendencias arriesgadas, tu estructura ósea lo soporta todo.</p>
+                    </div>
+                </div>
+            </>
+        )
+    },
+    {
+        id: 5,
+        title: "Lo que tu peluquero ve (y tú no) cuando te lavas el pelo en casa: Errores comunes",
+        category: "Tips Profesionales",
+        readTime: "4 min",
+        image: blogWash,
+        excerpt: "Crea un sentido de urgencia y curiosidad ('¿Lo estaré haciendo mal?'). Te explicamos los errores invisibles que apagan tu color y cómo corregirlos para mantener el resultado de salón en casa.",
+        content: (
+            <>
+                <p>
+                    Inviertes en el mejor color y corte, pero tu rutina de ducha puede estar saboteándolo todo.
+                    Como profesionales, a menudo vemos signos de "malos hábitos" de lavado que apagan el brillo y deshidratan la fibra.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Error 1: Frotar las puntas como si fuera ropa</h3>
+                <p>
+                    El champú es para el cuero cabelludo, donde está la grasa. La espuma que cae es suficiente para limpiar los largos.
+                    Frotar las puntas agresivamente abre la cutícula y provoca enredos y rotura. Masejea solo la raíz.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Error 2: Agua volcánica</h3>
+                <p>
+                    Sabemos que relaja, pero el agua muy caliente disuelve los lípidos naturales y arrastra el tinte mucho más rápido.
+                    Intenta lavar con agua tibia y haz el último aclarado con agua fría para sellar el brillo.
+                </p>
+                <h3 className="text-[#FCF6BA] font-heading mt-8 mb-4">Error 3: Acondicionador en la raíz</h3>
+                <p>
+                    A menos que tengas el cuero cabelludo extremadamente seco, el acondicionador va de medios a puntas.
+                    Aplicarlo arriba resta volumen y ensucia el pelo más rápido.
+                </p>
+                <div className="mt-8">
+                    <p className="font-bold text-[#BF953F] mb-2">Nuestra recomendación:</p>
+                    <p>Utiliza nuestra línea orgánica de mantenimiento en casa, libre de sulfatos agresivos, para prolongar la vida de tu color.</p>
+                </div>
+            </>
+        )
+    }
+];
+
+
 const SERVICES = [
     {
-        title: "Corte de Pelo Mujer",
+        title: "Corte de Pelo",
         desc: "Estudio visajístico y corte personalizado adaptado a tus facciones.",
         image: serviceHaircut
     },

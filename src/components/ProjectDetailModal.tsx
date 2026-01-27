@@ -114,8 +114,8 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
                     <Code className="w-20 h-20 text-white/20" />
                   </div>
                 )}
-                
-                <button 
+
+                <button
                   onClick={onClose}
                   className="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
                 >
@@ -136,59 +136,59 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 
               {/* Scrollable Content */}
               <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 custom-scrollbar">
-                
+
                 {caseStudy ? (
                   <>
-                     {/* Introduction */}
-                     <div className="grid md:grid-cols-2 gap-8">
-                        <section>
-                          <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-                            <Layers className="w-5 h-5 text-indigo-500" />
-                            El Desafío
-                          </h3>
-                          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            {caseStudy.problem}
-                          </p>
-                        </section>
-                        <section>
-                          <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-                            <Zap className="w-5 h-5 text-yellow-500" />
-                            La Solución
-                          </h3>
-                          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            {caseStudy.solution}
-                          </p>
-                        </section>
-                     </div>
+                    {/* Introduction */}
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <section>
+                        <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+                          <Layers className="w-5 h-5 text-indigo-500" />
+                          El Desafío
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                          {caseStudy.problem}
+                        </p>
+                      </section>
+                      <section>
+                        <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+                          <Zap className="w-5 h-5 text-yellow-500" />
+                          La Solución
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                          {caseStudy.solution}
+                        </p>
+                      </section>
+                    </div>
 
-                     {/* Architecture Grid */}
-                     <section>
-                        <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Arquitectura Técnica</h3>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          {caseStudy.architecture.map((item, idx) => (
-                            <div key={idx} className="p-4 bg-slate-50 dark:bg-dark-800 rounded-xl border border-slate-100 dark:border-dark-700 hover:border-indigo-500/30 transition-colors">
-                              <div className="flex items-center gap-3 mb-2">
-                                <item.icon className="w-5 h-5 text-indigo-500" />
-                                <h4 className="font-bold text-slate-800 dark:text-indigo-100">{item.title}</h4>
-                              </div>
-                              <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
+                    {/* Architecture Grid */}
+                    <section>
+                      <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Arquitectura Técnica</h3>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {caseStudy.architecture.map((item, idx) => (
+                          <div key={idx} className="p-4 bg-slate-50 dark:bg-dark-800 rounded-xl border border-slate-100 dark:border-dark-700 hover:border-indigo-500/30 transition-colors">
+                            <div className="flex items-center gap-3 mb-2">
+                              <item.icon className="w-5 h-5 text-indigo-500" />
+                              <h4 className="font-bold text-slate-800 dark:text-indigo-100">{item.title}</h4>
                             </div>
-                          ))}
-                        </div>
-                     </section>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
 
-                     {/* Challenges List */}
-                     <section>
-                        <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">Retos Superados</h3>
-                        <ul className="space-y-2">
-                          {caseStudy.challenges.map((challenge, idx) => (
-                             <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
-                               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
-                               {challenge}
-                             </li>
-                          ))}
-                        </ul>
-                     </section>
+                    {/* Challenges List */}
+                    <section>
+                      <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">Retos Superados</h3>
+                      <ul className="space-y-2">
+                        {caseStudy.challenges.map((challenge, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
+                            {challenge}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
                   </>
                 ) : (
                   <div className="text-center py-12 text-slate-500">
@@ -200,34 +200,34 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 
               {/* Footer Actions */}
               <div className="p-6 border-t border-slate-200 dark:border-dark-700 bg-slate-50 dark:bg-dark-800/50 flex justify-between items-center shrink-0">
-                 <div className="text-sm text-slate-500">
-                    Estado: <span className="font-medium text-slate-800 dark:text-white">{project.status}</span>
-                 </div>
-                 <div className="flex gap-3">
-                    {project.repoUrl && (
-                       <Button 
-                         variant="outline" 
-                         size="sm"
-                         leftIcon={<Github className="w-4 h-4" />}
-                         onClick={() => window.open(project.repoUrl, '_blank')}
-                       >
-                         Código
-                       </Button>
-                    )}
-                    {project.demoUrl && (
-                       <Button 
-                         variant="primary" 
-                         size="sm"
-                         rightIcon={<ExternalLink className="w-4 h-4" />}
-                         onClick={() => {
-                            window.open(project.demoUrl, '_blank');
-                            trackEvent('ProjectModal', 'ClickDemo', project.title);
-                         }}
-                       >
-                         Ver Demo
-                       </Button>
-                    )}
-                 </div>
+                <div className="text-sm text-slate-500">
+                  Estado: <span className="font-medium text-slate-800 dark:text-white">{project.status}</span>
+                </div>
+                <div className="flex gap-3">
+                  {project.repoUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      leftIcon={<Github className="w-4 h-4" />}
+                      onClick={() => window.open(project.repoUrl, '_blank')}
+                    >
+                      Código
+                    </Button>
+                  )}
+                  {project.demoUrl && (
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      rightIcon={<ExternalLink className="w-4 h-4" />}
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackEvent('ProjectModal', 'ClickDemo', project.title)}
+                    >
+                      Ver Demo
+                    </Button>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>

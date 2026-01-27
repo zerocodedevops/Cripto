@@ -3,24 +3,31 @@ import { chromium } from '@playwright/test';
 import path from 'path';
 
 async function verifySalon() {
-    console.log('Starting visual verification...');
+    console.log('Starting visual verification on PREVIEW...');
     const browser = await chromium.launch();
     const page = await browser.newPage();
 
+    page.on('console', msg => {
+        if (msg.type() === 'error') console.log(`CONSOLE ERROR: "${msg.text()}"`);
+    });
+
+    page.on('pageerror', err => {
+        console.log(`PAGE ERROR: "${err.message}"`);
+    });
+
     try {
-        // Navigate to local dev server (assuming it's running)
-        // Using hash router path for salon
-        console.log('Navigating to http://localhost:5173/#/proyectos/salon');
-        await page.goto('http://localhost:5173/#/proyectos/salon', { waitUntil: 'networkidle' });
+        // Navigate to local PREVIEW server
+        console.log('Navigating to http://localhost:4173/#/proyectos/salon');
+        await page.goto('http://localhost:4173/#/proyectos/salon', { waitUntil: 'networkidle' });
 
         // Set viewport to desktop size
         await page.setViewportSize({ width: 1920, height: 1080 });
 
         // Wait a bit for animations
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(3000);
 
         // Take screenshot
-        const screenshotPath = path.resolve('salon-verification.png');
+        const screenshotPath = path.resolve('salon-verification-preview.png');
         await page.screenshot({ path: screenshotPath, fullPage: true });
         console.log(`Screenshot saved to: ${screenshotPath}`);
 

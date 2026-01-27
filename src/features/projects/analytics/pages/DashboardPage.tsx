@@ -56,17 +56,17 @@ export default function DashboardPage() {
         const next = structuredClone(prev);
 
         // Update Active Users (fluctuate)
-        const currentUsers = Number.parseInt(next.kpi.activeUsers.value.replaceAll(',', ''));
+        const currentUsers = Number.parseInt(String(next.kpi.activeUsers.value).replaceAll(',', ''));
         const userChange = Math.floor(Math.random() * 10) - 4; // -4 to +5
         next.kpi.activeUsers.value = (currentUsers + userChange).toLocaleString();
 
         // Update Revenue (only up)
         if (newRevenue > 0) {
-          const currentRev = Number.parseFloat(next.kpi.totalRevenue.value.replaceAll(',', '').replace('€', '')); // Handle format
+          const currentRev = Number.parseFloat(String(next.kpi.totalRevenue.value).replaceAll(',', '').replace('€', '')); // Handle format
           next.kpi.totalRevenue.value = (currentRev + newRevenue).toLocaleString();
 
           // Update Sales count
-          const currentSales = Number.parseInt(next.kpi.totalSales.value.replaceAll(',', ''));
+          const currentSales = Number.parseInt(String(next.kpi.totalSales.value).replaceAll(',', ''));
           next.kpi.totalSales.value = (currentSales + 1).toLocaleString();
         }
 
