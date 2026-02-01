@@ -1,64 +1,78 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Calendar, Users, Settings, LogOut } from 'lucide-react';
-import { cn } from '@salon/lib/utils'; // Assuming utils still exists or I need to recreate it
+```javascript
+import { Outlet, useNavigate, NavLink } from 'react-router-dom';
+import { supabase } from '@/lib/supabase';
+import { LayoutDashboard, LogOut, Scissors, Users } from 'lucide-react';
 
 export default function AdminLayout() {
-    const location = useLocation();
-    const pathname = location.pathname;
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        navigate('/proyectos/salon/admin/login');
+    };
 
     const navItems = [
-        { href: '/admin/dashboard', label: 'Panel', icon: LayoutDashboard },
-        { href: '/admin/bookings', label: 'Reservas', icon: Calendar },
-        { href: '/admin/staff', label: 'Equipo', icon: Users },
-        { href: '/admin/settings', label: 'Ajustes', icon: Settings },
+        { icon: LayoutDashboard, label: 'Dashboard', to: '/proyectos/salon/admin' },
+        // { icon: Calendar, label: 'Agenda', to: '/proyectos/salon/admin/calendar' }, // Merged into Dashboard
+        { icon: Scissors, label: 'Servicios', to: '/proyectos/salon/admin/services' },
+        { icon: Users, label: 'Equipo', to: '/proyectos/salon/admin/team' },
+        // { icon: Settings, label: 'Configuración', to: '/proyectos/salon/admin/settings' },
     ];
 
     return (
-        <div className="flex min-h-screen bg-background text-foreground font-sans selection:bg-[#BF953F] selection:text-black">
+        <div className="min-h-screen bg-slate-950 flex font-sans text-slate-100">
             {/* Sidebar */}
-            <aside className="w-64 border-r border-white/10 bg-card/40 hidden md:flex flex-col">
-                <div className="p-6 border-b border-white/10">
-                    <h1 className="text-xl font-heading text-[#d4af37] tracking-wider">ZERO | Admin</h1>
+            <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col fixed h-full">
+                <div className="p-6 border-b border-slate-800">
+                    <h2 className="text-xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent">
+                        Zero Vanity
+                    </h2>
+                    <span className="text-xs text-slate-500 uppercase tracking-wider">Admin Panel</span>
                 </div>
 
                 <nav className="flex-1 p-4 space-y-2">
-                    {navItems.map((item) => {
-                        const Icon = item.icon;
-                        const isActive = pathname === item.href;
-
-                        return (
-                            <Link
-                                key={item.href}
-                                to={item.href}
-                                className={cn(
-                                    "flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-sm group",
-                                    isActive
-                                        ? "bg-[#BF953F] text-black shadow-lg shadow-[#BF953F]/20"
-                                        : "text-neutral-400 hover:text-white hover:bg-white/5"
-                                )}
-                            >
-                                <Icon size={18} className={cn("transition-colors", isActive ? "text-black" : "text-neutral-500 group-hover:text-white")} />
-                                <span className="uppercase tracking-widest text-xs font-bold">{item.label}</span>
-                            </Link>
-                        )
-                    })}
+                    {navItems.map((item) => (
+                        <NavLink
+                            key={item.to}
+                            to={item.to}
+                            end={item.to === '/proyectos/salon/admin'}
+                            className={({ isActive }) =>
+                                `flex items - center space - x - 3 px - 4 py - 3 rounded - lg mb - 1 transition - all ${
+    isActive
+        ? 'bg-amber-900/30 text-amber-400 border border-amber-800/50'
+        : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+} `
+                            }
+                        >
+                            <item.icon className="w-5 h-5 mr-3" />
+                            {item.label}
+                        </NavLink>
+                    ))}
                 </nav>
 
-                <div className="p-4 border-t border-white/10">
-                    <Link to="/auth/login" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-sm transition-colors">
-                        <LogOut size={18} />
-                        <span className="uppercase tracking-widest text-xs font-bold">Salir</span>
-                    </Link>
+                <div className="p-4 border-t border-slate-800">
+                    <button
+                        onClick={handleLogout}
+                        className="flex items-center w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-900/10 rounded-lg transition-colors"
+                    >
+                        <LogOut className="w-5 h-5 mr-3" />
+                        Cerrar Sesión
+                    </button>
                 </div>
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 flex flex-col h-screen overflow-hidden">
-                <div className="flex-1 overflow-auto bg-[url('https://res.cloudinary.com/dnggn27qg/image/upload/v1714050000/noise_p0x1yq.png')] bg-repeat opacity-100">
-                    <div className="bg-background/20 min-h-full">
-                        <Outlet />
+            <main className="flex-1 ml-64 p-8">
+                <header className="flex justify-between items-center mb-8">
+                    <h1 className="text-2xl font-bold">Dashboard</h1>
+                    <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                            <span className="font-bold text-amber-500">A</span>
+                        </div>
                     </div>
-                </div>
+                </header>
+
+                <Outlet />
             </main>
         </div>
     );
