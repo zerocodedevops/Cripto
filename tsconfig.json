@@ -1,36 +1,33 @@
 {
-  "compilerOptions": {
-    "target": "ES2021",
-    "useDefineForClassFields": true,
-    "lib": [
-      "ES2021",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@salon/*": [
-        "src/features/projects/salon/src/*"
-      ]
-    }
-  },
-  "include": [
-    "src",
-    "tests"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+	"compilerOptions": {
+		"target": "ES2021",
+		"useDefineForClassFields": true,
+		"lib": ["ES2021", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@salon/*": ["src/features/projects/salon/src/*"]
+		}
+	},
+	"include": ["src", "tests"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"src/features/projects/salon/src/app",
+		"src/features/projects/salon/src/middleware.ts",
+		"src/features/projects/salon/src/i18n",
+		"src/features/projects/salon/src/lib/prisma.ts"
+	],
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	]
 }

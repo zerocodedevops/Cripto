@@ -1,28 +1,28 @@
 {
-    "HomePage": {
-        "welcome": "Welcome to",
-        "branding": "House of Vanity",
-        "description": "Experience the pinnacle of styling. Where precision meets luxury in every cut, color, and treatment.",
-        "bookButton": "Book Appointment",
-        "portalButton": "Staff Portal",
-        "login": "Member Login",
-        "footerLocations": "London • New York • Dubai",
-        "rights": "© 2026 Zero Inc."
-    },
-    "Booking": {
-        "selectCategory": "Select a category",
-        "selectService": "Select a service",
-        "selectStaff": "Select specialist",
-        "date": "Date",
-        "checkSlots": "Check Availability",
-        "bookAction": "Book Now",
-        "noSlots": "No slots available",
-        "success": "Booking confirmed",
-        "heroTitle": "Your Time,\nRedefined.",
-        "heroDescription": "Select your preferred treatment and specialist. We ensure a seamless experience designed for your absolute comfort."
-    },
-    "Common": {
-        "loading": "Loading...",
-        "error": "An error occurred"
-    }
+	"HomePage": {
+		"welcome": "Welcome to",
+		"branding": "House of Vanity",
+		"description": "Experience the pinnacle of styling. Where precision meets luxury in every cut, color, and treatment.",
+		"bookButton": "Book Appointment",
+		"portalButton": "Staff Portal",
+		"login": "Member Login",
+		"footerLocations": "London • New York • Dubai",
+		"rights": "© 2026 Zero Inc."
+	},
+	"Booking": {
+		"selectCategory": "Select a category",
+		"selectService": "Select a service",
+		"selectStaff": "Select specialist",
+		"date": "Date",
+		"checkSlots": "Check Availability",
+		"bookAction": "Book Now",
+		"noSlots": "No slots available",
+		"success": "Booking confirmed",
+		"heroTitle": "Your Time,\nRedefined.",
+		"heroDescription": "Select your preferred treatment and specialist. We ensure a seamless experience designed for your absolute comfort."
+	},
+	"Common": {
+		"loading": "Loading...",
+		"error": "An error occurred"
+	}
 }

@@ -1,300 +1,300 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
-    "blog": "Thoughts",
-    "contact": "Contact"
-  },
-  "hero": {
-    "available": "Available for new projects",
-    "greeting": "Hi, I'm David G.",
-    "name": "(ZeroCode_DevOps)",
-    "role": "Self-Taught Developer",
-    "aiPowered": "AI-Powered",
-    "description1": "No traditional training, but infinite passion.",
-    "description2": "I build real projects with AI as my ally.",
-    "description3": "I commit 200% to every project.",
-    "cta": {
-      "contact": "Contact Me",
-      "github": "View GitHub"
-    }
-  },
-  "featuredProject": {
-    "title": "Featured Project",
-    "subtitle": "Real enterprise application in production",
-    "badge": "Featured Project",
-    "projectTitle": "Community Cleaning Management System",
-    "description": "Enterprise web application developed for J. Barranco Limpieza, a community cleaning services company in Madrid. The system comprehensively manages employees, clients, work routes, automatic billing, inventory control, and real-time communication. It includes three distinct portals: administrator, employee, and client, each with specific functionalities and role-based authentication.",
-    "quote": "This system was developed <1>without prior training</1>, guided completely by <3>AI</3> and <5>validated in production</5>.",
-    "features": {
-      "dashboard": "Dashboard with real-time metrics and billing charts",
-      "management": "Management of 51 clients and employees with role-based authentication",
-      "calendar": "Interactive calendar with route and task planning",
-      "realtime": "Real-time system for complaints, requests, and observations",
-      "pdf": "Automatic PDF generation (invoices, work reports)",
-      "mobile": "Android mobile app with Capacitor + offline support (PWA)"
-    },
-    "stackTitle": "Tech stack:",
-    "stats": {
-      "lines": "Lines",
-      "files": "Files",
-      "components": "Components",
-      "commits": "Commits"
-    },
-    "buttons": {
-      "demo": "View Demo",
-      "code": "View Code"
-    }
-  },
-  "about": {
-    "title": "About Me",
-    "subtitle": "A different approach to development",
-    "role": "Self-taught developer powered by AI",
-    "description": {
-      "p1": "I don't come from the classic development path and I don't pretend to. My strength is not in memorizing syntax, but in <1>understanding problems, designing solutions</1> and leaning on <3>Artificial Intelligence tools</3> to <5>convert ideas into real applications</5>.",
-      "boxTitle": "I work with AI as a <1>technical collaborator</1> that:",
-      "boxList": {
-        "item1": "Guides me in the code part",
-        "item2": "Helps me validate decisions",
-        "item3": "Allows me to learn while calculating",
-        "item4": "Gives me speed without sacrificing understanding"
-      },
-      "p2": "My approach is practical: I am not a traditional programmer, but I am someone capable of <1>taking a project from idea to functional product</1>, understanding every step of the process and improving with every iteration.",
-      "p3": "I believe in <1>transparency</1>, in <3>continuous learning</3> and in leveraging technology to <5>create value</5>.",
-      "p4": "My true strength is <1>absolute commitment</1> to every project. I get involved 200%, obsessing over details and not resting until the result exceeds expectations. Every challenge is a learning opportunity, and every mistake is a step towards improvement."
-    },
-    "highlights": {
-      "passion": {
-        "title": "Passion",
-        "description": "200% Enthusiast"
-      },
-      "ai": {
-        "title": "AI as ally",
-        "description": "AI-assisted development"
-      },
-      "autodidact": {
-        "title": "Self-taught",
-        "description": "Continuous learning"
-      },
-      "commitment": {
-        "title": "Commitment",
-        "description": "Involved in every detail"
-      }
-    }
-  },
-  "skills": {
-    "title": "Skills & Technologies",
-    "subtitle": "Real stack used in projects",
-    "aiBadge": "Artificial Intelligence Assisted Development",
-    "disclaimer": "* Labels reflect my <1>level of autonomy</1> using each technology in real projects.",
-    "levels": {
-      "expert": "Expert",
-      "advanced": "Advanced",
-      "proficient": "Proficient",
-      "competent": "Competent"
-    },
-    "categories": {
-      "frontend": {
-        "title": "Frontend",
-        "description": "Modern and reactive interfaces"
-      },
-      "backend": {
-        "title": "Backend & BaaS",
-        "description": "Firebase and Supabase as pillars"
-      },
-      "testing": {
-        "title": "Testing & QA",
-        "description": "Quality assured in every commit"
-      },
-      "devops": {
-        "title": "DevOps & Mobile",
-        "description": "CI/CD and multi-platform apps"
-      },
-      "soft": {
-        "title": "Soft Skills",
-        "description": "Human skills and mindset",
-        "items": {
-          "learning": "Autonomous Learning",
-          "problemSolving": "Problem Solving",
-          "communication": "Communication",
-          "adaptability": "Adaptability",
-          "criticalThinking": "Critical Thinking"
-        }
-      }
-    }
-  },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "A selection of my most recent work",
-    "status": {
-      "production": "In Production",
-      "development": "In Development",
-      "prototype": "Prototype"
-    },
-    "links": {
-      "demo": "Demo",
-      "code": "Code"
-    },
-    "items": {
-      "1": {
-        "description": "Complete online store with simulated Auth, persistent cart and checkout."
-      },
-      "2": {
-        "description": "Smart chat assistant with OpenAI integration and contextual memory."
-      },
-      "3": {
-        "description": "Task management application with real-time collaboration and notifications."
-      },
-      "4": {
-        "description": "Analytical dashboard to visualize investment portfolio metrics."
-      },
-      "5": {
-        "description": "Weather application with detailed forecasts and interactive maps."
-      },
-      "6": {
-        "description": "Blog platform with headless CMS, markdown and SEO optimization."
-      },
-      "7": {
-        "description": "Cryptocurrency analytics dashboard with real-time data, interactive charts and market heatmap."
-      },
-      "8": {
-        "description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite."
-      }
-    }
-  },
-  "crypto": {
-    "title": "Crypto Analytics",
-    "subtitle": "Real-time cryptocurrency dashboard powered by CoinGecko",
-    "sections": {
-      "topGainers": "Top Gainers 24h",
-      "topLosers": "Top Losers 24h",
-      "trending": "Trending",
-      "quickStats": "Quick Stats",
-      "about": "About",
-      "overview": "Market Overview",
-      "priceChart": "Price Chart",
-      "marketHeatmap": "Market Heatmap",
-      "bitcoinPriceChart": "{coin} Price Chart",
-      "heatmapSizeBy": "Size by market cap",
-      "heatmapColorBy": "Color by 24h change"
-    },
-    "stats": {
-      "totalCryptos": "Total Cryptos",
-      "activeMarkets": "Active Markets",
-      "dataSource": "Data Source",
-      "marketCap": "Market Cap",
-      "volume24h": "24h Volume",
-      "btcDominance": "BTC Dominance",
-      "ethDominance": "ETH Dominance"
-    },
-    "about": {
-      "description": "This dashboard simulates live cryptocurrency market data with dynamic pricing that updates every 30 seconds. Prices vary realistically to demonstrate real-time data visualization and auto-refresh capabilities."
-    },
-    "footer": "Simulated live data • Auto-updates every 30 seconds • Built with React + TypeScript + Recharts"
-  },
-  "blog": {
-    "title": "Thoughts",
-    "subtitle": "Reflections on the future of software development",
-    "readMore": "Read article",
-    "readTime": "read",
-    "items": {
-      "1": {
-        "category": "Philosophy",
-        "title": "Why \"AI-First\" is not just a Buzzword",
-        "excerpt": "How artificial intelligence is redefining software architecture, from design to deployment, and why developers must adapt."
-      },
-      "2": {
-        "category": "Technology",
-        "title": "Beyond Copilot: Autonomous Agents",
-        "excerpt": "The evolution of code assistants towards proactive companions capable of understanding the full business context and making architectural decisions."
-      },
-      "3": {
-        "category": "Development",
-        "title": "The End of \"Boilerplate\" in Frontend",
-        "excerpt": "Analyzing how new UI generation tools are eliminating repetitive work and allowing us to focus on pure business logic."
-      }
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Got a project in mind? Let's talk!",
-    "cta": {
-      "title": "Let's work together!",
-      "description": "I am open to collaborating on projects that value <1>innovation</1>, <3>transparency</3> and the strategic use of <5>AI</5>."
-    },
-    "info": {
-      "location": "Location"
-    },
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "placeholders": {
-        "name": "Your name",
-        "email": "you@email.com",
-        "subject": "What do you want to talk about?",
-        "message": "Your message..."
-      },
-      "validation": {
-        "name": "Name must be at least 2 characters",
-        "email": "Invalid email",
-        "subject": "Subject must be at least 5 characters",
-        "message": "Message must be at least 10 characters"
-      },
-      "submit": "Send Message",
-      "sending": "Sending...",
-      "success": "Message sent successfully! I'll reply soon.",
-      "error": "Error sending message. Please try again."
-    }
-  },
-  "footer": {
-    "rights": "All rights reserved",
-    "madeWith": "Made with",
-    "by": "by",
-    "tagline": "Creating unique digital experiences",
-    "curiosity": "curiosity + AI",
-    "scrollButton": "Scroll to top"
-  },
-  "theme": {
-    "light": "Light Mode",
-    "dark": "Dark Mode"
-  },
-  "language": {
-    "es": "Español",
-    "en": "English"
-  },
-  "shop": {
-    "nav": {
-      "home": "Home",
-      "catalog": "Catalog",
-      "cart": "Cart",
-      "login": "Login",
-      "logout": "Logout"
-    },
-    "catalog": {
-      "title": "Catalog",
-      "subtitle": "Discover our featured products",
-      "search": "Search products...",
-      "voiceSearch": "Listening...",
-      "category": {
-        "all": "All categories"
-      },
-      "noResults": "No products found matching your search."
-    },
-    "cart": {
-      "title": "Your Cart",
-      "empty": "Your cart is empty",
-      "emptyDesc": "Discover our products and start shopping!",
-      "continue": "Continue shopping",
-      "subtotal": "Subtotal",
-      "checkout": "Checkout"
-    },
-    "common": {
-      "loading": "Loading...",
-      "error": "An error occurred"
-    }
-  }
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"skills": "Skills",
+		"projects": "Projects",
+		"blog": "Thoughts",
+		"contact": "Contact"
+	},
+	"hero": {
+		"available": "Available for new projects",
+		"greeting": "Hi, I'm David G.",
+		"name": "(ZeroCode_DevOps)",
+		"role": "Self-Taught Developer",
+		"aiPowered": "AI-Powered",
+		"description1": "No traditional training, but infinite passion.",
+		"description2": "I build real projects with AI as my ally.",
+		"description3": "I commit 200% to every project.",
+		"cta": {
+			"contact": "Contact Me",
+			"github": "View GitHub"
+		}
+	},
+	"featuredProject": {
+		"title": "Featured Project",
+		"subtitle": "Real enterprise application in production",
+		"badge": "Featured Project",
+		"projectTitle": "Community Cleaning Management System",
+		"description": "Enterprise web application developed for J. Barranco Limpieza, a community cleaning services company in Madrid. The system comprehensively manages employees, clients, work routes, automatic billing, inventory control, and real-time communication. It includes three distinct portals: administrator, employee, and client, each with specific functionalities and role-based authentication.",
+		"quote": "This system was developed <1>without prior training</1>, guided completely by <3>AI</3> and <5>validated in production</5>.",
+		"features": {
+			"dashboard": "Dashboard with real-time metrics and billing charts",
+			"management": "Management of 51 clients and employees with role-based authentication",
+			"calendar": "Interactive calendar with route and task planning",
+			"realtime": "Real-time system for complaints, requests, and observations",
+			"pdf": "Automatic PDF generation (invoices, work reports)",
+			"mobile": "Android mobile app with Capacitor + offline support (PWA)"
+		},
+		"stackTitle": "Tech stack:",
+		"stats": {
+			"lines": "Lines",
+			"files": "Files",
+			"components": "Components",
+			"commits": "Commits"
+		},
+		"buttons": {
+			"demo": "View Demo",
+			"code": "View Code"
+		}
+	},
+	"about": {
+		"title": "About Me",
+		"subtitle": "A different approach to development",
+		"role": "Self-taught developer powered by AI",
+		"description": {
+			"p1": "I don't come from the classic development path and I don't pretend to. My strength is not in memorizing syntax, but in <1>understanding problems, designing solutions</1> and leaning on <3>Artificial Intelligence tools</3> to <5>convert ideas into real applications</5>.",
+			"boxTitle": "I work with AI as a <1>technical collaborator</1> that:",
+			"boxList": {
+				"item1": "Guides me in the code part",
+				"item2": "Helps me validate decisions",
+				"item3": "Allows me to learn while calculating",
+				"item4": "Gives me speed without sacrificing understanding"
+			},
+			"p2": "My approach is practical: I am not a traditional programmer, but I am someone capable of <1>taking a project from idea to functional product</1>, understanding every step of the process and improving with every iteration.",
+			"p3": "I believe in <1>transparency</1>, in <3>continuous learning</3> and in leveraging technology to <5>create value</5>.",
+			"p4": "My true strength is <1>absolute commitment</1> to every project. I get involved 200%, obsessing over details and not resting until the result exceeds expectations. Every challenge is a learning opportunity, and every mistake is a step towards improvement."
+		},
+		"highlights": {
+			"passion": {
+				"title": "Passion",
+				"description": "200% Enthusiast"
+			},
+			"ai": {
+				"title": "AI as ally",
+				"description": "AI-assisted development"
+			},
+			"autodidact": {
+				"title": "Self-taught",
+				"description": "Continuous learning"
+			},
+			"commitment": {
+				"title": "Commitment",
+				"description": "Involved in every detail"
+			}
+		}
+	},
+	"skills": {
+		"title": "Skills & Technologies",
+		"subtitle": "Real stack used in projects",
+		"aiBadge": "Artificial Intelligence Assisted Development",
+		"disclaimer": "* Labels reflect my <1>level of autonomy</1> using each technology in real projects.",
+		"levels": {
+			"expert": "Expert",
+			"advanced": "Advanced",
+			"proficient": "Proficient",
+			"competent": "Competent"
+		},
+		"categories": {
+			"frontend": {
+				"title": "Frontend",
+				"description": "Modern and reactive interfaces"
+			},
+			"backend": {
+				"title": "Backend & BaaS",
+				"description": "Firebase and Supabase as pillars"
+			},
+			"testing": {
+				"title": "Testing & QA",
+				"description": "Quality assured in every commit"
+			},
+			"devops": {
+				"title": "DevOps & Mobile",
+				"description": "CI/CD and multi-platform apps"
+			},
+			"soft": {
+				"title": "Soft Skills",
+				"description": "Human skills and mindset",
+				"items": {
+					"learning": "Autonomous Learning",
+					"problemSolving": "Problem Solving",
+					"communication": "Communication",
+					"adaptability": "Adaptability",
+					"criticalThinking": "Critical Thinking"
+				}
+			}
+		}
+	},
+	"projects": {
+		"title": "Projects",
+		"subtitle": "A selection of my most recent work",
+		"status": {
+			"production": "In Production",
+			"development": "In Development",
+			"prototype": "Prototype"
+		},
+		"links": {
+			"demo": "Demo",
+			"code": "Code"
+		},
+		"items": {
+			"1": {
+				"description": "Complete online store with simulated Auth, persistent cart and checkout."
+			},
+			"2": {
+				"description": "Smart chat assistant with OpenAI integration and contextual memory."
+			},
+			"3": {
+				"description": "Task management application with real-time collaboration and notifications."
+			},
+			"4": {
+				"description": "Analytical dashboard to visualize investment portfolio metrics."
+			},
+			"5": {
+				"description": "Weather application with detailed forecasts and interactive maps."
+			},
+			"6": {
+				"description": "Blog platform with headless CMS, markdown and SEO optimization."
+			},
+			"7": {
+				"description": "Cryptocurrency analytics dashboard with real-time data, interactive charts and market heatmap."
+			},
+			"8": {
+				"description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite."
+			}
+		}
+	},
+	"crypto": {
+		"title": "Crypto Analytics",
+		"subtitle": "Real-time cryptocurrency dashboard powered by CoinGecko",
+		"sections": {
+			"topGainers": "Top Gainers 24h",
+			"topLosers": "Top Losers 24h",
+			"trending": "Trending",
+			"quickStats": "Quick Stats",
+			"about": "About",
+			"overview": "Market Overview",
+			"priceChart": "Price Chart",
+			"marketHeatmap": "Market Heatmap",
+			"bitcoinPriceChart": "{coin} Price Chart",
+			"heatmapSizeBy": "Size by market cap",
+			"heatmapColorBy": "Color by 24h change"
+		},
+		"stats": {
+			"totalCryptos": "Total Cryptos",
+			"activeMarkets": "Active Markets",
+			"dataSource": "Data Source",
+			"marketCap": "Market Cap",
+			"volume24h": "24h Volume",
+			"btcDominance": "BTC Dominance",
+			"ethDominance": "ETH Dominance"
+		},
+		"about": {
+			"description": "This dashboard simulates live cryptocurrency market data with dynamic pricing that updates every 30 seconds. Prices vary realistically to demonstrate real-time data visualization and auto-refresh capabilities."
+		},
+		"footer": "Simulated live data • Auto-updates every 30 seconds • Built with React + TypeScript + Recharts"
+	},
+	"blog": {
+		"title": "Thoughts",
+		"subtitle": "Reflections on the future of software development",
+		"readMore": "Read article",
+		"readTime": "read",
+		"items": {
+			"1": {
+				"category": "Philosophy",
+				"title": "Why \"AI-First\" is not just a Buzzword",
+				"excerpt": "How artificial intelligence is redefining software architecture, from design to deployment, and why developers must adapt."
+			},
+			"2": {
+				"category": "Technology",
+				"title": "Beyond Copilot: Autonomous Agents",
+				"excerpt": "The evolution of code assistants towards proactive companions capable of understanding the full business context and making architectural decisions."
+			},
+			"3": {
+				"category": "Development",
+				"title": "The End of \"Boilerplate\" in Frontend",
+				"excerpt": "Analyzing how new UI generation tools are eliminating repetitive work and allowing us to focus on pure business logic."
+			}
+		}
+	},
+	"contact": {
+		"title": "Contact",
+		"subtitle": "Got a project in mind? Let's talk!",
+		"cta": {
+			"title": "Let's work together!",
+			"description": "I am open to collaborating on projects that value <1>innovation</1>, <3>transparency</3> and the strategic use of <5>AI</5>."
+		},
+		"info": {
+			"location": "Location"
+		},
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"subject": "Subject",
+			"message": "Message",
+			"placeholders": {
+				"name": "Your name",
+				"email": "you@email.com",
+				"subject": "What do you want to talk about?",
+				"message": "Your message..."
+			},
+			"validation": {
+				"name": "Name must be at least 2 characters",
+				"email": "Invalid email",
+				"subject": "Subject must be at least 5 characters",
+				"message": "Message must be at least 10 characters"
+			},
+			"submit": "Send Message",
+			"sending": "Sending...",
+			"success": "Message sent successfully! I'll reply soon.",
+			"error": "Error sending message. Please try again."
+		}
+	},
+	"footer": {
+		"rights": "All rights reserved",
+		"madeWith": "Made with",
+		"by": "by",
+		"tagline": "Creating unique digital experiences",
+		"curiosity": "curiosity + AI",
+		"scrollButton": "Scroll to top"
+	},
+	"theme": {
+		"light": "Light Mode",
+		"dark": "Dark Mode"
+	},
+	"language": {
+		"es": "Español",
+		"en": "English"
+	},
+	"shop": {
+		"nav": {
+			"home": "Home",
+			"catalog": "Catalog",
+			"cart": "Cart",
+			"login": "Login",
+			"logout": "Logout"
+		},
+		"catalog": {
+			"title": "Catalog",
+			"subtitle": "Discover our featured products",
+			"search": "Search products...",
+			"voiceSearch": "Listening...",
+			"category": {
+				"all": "All categories"
+			},
+			"noResults": "No products found matching your search."
+		},
+		"cart": {
+			"title": "Your Cart",
+			"empty": "Your cart is empty",
+			"emptyDesc": "Discover our products and start shopping!",
+			"continue": "Continue shopping",
+			"subtotal": "Subtotal",
+			"checkout": "Checkout"
+		},
+		"common": {
+			"loading": "Loading...",
+			"error": "An error occurred"
+		}
+	}
 }

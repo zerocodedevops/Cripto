@@ -1,51 +1,61 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import {
+	createContext,
+	type ReactNode,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 
-type Currency = 'EUR' | 'USD' | 'GBP';
+type Currency = "EUR" | "USD" | "GBP";
 
 interface CurrencyContextType {
-  currency: Currency;
-  setCurrency: (currency: Currency) => void;
-  currencySymbol: string;
-  currencyLocale: string;
+	currency: Currency;
+	setCurrency: (currency: Currency) => void;
+	currencySymbol: string;
+	currencyLocale: string;
 }
 
-const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
+const CurrencyContext = createContext<CurrencyContextType | undefined>(
+	undefined,
+);
 
 const currencyConfig = {
-  EUR: { symbol: '€', locale: 'es-ES' },
-  USD: { symbol: '$', locale: 'en-US' },
-  GBP: { symbol: '£', locale: 'en-GB' },
+	EUR: { symbol: "€", locale: "es-ES" },
+	USD: { symbol: "$", locale: "en-US" },
+	GBP: { symbol: "£", locale: "en-GB" },
 };
 
 export function CurrencyProvider({ children }: { children: ReactNode }) {
-  const [currency, setCurrency] = useState<Currency>('EUR');
+	const [currency, setCurrency] = useState<Currency>("EUR");
 
-  const currencySymbol = currencyConfig[currency].symbol;
-  const currencyLocale = currencyConfig[currency].locale;
+	const currencySymbol = currencyConfig[currency].symbol;
+	const currencyLocale = currencyConfig[currency].locale;
 
-  // Persist currency selection
-  useEffect(() => {
-    const saved = localStorage.getItem('crypto-currency') as Currency;
-    if (saved && (saved === 'EUR' || saved === 'USD' || saved === 'GBP')) {
-      setCurrency(saved);
-    }
-  }, []);
+	// Persist currency selection
+	useEffect(() => {
+		const saved = localStorage.getItem("crypto-currency") as Currency;
+		if (saved && (saved === "EUR" || saved === "USD" || saved === "GBP")) {
+			setCurrency(saved);
+		}
+	}, []);
 
-  useEffect(() => {
-    localStorage.setItem('crypto-currency', currency);
-  }, [currency]);
+	useEffect(() => {
+		localStorage.setItem("crypto-currency", currency);
+	}, [currency]);
 
-  return (
-    <CurrencyContext.Provider value={{ currency, setCurrency, currencySymbol, currencyLocale }}>
-      {children}
-    </CurrencyContext.Provider>
-  );
+	return (
+		<CurrencyContext.Provider
+			value={{ currency, setCurrency, currencySymbol, currencyLocale }}
+		>
+			{children}
+		</CurrencyContext.Provider>
+	);
 }
 
 export function useCurrency() {
-  const context = useContext(CurrencyContext);
-  if (!context) {
-    throw new Error('useCurrency must be used within a CurrencyProvider');
-  }
-  return context;
+	const context = useContext(CurrencyContext);
+	if (!context) {
+		throw new Error("useCurrency must be used within a CurrencyProvider");
+	}
+	return context;
 }

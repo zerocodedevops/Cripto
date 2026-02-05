@@ -1,0 +1,56 @@
+
+> zerocode-portfolio@0.1.0 type-check
+> tsc --noEmit
+
+src/features/projects/salon/src/app/[locale]/book/page.tsx(1,20): error TS2307: Cannot find module '@/lib/prisma' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/book/page.tsx(2,27): error TS2307: Cannot find module '@/components/booking/BookingWizard' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/book/page.tsx(3,33): error TS2307: Cannot find module 'next-intl/server' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(1,31): error TS2307: Cannot find module 'next' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(2,40): error TS2307: Cannot find module 'next/font/google' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(5,23): error TS2307: Cannot find module '@/components/providers' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(25,40): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(26,29): error TS2307: Cannot find module 'next-intl/server' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/layout.tsx(27,26): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/page.tsx(1,44): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/app/[locale]/page.tsx(2,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/dashboard/page.tsx(1,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/dashboard/page.tsx(64,43): error TS2322: Type '{ bookings: any; defaultDate: Date; }' is not assignable to type 'IntrinsicAttributes & BookingCalendarProps'.
+  Property 'defaultDate' does not exist on type 'IntrinsicAttributes & BookingCalendarProps'.
+src/features/projects/salon/src/app/admin/layout.tsx(1,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/layout.tsx(9,40): error TS2307: Cannot find module 'next/font/google' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/staff/[id]/page.tsx(1,20): error TS2307: Cannot find module '@/lib/prisma' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/staff/[id]/page.tsx(2,32): error TS2307: Cannot find module '@/components/admin/AvailabilityEditor' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/staff/[id]/page.tsx(3,26): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/test/client.tsx(25,23): error TS2307: Cannot find module '@radix-ui/react-label' or its corresponding type declarations.
+src/features/projects/salon/src/app/admin/test/client.tsx(220,8): error TS2322: Type '{ children: string; onClick: () => Promise<void>; variant: string; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/features/projects/salon/src/app/auth/layout.tsx(1,31): error TS2307: Cannot find module 'next' or its corresponding type declarations.
+src/features/projects/salon/src/app/auth/layout.tsx(2,40): error TS2307: Cannot find module 'next/font/google' or its corresponding type declarations.
+src/features/projects/salon/src/app/auth/login/page.tsx(1,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/components/admin/StaffList.tsx(4,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/CategoryStep.tsx(3,33): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/ConfirmationStep.tsx(5,33): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/ConfirmationStep.tsx(9,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/ConfirmationStep.tsx(53,29): error TS2322: Type '{ children: string; onClick: () => void; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/features/projects/salon/src/components/booking/steps/DateStep.tsx(5,33): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/DateStep.tsx(56,6): error TS2322: Type '{ children: Element; variant: string; size: string; onClick: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/features/projects/salon/src/components/booking/steps/ServiceStep.tsx(3,33): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/ServiceStep.tsx(27,6): error TS2322: Type '{ children: Element; variant: string; size: string; onClick: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/features/projects/salon/src/components/booking/steps/StaffStep.tsx(3,33): error TS2307: Cannot find module 'next-intl' or its corresponding type declarations.
+src/features/projects/salon/src/components/booking/steps/StaffStep.tsx(23,6): error TS2322: Type '{ children: Element; variant: string; size: string; onClick: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/features/projects/salon/src/components/ui/button.tsx(2,22): error TS2307: Cannot find module '@radix-ui/react-slot' or its corresponding type declarations.
+src/features/projects/salon/src/components/ui/button.tsx(3,40): error TS2307: Cannot find module 'class-variance-authority' or its corresponding type declarations.
+src/features/projects/salon/src/components/ui/button.tsx(43,16): error TS2339: Property 'variant' does not exist on type 'ButtonProps'.
+src/features/projects/salon/src/components/ui/button.tsx(43,25): error TS2339: Property 'size' does not exist on type 'ButtonProps'.
+src/features/projects/salon/src/components/ui/select.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-select' or its corresponding type declarations.
+src/features/projects/salon/src/features/admin/actions.ts(4,32): error TS2307: Cannot find module 'next/cache' or its corresponding type declarations.
+src/features/projects/salon/src/features/admin/staffActions.ts(4,32): error TS2307: Cannot find module 'next/cache' or its corresponding type declarations.
+src/features/projects/salon/src/i18n/request.ts(1,34): error TS2307: Cannot find module 'next-intl/server' or its corresponding type declarations.
+src/features/projects/salon/src/lib/prisma.ts(1,30): error TS2307: Cannot find module '@prisma/client' or its corresponding type declarations.
+src/features/projects/salon/src/main.tsx(3,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+src/features/projects/salon/src/middleware.ts(1,30): error TS2307: Cannot find module 'next-intl/middleware' or its corresponding type declarations.
+src/features/projects/salon/src/middleware.ts(2,48): error TS2307: Cannot find module 'next/server' or its corresponding type declarations.

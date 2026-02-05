@@ -1,28 +1,32 @@
-import { initializeApp, FirebaseApp, getApp, getApps } from 'firebase/app';
-import { getFirestore, Firestore } from 'firebase/firestore';
-import { getAuth, Auth } from 'firebase/auth';
-import { getStorage, FirebaseStorage } from 'firebase/storage';
+import { type FirebaseApp, getApp, getApps, initializeApp } from "firebase/app";
+import { type Auth, getAuth } from "firebase/auth";
+import { type Firestore, getFirestore } from "firebase/firestore";
+import { type FirebaseStorage, getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+	authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+	projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+	storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+	appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = (() => {
-  if (!firebaseConfig.apiKey) return {} as FirebaseApp;
-  return getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+	if (!firebaseConfig.apiKey) return {} as FirebaseApp;
+	return getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 })();
 
 const db = firebaseConfig.apiKey ? getFirestore(app) : ({} as Firestore);
 const auth = firebaseConfig.apiKey ? getAuth(app) : ({} as Auth);
-const storage = firebaseConfig.apiKey ? getStorage(app) : ({} as FirebaseStorage);
+const storage = firebaseConfig.apiKey
+	? getStorage(app)
+	: ({} as FirebaseStorage);
 
 if (!firebaseConfig.apiKey) {
-  console.warn('Firebase config missing (VITE_FIREBASE_API_KEY). Using mock mode.');
+	console.warn(
+		"Firebase config missing (VITE_FIREBASE_API_KEY). Using mock mode.",
+	);
 }
 
 export { app, db, auth, storage };

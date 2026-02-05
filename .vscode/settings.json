@@ -1,31 +1,35 @@
 {
-  "css.customData": [],
-  "css.validate": false,
-  "scss.validate": false,
-  "less.validate": false,
-  "tailwindCSS.includeLanguages": {
-    "typescript": "javascript",
-    "typescriptreact": "javascript"
-  },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+	"css.customData": [],
+	"css.validate": false,
+	"scss.validate": false,
+	"less.validate": false,
+	"tailwindCSS.includeLanguages": {
+		"typescript": "javascript",
+		"typescriptreact": "javascript"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"sonarlint.connectedMode.project": {
+		"connectionId": "zerocodedevops",
+		"projectKey": "ZeroCode-Portfolio"
+	}
 }

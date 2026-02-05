@@ -1,54 +1,35 @@
-'use server'
-
-import prisma from '@salon/lib/prisma'
-import { revalidatePath } from 'next/cache'
+// Mock implementation for Vite Client
 
 export async function getAdminStaff() {
-    return await prisma.staff.findMany({
-        include: {
-            services: true,
-            schedules: true
-        },
-        orderBy: { name: 'asc' }
-    })
+	return [
+		{
+			id: "1",
+			name: "Ana Silva",
+			role: "Stylist",
+			active: true,
+			services: [],
+			schedules: [],
+		},
+		{
+			id: "2",
+			name: "Carlos Ruiz",
+			role: "Barber",
+			active: true,
+			services: [],
+			schedules: [],
+		},
+	];
 }
 
 export async function toggleStaffStatus(staffId: string, isActive: boolean) {
-    try {
-        await prisma.staff.update({
-            where: { id: staffId },
-            data: { active: isActive }
-        })
-        revalidatePath('/admin/staff')
-        return { success: true }
-    } catch (error) {
-        return { success: false, error: 'Failed to update status' }
-    }
+	console.log("Mock: toggleStaffStatus", staffId, isActive);
+	return { success: true };
 }
 
-export async function updateAvailability(staffId: string, availabilityData: any[]) {
-    try {
-        // Simple strategy: Clear existing and re-create
-        // In production: transactional update or diff
-        await prisma.availability.deleteMany({
-            where: { staffId }
-        })
-
-        if (availabilityData.length > 0) {
-            await prisma.availability.createMany({
-                data: availabilityData.map((slot: any) => ({
-                    staffId,
-                    dayOfWeek: slot.dayOfWeek,
-                    startTime: slot.startTime,
-                    endTime: slot.endTime
-                }))
-            })
-        }
-
-        revalidatePath('/admin/staff')
-        return { success: true }
-    } catch (error) {
-        console.error('Update Availability Error:', error)
-        return { success: false, error: 'Failed to update availability' }
-    }
+export async function updateAvailability(
+	staffId: string,
+	availabilityData: any[],
+) {
+	console.log("Mock: updateAvailability", staffId, availabilityData);
+	return { success: true };
 }

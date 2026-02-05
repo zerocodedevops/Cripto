@@ -1,49 +1,50 @@
-import { DashboardData } from '../types';
+import type { DashboardData } from "../types";
 
 export const exportToCSV = (data: DashboardData) => {
-  const csvRows: string[] = [
-    'Metric,Value,Change,Trend',
-    ...Object.entries(data.kpi).map(([, kpi]) => 
-      `${kpi.title},${kpi.value},${kpi.change}%,${kpi.trend}`
-    ),
-    '',
-    'Date,Sales,Revenue',
-    ...data.salesTrend.map((item) => 
-      `${item.date},${item.sales},${item.revenue}`
-    ),
-    '',
-    'Device,Percentage',
-    ...data.revenueByDevice.map((item) => 
-      `${item.device},${item.value}%`
-    ),
-    '',
-    'Step,Count,Drop-off',
-    ...data.conversionFunnel.map((item) => 
-      `${item.name},${item.count},${item.dropOff || 0}%`
-    ),
-  ];
-  
-  const csvContent = csvRows.join('\n');
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const link = document.createElement('a');
-  const url = URL.createObjectURL(blob);
-  
-  link.setAttribute('href', url);
-  link.setAttribute('download', `analytics-dashboard-${new Date().toISOString().split('T')[0]}.csv`);
-  link.style.visibility = 'hidden';
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+	const csvRows: string[] = [
+		"Metric,Value,Change,Trend",
+		...Object.entries(data.kpi).map(
+			([, kpi]) => `${kpi.title},${kpi.value},${kpi.change}%,${kpi.trend}`,
+		),
+		"",
+		"Date,Sales,Revenue",
+		...data.salesTrend.map(
+			(item) => `${item.date},${item.sales},${item.revenue}`,
+		),
+		"",
+		"Device,Percentage",
+		...data.revenueByDevice.map((item) => `${item.device},${item.value}%`),
+		"",
+		"Step,Count,Drop-off",
+		...data.conversionFunnel.map(
+			(item) => `${item.name},${item.count},${item.dropOff || 0}%`,
+		),
+	];
+
+	const csvContent = csvRows.join("\n");
+	const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+	const link = document.createElement("a");
+	const url = URL.createObjectURL(blob);
+
+	link.setAttribute("href", url);
+	link.setAttribute(
+		"download",
+		`analytics-dashboard-${new Date().toISOString().split("T")[0]}.csv`,
+	);
+	link.style.visibility = "hidden";
+	document.body.appendChild(link);
+	link.click();
+	link.remove();
 };
 
 export const exportToPDF = (data: DashboardData) => {
-  // Simple PDF export using window.print() for now
-  // For production, you'd use jsPDF or similar library
-  
-  const printWindow = window.open('', '_blank');
-  if (!printWindow) return;
-  
-  const html = `
+	// Simple PDF export using window.print() for now
+	// For production, you'd use jsPDF or similar library
+
+	const printWindow = window.open("", "_blank");
+	if (!printWindow) return;
+
+	const html = `
     <!DOCTYPE html>
     <html>
     <head>
@@ -97,14 +98,18 @@ export const exportToPDF = (data: DashboardData) => {
             <th>Change</th>
             <th>Trend</th>
           </tr>
-          ${Object.entries(data.kpi).map(([, kpi]) => `
+          ${Object.entries(data.kpi)
+						.map(
+							([, kpi]) => `
             <tr>
               <td>${kpi.title}</td>
               <td>${kpi.value}</td>
               <td>${kpi.change}%</td>
               <td>${kpi.trend}</td>
             </tr>
-          `).join('')}
+          `,
+						)
+						.join("")}
         </table>
       </div>
       
@@ -116,13 +121,17 @@ export const exportToPDF = (data: DashboardData) => {
             <th>Sales</th>
             <th>Revenue</th>
           </tr>
-          ${data.salesTrend.map((item) => `
+          ${data.salesTrend
+						.map(
+							(item) => `
             <tr>
               <td>${item.date}</td>
               <td>$${item.sales}</td>
               <td>$${item.revenue}</td>
             </tr>
-          `).join('')}
+          `,
+						)
+						.join("")}
         </table>
       </div>
       
@@ -133,12 +142,16 @@ export const exportToPDF = (data: DashboardData) => {
             <th>Device</th>
             <th>Percentage</th>
           </tr>
-          ${data.revenueByDevice.map((item) => `
+          ${data.revenueByDevice
+						.map(
+							(item) => `
             <tr>
               <td>${item.device}</td>
               <td>${item.value}%</td>
             </tr>
-          `).join('')}
+          `,
+						)
+						.join("")}
         </table>
       </div>
       
@@ -150,26 +163,30 @@ export const exportToPDF = (data: DashboardData) => {
             <th>Count</th>
             <th>Drop-off</th>
           </tr>
-          ${data.conversionFunnel.map((item) => `
+          ${data.conversionFunnel
+						.map(
+							(item) => `
             <tr>
               <td>${item.name}</td>
               <td>${item.count.toLocaleString()}</td>
               <td>${item.dropOff || 0}%</td>
             </tr>
-          `).join('')}
+          `,
+						)
+						.join("")}
         </table>
       </div>
     </body>
     </html>
   `;
-  
-  // Use innerHTML instead of deprecated write()
-  printWindow.document.open();
-  printWindow.document.body.innerHTML = html;
-  printWindow.document.close();
-  
-  // Wait a bit for content to load, then print
-  setTimeout(() => {
-    printWindow.print();
-  }, 250);
+
+	// Use innerHTML instead of deprecated write()
+	printWindow.document.open();
+	printWindow.document.body.innerHTML = html;
+	printWindow.document.close();
+
+	// Wait a bit for content to load, then print
+	setTimeout(() => {
+		printWindow.print();
+	}, 250);
 };

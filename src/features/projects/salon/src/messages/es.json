@@ -1,28 +1,28 @@
 {
-    "HomePage": {
-        "welcome": "Bienvenido a",
-        "branding": "House of Vanity",
-        "description": "Experimenta la cúspide del estilismo. Donde la precisión se encuentra con el lujo en cada corte, color y tratamiento.",
-        "bookButton": "Reservar Cita",
-        "portalButton": "Portal Personal",
-        "login": "Acceso Miembros",
-        "footerLocations": "Londres • Nueva York • Dubái",
-        "rights": "© 2026 Zero Inc."
-    },
-    "Booking": {
-        "selectCategory": "Selecciona una categoría",
-        "selectService": "Selecciona un servicio",
-        "selectStaff": "Selecciona especialista",
-        "date": "Fecha",
-        "checkSlots": "Ver Disponibilidad",
-        "bookAction": "Reservar Ahora",
-        "noSlots": "No hay huecos disponibles",
-        "success": "Reserva confirmada",
-        "heroTitle": "Tu Tiempo,\nRedefinido.",
-        "heroDescription": "Selecciona tu tratamiento preferido y especialista. Aseguramos una experiencia impecable diseñada para tu confort absoluto."
-    },
-    "Common": {
-        "loading": "Cargando...",
-        "error": "Ha ocurrido un error"
-    }
+	"HomePage": {
+		"welcome": "Bienvenido a",
+		"branding": "House of Vanity",
+		"description": "Experimenta la cúspide del estilismo. Donde la precisión se encuentra con el lujo en cada corte, color y tratamiento.",
+		"bookButton": "Reservar Cita",
+		"portalButton": "Portal Personal",
+		"login": "Acceso Miembros",
+		"footerLocations": "Londres • Nueva York • Dubái",
+		"rights": "© 2026 Zero Inc."
+	},
+	"Booking": {
+		"selectCategory": "Selecciona una categoría",
+		"selectService": "Selecciona un servicio",
+		"selectStaff": "Selecciona especialista",
+		"date": "Fecha",
+		"checkSlots": "Ver Disponibilidad",
+		"bookAction": "Reservar Ahora",
+		"noSlots": "No hay huecos disponibles",
+		"success": "Reserva confirmada",
+		"heroTitle": "Tu Tiempo,\nRedefinido.",
+		"heroDescription": "Selecciona tu tratamiento preferido y especialista. Aseguramos una experiencia impecable diseñada para tu confort absoluto."
+	},
+	"Common": {
+		"loading": "Cargando...",
+		"error": "Ha ocurrido un error"
+	}
 }

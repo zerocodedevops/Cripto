@@ -6,7 +6,17 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": ["**", "!!**/dist"]
+		"includes": [
+			"**",
+			"!!**/dist",
+			"!!**/.next",
+			"!!**/coverage",
+			"!!**/.unlighthouse",
+			"!!**/build",
+			"!!**/node_modules",
+			"!!**/playwright-report",
+			"!!**/*.css"
+		]
 	},
 	"formatter": {
 		"enabled": true,

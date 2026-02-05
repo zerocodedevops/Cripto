@@ -1,13 +1,10 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = import.meta.env.VITE_VANITY_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_VANITY_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase credentials missing in .env.local');
+	console.warn("Supabase credentials missing in .env.local");
 }
 
-export const supabase = createClient(
-    supabaseUrl || '',
-    supabaseAnonKey || ''
-);
+export const supabase = createClient(supabaseUrl || "", supabaseAnonKey || "");
