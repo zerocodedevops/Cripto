@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronDown, Check, Calendar, MessageSquare, User, Clock, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
-import { supabase } from '../../../../../lib/supabase';
+import { supabase } from '@/lib/supabase';
 import type { Stylist } from '../data/stylists';
+import PaymentSimulator from '../components/payment/PaymentSimulator'; // Verify path
 
 interface BookingModalProps {
     onClose: () => void;
 }
 
-type BookingStep = 1 | 2 | 3;
+type BookingStep = 1 | 2 | 3 | 4;
 
 interface ServiceItem {
     id: string;
     title: string;
     description?: string;
     duration: string;
-    price?: number;
+    price: number; // Ensure price is mandatory or handled
     category: string;
 }
 
@@ -125,49 +126,78 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
     };
 
     const handleNext = () => {
-        if (step < 3) setStep(prev => (prev + 1) as BookingStep);
+        if (step < 4) setStep(prev => (prev + 1) as BookingStep);
     };
 
     const handleBack = () => {
         if (step > 1) setStep(prev => (prev - 1) as BookingStep);
     };
 
-    const handleConfirm = async () => {
+    const handlePaymentSuccess = async (paymentDetails: any) => {
         if (!selectedDate || !selectedTime) return;
 
         setIsSaving(true);
         try {
-            // Combine Date and Time into YYYY-MM-DD format (DB expects Date type)
-            // Ideally we'd store a proper timestamp, but schema says 'date' and 'time' separate columns.
-            const formattedDate = selectedDate.toISOString().split('T')[0];
+            // FIX: Use local date components to avoid toISOString() converting to UTC (often previous day)
+            const year = selectedDate.getFullYear();
+            const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+            const day = String(selectedDate.getDate()).padStart(2, '0');
+            const formattedDate = `${year}-${month}-${day}`;
+
+            // Get user if logged in
+            const { data: { user } } = await supabase.auth.getUser();
 
             const payload = {
                 service_ids: selectedServices,
-                stylist_id: selectedStylist ? selectedStylist.id : null, // Handle "Anyone" logic appropriately if needed
+                stylist_id: selectedStylist ? selectedStylist.id : null,
                 date: formattedDate,
-                time: selectedTime, // "10:00" format fits 'time' type usually
+                time: selectedTime,
                 customer_notes: specialRequests,
-                status: 'pending'
+                status: 'pending', // Paid bookings are still pending confirmation technically, or assume auto-approved if paid? Let's keep pending.
+
+                // Payment Fields (Module 1)
+                user_id: user ? user.id : null,
+                payment_status: paymentDetails.status,
+                deposit_amount: paymentDetails.amount,
+                payment_id: paymentDetails.id
             };
 
             const { error } = await supabase.from('bookings').insert([payload]);
 
             if (error) throw error;
 
-            alert('¡Reserva confirmada con éxito! Te esperamos.');
-            onClose();
+            // Wait a bit to show the "Payment Success" UI in the simulator before closing
+            setTimeout(() => {
+                onClose();
+                // Optionally navigate to MyBookings if logged in
+                if (user) {
+                    globalThis.location.href = '/proyectos/salon/client/bookings';
+                }
+            }, 1000);
 
         } catch (error: any) {
             console.error('Booking error:', error);
             alert(`Error al reservar: ${error.message}`);
-        } finally {
-            setIsSaving(false);
+            setIsSaving(false); // Only stop saving on error to let user retry
         }
+    };
+
+    const calculateTotal = () => {
+        let total = 0;
+        catalog.forEach(cat => {
+            cat.services.forEach(s => {
+                if (selectedServices.includes(s.id)) {
+                    total += s.price || 20; // Default fallback price
+                }
+            });
+        });
+        return total;
     };
 
     const isNextDisabled = () => {
         if (step === 1) return selectedServices.length === 0;
         if (step === 2) return false;
+        if (step === 3) return !selectedDate || !selectedTime;
         return false;
     };
 
@@ -204,6 +234,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                                 {step === 1 && "Paso 1: Selecciona tus servicios"}
                                 {step === 2 && "Paso 2: Elige a tu estilista"}
                                 {step === 3 && "Paso 3: Fecha y Hora"}
+                                {step === 4 && "Paso 4: Pago y Confirmación"}
                             </p>
                         </div>
                         <button
@@ -218,8 +249,8 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                     <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden flex">
                         <motion.div
                             className="h-full bg-[#BF953F]"
-                            initial={{ width: "33%" }}
-                            animate={{ width: `${step * 33.33}%` }}
+                            initial={{ width: "25%" }}
+                            animate={{ width: `${step * 25}%` }}
                             transition={{ duration: 0.3 }}
                         />
                     </div>
@@ -239,7 +270,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                                 transition={{ duration: 0.3 }}
                                 className="space-y-6"
                             >
-                                {/* Special Requests (Moved to Step 1 for simplicity) */}
+                                {/* Special Requests */}
                                 <div className="bg-white/[0.03] border border-white/5 p-4 rounded-sm">
                                     <div className="flex items-start gap-3 mb-3">
                                         <MessageSquare className="text-[#BF953F] mt-1" size={18} />
@@ -298,8 +329,11 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                                                                             <p className="text-xs text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors">{service.description}</p>
                                                                         )}
                                                                     </div>
-                                                                    <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all mt-1 ${selectedServices.includes(service.id) ? 'bg-[#BF953F] border-[#BF953F]' : 'border-white/20 group-hover:border-white/40'}`}>
-                                                                        {selectedServices.includes(service.id) && <Check size={12} className="text-black stroke-[3]" />}
+                                                                    <div className="text-right">
+                                                                        <span className="text-[#BF953F] font-bold text-sm block">{service.price}€</span>
+                                                                        <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all mt-2 ml-auto ${selectedServices.includes(service.id) ? 'bg-[#BF953F] border-[#BF953F]' : 'border-white/20 group-hover:border-white/40'}`}>
+                                                                            {selectedServices.includes(service.id) && <Check size={12} className="text-black stroke-[3]" />}
+                                                                        </div>
                                                                     </div>
                                                                 </button>
                                                             ))}
@@ -416,52 +450,62 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                                 )}
                             </motion.div>
                         )}
+
+                        {/* STEP 4: PAYMENT (NEW) */}
+                        {step === 4 && (
+                            <motion.div
+                                key="step-4"
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -20 }}
+                                transition={{ duration: 0.3 }}
+                                className="space-y-6"
+                            >
+                                <PaymentSimulator
+                                    amount={calculateTotal()} // Pass calculated total
+                                    onSuccess={handlePaymentSuccess}
+                                    onCancel={() => setStep(3)}
+                                />
+                            </motion.div>
+                        )}
+
                     </AnimatePresence>
                 </div>
 
                 {/* Footer Navigation */}
-                <div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
-                    {step > 1 ? (
-                        <button
-                            onClick={handleBack}
-                            disabled={isSaving}
-                            className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
-                        >
-                            <ChevronLeft size={18} /> Atrás
-                        </button>
-                    ) : (
-                        <div /> /* Spacer */
-                    )}
+                {step < 4 && ( /* Hide default footer in step 4 as PaymentSimulator has its own buttons */
+                    <div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
+                        {step > 1 ? (
+                            <button
+                                onClick={handleBack}
+                                disabled={isSaving}
+                                className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
+                            >
+                                <ChevronLeft size={18} /> Atrás
+                            </button>
+                        ) : (
+                            <div /> /* Spacer */
+                        )}
 
-                    <div className="flex items-center gap-4">
-                        <span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
-                            {(() => {
-                                if (step === 1) return `${selectedServices.length} servicios`;
-                                if (step === 2) return selectedStylist?.name || 'Cualquiera';
-                                return `${selectedDate ? selectedDate.toLocaleDateString() : ''} ${selectedTime || ''}`;
-                            })()}
-                        </span>
+                        <div className="flex items-center gap-4">
+                            <span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
+                                {(() => {
+                                    if (step === 1) return `${selectedServices.length} servicios (${calculateTotal()}€)`;
+                                    if (step === 2) return selectedStylist?.name || 'Cualquiera';
+                                    return `${selectedDate ? selectedDate.toLocaleDateString() : ''} ${selectedTime || ''}`;
+                                })()}
+                            </span>
 
-                        {step < 3 ? (
                             <button
                                 onClick={handleNext}
                                 disabled={isNextDisabled() || isSaving}
                                 className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                             >
-                                Siguiente <ChevronRight size={16} />
+                                {step === 3 ? 'Ir a Pagan' : 'Siguiente'} <ChevronRight size={16} />
                             </button>
-                        ) : (
-                            <button
-                                onClick={handleConfirm}
-                                disabled={!selectedDate || !selectedTime || isSaving}
-                                className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                            >
-                                {isSaving ? <Loader2 className="animate-spin" size={16} /> : <Calendar size={16} />}
-                                {isSaving ? 'Reservando...' : 'Confirmar'}
-                            </button>
-                        )}
+                        </div>
                     </div>
-                </div>
+                )}
             </motion.div>
         </motion.div>
     );

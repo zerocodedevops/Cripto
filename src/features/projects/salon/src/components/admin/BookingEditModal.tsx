@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { X, Save, Calendar as CalIcon, Clock, User, Scissors } from 'lucide-react'
-import { BookingService } from '@salon/services/mockData'
+import { BookingService } from '@salon/services/bookingService'
 import { format } from 'date-fns'
 
 interface EditModalProps {
@@ -24,13 +24,19 @@ export default function BookingEditModal({ booking, isOpen, onClose }: EditModal
     const [serviceList, setServiceList] = useState<any[]>([])
 
     useEffect(() => {
-        if (isOpen) {
+        if (isOpen && booking) {
             // Initialize form with booking data
             const bookingDate = new Date(booking.date)
             setDate(format(bookingDate, 'yyyy-MM-dd'))
-            setTime(format(bookingDate, 'HH:mm'))
-            setStaffId(booking.staffId || booking.staff?.id)
-            setServiceId(booking.serviceId || booking.service?.id)
+            // Use time string directly if available, else derive from date (fallback)
+            setTime(booking.time || format(bookingDate, 'HH:mm'))
+            setStaffId(booking.stylist_id || booking.staff?.id || '')
+            // Handle potentially multiple services, pick first for edit or specific logic needed?
+            // Assuming simplified model: booking has one main service or we pick the first
+            const sId = Array.isArray(booking.service_ids) && booking.service_ids.length > 0
+                ? booking.service_ids[0]
+                : (booking.serviceId || booking.service?.id || '');
+            setServiceId(sId)
 
             // Load dropdown data
             BookingService.getFormData().then(data => {
@@ -46,14 +52,13 @@ export default function BookingEditModal({ booking, isOpen, onClose }: EditModal
         setError('')
 
         try {
-            // Construct Date object
+            // Construct Date object just for local reasoning if needed, but we pass date/time separate to service now
             const [year, month, day] = date.split('-').map(Number)
-            const [hour, minute] = time.split(':').map(Number)
-
-            const newDate = new Date(year, month - 1, day, hour, minute)
+            const newDate = new Date(year, month - 1, day)
 
             const res = await BookingService.updateBookingDetails(booking.id, {
                 date: newDate,
+                time: time,
                 staffId,
                 serviceId
             })
@@ -64,7 +69,8 @@ export default function BookingEditModal({ booking, isOpen, onClose }: EditModal
             } else {
                 setError(res.error || 'Error al actualizar')
             }
-        } catch {
+        } catch (err) {
+            console.error(err)
             setError('Error de conexión')
         } finally {
             setLoading(false)
@@ -74,8 +80,8 @@ export default function BookingEditModal({ booking, isOpen, onClose }: EditModal
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="w-full max-w-md bg-neutral-900 border border-[#BF953F]/30 rounded-sm shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
+            <div className="w-full max-w-md bg-neutral-900 border border-[#BF953F]/30 rounded-sm shadow-2xl overflow-hidden" onClick={e => e.stopPropagation()}>
                 {/* Header */}
                 <div className="px-6 py-4 border-b border-white/10 flex justify-between items-center bg-black/20">
                     <h3 className="text-[#FCF6BA] font-heading tracking-wide">Editar Reserva</h3>

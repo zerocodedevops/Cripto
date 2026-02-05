@@ -21,6 +21,7 @@ const localizer = dateFnsLocalizer({
 interface BookingCalendarProps {
     readonly bookings?: any[];
     readonly className?: string;
+    readonly onSelectBooking?: (booking: any) => void;
 }
 
 const messages = {
@@ -67,13 +68,13 @@ const CustomToolbar = (toolbar: any) => {
     return (
         <div className="flex items-center justify-between mb-4 px-2">
             <div className="flex items-center gap-2">
-                <button onClick={goToBack} className="p-1 hover:bg-slate-800 rounded-md transition-colors text-slate-400 hover:text-white">
+                <button onClick={goToBack} className="p-1 hover:bg-slate-800 rounded-md transition-colors text-slate-400 hover:text-white" type="button">
                     <ChevronLeft className="w-5 h-5" />
                 </button>
-                <button onClick={goToCurrent} className="px-3 py-1 text-xs font-medium bg-amber-900/30 text-amber-400 border border-amber-800/50 rounded-md hover:bg-amber-900/50 transition-colors">
+                <button onClick={goToCurrent} className="px-3 py-1 text-xs font-medium bg-amber-900/30 text-amber-400 border border-amber-800/50 rounded-md hover:bg-amber-900/50 transition-colors" type="button">
                     Hoy
                 </button>
-                <button onClick={goToNext} className="p-1 hover:bg-slate-800 rounded-md transition-colors text-slate-400 hover:text-white">
+                <button onClick={goToNext} className="p-1 hover:bg-slate-800 rounded-md transition-colors text-slate-400 hover:text-white" type="button">
                     <ChevronRight className="w-5 h-5" />
                 </button>
                 <span className="text-slate-200 font-medium ml-2 text-lg">{label()}</span>
@@ -83,18 +84,21 @@ const CustomToolbar = (toolbar: any) => {
                 <button
                     onClick={() => toolbar.onView('month')}
                     className={`px-3 py-1 text-xs rounded-md transition-all ${toolbar.view === 'month' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                    type="button"
                 >
                     Mes
                 </button>
                 <button
                     onClick={() => toolbar.onView('week')}
                     className={`px-3 py-1 text-xs rounded-md transition-all ${toolbar.view === 'week' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                    type="button"
                 >
                     Semana
                 </button>
                 <button
                     onClick={() => toolbar.onView('day')}
                     className={`px-3 py-1 text-xs rounded-md transition-all ${toolbar.view === 'day' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                    type="button"
                 >
                     Día
                 </button>
@@ -103,21 +107,29 @@ const CustomToolbar = (toolbar: any) => {
     );
 };
 
-export default function BookingCalendar({ bookings = [], className }: BookingCalendarProps) {
-    const [view, setView] = useState<View>(Views.DAY);
+export default function BookingCalendar({ bookings = [], className, onSelectBooking }: BookingCalendarProps) {
+    const [view, setView] = useState<View>(Views.WEEK);
     const [date, setDate] = useState(new Date());
 
     const { views } = useMemo(() => ({
         views: [Views.MONTH, Views.WEEK, Views.DAY, Views.AGENDA],
     }), []);
 
-    const events = bookings.map(b => ({
-        id: b.id,
-        title: `${b.user_name || 'Cliente'} - ${b.service_name || 'Servicio'}`,
-        start: new Date(b.date),
-        end: new Date(new Date(b.date).getTime() + (b.duration || 60) * 60000),
-        resource: b
-    }));
+    const events = bookings.map(b => {
+        // Construct full date string (YYYY-MM-DDTHH:mm:00)
+        // If 'time' is missing or null, default to 10:00 to avoid midnight issues
+        const timeStr = b.time ? b.time : '10:00';
+        const dateTimeStr = `${b.date.split('T')[0]}T${timeStr}:00`;
+        const startDate = new Date(dateTimeStr);
+
+        return {
+            id: b.id,
+            title: `${b.user_name || 'Cliente'} - ${b.service_name || 'Servicio'}`,
+            start: startDate,
+            end: new Date(startDate.getTime() + (b.duration || 60) * 60000),
+            resource: b
+        };
+    });
 
     return (
         <div className={`h-[600px] bg-slate-900 border border-slate-800 rounded-xl p-4 ${className}`}>
@@ -137,10 +149,28 @@ export default function BookingCalendar({ bookings = [], className }: BookingCal
                 components={{
                     toolbar: CustomToolbar
                 }}
+                onSelectEvent={(event) => {
+                    console.log('Calendar Event Clicked:', event);
+                    onSelectBooking?.(event.resource);
+                }}
                 className="custom-calendar text-slate-300"
-                eventPropGetter={() => ({
-                    className: 'bg-amber-600 border-none text-white text-xs rounded px-1 py-0.5 opacity-90 hover:opacity-100 cursor-pointer'
-                })}
+                eventPropGetter={(event) => {
+                    let newStyle = 'border-none text-white text-xs rounded px-1 py-0.5 opacity-90 hover:opacity-100 cursor-pointer ';
+
+                    switch (event.resource.status) {
+                        case 'confirmed':
+                        case 'paid':
+                            newStyle += 'bg-emerald-600';
+                            break;
+                        case 'cancelled':
+                            newStyle += 'bg-red-600 line-through opacity-50';
+                            break;
+                        default: // pending
+                            newStyle += 'bg-amber-600';
+                    }
+
+                    return { className: newStyle };
+                }}
             />
 
             {/* Custom Styles Injection for overrides */}

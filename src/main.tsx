@@ -11,34 +11,14 @@ import './i18n/config';
 initGA();
 logPageView();
 
-async function enableMocking() {
-  const USE_WEBSOCKET = import.meta.env.VITE_USE_WEBSOCKET === 'true';
-
-  // Disable MSW in production to prevent CSP errors and performance impact
-  if (import.meta.env.PROD) {
-    return;
+// Force unregister any existing service workers (MSW or others) to clear network issues
+if ('serviceWorker' in navigator) {
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  for (const registration of registrations) {
+    console.log('Unregistering Service Worker:', registration);
+    registration.unregister();
   }
-
-  // Enable MSW for HTTP mocking only (not WebSocket)
-  const { worker } = await import('./mocks/browser');
-
-  console.log('🎭 MSW enabled (Development)');
-
-  if (USE_WEBSOCKET) {
-    console.log('🔌 WebSocket enabled - MSW will only mock HTTP, not WebSocket');
-  }
-
-  return worker.start({
-    onUnhandledRequest: 'bypass',
-    serviceWorker: {
-      url: '/mockServiceWorker.js',
-    },
-    // IMPORTANT: Don't intercept WebSocket connections
-    quiet: false,
-  });
 }
-
-await enableMocking();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');

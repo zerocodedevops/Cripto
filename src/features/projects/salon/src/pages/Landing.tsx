@@ -82,7 +82,7 @@ export default function Landing() {
                 </ul>
 
                 <div>
-                    <Link to="auth/login" className="px-6 py-2 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm">
+                    <Link to="/proyectos/salon/auth/admin/login" className="px-6 py-2 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm">
                         Acceso Admin
                     </Link>
                 </div>

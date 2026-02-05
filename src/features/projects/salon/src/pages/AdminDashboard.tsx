@@ -5,6 +5,8 @@ import BookingCalendar from '../components/admin/BookingCalendar';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
+import BookingActions from '../components/admin/BookingActions';
+
 export default function AdminDashboard() {
     const [bookings, setBookings] = useState<any[]>([]);
     const [stats, setStats] = useState({
@@ -16,12 +18,23 @@ export default function AdminDashboard() {
     const [loading, setLoading] = useState(true);
     const [stylists, setStylists] = useState<any[]>([]);
     const [selectedStylistId, setSelectedStylistId] = useState<string>('all');
+    const [selectedBookingForAction, setSelectedBookingForAction] = useState<any>(null);
 
     useEffect(() => {
+        console.log("AdminDashboard Component Mounted - Fetching Data");
         fetchDashboardData();
     }, []);
 
+    useEffect(() => {
+        if (selectedBookingForAction) {
+            console.log("Modal Open for Booking:", selectedBookingForAction);
+        }
+    }, [selectedBookingForAction]);
+
     const fetchDashboardData = async () => {
+        console.log("Fetching dashboard data...");
+        // ... (keep fetchDashboardData implementation same) ...
+        // ... (keep fetchDashboardData implementation same) ...
         try {
             // 1. Fetch Bookings
             const { data: bookingsData, error: bookingsError } = await supabase
@@ -118,6 +131,22 @@ export default function AdminDashboard() {
 
     return (
         <div className="space-y-6">
+            {/* DEBUG BUTTON - REMOVE LATER */}
+            <button
+                onClick={() => setSelectedBookingForAction({
+                    id: 'debug-1',
+                    service_name: 'CITA DE PRUEBA',
+                    user_name: 'USUARIO TEST',
+                    date: new Date().toISOString(),
+                    time: '12:00',
+                    status: 'confirmed',
+                    stylist_name: 'TESTER'
+                })}
+                className="bg-purple-600 text-white px-4 py-2 rounded shadow-lg font-bold w-full uppercase"
+            >
+                🛑 CLICK PARA PROBAR MODAL 🛑
+            </button>
+
             {/* KPI Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Card 1: Citas Hoy */}
@@ -173,7 +202,7 @@ export default function AdminDashboard() {
 
             {/* Main Content Area */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Calendar Section (Takes up 2 cols) */}
+                {/* Calendar Section */}
                 <div className="lg:col-span-2 space-y-4">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <h2 className="text-lg font-semibold text-slate-200 flex items-center">
@@ -196,6 +225,7 @@ export default function AdminDashboard() {
                     <BookingCalendar
                         bookings={selectedStylistId === 'all' ? bookings : bookings.filter(b => b.stylist_id === selectedStylistId)}
                         className="min-h-[500px]"
+                        onSelectBooking={(booking) => setSelectedBookingForAction(booking)}
                     />
                 </div>
 
@@ -254,6 +284,91 @@ export default function AdminDashboard() {
                     </div>
                 </div>
             </div>
+
+            {/* Action Modal for Calendar Clicks */}
+            {selectedBookingForAction && (
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+                    {/* Backdrop Layer */}
+                    <button
+                        type="button"
+                        className="absolute inset-0 w-full h-full bg-black/60 backdrop-blur-sm cursor-default"
+                        onClick={() => setSelectedBookingForAction(null)}
+                        aria-label="Cerrar modal"
+                    />
+
+                    {/* Modal Content */}
+                    <div
+                        className="relative bg-slate-900 border border-slate-700 rounded-xl p-6 shadow-2xl w-full max-w-sm"
+                    >
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 className="text-lg font-bold text-slate-100">{selectedBookingForAction.service_name}</h3>
+                                <p className="text-slate-400 text-sm">{selectedBookingForAction.user_name}</p>
+                            </div>
+                            <button onClick={() => setSelectedBookingForAction(null)} className="text-slate-500 hover:text-white">
+                                <span className="sr-only">Cerrar</span>
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                            </button>
+                        </div>
+
+                        <div className="space-y-3 mb-6 bg-slate-950/50 p-3 rounded-lg border border-slate-800 text-sm text-slate-300">
+                            <div className="flex justify-between">
+                                <span className="text-slate-500">Fecha:</span>
+                                <span>{format(new Date(selectedBookingForAction.date), 'dd MMM yyyy', { locale: es })}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="text-slate-500">Hora:</span>
+                                <span>{selectedBookingForAction.time || format(new Date(selectedBookingForAction.date), 'HH:mm')}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="text-slate-500">Profesional:</span>
+                                <span>{selectedBookingForAction.stylist_name}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="text-slate-500">Estado:</span>
+                                <span className={`uppercase font-bold text-xs px-2 py-0.5 rounded ${(() => {
+                                    if (selectedBookingForAction.status === 'confirmed') return 'bg-emerald-900/50 text-emerald-400';
+                                    if (selectedBookingForAction.status === 'cancelled') return 'bg-red-900/50 text-red-400';
+                                    return 'bg-amber-900/50 text-amber-400';
+                                })()
+                                    }`}>
+                                    {selectedBookingForAction.status}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            {/* Primary Actions */}
+                            <div className="flex gap-2">
+                                <BookingActions booking={selectedBookingForAction} />
+                                <div className="text-xs text-slate-500 flex items-center ml-2">
+                                    ← Usa este menú para Editar
+                                </div>
+                            </div>
+
+                            {/* Cancel Button - Case Insensitive Check */}
+                            {selectedBookingForAction.status?.toLowerCase() !== 'cancelled' ? (
+                                <button
+                                    onClick={() => {
+                                        console.log("Cancel button clicked for id:", selectedBookingForAction.id);
+                                        if (confirm('¿Seguro que quieres cancelar esta cita?')) {
+                                            handleStatusUpdate(selectedBookingForAction.id, 'cancelled');
+                                            setSelectedBookingForAction(null);
+                                        }
+                                    }}
+                                    className="w-full py-4 mt-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg text-lg uppercase shadow-lg transition-transform transform active:scale-95"
+                                >
+                                    CANCELAR CITA
+                                </button>
+                            ) : (
+                                <div className="w-full text-center py-2 text-red-500 font-bold border border-red-900/50 bg-red-900/10 rounded mt-2">
+                                    CITA CANCELADA
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

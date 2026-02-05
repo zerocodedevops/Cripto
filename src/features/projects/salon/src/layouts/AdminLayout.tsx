@@ -1,4 +1,4 @@
-```javascript
+
 import { Outlet, useNavigate, NavLink } from 'react-router-dom';
 import { supabase } from '@/lib/supabase';
 import { LayoutDashboard, LogOut, Scissors, Users } from 'lucide-react';
@@ -8,7 +8,7 @@ export default function AdminLayout() {
 
     const handleLogout = async () => {
         await supabase.auth.signOut();
-        navigate('/proyectos/salon/admin/login');
+        navigate('/proyectos/salon/auth/admin/login');
     };
 
     const navItems = [
@@ -37,11 +37,10 @@ export default function AdminLayout() {
                             to={item.to}
                             end={item.to === '/proyectos/salon/admin'}
                             className={({ isActive }) =>
-                                `flex items - center space - x - 3 px - 4 py - 3 rounded - lg mb - 1 transition - all ${
-    isActive
-        ? 'bg-amber-900/30 text-amber-400 border border-amber-800/50'
-        : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
-} `
+                                `flex items-center space-x-3 px-4 py-3 rounded-lg mb-1 transition-all ${isActive
+                                    ? 'bg-amber-900/30 text-amber-400 border border-amber-800/50'
+                                    : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+                                }`
                             }
                         >
                             <item.icon className="w-5 h-5 mr-3" />
