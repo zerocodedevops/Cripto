@@ -53,7 +53,8 @@ export default function Landing() {
 			{/* Background Effects */}
 			<div className="fixed inset-0 z-0 pointer-events-none">
 				<div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#BF953F]/10 to-transparent opacity-50" />
-				<div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
+				{/* Background with texture - REMOVED CSP violation */}
+				<div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
 			</div>
 
 			{/* Navbar */}

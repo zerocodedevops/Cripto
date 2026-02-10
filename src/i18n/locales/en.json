@@ -161,6 +161,9 @@
 			},
 			"8": {
 				"description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite."
+			},
+			"9": {
+				"description": "Modern website for a moving company aimed at capturing leads. Features a quote calculator, service showcase, and a clean, responsive design optimized for conversions."
 			}
 		}
 	},

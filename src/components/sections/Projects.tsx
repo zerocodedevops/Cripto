@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import projectAiChat from "@/assets/projects/project-ai-chat.jpg";
 import projectBlog from "@/assets/projects/project-blog.jpg";
 import projectCrypto from "@/assets/projects/project-crypto-dashboard.jpg";
+import projectZeroDelay from "@/assets/projects/ZeroDelay.jpg";
 
 import projectDevOps from "@/assets/projects/project-devops-shop.jpg";
 import projectPortfolio from "@/assets/projects/project-portfolio-dashboard.jpg";
@@ -55,6 +56,15 @@ const projects: Project[] = [
 		demoUrl: "#/proyectos/crypto",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Prototype",
+	},
+	{
+		id: 9,
+		title: "Zero Delay Mudanzas",
+		image: projectZeroDelay,
+		tags: ["React", "Tailwind CSS", "Vite", "Responsive"],
+		demoUrl: "#/proyectos/zero-delay",
+		repoUrl: "https://github.com/zerocodedevops",
+		status: "Development",
 	},
 
 	// IN DEVELOPMENT - Coming soon

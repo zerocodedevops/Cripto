@@ -15,6 +15,7 @@ const CryptoApp = lazy(() =>
 		default: m.CryptoDashboard,
 	})),
 );
+const MediaApp = lazy(() => import("@/features/projects/mudanzas-coral/src/App"));
 const NotFound = lazy(() => import("@/features/misc/NotFound"));
 
 const router = createHashRouter(
@@ -67,6 +68,16 @@ const router = createHashRouter(
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Loading Salon App..." />}>
 						<SalonApp />
+					</Suspense>
+				</PageTransition>
+			),
+		},
+		{
+			path: "/proyectos/zero-delay/*",
+			element: (
+				<PageTransition>
+					<Suspense fallback={<PageLoader text="Cargando Mudanzas Coral..." />}>
+						<MediaApp />
 					</Suspense>
 				</PageTransition>
 			),

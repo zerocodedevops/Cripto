@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from "framer-motion";
 // eslint-disable-next-line
-import { ArrowUp, Code2, Github, Heart, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Code2, Github, Heart, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const socialLinks = [
@@ -14,6 +14,7 @@ const socialLinks = [
 		label: "LinkedIn",
 	},
 	{ icon: Mail, href: "mailto:zerocode.devops@gmail.com", label: "Email" },
+	{ icon: MessageCircle, href: "https://wa.me/34912622712", label: "WhatsApp" },
 ];
 
 export function Footer() {
@@ -116,6 +117,51 @@ export function Footer() {
 						{t("footer.by")}{" "}
 						<span className="text-primary-400">{t("footer.curiosity")}</span>
 					</p>
+
+					{/* SEO Keywords */}
+					<div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-2 text-xs text-dark-600">
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Contratar Diseñador Web</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Contratar Programador Web</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Creación de Páginas Web</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Creación de Páginas Web Madrid</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Desarrollo Web a Medida</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Desarrollo Web Freelance</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Desarrollo Web Madrid</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño UX/UI</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño de Tiendas Online</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño Web Freelance Madrid</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño Web para Autónomos</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño Web para Pymes</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño Web Profesional</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseñador Web en Madrid</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseñador Web para Empresas</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Especialista en Diseño Web</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Mantenimiento Web Profesional</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Programador Web Freelance</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Programador Web para Autónomos</a>
+						<span>|</span>
+						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Programador Web en Madrid</a>
+						<span>|</span>
+						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Servicios de Diseño Web</a>
+					</div>
 				</div>
 			</div>
 		</footer>

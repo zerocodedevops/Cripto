@@ -161,6 +161,9 @@
 			},
 			"8": {
 				"description": "Sitio web premium para salón de belleza con animaciones fluidas, galería interactiva y diseño responsive. Migrado a React + Vite."
+			},
+			"9": {
+				"description": "Sitio web moderno para empresa de mudanzas orientado a la captación de leads con presentación de servicios y un diseño limpio y responsive optimizado para conversiones."
 			}
 		}
 	},

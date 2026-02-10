@@ -1,6 +1,7 @@
 import { Edit2, Loader2, Save, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import SyncPricesButton from "../../components/admin/SyncPricesButton";
 
 export default function ServicesPage() {
 	const [services, setServices] = useState<any[]>([]);
@@ -20,6 +21,9 @@ export default function ServicesPage() {
 				.order("category", { ascending: true });
 
 			if (error) throw error;
+			console.log("📊 Services fetched:", data);
+			console.log("💰 First service price:", data?.[0]?.price, typeof data?.[0]?.price);
+			console.log("📋 DB Titles:", data?.map(s => s.title).slice(0, 10));
 			setServices(data || []);
 		} catch (error) {
 			console.error("Error fetching services:", error);
@@ -74,9 +78,7 @@ export default function ServicesPage() {
 				<h1 className="text-2xl font-bold text-slate-100">
 					Gestión de Servicios
 				</h1>
-				{/* <button className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg flex items-center text-sm">
-                    <Plus className="w-4 h-4 mr-2" /> Nuevo Servicio
-                </button> */}
+				<SyncPricesButton onSyncComplete={fetchServices} />
 			</div>
 
 			<div className="grid gap-4">

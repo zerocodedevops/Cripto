@@ -9,6 +9,7 @@ import {
 	Moon,
 	Sun,
 	X,
+	MessageCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -25,6 +26,7 @@ const socialLinks = [
 		label: "LinkedIn",
 	},
 	{ icon: Mail, href: "mailto:zerocode.devops@gmail.com", label: "Email" },
+	{ icon: MessageCircle, href: "https://wa.me/34912622712", label: "WhatsApp" },
 ];
 
 export function Navbar() {

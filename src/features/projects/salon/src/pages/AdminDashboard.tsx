@@ -5,6 +5,7 @@ import {
 	CheckCircle,
 	Clock,
 	CreditCard,
+	MessageSquare,
 	Users,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -66,9 +67,38 @@ export default function AdminDashboard() {
 			const now = new Date();
 			const todayStr = now.toISOString().split("T")[0];
 
+			console.log("📊 Total bookings fetched:", bookingsData?.length);
+			console.log("📊 Bookings status breakdown:", {
+				pending: bookingsData?.filter(b => b.status === "pending").length,
+				confirmed: bookingsData?.filter(b => b.status === "confirmed").length,
+				cancelled: bookingsData?.filter(b => b.status === "cancelled").length,
+			});
+
+			if (bookingsData && bookingsData.length > 0) {
+				console.log("📊 All bookings:", bookingsData.map(b => ({
+					id: b.id.substring(0, 8),
+					status: b.status,
+					date: b.date,
+					time: b.time,
+					stylist: b.stylist_id?.substring(0, 8),
+				})));
+			}
+
 			// Normalize data for Calendar
 			const formattedBookings =
 				bookingsData?.map((b) => {
+					// DEBUG: Log raw data
+					if (bookingsData.indexOf(b) === 0) {
+						console.log("🔍 First booking raw data:", {
+							id: b.id,
+							date: b.date,
+							time: b.time,
+							stylist_id: b.stylist_id,
+							user_email: b.user_email,
+							customer_notes: b.customer_notes,
+						});
+					}
+
 					// Handle multiple services (array of IDs)
 					const bookingServices =
 						b.service_ids
@@ -77,14 +107,38 @@ export default function AdminDashboard() {
 					const serviceNames = bookingServices
 						.map((s: any) => s.title)
 						.join(", ");
+
+					// Parse duration strings to minutes
+					const parseDuration = (durationStr: string): number => {
+						if (!durationStr) return 0;
+						let totalMinutes = 0;
+						// Match "1h 10 min" or "45 min" format
+						const hourMatch = durationStr.match(/(\d+)h/);
+						const minMatch = durationStr.match(/(\d+)\s*min/);
+						if (hourMatch) totalMinutes += parseInt(hourMatch[1]) * 60;
+						if (minMatch) totalMinutes += parseInt(minMatch[1]);
+						return totalMinutes;
+					};
+
 					const totalDuration = bookingServices.reduce(
-						(acc: number, curr: any) => acc + (curr.duration || 0),
+						(acc: number, curr: any) => acc + parseDuration(curr.duration || ""),
 						0,
 					);
 					const totalPrice = bookingServices.reduce(
 						(acc: number, curr: any) => acc + (curr.price || 0),
 						0,
 					);
+
+					// DEBUG stylist mapping
+					if (bookingsData.indexOf(b) === 0) {
+						console.log("🔍 Stylist lookup:", {
+							booking_stylist_id: b.stylist_id,
+							stylists_available: stylistsMap.size,
+							found_stylist: stylistsMap.get(b.stylist_id),
+							all_stylist_ids: Array.from(stylistsMap.keys()),
+						});
+					}
+
 					const stylistName = b.stylist_id
 						? stylistsMap.get(b.stylist_id)?.name
 						: "Cualquiera";
@@ -92,13 +146,15 @@ export default function AdminDashboard() {
 					return {
 						...b,
 						user_name:
-							b.user_email?.split("@")[0] ||
-							b.customer_notes?.slice(0, 10) ||
-							"Cliente",
+							b.guest_name || // Use guest_name if available (for guest bookings)
+							b.user_email?.split("@")[0] || // Or extract from user email if logged in
+							"Invitado Web", // Fallback
 						service_name: serviceNames || "Varios Servicios",
 						duration: totalDuration || 60,
 						price: totalPrice,
-						stylist_name: stylistName,
+						stylist_name: stylistName || "Cualquiera",
+						// Helper for display - use the TIME field, not DATE
+						display_time: b.time ? b.time.substring(0, 5) : "00:00",  // "10:00:00" → "10:00"
 					};
 				}) || [];
 
@@ -170,22 +226,50 @@ export default function AdminDashboard() {
 	return (
 		<div className="space-y-6">
 			{/* DEBUG BUTTON - REMOVE LATER */}
-			<button
-				onClick={() =>
-					setSelectedBookingForAction({
-						id: "debug-1",
-						service_name: "CITA DE PRUEBA",
-						user_name: "USUARIO TEST",
-						date: new Date().toISOString(),
-						time: "12:00",
-						status: "confirmed",
-						stylist_name: "TESTER",
-					})
-				}
-				className="bg-purple-600 text-white px-4 py-2 rounded shadow-lg font-bold w-full uppercase"
-			>
-				🛑 CLICK PARA PROBAR MODAL 🛑
-			</button>
+			{/* UTILS ROW */}
+			<div className="flex gap-4">
+				<button
+					onClick={() =>
+						setSelectedBookingForAction({
+							id: "debug-1",
+							service_name: "CITA DE PRUEBA",
+							user_name: "USUARIO TEST",
+							date: new Date().toISOString(),
+							time: "12:00",
+							status: "confirmed",
+							stylist_name: "TESTER",
+						})
+					}
+					className="bg-purple-600/20 text-purple-400 border border-purple-600/50 px-4 py-2 rounded text-xs font-bold uppercase hover:bg-purple-600/30"
+				>
+					🧪 Probar Modal
+				</button>
+
+				<button
+					onClick={async () => {
+						if (
+							confirm(
+								"¿PELIGRO: Estás seguro de que quieres BORRAR TODAS LAS CITAS? Esto no se puede deshacer.",
+							) &&
+							confirm("¿De verdad? Se borrará todo el historial.")
+						) {
+							const { error } = await supabase
+								.from("bookings")
+								.delete()
+								.neq("id", "00000000-0000-0000-0000-000000000000"); // Hack to delete all
+							if (error) {
+								alert("Error al borrar: " + error.message);
+							} else {
+								alert("Historial borrado completo.");
+								window.location.reload();
+							}
+						}
+					}}
+					className="bg-red-600/20 text-red-500 border border-red-600/50 px-4 py-2 rounded text-xs font-bold uppercase hover:bg-red-600/30 ml-auto"
+				>
+					🗑️ Borrar Todo el Historial
+				</button>
+			</div>
 
 			{/* KPI Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -244,10 +328,7 @@ export default function AdminDashboard() {
 								</h3>
 								<p className="text-amber-400 text-xs mt-1 flex items-center">
 									<Clock className="w-3 h-3 mr-1" />
-									{format(new Date(stats.nextClient.date), "HH:mm", {
-										locale: es,
-									})}{" "}
-									- {stats.nextClient.service_name}
+									{stats.nextClient.display_time} - {stats.nextClient.service_name}
 								</p>
 							</>
 						) : (
@@ -330,13 +411,18 @@ export default function AdminDashboard() {
 												</div>
 												<div className="flex items-center">
 													<Clock className="w-3 h-3 mr-1.5 opacity-70" />
-													{format(new Date(b.date), "HH:mm", { locale: es })} (
-													{b.duration} min)
+													{b.display_time} ({b.duration} min)
 												</div>
 												<div className="flex items-center text-amber-400/80">
 													<Users className="w-3 h-3 mr-1.5 opacity-70" />
-													{b.services?.name}
+													{b.stylist_name}
 												</div>
+												{b.customer_notes && (
+													<div className="flex items-start mt-2 text-slate-300 bg-slate-900/50 p-2 rounded border border-slate-700/50">
+														<MessageSquare className="w-3 h-3 mr-1.5 opacity-70 mt-0.5 flex-shrink-0" />
+														<span className="text-xs">{b.customer_notes}</span>
+													</div>
+												)}
 											</div>
 											<div className="mt-3 flex gap-2">
 												<button
@@ -417,8 +503,7 @@ export default function AdminDashboard() {
 							<div className="flex justify-between">
 								<span className="text-slate-500">Hora:</span>
 								<span>
-									{selectedBookingForAction.time ||
-										format(new Date(selectedBookingForAction.date), "HH:mm")}
+									{selectedBookingForAction.display_time}
 								</span>
 							</div>
 							<div className="flex justify-between">
@@ -452,7 +537,7 @@ export default function AdminDashboard() {
 
 							{/* Cancel Button - Case Insensitive Check */}
 							{selectedBookingForAction.status?.toLowerCase() !==
-							"cancelled" ? (
+								"cancelled" ? (
 								<button
 									onClick={() => {
 										console.log(

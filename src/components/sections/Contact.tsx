@@ -10,12 +10,11 @@ import {
 	Linkedin,
 	Mail,
 	MapPin,
-	Phone,
 	Send,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Button } from "@/components/ui";
 import { slideInLeft, slideInRight } from "@/hooks/useScrollAnimation";
@@ -33,41 +32,6 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 	</svg>
 );
 
-const contactInfo = [
-	{
-		icon: Mail,
-		// label: 'Email', // Replaced by translation
-		labelKey: "email",
-		value: "zerocode.devops@gmail.com",
-		href: "mailto:zerocode.devops@gmail.com",
-	},
-	{
-		icon: WhatsAppIcon,
-		labelKey: "whatsapp",
-		value: "+34 912 622 712",
-		href: "https://wa.me/34912622712",
-	},
-	{
-		icon: MapPin,
-		labelKey: "location",
-		value: "Madrid, España",
-		href: "#",
-	},
-	{
-		// eslint-disable-next-line
-		icon: Linkedin,
-		labelKey: "linkedin",
-		value: "zerocode-devops",
-		href: "https://www.linkedin.com/in/zerocode-devops",
-	},
-	{
-		// eslint-disable-next-line
-		icon: Github,
-		labelKey: "github",
-		value: "zerocodedevops",
-		href: "https://github.com/zerocodedevops",
-	},
-];
 
 export function Contact() {
 	const { t } = useTranslation();
@@ -180,7 +144,7 @@ export function Contact() {
 
 						<div className="space-y-4">
 							<a
-								href="mailto:zerocode.devops@gmail.com"
+								href="mailto:admin@zerocode-devops.com"
 								className="flex items-center gap-4 p-4 rounded-xl bg-dark-900/50 border border-dark-700/50 hover:border-primary-500/30 transition-all group"
 							>
 								<div className="p-3 rounded-lg bg-primary-500/10 text-primary-400 group-hover:bg-primary-500/20 transition-colors">
@@ -191,8 +155,25 @@ export function Contact() {
 										Email
 									</p>
 									<p className="text-white font-medium">
-										zerocode.devops@gmail.com
+										admin@zerocode-devops.com
 									</p>
+								</div>
+							</a>
+
+							<a
+								href="https://wa.me/34912622712"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-4 p-4 rounded-xl bg-dark-900/50 border border-dark-700/50 hover:border-primary-500/30 transition-all group"
+							>
+								<div className="p-3 rounded-lg bg-primary-500/10 text-primary-400 group-hover:bg-primary-500/20 transition-colors">
+									<WhatsAppIcon className="w-5 h-5" />
+								</div>
+								<div>
+									<p className="text-dark-400 text-xs uppercase tracking-wider font-medium mb-0.5">
+										WhatsApp Bussines
+									</p>
+									<p className="text-white font-medium">+34 912 622 712</p>
 								</div>
 							</a>
 

@@ -1,6 +1,6 @@
 import { format, getDay, parse, startOfWeek } from "date-fns";
 import { enUS, es } from "date-fns/locale";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
 	Calendar,
 	dateFnsLocalizer,
@@ -9,6 +9,7 @@ import {
 } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 const locales = {
 	"en-US": enUS,
@@ -27,6 +28,7 @@ interface BookingCalendarProps {
 	readonly bookings?: any[];
 	readonly className?: string;
 	readonly onSelectBooking?: (booking: any) => void;
+	readonly onRefresh?: () => void;
 }
 
 const messages = {
@@ -103,13 +105,6 @@ const CustomToolbar = (toolbar: any) => {
 
 			<div className="flex bg-slate-900/50 p-1 rounded-lg border border-slate-800">
 				<button
-					onClick={() => toolbar.onView("month")}
-					className={`px-3 py-1 text-xs rounded-md transition-all ${toolbar.view === "month" ? "bg-slate-800 text-white shadow-sm" : "text-slate-400 hover:text-slate-200"}`}
-					type="button"
-				>
-					Mes
-				</button>
-				<button
 					onClick={() => toolbar.onView("week")}
 					className={`px-3 py-1 text-xs rounded-md transition-all ${toolbar.view === "week" ? "bg-slate-800 text-white shadow-sm" : "text-slate-400 hover:text-slate-200"}`}
 					type="button"
@@ -128,36 +123,103 @@ const CustomToolbar = (toolbar: any) => {
 	);
 };
 
+// Custom Event Component - only shows title without time
+const CustomEvent = ({ event }: any) => {
+	return (
+		<div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
+			<span>{event.title}</span>
+		</div>
+	);
+};
+
 export default function BookingCalendar({
 	bookings = [],
 	className,
 	onSelectBooking,
+	onRefresh,
 }: BookingCalendarProps) {
 	const [view, setView] = useState<View>(Views.WEEK);
 	const [date, setDate] = useState(new Date());
 
 	const { views } = useMemo(
 		() => ({
-			views: [Views.MONTH, Views.WEEK, Views.DAY, Views.AGENDA],
+			views: [Views.WEEK, Views.DAY, Views.AGENDA],
 		}),
 		[],
 	);
 
+	// Auto-navigate to first booking if there are bookings
+	useEffect(() => {
+		if (bookings.length > 0 && bookings[0].date) {
+			const firstBookingDate = new Date(bookings[0].date);
+			// Only navigate if first booking is in a different week/month
+			if (Math.abs(firstBookingDate.getTime() - date.getTime()) > 7 * 24 * 60 * 60 * 1000) {
+				setDate(firstBookingDate);
+			}
+		}
+	}, [bookings.length]);
+
+	// Responsive: default to Day view on mobile
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 768) {
+				setView(Views.DAY);
+			}
+		};
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	// Real-time subscription to bookings table
+	useEffect(() => {
+		if (!onRefresh) return;
+
+		const channel = supabase
+			.channel('bookings-changes')
+			.on(
+				'postgres_changes',
+				{ event: '*', schema: 'public', table: 'bookings' },
+				() => {
+					console.log('📡 Booking change detected, refreshing...');
+					onRefresh();
+				}
+			)
+			.subscribe();
+
+		return () => {
+			supabase.removeChannel(channel);
+		};
+	}, [onRefresh]);
+
 	const events = bookings.map((b) => {
-		// Construct full date string (YYYY-MM-DDTHH:mm:00)
-		// If 'time' is missing or null, default to 10:00 to avoid midnight issues
-		const timeStr = b.time ? b.time : "10:00";
-		const dateTimeStr = `${b.date.split("T")[0]}T${timeStr}:00`;
+		// Construct full date string (YYYY-MM-DDTHH:mm:ss)
+		// b.date is already "YYYY-MM-DD" format, b.time is "HH:mm:ss"
+		const timeStr = b.time || "10:00:00";
+		const dateTimeStr = `${b.date}T${timeStr}`;
 		const startDate = new Date(dateTimeStr);
+		const endDate = new Date(startDate.getTime() + (b.duration || 60) * 60000);
+
+		// Safety check - log ONLY if invalid
+		if (isNaN(startDate.getTime())) {
+			console.error("❌ Invalid date detected:", {
+				original_date: b.date,
+				original_time: b.time,
+				constructed: dateTimeStr,
+			});
+		}
 
 		return {
 			id: b.id,
-			title: `${b.user_name || "Cliente"} - ${b.service_name || "Servicio"}`,
+			title: `${b.user_name || "Cliente"} - ${b.service_name || "Servicio"} (${b.stylist_name || "Cualquiera"})`,
 			start: startDate,
-			end: new Date(startDate.getTime() + (b.duration || 60) * 60000),
+			end: endDate,
 			resource: b,
 		};
 	});
+
+	console.log("📅 Total events generated:", events.length);
+	console.log("📅 Passing events to Calendar:", events);
 
 	return (
 		<div
@@ -178,6 +240,7 @@ export default function BookingCalendar({
 				culture="es"
 				components={{
 					toolbar: CustomToolbar,
+					event: CustomEvent,
 				}}
 				onSelectEvent={(event) => {
 					console.log("Calendar Event Clicked:", event);
@@ -185,22 +248,35 @@ export default function BookingCalendar({
 				}}
 				className="custom-calendar text-slate-300"
 				eventPropGetter={(event) => {
-					let newStyle =
-						"border-none text-white text-xs rounded px-1 py-0.5 opacity-90 hover:opacity-100 cursor-pointer ";
+					let backgroundColor = "";
 
 					switch (event.resource.status) {
 						case "confirmed":
 						case "paid":
-							newStyle += "bg-emerald-600";
+							backgroundColor = "#10b981"; // emerald-600
 							break;
 						case "cancelled":
-							newStyle += "bg-red-600 line-through opacity-50";
+							backgroundColor = "#dc2626"; // red-600
 							break;
 						default: // pending
-							newStyle += "bg-amber-600";
+							backgroundColor = "#f59e0b"; // amber-600
 					}
 
-					return { className: newStyle };
+					return {
+						style: {
+							backgroundColor,
+							color: "white",
+							border: "none",
+							borderRadius: "0",
+							padding: "4px 8px",
+							fontSize: "13px",
+							fontWeight: "500",
+							opacity: event.resource.status === "cancelled" ? 0.5 : 1,
+							cursor: "pointer",
+							width: "100%",
+							margin: 0,
+						}
+					};
 				}}
 			/>
 
@@ -222,7 +298,29 @@ export default function BookingCalendar({
                 .rbc-time-view-resources .rbc-time-gutter, .rbc-time-view-resources .rbc-time-header-gutter { border-right: 1px solid #1e293b; }
                 .rbc-time-gutter .rbc-timeslot-group { border-bottom: 1px solid #1e293b; }
                 .rbc-label { color: #94a3b8; font-size: 0.75rem; }
+                /* Force events to full width */
+                .rbc-event { 
+                    margin: 0 !important; 
+                    left: 0 !important; 
+                    width: calc(100% - 2px) !important; 
+                    right: 0 !important; 
+                    border-right: 2px solid #0f172a !important;
+                }
+                .rbc-event-content { 
+                    padding: 0 !important; 
+                    width: 100% !important;
+                }
+                .rbc-event-label { display: none !important; }
                 .rbc-current-time-indicator { background-color: #f59e0b; }
+
+                /* Responsive Mobile/Tablet */
+                @media (max-width: 768px) {
+                    .rbc-toolbar { flex-direction: column; gap: 8px; align-items: stretch; }
+                    .rbc-toolbar > * { justify-content: center; }
+                    .rbc-event { font-size: 11px !important; padding: 2px 4px !important; }
+                    .rbc-header { font-size: 0.75rem; padding: 8px 0; }
+                    .rbc-label { font-size: 0.65rem; }
+                }
             `}</style>
 		</div>
 	);

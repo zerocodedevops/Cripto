@@ -2,11 +2,9 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import {
 	Calendar,
-	ChevronRight,
 	Clock,
 	CreditCard,
 	Loader2,
-	MapPin,
 	Scissors,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -24,7 +22,7 @@ export default function MyBookings() {
 			if (!user) return;
 
 			// Fetch bookings for this user
-			const { data, error } = await supabase
+			const { data } = await supabase
 				.from("bookings")
 				.select(`
                     *,
@@ -86,13 +84,12 @@ export default function MyBookings() {
 						</p>
 					</div>
 					<div
-						className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${
-							booking.status === "approved"
-								? "bg-emerald-900/30 text-emerald-400 border-emerald-800/50"
-								: booking.status === "pending"
-									? "bg-amber-900/30 text-amber-400 border-amber-800/50"
-									: "bg-red-900/30 text-red-400 border-red-800/50"
-						}`}
+						className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${booking.status === "approved"
+							? "bg-emerald-900/30 text-emerald-400 border-emerald-800/50"
+							: booking.status === "pending"
+								? "bg-amber-900/30 text-amber-400 border-amber-800/50"
+								: "bg-red-900/30 text-red-400 border-red-800/50"
+							}`}
 					>
 						{booking.status === "approved"
 							? "Confirmada"
@@ -111,7 +108,7 @@ export default function MyBookings() {
 					</div>
 					<div className="flex items-center text-slate-300 text-sm">
 						<Clock className="w-4 h-4 mr-3 text-slate-500" />
-						{booking.time}
+						{format(new Date(booking.date), "HH:mm")}
 					</div>
 					<div className="flex items-center text-slate-300 text-sm">
 						<CreditCard className="w-4 h-4 mr-3 text-slate-500" />
