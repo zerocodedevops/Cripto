@@ -23,7 +23,19 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES: any = {
+interface PricingItem {
+	id: string;
+	name: string;
+	description: string;
+	price: number;
+}
+
+interface PricingCategory {
+	icon: any;
+	items: PricingItem[];
+}
+
+const CATEGORIES: Record<string, PricingCategory> = {
 	"Estructura y Secciones": {
 		icon: LayoutIcon,
 		items: [
@@ -272,7 +284,7 @@ export function PricingConfigurator() {
 
 	const totalPrice = useMemo(() => {
 		let total = 0;
-		const allItems = Object.values(CATEGORIES).flatMap((cat: any) => cat.items);
+		const allItems = Object.values(CATEGORIES).flatMap((cat) => cat.items);
 
 		if (selectedPack) {
 			const pack = PACKS[selectedPack as keyof typeof PACKS];
@@ -296,7 +308,7 @@ export function PricingConfigurator() {
 
 	const onSubmit = async (formData: ContactFormData) => {
 		setStatus("loading");
-		const allItems = Object.values(CATEGORIES).flatMap((cat: any) => cat.items);
+		const allItems = Object.values(CATEGORIES).flatMap((cat) => cat.items);
 		const selected = allItems.filter((item) => selections[item.id]);
 
 		let selectionText = "";
@@ -305,6 +317,7 @@ export function PricingConfigurator() {
 		selectionText += `SERVICIOS:\n${selected.map((i) => `- ${i.name}`).join("\n")}`;
 		selectionText += `\nTOTAL ESTIMADO: ${totalPrice}€ + IVA`;
 
+		const messageSuffix = formData.message ?? "Sin mensaje";
 		try {
 			await emailjs.send(
 				import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -313,7 +326,7 @@ export function PricingConfigurator() {
 					from_name: formData.name,
 					from_email: formData.email,
 					subject: `Solicitud de Presupuesto - ${totalPrice}€`,
-					message: `El cliente ha configurado el siguiente presupuesto:\n\n${selectionText}\n\nMensaje adicional: ${formData.message || "Sin mensaje"}`,
+					message: `El cliente ha configurado el siguiente presupuesto:\n\n${selectionText}\n\nMensaje adicional: ${messageSuffix}`,
 				},
 				import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 			);
@@ -395,7 +408,7 @@ export function PricingConfigurator() {
 
 			{/* Detailed Options */}
 			<div className="space-y-10">
-				{Object.entries(CATEGORIES).map(([catName, data]: [string, any]) => (
+				{Object.entries(CATEGORIES).map(([catName, data]) => (
 					<div key={catName} className="space-y-6">
 						<div className="flex items-center gap-3 border-b border-dark-800 pb-4">
 							<div className="p-2 rounded-lg bg-primary-500/10 text-primary-400">
@@ -407,7 +420,7 @@ export function PricingConfigurator() {
 						</div>
 
 						<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-							{data.items.map((item: any) => {
+							{data.items.map((item) => {
 								const isSelected = selections[item.id];
 								const isInPack =
 									selectedPack &&
@@ -498,10 +511,7 @@ export function PricingConfigurator() {
 									</span>
 									<span className="text-white font-bold text-3xl font-outfit">
 										Presupuesto
-										<span className="text-sm text-dark-500 ml-1 font-normal">
-											{" "}
-											a Medida
-										</span>
+										<span className="text-sm text-dark-500 ml-1 font-normal"> a Medida</span>
 									</span>
 								</div>
 							</div>
