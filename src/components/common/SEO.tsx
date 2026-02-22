@@ -13,7 +13,7 @@ export function Seo({
 	description,
 	keywords,
 	image = "https://zerocode-devops.web.app/og-image.png",
-	url = "https://zerocode-devops.web.app",
+	url = globalThis.location?.href || "https://zerocode-devops.web.app",
 }: Readonly<SEOProps>) {
 	const siteTitle = "ZeroCode | David G. - AI-First Developer";
 

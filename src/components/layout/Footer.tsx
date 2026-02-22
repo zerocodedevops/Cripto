@@ -1,15 +1,28 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from "framer-motion";
-// eslint-disable-next-line
-import { ArrowUp, Code2, Github, Heart, Linkedin, Mail, MessageCircle } from "lucide-react";
+// eslint-disable-next-line @typescript-eslint/no-deprecated
+import {
+	ArrowUp,
+	Code2,
+	Github as GithubIcon,
+	Heart,
+	Linkedin as LinkedinIcon,
+	Mail,
+	MessageCircle,
+} from "lucide-react"; // NOSONAR
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const socialLinks = [
-	// eslint-disable-next-line
-	{ icon: Github, href: "https://github.com/zerocodedevops", label: "GitHub" },
-	// eslint-disable-next-line
+	// eslint-disable-next-line @typescript-eslint/no-deprecated
 	{
-		icon: Linkedin,
+		icon: GithubIcon,
+		href: "https://github.com/zerocodedevops",
+		label: "GitHub",
+	}, // NOSONAR
+	// eslint-disable-next-line @typescript-eslint/no-deprecated
+	{
+		icon: LinkedinIcon, // NOSONAR
 		href: "https://www.linkedin.com/in/zerocode-devops",
 		label: "LinkedIn",
 	},
@@ -18,18 +31,36 @@ const socialLinks = [
 ];
 
 export function Footer() {
+	const navigate = useNavigate();
 	const { t } = useTranslation();
 
 	const footerLinks = [
-		{ label: t("nav.home"), href: "#hero" },
-		{ label: t("nav.about"), href: "#about" },
-		{ label: t("nav.skills"), href: "#skills" },
-		{ label: t("nav.projects"), href: "#projects" },
-		{ label: t("nav.contact"), href: "#contact" },
+		{ label: "Inicio", href: "/" },
+		{ label: "Sobre Mí", href: "/disenador-web-freelance-madrid" },
+		{ label: "Servicios", href: "/paginas-web-pymes-autonomos" },
+		{ label: "Precios", href: "/precios-paginas-web" },
+		{ label: "Contacto", href: "#contact" },
 	];
 
+	const handleNavClick = (href: string) => {
+		if (href.startsWith("#")) {
+			const element = document.querySelector(href);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			} else {
+				navigate("/");
+				setTimeout(() => {
+					document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+				}, 100);
+			}
+		} else {
+			navigate(href);
+			globalThis.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	};
+
 	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		globalThis.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const currentYear = new Date().getFullYear();
@@ -53,14 +84,12 @@ export function Footer() {
 					<div className="text-center md:text-left">
 						<div className="mb-6 md:mb-0 w-full">
 							<motion.a
-								href="#hero"
+								href="/"
 								className="flex items-center justify-center md:justify-start gap-2 mb-2 group w-fit mx-auto md:mx-0"
 								whileHover={{ scale: 1.05 }}
 								onClick={(e) => {
 									e.preventDefault();
-									document
-										.querySelector("#hero")
-										?.scrollIntoView({ behavior: "smooth" });
+									handleNavClick("/");
 								}}
 							>
 								<div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
@@ -71,7 +100,7 @@ export function Footer() {
 								</span>
 							</motion.a>
 							<p className="text-dark-400 mt-2 text-sm mx-auto md:mx-0 whitespace-nowrap">
-								{t("footer.tagline")}
+								Creando experiencias digitales únicas
 							</p>
 						</div>
 					</div>
@@ -80,10 +109,14 @@ export function Footer() {
 					<div className="flex flex-wrap justify-center gap-6">
 						{footerLinks.map((link) => (
 							<motion.a
-								key={link.href}
+								key={link.label}
 								href={link.href}
-								className="text-dark-400 hover:text-primary-400 transition-colors text-sm"
+								className="text-dark-400 hover:text-primary-400 transition-colors text-sm font-medium"
 								whileHover={{ y: -2 }}
+								onClick={(e) => {
+									e.preventDefault();
+									handleNavClick(link.href);
+								}}
 							>
 								{link.label}
 							</motion.a>
@@ -120,47 +153,174 @@ export function Footer() {
 
 					{/* SEO Keywords */}
 					<div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-2 text-xs text-dark-600">
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Contratar Diseñador Web</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Contratar Diseñador Web
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Contratar Programador Web</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Contratar Programador Web
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Creación de Páginas Web</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Creación de Páginas Web
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Creación de Páginas Web Madrid</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Creación de Páginas Web Madrid
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Desarrollo Web a Medida</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Desarrollo Web a Medida
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Desarrollo Web Freelance</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Desarrollo Web Freelance
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Desarrollo Web Madrid</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Desarrollo Web Madrid
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño UX/UI</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño UX/UI
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño de Tiendas Online</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño de Tiendas Online
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño Web Freelance Madrid</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño Web Freelance Madrid
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño Web para Autónomos</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño Web para Autónomos
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseño Web para Pymes</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño Web para Pymes
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseño Web Profesional</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseño Web Profesional
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Diseñador Web en Madrid</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseñador Web en Madrid
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Diseñador Web para Empresas</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Diseñador Web para Empresas
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Especialista en Diseño Web</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Especialista en Diseño Web
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Mantenimiento Web Profesional</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Mantenimiento Web Profesional
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Programador Web Freelance</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Programador Web Freelance
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Programador Web para Autónomos</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Programador Web para Autónomos
+						</a>
 						<span>|</span>
-						<a href="mailto:admin@zerocode-devops.com" className="hover:text-primary-400 transition-colors">Programador Web en Madrid</a>
+						<a
+							href="mailto:admin@zerocode-devops.com"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Programador Web en Madrid
+						</a>
 						<span>|</span>
-						<a href="https://wa.me/34912622712" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Servicios de Diseño Web</a>
+						<a
+							href="https://wa.me/34912622712"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-primary-400 transition-colors"
+						>
+							Servicios de Diseño Web
+						</a>
 					</div>
 				</div>
 			</div>

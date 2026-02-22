@@ -79,6 +79,7 @@ export default function DashboardPage() {
 				// Update Active Users (fluctuate)
 				const currentUsers = Number.parseInt(
 					String(next.kpi.activeUsers.value).replaceAll(",", ""),
+					10,
 				);
 				const userChange = Math.floor(Math.random() * 10) - 4; // -4 to +5
 				next.kpi.activeUsers.value = (
@@ -99,6 +100,7 @@ export default function DashboardPage() {
 					// Update Sales count
 					const currentSales = Number.parseInt(
 						String(next.kpi.totalSales.value).replaceAll(",", ""),
+						10,
 					);
 					next.kpi.totalSales.value = (currentSales + 1).toLocaleString();
 				}

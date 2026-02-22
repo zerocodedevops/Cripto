@@ -6,7 +6,6 @@ import {
 	premiumColors,
 	premiumEffects,
 	premiumLayout,
-	premiumTypography,
 } from "../utils/premiumTheme";
 
 interface LayoutControlsProps {

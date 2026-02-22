@@ -28,7 +28,7 @@ export default function BookingActions({ booking }: { readonly booking: any }) {
 		if (res.success) {
 			globalThis.location.reload();
 		} else {
-			alert("Error al eliminar: " + (res.error || "Desconocido"));
+			alert(`Error al eliminar: ${res.error || "Desconocido"}`);
 		}
 	};
 

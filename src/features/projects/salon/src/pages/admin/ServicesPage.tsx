@@ -11,7 +11,7 @@ export default function ServicesPage() {
 
 	useEffect(() => {
 		fetchServices();
-	}, []);
+	}, [fetchServices]);
 
 	const fetchServices = async () => {
 		try {
@@ -22,8 +22,12 @@ export default function ServicesPage() {
 
 			if (error) throw error;
 			console.log("📊 Services fetched:", data);
-			console.log("💰 First service price:", data?.[0]?.price, typeof data?.[0]?.price);
-			console.log("📋 DB Titles:", data?.map(s => s.title).slice(0, 10));
+			console.log(
+				"💰 First service price:",
+				data?.[0]?.price,
+				typeof data?.[0]?.price,
+			);
+			console.log("📋 DB Titles:", data?.map((s) => s.title).slice(0, 10));
 			setServices(data || []);
 		} catch (error) {
 			console.error("Error fetching services:", error);
@@ -157,7 +161,7 @@ export default function ServicesPage() {
 										value={editForm.duration || ""}
 										aria-label="Service Duration"
 										onChange={(e) => {
-											const val = Number.parseInt(e.target.value);
+											const val = Number.parseInt(e.target.value, 10);
 											setEditForm({
 												...editForm,
 												duration: Number.isNaN(val) ? 0 : val,

@@ -26,7 +26,7 @@ export interface ProductParams {
 import { ShopService } from "../../../../services/shopService";
 
 // Initialize Fuzzy Search
-const fuse = new Fuse(mockProducts, {
+const _fuse = new Fuse(mockProducts, {
 	keys: ["title", "description", "category"],
 	threshold: 0.3, // Tolerance for typos
 });

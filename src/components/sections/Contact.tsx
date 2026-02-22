@@ -32,7 +32,6 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 	</svg>
 );
 
-
 export function Contact() {
 	const { t } = useTranslation();
 	const [status, setStatus] = useState<

@@ -30,7 +30,7 @@ export default function AdminDashboard() {
 	useEffect(() => {
 		console.log("AdminDashboard Component Mounted - Fetching Data");
 		fetchDashboardData();
-	}, []);
+	}, [fetchDashboardData]);
 
 	useEffect(() => {
 		if (selectedBookingForAction) {
@@ -69,19 +69,22 @@ export default function AdminDashboard() {
 
 			console.log("📊 Total bookings fetched:", bookingsData?.length);
 			console.log("📊 Bookings status breakdown:", {
-				pending: bookingsData?.filter(b => b.status === "pending").length,
-				confirmed: bookingsData?.filter(b => b.status === "confirmed").length,
-				cancelled: bookingsData?.filter(b => b.status === "cancelled").length,
+				pending: bookingsData?.filter((b) => b.status === "pending").length,
+				confirmed: bookingsData?.filter((b) => b.status === "confirmed").length,
+				cancelled: bookingsData?.filter((b) => b.status === "cancelled").length,
 			});
 
 			if (bookingsData && bookingsData.length > 0) {
-				console.log("📊 All bookings:", bookingsData.map(b => ({
-					id: b.id.substring(0, 8),
-					status: b.status,
-					date: b.date,
-					time: b.time,
-					stylist: b.stylist_id?.substring(0, 8),
-				})));
+				console.log(
+					"📊 All bookings:",
+					bookingsData.map((b) => ({
+						id: b.id.substring(0, 8),
+						status: b.status,
+						date: b.date,
+						time: b.time,
+						stylist: b.stylist_id?.substring(0, 8),
+					})),
+				);
 			}
 
 			// Normalize data for Calendar
@@ -115,13 +118,14 @@ export default function AdminDashboard() {
 						// Match "1h 10 min" or "45 min" format
 						const hourMatch = durationStr.match(/(\d+)h/);
 						const minMatch = durationStr.match(/(\d+)\s*min/);
-						if (hourMatch) totalMinutes += parseInt(hourMatch[1]) * 60;
-						if (minMatch) totalMinutes += parseInt(minMatch[1]);
+						if (hourMatch) totalMinutes += parseInt(hourMatch[1], 10) * 60;
+						if (minMatch) totalMinutes += parseInt(minMatch[1], 10);
 						return totalMinutes;
 					};
 
 					const totalDuration = bookingServices.reduce(
-						(acc: number, curr: any) => acc + parseDuration(curr.duration || ""),
+						(acc: number, curr: any) =>
+							acc + parseDuration(curr.duration || ""),
 						0,
 					);
 					const totalPrice = bookingServices.reduce(
@@ -154,7 +158,7 @@ export default function AdminDashboard() {
 						price: totalPrice,
 						stylist_name: stylistName || "Cualquiera",
 						// Helper for display - use the TIME field, not DATE
-						display_time: b.time ? b.time.substring(0, 5) : "00:00",  // "10:00:00" → "10:00"
+						display_time: b.time ? b.time.substring(0, 5) : "00:00", // "10:00:00" → "10:00"
 					};
 				}) || [];
 
@@ -258,7 +262,7 @@ export default function AdminDashboard() {
 								.delete()
 								.neq("id", "00000000-0000-0000-0000-000000000000"); // Hack to delete all
 							if (error) {
-								alert("Error al borrar: " + error.message);
+								alert(`Error al borrar: ${error.message}`);
 							} else {
 								alert("Historial borrado completo.");
 								window.location.reload();
@@ -328,7 +332,8 @@ export default function AdminDashboard() {
 								</h3>
 								<p className="text-amber-400 text-xs mt-1 flex items-center">
 									<Clock className="w-3 h-3 mr-1" />
-									{stats.nextClient.display_time} - {stats.nextClient.service_name}
+									{stats.nextClient.display_time} -{" "}
+									{stats.nextClient.service_name}
 								</p>
 							</>
 						) : (
@@ -502,9 +507,7 @@ export default function AdminDashboard() {
 							</div>
 							<div className="flex justify-between">
 								<span className="text-slate-500">Hora:</span>
-								<span>
-									{selectedBookingForAction.display_time}
-								</span>
+								<span>{selectedBookingForAction.display_time}</span>
 							</div>
 							<div className="flex justify-between">
 								<span className="text-slate-500">Profesional:</span>
@@ -537,7 +540,7 @@ export default function AdminDashboard() {
 
 							{/* Cancel Button - Case Insensitive Check */}
 							{selectedBookingForAction.status?.toLowerCase() !==
-								"cancelled" ? (
+							"cancelled" ? (
 								<button
 									onClick={() => {
 										console.log(

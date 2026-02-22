@@ -25,7 +25,7 @@ export const handlers = [
 				valStr.replaceAll(",", "").replaceAll("%", ""),
 			);
 			if (Number.isNaN(num)) return valStr;
-			if (isPercent) return num.toFixed(1) + "%"; // Don't scale percentages usually, or maybe just slight variation? Let's not scale % for now.
+			if (isPercent) return `${num.toFixed(1)}%`; // Don't scale percentages usually, or maybe just slight variation? Let's not scale % for now.
 			return (num * mul).toLocaleString();
 		};
 
@@ -52,7 +52,7 @@ export const handlers = [
 				},
 				conversionRate: {
 					title: "Conversión",
-					value: getSegmentValue(4.2, 3.1, 3.6) + "%",
+					value: `${getSegmentValue(4.2, 3.1, 3.6)}%`,
 					change: getSegmentValue(2.1, -0.8, -1.2),
 					trend: segment === "mobile" ? "up" : "down",
 				},
@@ -260,7 +260,7 @@ export const handlers = [
 					sparkline_in_7d: {
 						price: Array.from(
 							{ length: 168 },
-							(_, j) => basePrice + (Math.random() - 0.5) * (basePrice * 0.05),
+							(_, _j) => basePrice + (Math.random() - 0.5) * (basePrice * 0.05),
 						),
 					},
 					price_change_percentage_7d_in_currency:

@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, DollarSign, Wallet, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useCryptoPrice } from "../hooks/useCryptoPrice";
 import { cryptoTheme } from "../utils/cryptoTheme";
 

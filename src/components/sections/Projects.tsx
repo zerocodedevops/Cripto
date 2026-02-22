@@ -5,13 +5,12 @@ import { useTranslation } from "react-i18next";
 import projectAiChat from "@/assets/projects/project-ai-chat.jpg";
 import projectBlog from "@/assets/projects/project-blog.jpg";
 import projectCrypto from "@/assets/projects/project-crypto-dashboard.jpg";
-import projectZeroDelay from "@/assets/projects/ZeroDelay.jpg";
-
 import projectDevOps from "@/assets/projects/project-devops-shop.jpg";
 import projectPortfolio from "@/assets/projects/project-portfolio-dashboard.jpg";
 import projectSalon from "@/assets/projects/project-salon.jpg";
 import projectTask from "@/assets/projects/project-task-management.jpg";
 import projectWeather from "@/assets/projects/project-weather.jpg";
+import projectZeroDelay from "@/assets/projects/ZeroDelay.jpg";
 import { Card, TechBadge } from "@/components/ui";
 import { fadeInUp, staggerContainer } from "@/hooks/useScrollAnimation";
 import { trackEvent } from "@/lib/analytics";

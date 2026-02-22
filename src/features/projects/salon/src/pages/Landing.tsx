@@ -272,7 +272,7 @@ export default function Landing() {
 						Últimas Novedades
 					</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{BLOG_POSTS.map((post, index) => (
+						{BLOG_POSTS.map((post, _index) => (
 							<button
 								key={post.id}
 								className="group w-full text-left cursor-pointer border border-white/5 bg-background hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col h-full"

@@ -52,7 +52,6 @@ describe("Cart Slice", () => {
 	const initialState = { items: [], isOpen: false, status: "idle" as const };
 
 	it("should handle initial state", () => {
-		// @ts-expect-error
 		expect(cartReducer(undefined, { type: "unknown" })).toEqual(initialState);
 	});
 
@@ -69,7 +68,6 @@ describe("Cart Slice", () => {
 		const actual = cartReducer(initialState, addToCart(product));
 		expect(actual.items.length).toEqual(1);
 		expect(actual.items[0].quantity).toEqual(1);
-		// @ts-expect-error
 		expect(actual.items[0].size).toBeUndefined();
 	});
 

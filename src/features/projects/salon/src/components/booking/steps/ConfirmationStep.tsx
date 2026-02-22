@@ -20,7 +20,7 @@ export default function ConfirmationStep() {
 		if (status === "idle" && date) {
 			confirmBooking();
 		}
-	}, [status, date]);
+	}, [status, date, confirmBooking]);
 
 	const confirmBooking = async () => {
 		setStatus("processing");

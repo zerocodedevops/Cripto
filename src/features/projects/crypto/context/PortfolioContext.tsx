@@ -137,7 +137,7 @@ export function PortfolioProvider({
 				0,
 			),
 		}),
-		[transactions, holdings],
+		[transactions, holdings, addTransaction, getHolding, removeTransaction],
 	);
 
 	return (

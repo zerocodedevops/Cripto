@@ -1,0 +1,347 @@
+apps\devops-shop\src\pages\CatalogPage.tsx:20:19 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    18 Ôöé 	const handleVoiceSearch = () => {
+    19 Ôöé 		const SpeechRecognition =
+  > 20 Ôöé 			(globalThis as any).SpeechRecognition ||
+       Ôöé 			               ^^^
+    21 Ôöé 			(globalThis as any).webkitSpeechRecognition;
+    22 Ôöé 
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:21:19 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    19 Ôöé 		const SpeechRecognition =
+    20 Ôöé 			(globalThis as any).SpeechRecognition ||
+  > 21 Ôöé 			(globalThis as any).webkitSpeechRecognition;
+       Ôöé 			               ^^^
+    22 Ôöé 
+    23 Ôöé 		if (SpeechRecognition) {
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:29:35 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    27 Ôöé 			setIsListening(true);
+    28 Ôöé 
+  > 29 Ôöé 			recognition.onresult = (event: any) => {
+       Ôöé 			                               ^^^
+    30 Ôöé 				const transcript = event.results[0][0].transcript;
+    31 Ôöé 				setSearch(transcript);
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:76:7 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    74 Ôöé 							className={`pl-10 pr-10 py-2 bg-slate-50 dark:bg-slate-800 border ${isListening ? "border-indigo-500 ring-2 ring-indigo-500/20" : "border-slate-200 dark:border-slate-700"} rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-64 transition-all dark:text-white dark:placeholder-slate-500`}
+    75 Ôöé 						/>
+  > 76 Ôöé 						<button
+       Ôöé 						^^^^^^^
+  > 77 Ôöé 							onClick={handleVoiceSearch}
+  > 78 Ôöé 							className={`absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-slate-200 transition-colors ${isListening ? "text-red-500 animate-pulse" : "text-slate-400"}`}
+  > 79 Ôöé 							title="Buscar por voz"
+  > 80 Ôöé 						>
+       Ôöé 						^
+    81 Ôöé 							<Mic className="w-4 h-4" />
+    82 Ôöé 						</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:108:13 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+    106 Ôöé 					{Array.from({ length: 8 }).map((_, i) => (
+    107 Ôöé 						<div
+  > 108 Ôöé 							key={i}
+        Ôöé 							     ^
+    109 Ôöé 							className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800"
+    110 Ôöé 						>
+  
+  i This is the source of the key value.
+  
+    104 Ôöé 			{isLoading ? (
+    105 Ôöé 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  > 106 Ôöé 					{Array.from({ length: 8 }).map((_, i) => (
+        Ôöé 					                                   ^
+    107 Ôöé 						<div
+    108 Ôöé 							key={i}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:70:31 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    68 Ôöé 										transition: "opacity 0.3s",
+    69 Ôöé 									}}
+  > 70 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+       Ôöé 									                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    71 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+    72 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:71:30 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    69 Ôöé 									}}
+    70 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+  > 71 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+       Ôöé 									                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    72 Ôöé 								>
+    73 Ôöé 									Inicio
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:86:31 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    84 Ôöé 										transition: "opacity 0.3s",
+    85 Ôöé 									}}
+  > 86 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+       Ôöé 									                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    87 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+    88 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:87:30 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    85 Ôöé 									}}
+    86 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+  > 87 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+       Ôöé 									                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    88 Ôöé 								>
+    89 Ôöé 									Servicios
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:102:31 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    100 Ôöé 										transition: "opacity 0.3s",
+    101 Ôöé 									}}
+  > 102 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+        Ôöé 									                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    103 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+    104 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:103:30 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    101 Ôöé 									}}
+    102 Ôöé 									onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+  > 103 Ôöé 									onMouseOut={(e) => (e.currentTarget.style.opacity = "0.9")}
+        Ôöé 									                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    104 Ôöé 								>
+    105 Ôöé 									Contacto
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:203:29 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    201 Ôöé 								transition: "opacity 0.3s",
+    202 Ôöé 							}}
+  > 203 Ôöé 							onMouseOver={(e) => (e.currentTarget.style.opacity = "0.6")}
+        Ôöé 							                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    204 Ôöé 							onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+    205 Ôöé 						>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:204:28 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    202 Ôöé 							}}
+    203 Ôöé 							onMouseOver={(e) => (e.currentTarget.style.opacity = "0.6")}
+  > 204 Ôöé 							onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+        Ôöé 							                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    205 Ôöé 						>
+    206 Ôöé 							Aviso Legal
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Footer.tsx:215:29 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    213 Ôöé 								transition: "opacity 0.3s",
+    214 Ôöé 							}}
+  > 215 Ôöé 							onMouseOver={(e) => (e.currentTarget.style.opacity = "0.6")}
+        Ôöé 							                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    216 Ôöé 							onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+    217 Ôöé 						>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\WhatsAppButton.tsx:37:4 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    35 Ôöé 			}}
+    36 Ôöé 		>
+  > 37 Ôöé 			<svg
+       Ôöé 			^^^^
+  > 38 Ôöé 				width="32"
+        ...
+  > 42 Ôöé 				xmlns="http://www.w3.org/2000/svg"
+  > 43 Ôöé 			>
+       Ôöé 			^
+    44 Ôöé 				<path
+    45 Ôöé 					d="M16 2C8.3 2 2 8.3 2 16C2 18.4 2.6 20.6 3.7 22.5L2.1 28.9L8.7 27.3C10.5 28.3 12.6 28.9 14.9 28.9C22.6 28.9 28.9 22.6 28.9 14.9C29 8.3 23.7 2 16 2ZM23.4 21.5C23.1 22.4 21.6 23.2 20.8 23.3C20.2 23.4 19.4 23.4 18.5 23.1C17.9 22.9 17.2 22.6 16.3 22.2C12.9 20.7 10.7 17.3 10.5 17.1C10.3 16.8 9 15.1 9 13.3C9 11.5 9.9 10.6 10.3 10.2C10.6 9.9 11 9.8 11.3 9.8C11.4 9.8 11.6 9.8 11.7 9.8C12 9.8 12.3 9.8 12.5 10.4C12.8 11.1 13.5 12.9 13.6 13C13.7 13.1 13.7 13.3 13.6 13.4C13.5 13.6 13.4 13.7 13.2 13.9C13 14.1 12.8 14.4 12.7 14.5C12.5 14.7 12.3 14.9 12.5 15.2C12.7 15.6 13.4 16.7 14.5 17.7C15.8 18.8 16.9 19.2 17.3 19.4C17.6 19.5 17.8 19.5 18 19.3C18.2 19.1 18.9 18.3 19.1 17.9C19.3 17.6 19.6 17.6 19.9 17.7C20.2 17.8 22 18.7 22.3 18.9C22.7 19.1 22.9 19.2 23 19.3C23.1 19.6 23.1 20.2 22.9 20.9C22.8 21.1 23.7 20.6 23.4 21.5Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\WhatsAppButton.tsx:8:3 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+     6 Ôöé 	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+     7 Ôöé 	return (
+   > 8 Ôöé 		<a
+       Ôöé 		^^
+   > 9 Ôöé 			href={whatsappUrl}
+        ...
+  > 35 Ôöé 			}}
+  > 36 Ôöé 		>
+       Ôöé 		^
+    37 Ôöé 			<svg
+    38 Ôöé 				width="32"
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\home\WhyChooseUs.tsx:6:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+     4 Ôöé 			id: 1,
+     5 Ôöé 			icon: (
+   > 6 Ôöé 				<svg
+       Ôöé 				^^^^
+   > 7 Ôöé 					width="64"
+        ...
+  > 11 Ôöé 					xmlns="http://www.w3.org/2000/svg"
+  > 12 Ôöé 				>
+       Ôöé 				^
+    13 Ôöé 					<path
+    14 Ôöé 						d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\home\WhyChooseUs.tsx:26:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    24 Ôöé 			id: 2,
+    25 Ôöé 			icon: (
+  > 26 Ôöé 				<svg
+       Ôöé 				^^^^
+  > 27 Ôöé 					width="64"
+        ...
+  > 31 Ôöé 					xmlns="http://www.w3.org/2000/svg"
+  > 32 Ôöé 				>
+       Ôöé 				^
+    33 Ôöé 					<path
+    34 Ôöé 						d="M20 8H18V6C18 4.89 17.11 4 16 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V10C22 8.89 21.11 8 20 8ZM4 6H16V11H4V6ZM4 18V13H20V18H4ZM9 15H7V17H9V15ZM13 15H11V17H13V15ZM17 15H15V17H17V15Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\home\WhyChooseUs.tsx:46:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    44 Ôöé 			id: 3,
+    45 Ôöé 			icon: (
+  > 46 Ôöé 				<svg
+       Ôöé 				^^^^
+  > 47 Ôöé 					width="64"
+        ...
+  > 51 Ôöé 					xmlns="http://www.w3.org/2000/svg"
+  > 52 Ôöé 				>
+       Ôöé 				^
+    53 Ôöé 					<path
+    54 Ôöé 						d="M12 2L2 7V12C2 17.55 5.84 22.74 12 24C18.16 22.74 22 17.55 22 12V7L12 2ZM12 12.99H20C19.47 17.11 16.72 20.78 12 21.93V13H4V7.3L12 3.19V12.99Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\home\WhyChooseUs.tsx:66:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    64 Ôöé 			id: 4,
+    65 Ôöé 			icon: (
+  > 66 Ôöé 				<svg
+       Ôöé 				^^^^
+  > 67 Ôöé 					width="64"
+        ...
+  > 71 Ôöé 					xmlns="http://www.w3.org/2000/svg"
+  > 72 Ôöé 				>
+       Ôöé 				^
+    73 Ôöé 					<path
+    74 Ôöé 						d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 461.
+Checked 346 files in 200ms. No fixes applied.
+Found 351 errors.
+Found 130 warnings.
+lint ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

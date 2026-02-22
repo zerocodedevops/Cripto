@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
 	plugins: [
@@ -39,7 +38,21 @@ export default defineConfig({
 		dedupe: ["react", "react-dom", "react-router-dom"],
 	},
 	optimizeDeps: {
-		exclude: ["lucide-react"],
+		include: [
+			"react",
+			"react-dom",
+			"react-router-dom",
+			"framer-motion",
+			"lucide-react",
+			"@supabase/supabase-js",
+			"firebase/app",
+			"firebase/auth",
+		],
+	},
+	server: {
+		watch: {
+			ignored: ["**/dist/**", "**/playwright-report/**", "**/test-results/**"],
+		},
 	},
 	build: {
 		target: "esnext",

@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "accent" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps extends ComponentProps<typeof motion.button> {
+interface ButtonProps
+	extends Omit<ComponentProps<typeof motion.button>, "onDrag" | "onDragStart" | "onDragEnd"> {
 	variant?: ButtonVariant;
 	size?: ButtonSize;
 	isLoading?: boolean;
@@ -46,7 +47,6 @@ export const Button = forwardRef<
 		},
 		ref,
 	) => {
-		const Component = href ? motion.a : motion.button;
 
 		// Determine common props
 		const commonProps = {
@@ -59,7 +59,7 @@ export const Button = forwardRef<
 		if (href) {
 			return (
 				<motion.a
-					ref={ref as any}
+					ref={ref as React.Ref<HTMLAnchorElement>}
 					href={href}
 					{...(commonProps as any)}
 					// Anchor doesn't support 'disabled' attribute natively, handled via pointer-events (optional but usually btn handles it)
@@ -75,6 +75,7 @@ export const Button = forwardRef<
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"
+							aria-hidden="true"
 						>
 							<circle
 								className="opacity-25"
@@ -100,7 +101,8 @@ export const Button = forwardRef<
 
 		return (
 			<motion.button
-				ref={ref as any}
+				type={(props.type as "button" | "submit" | "reset") || "button"}
+				ref={ref as React.Ref<HTMLButtonElement>}
 				disabled={disabled || isLoading}
 				{...commonProps}
 			>
@@ -110,6 +112,7 @@ export const Button = forwardRef<
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
+						aria-hidden="true"
 					>
 						<circle
 							className="opacity-25"

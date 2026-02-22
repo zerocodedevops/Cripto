@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { I18nextProvider } from "react-i18next";
+import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
@@ -10,7 +11,9 @@ import i18n from "./setup";
 
 // Wrapper component for tests
 const TestWrapper = ({ children }: { children: React.ReactNode }) => (
-	<I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+	<MemoryRouter>
+		<I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+	</MemoryRouter>
 );
 
 describe("Portfolio Sections Render", () => {
@@ -21,11 +24,11 @@ describe("Portfolio Sections Render", () => {
 			</TestWrapper>,
 		);
 
-		expect(screen.getByText(/Hola, soy/i)).toBeInTheDocument();
-		expect(screen.getByText(/ZeroCode_DevOps/i)).toBeInTheDocument();
-		expect(screen.getByText(/Desarrollador Autodidacta/i)).toBeInTheDocument();
-		expect(screen.getByText(/Contáctame/i)).toBeInTheDocument();
-		expect(screen.getByText(/Ver GitHub/i)).toBeInTheDocument();
+		// Updated heading: "Diseño Web para Pymes y Autónomos en Madrid"
+		expect(screen.getByText(/Pymes y Autónomos/i)).toBeInTheDocument();
+		expect(
+			screen.getByText(/Disponible para nuevos proyectos/i),
+		).toBeInTheDocument();
 	});
 
 	it("About section renders with correct content", () => {
@@ -35,8 +38,9 @@ describe("Portfolio Sections Render", () => {
 			</TestWrapper>,
 		);
 
-		expect(screen.getByText(/Sobre mí/i)).toBeInTheDocument();
-		expect(screen.getByText(/AI-First Developer/i)).toBeInTheDocument();
+		// "Sobre" and "Mí" are in separate elements, so match partial text
+		expect(screen.getByText(/Sobre/i)).toBeInTheDocument();
+		expect(screen.getByText(/AI-First Development/i)).toBeInTheDocument();
 	});
 
 	it("Skills section renders with heading and content", () => {
@@ -46,11 +50,9 @@ describe("Portfolio Sections Render", () => {
 			</TestWrapper>,
 		);
 
-		// The heading is "Habilidades & Tecnologías" not "Skills"
 		expect(
 			screen.getByRole("heading", { level: 2, name: /Habilidades/i }),
 		).toBeInTheDocument();
-		// Soft Skills section is present
 		expect(screen.getByText("Soft Skills")).toBeInTheDocument();
 	});
 

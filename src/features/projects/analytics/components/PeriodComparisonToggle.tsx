@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { GitCompare } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-import {
-	premiumColors,
-	premiumLayout,
-	premiumTypography,
-} from "../utils/premiumTheme";
+import { premiumColors } from "../utils/premiumTheme";
 
 interface PeriodComparisonToggleProps {
 	readonly enabled: boolean;

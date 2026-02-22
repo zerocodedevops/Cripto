@@ -11,7 +11,7 @@ export default function StylistsPage() {
 
 	useEffect(() => {
 		fetchStylists();
-	}, []);
+	}, [fetchStylists]);
 
 	const fetchStylists = async () => {
 		try {

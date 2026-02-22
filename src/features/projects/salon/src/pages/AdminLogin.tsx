@@ -11,7 +11,6 @@ export default function AdminLogin() {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	// @ts-expect-error
 	const from = location.state?.from?.pathname || "/proyectos/salon/admin";
 
 	const handleLogin = async (e: React.FormEvent) => {

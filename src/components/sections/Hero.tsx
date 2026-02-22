@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from "framer-motion";
 // eslint-disable-next-line
-import { ArrowDown, Github, Linkedin, Mail, Terminal } from "lucide-react";
+import { Github, Linkedin, Mail, Terminal } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TypeAnimation } from "react-type-animation";
 import { trackEvent } from "@/lib/analytics";
@@ -70,12 +70,11 @@ export function Hero() {
 							transition={{ delay: 0.3 }}
 							className="font-outfit font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6"
 						>
-							Diseño y Desarrollo de{" "}
-							<span className="text-gradient">Web Apps y SaaS</span> con
-							tecnología NoCode
+							Diseño Web para{" "}
+							<span className="text-gradient">Pymes y Autónomos</span> en Madrid
 						</motion.h1>
 
-						{/* Typing Animation - Simplified or Removed to focus on message? Keeping it for now but maybe updating list */}
+						{/* Typing Animation */}
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -85,11 +84,13 @@ export function Hero() {
 							<Terminal className="w-5 h-5 text-primary-400" />
 							<TypeAnimation
 								sequence={[
-									"Productos Digitales",
+									"Más Clientes",
 									2000,
-									"SaaS & Automatización",
+									"Webs que Venden",
 									2000,
-									"Web Apps Escalables",
+									"Diseño con IA",
+									2000,
+									"Desarrollo Ágil",
 									2000,
 								]}
 								wrapper="span"
@@ -106,16 +107,16 @@ export function Hero() {
 							transition={{ delay: 0.5 }}
 							className="text-dark-400 text-lg leading-relaxed mb-12 max-w-lg"
 						>
-							Lanza tu producto digital en semanas, no meses.
+							Ayudo a pequeños negocios a digitalizarse con webs profesionales,
+							creadas desde cero con Inteligencia Artificial para maximizar la
+							calidad y velocidad.
 							<br />
 							<span className="text-white font-medium">
-								La robustez del código
+								Diseño de alto impacto
 							</span>{" "}
-							con la{" "}
-							<span className="text-accent-400 font-medium">
-								velocidad del diseño visual
-							</span>
-							.
+							en{" "}
+							<span className="text-accent-400 font-medium">tiempo récord</span>{" "}
+							gracias a un proceso AI-First.
 						</motion.p>
 
 						{/* CTA Buttons & Social Links */}

@@ -126,7 +126,7 @@ const CustomToolbar = (toolbar: any) => {
 // Custom Event Component - only shows title without time
 const CustomEvent = ({ event }: any) => {
 	return (
-		<div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
+		<div style={{ height: "100%", width: "100%", overflow: "hidden" }}>
 			<span>{event.title}</span>
 		</div>
 	);
@@ -153,11 +153,14 @@ export default function BookingCalendar({
 		if (bookings.length > 0 && bookings[0].date) {
 			const firstBookingDate = new Date(bookings[0].date);
 			// Only navigate if first booking is in a different week/month
-			if (Math.abs(firstBookingDate.getTime() - date.getTime()) > 7 * 24 * 60 * 60 * 1000) {
+			if (
+				Math.abs(firstBookingDate.getTime() - date.getTime()) >
+				7 * 24 * 60 * 60 * 1000
+			) {
 				setDate(firstBookingDate);
 			}
 		}
-	}, [bookings.length]);
+	}, [bookings.length, bookings[0].date, date]);
 
 	// Responsive: default to Day view on mobile
 	useEffect(() => {
@@ -167,8 +170,8 @@ export default function BookingCalendar({
 			}
 		};
 		handleResize();
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	// Real-time subscription to bookings table
@@ -176,14 +179,14 @@ export default function BookingCalendar({
 		if (!onRefresh) return;
 
 		const channel = supabase
-			.channel('bookings-changes')
+			.channel("bookings-changes")
 			.on(
-				'postgres_changes',
-				{ event: '*', schema: 'public', table: 'bookings' },
+				"postgres_changes",
+				{ event: "*", schema: "public", table: "bookings" },
 				() => {
-					console.log('📡 Booking change detected, refreshing...');
+					console.log("📡 Booking change detected, refreshing...");
 					onRefresh();
-				}
+				},
 			)
 			.subscribe();
 
@@ -201,7 +204,7 @@ export default function BookingCalendar({
 		const endDate = new Date(startDate.getTime() + (b.duration || 60) * 60000);
 
 		// Safety check - log ONLY if invalid
-		if (isNaN(startDate.getTime())) {
+		if (Number.isNaN(startDate.getTime())) {
 			console.error("❌ Invalid date detected:", {
 				original_date: b.date,
 				original_time: b.time,
@@ -275,7 +278,7 @@ export default function BookingCalendar({
 							cursor: "pointer",
 							width: "100%",
 							margin: 0,
-						}
+						},
 					};
 				}}
 			/>

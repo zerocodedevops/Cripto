@@ -5,7 +5,7 @@ import {
 	Loader2,
 	Lock,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface PaymentSimulatorProps {
 	amount: number;
@@ -32,7 +32,7 @@ export default function PaymentSimulator({
 	const formatCardNumber = (value: string) => {
 		const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
 		const matches = v.match(/\d{4,16}/g);
-		const match = (matches && matches[0]) || "";
+		const match = matches?.[0] || "";
 		const parts = [];
 		for (let i = 0, len = match.length; i < len; i += 4) {
 			parts.push(match.substring(i, i + 4));
@@ -53,7 +53,7 @@ export default function PaymentSimulator({
 			// Simple logic for expiry formatting (MM/YY)
 			let formatted = value.replace(/[^0-9]/g, "");
 			if (formatted.length > 2) {
-				formatted = formatted.substring(0, 2) + "/" + formatted.substring(2, 4);
+				formatted = `${formatted.substring(0, 2)}/${formatted.substring(2, 4)}`;
 			}
 			setCardData((prev) => ({ ...prev, [name]: formatted }));
 		} else {
@@ -81,7 +81,7 @@ export default function PaymentSimulator({
 			// Wait a moment before calling onSuccess to show the success state
 			setTimeout(() => {
 				onSuccess({
-					id: "sim_" + Math.random().toString(36).substr(2, 9),
+					id: `sim_${Math.random().toString(36).substr(2, 9)}`,
 					status: "paid",
 					amount: amount,
 					method: "card",

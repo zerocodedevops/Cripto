@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { I18nextProvider } from "react-i18next";
+import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -8,7 +9,9 @@ import i18n from "./setup";
 
 // Wrapper component for tests
 const TestWrapper = ({ children }: { children: React.ReactNode }) => (
-	<I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+	<MemoryRouter>
+		<I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+	</MemoryRouter>
 );
 
 describe("Accessibility Tests", () => {

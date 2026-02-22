@@ -65,7 +65,12 @@ export function PriceAlerts() {
 				}
 			}
 		});
-	}, [coins, alerts, formatCurrency]);
+	}, [
+		coins,
+		alerts,
+		formatCurrency, // Disable alert to prevent notification spam
+		toggleAlert,
+	]);
 
 	const toggleAlert = (id: string) => {
 		setAlerts((prev) =>

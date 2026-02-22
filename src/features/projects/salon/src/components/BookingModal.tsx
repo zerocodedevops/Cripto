@@ -177,7 +177,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 			const payload = {
 				service_ids: selectedServices,
 				stylist_id: selectedStylist ? selectedStylist.id : null,
-				date: selectedDate?.toISOString().split('T')[0] || '', // YYYY-MM-DD format
+				date: selectedDate?.toISOString().split("T")[0] || "", // YYYY-MM-DD format
 				time: selectedTime,
 				customer_notes: specialRequests, // Only observations
 				guest_name: guestName || null,
@@ -315,10 +315,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 											type="text"
 											placeholder="Tu Nombre"
 											className="bg-black/30 border border-white/10 rounded-sm p-3 text-sm text-neutral-300 focus:outline-none focus:border-[#BF953F]/50 transition-colors"
-											// We need to add state for this. I'll use specialRequests for now or add new state? 
+											// We need to add state for this. I'll use specialRequests for now or add new state?
 											// The user explicitly complained about "ni el nombre del cliente".
 											// I will add local state in the previous step (Replace entire file to safely add state) or use a hack.
-											// Let's add the input but bind it to `customer_notes` for now if we can't add state easily? 
+											// Let's add the input but bind it to `customer_notes` for now if we can't add state easily?
 											// No, I should do this properly. I will add the state variables in a separate edit or just assume I can edit the whole component?
 											// I am editing a chunk. I'll rely on a second edit to add the state variables definition.
 											value={guestName}
@@ -418,11 +418,11 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 																			{selectedServices.includes(
 																				service.id,
 																			) && (
-																					<Check
-																						size={12}
-																						className="text-black stroke-[3]"
-																					/>
-																				)}
+																				<Check
+																					size={12}
+																					className="text-black stroke-[3]"
+																				/>
+																			)}
 																		</div>
 																	</div>
 																</button>
@@ -589,40 +589,40 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 				{/* Footer Navigation */}
 				{step <
 					4 /* Hide default footer in step 4 as PaymentSimulator has its own buttons */ && (
-						<div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
-							{step > 1 ? (
-								<button
-									onClick={handleBack}
-									disabled={isSaving}
-									className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
-								>
-									<ChevronLeft size={18} /> Atrás
-								</button>
-							) : (
-								<div /> /* Spacer */
-							)}
+					<div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
+						{step > 1 ? (
+							<button
+								onClick={handleBack}
+								disabled={isSaving}
+								className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
+							>
+								<ChevronLeft size={18} /> Atrás
+							</button>
+						) : (
+							<div /> /* Spacer */
+						)}
 
-							<div className="flex items-center gap-4">
-								<span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
-									{(() => {
-										if (step === 1)
-											return `${selectedServices.length} servicios (${calculateTotal()}€)`;
-										if (step === 2) return selectedStylist?.name || "Cualquiera";
-										return `${selectedDate ? selectedDate.toLocaleDateString() : ""} ${selectedTime || ""}`;
-									})()}
-								</span>
+						<div className="flex items-center gap-4">
+							<span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
+								{(() => {
+									if (step === 1)
+										return `${selectedServices.length} servicios (${calculateTotal()}€)`;
+									if (step === 2) return selectedStylist?.name || "Cualquiera";
+									return `${selectedDate ? selectedDate.toLocaleDateString() : ""} ${selectedTime || ""}`;
+								})()}
+							</span>
 
-								<button
-									onClick={handleNext}
-									disabled={isNextDisabled() || isSaving}
-									className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-								>
-									{step === 3 ? "Ir a Pagan" : "Siguiente"}{" "}
-									<ChevronRight size={16} />
-								</button>
-							</div>
+							<button
+								onClick={handleNext}
+								disabled={isNextDisabled() || isSaving}
+								className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+							>
+								{step === 3 ? "Ir a Pagan" : "Siguiente"}{" "}
+								<ChevronRight size={16} />
+							</button>
 						</div>
-					)}
+					</div>
+				)}
 			</motion.div>
 		</motion.div>
 	);

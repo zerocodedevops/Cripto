@@ -1,0 +1,398 @@
+apps\devops-shop\src\components\ScrollToTop.tsx:5:10 lint/correctness/noUnusedVariables ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! This variable pathname is unused.
+  
+    4 Ôöé export default function ScrollToTop() {
+  > 5 Ôöé 	const { pathname } = useLocation();
+      Ôöé 	        ^^^^^^^^
+    6 Ôöé 
+    7 Ôöé 	useEffect(() => {
+  
+  i Unused variables are often the result of typos, incomplete refactors, or other sources of bugs.
+  
+
+apps\devops-shop\src\components\AuthModal.tsx:81:10 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    79 Ôöé 							<form onSubmit={handleSubmit} className="space-y-4">
+    80 Ôöé 								<div className="space-y-2">
+  > 81 Ôöé 									<label className="text-sm font-medium text-slate-700 ml-1">
+       Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 82 Ôöé 										Usuario
+  > 83 Ôöé 									</label>
+       Ôöé 									^^^^^^^^
+    84 Ôöé 									<div className="relative">
+    85 Ôöé 										<User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\devops-shop\src\components\AuthModal.tsx:97:10 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+     96 Ôöé 								<div className="space-y-2">
+   > 97 Ôöé 									<label className="text-sm font-medium text-slate-700 ml-1">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   > 98 Ôöé 										Contrase├▒a
+   > 99 Ôöé 									</label>
+        Ôöé 									^^^^^^^^
+    100 Ôöé 									<div className="relative">
+    101 Ôöé 										<Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\devops-shop\src\components\AuthModal.tsx:60:8 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    58 Ôöé 					>
+    59 Ôöé 						<div className="relative p-8">
+  > 60 Ôöé 							<button
+       Ôöé 							^^^^^^^
+  > 61 Ôöé 								onClick={onClose}
+  > 62 Ôöé 								className="absolute top-4 right-4 p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400 hover:text-slate-600"
+  > 63 Ôöé 							>
+       Ôöé 							^
+    64 Ôöé 								<X className="w-5 h-5" />
+    65 Ôöé 							</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\AuthModal.tsx:129:9 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    128 Ôöé 							<div className="mt-6 text-center">
+  > 129 Ôöé 								<button
+        Ôöé 								^^^^^^^
+  > 130 Ôöé 									onClick={() => setIsRegister(!isRegister)}
+  > 131 Ôöé 									className="text-sm text-slate-500 hover:text-indigo-600 font-medium transition-colors"
+  > 132 Ôöé 								>
+        Ôöé 								^
+    133 Ôöé 									{isRegister
+    134 Ôöé 										? "┬┐Ya tienes cuenta? Inicia sesi├│n"
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:38:8 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    36 Ôöé 								Tu Cesta ({items.length})
+    37 Ôöé 							</h2>
+  > 38 Ôöé 							<button
+       Ôöé 							^^^^^^^
+  > 39 Ôöé 								onClick={() => dispatch(toggleCart())}
+  > 40 Ôöé 								className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+  > 41 Ôöé 							>
+       Ôöé 							^
+    42 Ôöé 								<X className="w-5 h-5 text-slate-500" />
+    43 Ôöé 							</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:58:10 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    56 Ôöé 										┬íDescubre nuestros productos y empieza a comprar!
+    57 Ôöé 									</p>
+  > 58 Ôöé 									<button
+       Ôöé 									^^^^^^^
+  > 59 Ôöé 										onClick={() => dispatch(toggleCart())}
+  > 60 Ôöé 										className="text-indigo-600 font-medium hover:text-indigo-800"
+  > 61 Ôöé 									>
+       Ôöé 									^
+    62 Ôöé 										Seguir comprando
+    63 Ôöé 									</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:88:14 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     86 Ôöé 											<div className="flex justify-between items-center mt-2">
+     87 Ôöé 												<div className="flex items-center gap-2 bg-slate-50 rounded-lg p-1">
+   > 88 Ôöé 													<button
+        Ôöé 													^^^^^^^
+   > 89 Ôöé 														onClick={() =>
+         ...
+   > 97 Ôöé 														className="p-1 hover:bg-white hover:shadow-sm rounded transition-all"
+   > 98 Ôöé 													>
+        Ôöé 													^
+     99 Ôöé 														<Minus className="w-3 h-3 text-slate-600" />
+    100 Ôöé 													</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:104:14 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    102 Ôöé 														{item.quantity}
+    103 Ôöé 													</span>
+  > 104 Ôöé 													<button
+        Ôöé 													^^^^^^^
+  > 105 Ôöé 														onClick={() =>
+         ...
+  > 113 Ôöé 														className="p-1 hover:bg-white hover:shadow-sm rounded transition-all"
+  > 114 Ôöé 													>
+        Ôöé 													^
+    115 Ôöé 														<Plus className="w-3 h-3 text-slate-600" />
+    116 Ôöé 													</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:118:13 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    116 Ôöé 													</button>
+    117 Ôöé 												</div>
+  > 118 Ôöé 												<button
+        Ôöé 												^^^^^^^
+  > 119 Ôöé 													onClick={() => dispatch(removeFromCart(item.id))}
+  > 120 Ôöé 													className="text-red-400 hover:text-red-500 p-1"
+  > 121 Ôöé 												>
+        Ôöé 												^
+    122 Ôöé 													<Trash2 className="w-4 h-4" />
+    123 Ôöé 												</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\ProductCard.tsx:53:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    51 Ôöé 						${product.price}
+    52 Ôöé 					</span>
+  > 53 Ôöé 					<button
+       Ôöé 					^^^^^^^
+  > 54 Ôöé 						onClick={() =>
+        ...
+  > 64 Ôöé 						className="bg-slate-900 dark:bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors shadow-lg hover:shadow-indigo-500/20 active:scale-95"
+  > 65 Ôöé 					>
+       Ôöé 					^
+    66 Ôöé 						<ShoppingBag className="w-5 h-5" />
+    67 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\components\Toast.tsx:52:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    50 Ôöé 					{icons[type]}
+    51 Ôöé 					<p className="text-sm font-medium text-slate-700">{message}</p>
+  > 52 Ôöé 					<button
+       Ôöé 					^^^^^^^
+  > 53 Ôöé 						onClick={onClose}
+  > 54 Ôöé 						className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 rounded-full hover:bg-black/5 transition-colors"
+  > 55 Ôöé 					>
+       Ôöé 					^
+    56 Ôöé 						<X className="w-4 h-4" />
+    57 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:61:8 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    60 Ôöé 							{/* Theme Toggle */}
+  > 61 Ôöé 							<button
+       Ôöé 							^^^^^^^
+  > 62 Ôöé 								onClick={toggleTheme}
+  > 63 Ôöé 								className="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+  > 64 Ôöé 								title={isDark ? "Modo Claro" : "Modo Oscuro"}
+  > 65 Ôöé 							>
+       Ôöé 							^
+    66 Ôöé 								{isDark ? (
+    67 Ôöé 									<Sun className="w-5 h-5" />
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:75:9 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    73 Ôöé 							{/* Language Toggle */}
+    74 Ôöé 							<div className="flex items-center gap-1 border border-slate-200 dark:border-slate-700 rounded-lg p-1 mr-2">
+  > 75 Ôöé 								<button
+       Ôöé 								^^^^^^^
+  > 76 Ôöé 									onClick={() => i18n.changeLanguage("es")}
+  > 77 Ôöé 									className={`px-2 py-1 text-xs font-medium rounded transition-colors ${i18n.language === "es" ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-indigo-600 dark:text-slate-400"}`}
+  > 78 Ôöé 								>
+       Ôöé 								^
+    79 Ôöé 									ES
+    80 Ôöé 								</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:81:9 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    79 Ôöé 									ES
+    80 Ôöé 								</button>
+  > 81 Ôöé 								<button
+       Ôöé 								^^^^^^^
+  > 82 Ôöé 									onClick={() => i18n.changeLanguage("en")}
+  > 83 Ôöé 									className={`px-2 py-1 text-xs font-medium rounded transition-colors ${i18n.language === "en" ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-indigo-600 dark:text-slate-400"}`}
+  > 84 Ôöé 								>
+       Ôöé 								^
+    85 Ôöé 									EN
+    86 Ôöé 								</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:98:10 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     96 Ôöé 										</span>
+     97 Ôöé 									</span>
+   > 98 Ôöé 									<button
+        Ôöé 									^^^^^^^
+   > 99 Ôöé 										onClick={() => dispatch(logout())}
+  > 100 Ôöé 										className="p-2 text-slate-400 dark:text-slate-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-full transition-all"
+  > 101 Ôöé 										title="Cerrar sesi├│n"
+  > 102 Ôöé 									>
+        Ôöé 									^
+    103 Ôöé 										<LogOut className="w-5 h-5" />
+    104 Ôöé 									</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:107:9 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    105 Ôöé 								</div>
+    106 Ôöé 							) : (
+  > 107 Ôöé 								<button
+        Ôöé 								^^^^^^^
+  > 108 Ôöé 									onClick={() => setIsAuthOpen(true)}
+  > 109 Ôöé 									className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all"
+  > 110 Ôöé 								>
+        Ôöé 								^
+    111 Ôöé 									<User className="w-5 h-5" />
+    112 Ôöé 									<span className="hidden sm:inline">Entrar</span>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\layout\EcommerceLayout.tsx:116:8 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    114 Ôöé 							)}
+    115 Ôöé 
+  > 116 Ôöé 							<button
+        Ôöé 							^^^^^^^
+  > 117 Ôöé 								onClick={() => dispatch(toggleCart())}
+  > 118 Ôöé 								className="relative p-2 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
+  > 119 Ôöé 							>
+        Ôöé 							^
+    120 Ôöé 								<ShoppingCart className="w-6 h-6" />
+    121 Ôöé 								{itemCount > 0 && (
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\pages\ProductDetailPage.tsx:57:4 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    55 Ôöé 				</span>
+    56 Ôöé 			</nav>
+  > 57 Ôöé 			<button
+       Ôöé 			^^^^^^^
+  > 58 Ôöé 				onClick={() => navigate(-1)}
+  > 59 Ôöé 				className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 mb-8 transition-colors"
+  > 60 Ôöé 			>
+       Ôöé 			^
+    61 Ôöé 				<ArrowLeft className="w-4 h-4" />
+    62 Ôöé 				Volver al cat├ílogo
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\devops-shop\src\pages\ProductDetailPage.tsx:109:7 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    108 Ôöé 					<div className="flex flex-col sm:flex-row gap-4 mb-8">
+  > 109 Ôöé 						<button
+        Ôöé 						^^^^^^^
+  > 110 Ôöé 							onClick={() => dispatch(addToCart({ ...product }))}
+  > 111 Ôöé 							className="flex-1 bg-slate-900 dark:bg-indigo-600 text-white py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/30 active:scale-95 text-lg font-medium"
+  > 112 Ôöé 						>
+        Ôöé 						^
+    113 Ôöé 							<ShoppingBag className="w-5 h-5" />
+    114 Ôöé 							A├▒adir a la Cesta
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 481.
+Checked 346 files in 183ms. No fixes applied.
+Found 370 errors.
+Found 131 warnings.
+lint ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

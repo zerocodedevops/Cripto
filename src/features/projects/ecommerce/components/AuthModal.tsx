@@ -98,7 +98,6 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 											onChange={(e) => setUsername(e.target.value)}
 											className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium text-slate-900"
 											placeholder="Ej. daviddevops"
-											autoFocus
 											required
 										/>
 									</div>

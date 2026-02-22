@@ -32,7 +32,7 @@ export function LanguageProvider({
 		return translations[language][key];
 	};
 
-	const value = useMemo(() => ({ language, setLanguage, t }), [language]);
+	const value = useMemo(() => ({ language, setLanguage, t }), [language, t]);
 
 	return (
 		<LanguageContext.Provider value={value}>

@@ -56,7 +56,7 @@ export default function ReviewList({
 		};
 
 		fetchReviews();
-	}, [productId, refreshTrigger]);
+	}, [productId]);
 
 	if (loading) {
 		return (

@@ -1,0 +1,1132 @@
+
+> zerocode-portfolio@0.1.0 test
+> vitest --watch=false
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mC:/Users/dgper/Proyectos/ZeroCode[39m
+
+ [32mÔ£ô[39m src/features/projects/ecommerce/__tests__/integration.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 2[2mms[22m[39m
+ [32mÔ£ô[39m apps/devops-shop/src/__tests__/integration.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32mÔ£ô[39m apps/devops-shop/src/store/__tests__/slices.test.ts [2m ([22m[2m6 tests[22m[2m)[22m[90m 12[2mms[22m[39m
+ [32mÔ£ô[39m src/features/projects/mudanzas-coral/tests/unit/components/Footer.test.tsx [2m ([22m[2m3 tests[22m[2m)[22m[90m 104[2mms[22m[39m
+ [33mÔØ»[39m apps/zerodelay/tests/unit/components/Footer.test.tsx [2m ([22m[2m3 tests[22m [2m|[22m [31m3 failed[39m[2m)[22m[90m 31[2mms[22m[39m
+[31m   [33mÔØ»[31m apps/zerodelay/tests/unit/components/Footer.test.tsx[2m > [22mFooter Component[2m > [22mrenders company information[39m
+[31m     ÔåÆ A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.[39m
+[31m   [33mÔØ»[31m apps/zerodelay/tests/unit/components/Footer.test.tsx[2m > [22mFooter Component[2m > [22mrenders contact information[39m
+[31m     ÔåÆ A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.[39m
+[31m   [33mÔØ»[31m apps/zerodelay/tests/unit/components/Footer.test.tsx[2m > [22mFooter Component[2m > [22mrenders legal links[39m
+[31m     ÔåÆ A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.[39m
+ [33mÔØ»[39m apps/zerodelay/tests/unit/components/Header.test.tsx [2m ([22m[2m2 tests[22m [2m|[22m [31m2 failed[39m[2m)[22m[90m 28[2mms[22m[39m
+[31m   [33mÔØ»[31m apps/zerodelay/tests/unit/components/Header.test.tsx[2m > [22mHeader Component[2m > [22mrenders logo and navigation links[39m
+[31m     ÔåÆ A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.[39m
+[31m   [33mÔØ»[31m apps/zerodelay/tests/unit/components/Header.test.tsx[2m > [22mHeader Component[2m > [22mmobile menu toggles when button is clicked[39m
+[31m     ÔåÆ A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.[39m
+ [32mÔ£ô[39m src/features/projects/mudanzas-coral/tests/unit/components/Header.test.tsx [2m ([22m[2m2 tests[22m[2m)[22m[90m 128[2mms[22m[39m
+stderr | src\config\firebase.ts:27:10
+Firebase config missing (VITE_FIREBASE_API_KEY). Using mock mode.
+
+ [32mÔ£ô[39m src/features/projects/ecommerce/store/__tests__/slices.test.ts [2m ([22m[2m6 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+stderr | tests/accessibility.test.tsx > Accessibility Tests > Navbar > has accessible navigation links
+Warning: React does not recognize the `whileHover` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whilehover` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at a
+    at a (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:59:11)
+    at nav
+    at div
+    at header
+    at header (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:44:16)
+    at Navbar (C:\Users\dgper\Proyectos\ZeroCode\src\components\layout\Navbar.tsx:28:42)
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\accessibility.test.tsx:17:24)
+Warning: React does not recognize the `whileTap` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whiletap` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at a
+    at a (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:59:11)
+    at div
+    at div
+    at nav
+    at div
+    at header
+    at header (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:44:16)
+    at Navbar (C:\Users\dgper\Proyectos\ZeroCode\src\components\layout\Navbar.tsx:28:42)
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\accessibility.test.tsx:17:24)
+
+stderr | tests/accessibility.test.tsx > Accessibility Tests > Contact Form > has properly labeled form inputs
+Warning: React does not recognize the `whileInView` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whileinview` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at div
+    at section
+    at Contact (C:\Users\dgper\Proyectos\ZeroCode\src\components\sections\Contact.tsx:47:39)
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\accessibility.test.tsx:17:24)
+
+ [32mÔ£ô[39m tests/accessibility.test.tsx [2m ([22m[2m7 tests[22m[2m)[22m[90m 206[2mms[22m[39m
+stderr | tests/sections.test.tsx > Portfolio Sections Render > Hero section renders with main heading
+Warning: React does not recognize the `whileHover` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whilehover` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at button
+    at button (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:54:16)
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at div
+    at section
+    at Hero (C:\Users\dgper\Proyectos\ZeroCode\src\components\sections\Hero.tsx:25:39)
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\sections.test.tsx:21:24)
+Warning: React does not recognize the `whileTap` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whiletap` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at button
+    at button (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:54:16)
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at div
+    at section
+    at Hero (C:\Users\dgper\Proyectos\ZeroCode\src\components\sections\Hero.tsx:25:39)
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\sections.test.tsx:21:24)
+
+stderr | tests/sections.test.tsx > Portfolio Sections Render > About section renders with correct content
+Warning: React does not recognize the `whileInView` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whileinview` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at div
+    at section
+    at About
+    at I18nextProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-i18next/dist/es/I18nextProvider.js:4:3)
+    at TestWrapper (C:\Users\dgper\Proyectos\ZeroCode\tests\sections.test.tsx:21:24)
+
+stderr | tests/sections.test.tsx > Portfolio Sections Render > Skills section renders with heading and content
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ [33mÔØ»[39m tests/sections.test.tsx [2m ([22m[2m5 tests[22m [2m|[22m [31m2 failed[39m[2m)[22m[90m 254[2mms[22m[39m
+[31m   [33mÔØ»[31m tests/sections.test.tsx[2m > [22mPortfolio Sections Render[2m > [22mHero section renders with main heading[39m
+[31m     ÔåÆ Unable to find an element with the text: /Web Apps y SaaS/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"relative flex items-start overflow-hidden pt-32 pb-20"[31m
+      [33mdata-testid[31m=[32m"hero-section"[31m
+      [33mid[31m=[32m"hero"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[128px] pointer-events-none"[31m
+      [36m/>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] pointer-events-none"[31m
+      [36m/>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]"[31m
+      [36m/>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"container-custom relative z-10"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"grid lg:grid-cols-2 gap-12 items-center"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33manimate[31m=[32m"[object Object]"[31m
+            [33minitial[31m=[32m"[object Object]"[31m
+            [33mtransition[31m=[32m"[object Object]"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33manimate[31m=[32m"[object Object]"[31m
+              [33mclass[31m=[32m"inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8"[31m
+              [33minitial[31m=[32m"[object Object]"[31m
+              [33mtransition[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"relative flex h-2 w-2"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"[31m
+                [36m/>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"relative inline-flex rounded-full h-2 w-2 bg-green-500"[31m
+                [36m/>[31m
+              [36m</span>[31m
+              [0mDisponible para nuevos proyectos[0m
+            [36m</div>[31m
+            [36m<h1[31m
+              [33manimate[31m=[32m"[object Object]"[31m
+              [33mclass[31m=[32m"font-outfit font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6"[31m
+              [33minitial[31m=[32m"[object Object]"[31m
+              [33mtransition[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [0mDise├▒o Web para[0m
+              [0m [0m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-gradient"[31m
+              [36m>[31m
+                [0mPymes y Aut├│nomos[0m
+              [36m</span>[31m
+              [0m en Madrid[0m
+            [36m</h1>[31m
+            [36m<div[31m
+              [33manimate[31m=[32m"[object Object]"[31m
+              [33mclass[31m=[32m"flex items-center gap-3 text-xl md:text-2xl text-dark-400 mb-6"[31m
+              [33minitial[31m=[32m"[object Object]"[31m
+              [33mtransition[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"lucide lucide-terminal w-5 h-5 text-primary-400"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"24"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"24"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M12 19h8"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"m4 17 6-6-6-6"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"index-module_type__E-SaG font-mono text-primary-300"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<p[31m
+              [33manimate[31m=[32m"[object Object]"[31m
+              [33mclass[31m=[32m"text-dark-400 text-lg leading-relaxed mb-12 max-w-lg"[31m
+              [33minitial[31m=[32m"[object Object]"[31m
+              [33mtransition[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [0mAyudo a peque├▒os negocios a digitalizarse con webs profesionales, creadas desde cero con Inteligencia Artificial para maximizar la calidad y velocidad.[0m
+              [36m<br />[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-white font-medium"[31m
+              [36m>[31m
+                [0mDise├▒o de alto impacto[0m
+              [36m</span>[31m
+              [0m [0m
+              [0men[0m
+              [0m [0m
+              [36m<span[31m
+                [33mclass[31m=[32m"text-accent-400 font-medium"[31m
+              [36m>[31m
+                [0mtiempo r├®cord[0m
+              [36m</span>[31m
+              [0m [0m
+              [0mgracias a un proceso AI-First.[0m
+            [36m</p>[31m
+            [36m<div[31m
+              [33manimate[31m=[32m"[object Object]"[31m
+              [33mclass[31m=[32m"flex flex-wrap items-center gap-4 mb-2 lg:mb-20 lg:ml-[78px]"[31m
+              [33minitial[31m=[32m"[object Object]"[31m
+              [33mtransition[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"px-8 py-3.5 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-400 transition-colors duration-200 shadow-glow hover:shadow-lg"[31m
+                [33mwhilehover[31m=[32m"[object Object]"[31m
+                [33mwhiletap[31m=[32m"[object Object]"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"flex items-center gap-2"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-mail w-5 h-5"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"24"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[...[39m
+[31m   [33mÔØ»[31m tests/sections.test.tsx[2m > [22mPortfolio Sections Render[2m > [22mAbout section renders with correct content[39m
+[31m     ÔåÆ Unable to find an element with the text: /AI-First Developer/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"section relative overflow-hidden"[31m
+      [33mid[31m=[32m"about"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"absolute inset-0 pointer-events-none"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-radial from-accent-500/10 to-transparent"[31m
+        [36m/>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-primary-500/10 to-transparent"[31m
+        [36m/>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"container-custom relative z-10"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"text-center mb-12"[31m
+          [33minitial[31m=[32m"hidden"[31m
+          [33mvariants[31m=[32m"[object Object]"[31m
+          [33mviewport[31m=[32m"[object Object]"[31m
+          [33mwhileinview[31m=[32m"visible"[31m
+        [36m>[31m
+          [36m<h2[31m
+            [33mclass[31m=[32m"font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6"[31m
+          [36m>[31m
+            [0mSobre [0m
+            [36m<span[31m
+              [33mclass[31m=[32m"text-gradient"[31m
+            [36m>[31m
+              [0mM├¡[0m
+            [36m</span>[31m
+          [36m</h2>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-xl text-dark-300 font-medium"[31m
+          [36m>[31m
+            [0mUn desarrollador diferente con un enfoque innovador[0m
+          [36m</p>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"flex flex-col lg:flex-row items-center gap-12 lg:gap-20"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full lg:w-1/2"[31m
+            [33minitial[31m=[32m"hidden"[31m
+            [33mvariants[31m=[32m"[object Object]"[31m
+            [33mviewport[31m=[32m"[object Object]"[31m
+            [33mwhileinview[31m=[32m"visible"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"relative group"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"absolute -inset-0.5 bg-gradient-to-br from-primary-500 to-accent-500 rounded-[2rem] opacity-50 blur-lg group-hover:opacity-75 transition duration-500"[31m
+              [36m/>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"relative bg-dark-900/90 backdrop-blur-xl border border-dark-700/50 rounded-[2rem] p-8 overflow-hidden"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-5 mb-8"[31m
+                [36m>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/20"[31m
+                  [36m>[31m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"lucide lucide-bot w-8 h-8 text-white"[31m
+                      [33mfill[31m=[32m"none"[31m
+                      [33mheight[31m=[32m"24"[31m
+                      [33mstroke[31m=[32m"currentColor"[31m
+                      [33mstroke-linecap[31m=[32m"round"[31m
+                      [33mstroke-linejoin[31m=[32m"round"[31m
+                      [33mstroke-width[31m=[32m"2"[31m
+                      [33mviewBox[31m=[32m"0 0 24 24"[31m
+                      [33mwidth[31m=[32m"24"[31m
+                      [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M12 8V4H8"[31m
+                      [36m/>[31m
+                      [36m<rect[31m
+                        [33mheight[31m=[32m"12"[31m
+                        [33mrx[31m=[32m"2"[31m
+                        [33mwidth[31m=[32m"16"[31m
+                        [33mx[31m=[32m"4"[31m
+                        [33my[31m=[32m"8"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M2 14h2"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M20 14h2"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M15 13v2"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M9 13v2"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                  [36m</div>[31m
+                  [36m<div>[31m
+                    [36m<h3[31m
+                      [33mclass[31m=[32m"text-2xl font-bold text-white font-outfit"[31m
+                    [36m>[31m
+                      [0mZeroCode[0m
+                    [36m</h3>[31m
+                    [36m<p[31m
+                      [33mclass[31m=[32m"text-primary-400 font-medium"[31m
+                    [36m>[31m
+                      [0mAI-First Development[0m
+                    [36m</p>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"grid grid-cols-2 gap-4"[31m
+                [36m>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"[31m
+                  [36m>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-3xl font-bold text-neon-cyan mb-1 group-hover/item:scale-110 transition-transform origin-left"[31m
+                    [36m>[31m
+                      [0m100%[0m
+                    [36m</div>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-sm text-dark-400 font-medium"[31m
+                    [36m>[31m
+                      [0mPersonalizado[0m
+                    [36m</div>[31m
+                  [36m</div>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"[31m
+                  [36m>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-3xl font-bold text-neon-purple mb-1 group-hover/item:scale-110 transition-transform origin-left"[31m
+                    [36m>[31m
+                      [0mAI[0m
+                    [36m</div>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-sm text-dark-400 font-medium"[31m
+                    [36m>[31m
+                      [0mPotenciado[0m
+                    [36m</div>[31m
+                  [36m</div>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"[31m
+                  [36m>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-3xl font-bold text-emerald-400 mb-1 group-hover/item:scale-110 transition-transform origin-left"[31m
+                    [36m>[31m
+                      [0mRivas[0m
+                    [36m</div>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-sm text-dark-400 font-medium"[31m
+                    [36m>[31m
+                      [0mUbicaci├│n[0m
+                    [36m</div>[31m
+                  [36m</div>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"[31m
+                  [36m>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-3xl font-bold text-amber-400 mb-1 group-hover/item:scale-110 transition-transform origin-left"[31m
+                    [36m>[31m
+                      [0mQuick[0m
+                    [36m</div>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"text-sm text-dark-400 font-medium"[31m
+                    [36m>[31m
+                      [0mLanzamiento[0m
+                    [36m</div>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full lg:w-1/2"[31m
+            [33minitial[31m=[32m"hidden"[31m
+            [33mvariants[31m=[32m"[object Object]"[31m
+            [33mviewport[31m=[32m"[object Object]"[31m
+            [33mwhileinview[31m=[32m"visible"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"space-y-6"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all group"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mb-2"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-globe w-5 h-5 text-primary-400"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"24"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"24"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<circle[31m
+                      [33mcx[31m=[32m"12"[31m
+                      [33mcy[31m=[32m"12"[31m
+                      [33mr[31m=[32m"10"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M2 12h20"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                  [36m<h3[31m
+                    [33mclass[31m=[32m"text-xl font-bold text-white group-hover:text-primary-400"[31m
+                  [36m>[31m
+                    [0mPresencia Digital de ├ëlite[0m
+                  [36m</h3>[31m
+                [36m</div>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-dark-400"[31m
+                [36m>[31m
+                  [0mDise├▒amos webs que no solo son est├®ticamente impecables, sino que est├ín construidas para convertir visitantes en clientes desde el primer d├¡a.[0m
+                [36m</p>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-accent-500/30 transition-all group"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mb-2"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-zap w-5 h-5 text-accent-400"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"24"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"24"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                  [36m<h3[31m
+                    [33mclass[31m=[32m"text-xl font-bold text-white group-hover:text-accent-400"[31m
+                  [36m>[31m
+                    [0mDesarrollo Potenciado por IA[0m
+                  [36m</h3>[31m
+                [36m</div>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-dark-400"[31m
+                [36m>[31m
+                  [0mUtilizamos Inteligencia Artificial para acelerar el proceso creativo y t├®cnico, entregando resultados de alta gama en una fracci├│n del tiempo habitual.[0m
+                [36m</p>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-neon-purple/30 transition-all group"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-3 mb-2"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-map-pin w-5 h-5 text-neon-purple"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"24"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"24"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"[31m
+                    [36m/>[31m
+                    [36m<circle[31m
+                      [33mcx[31m=[32m"12"[31m
+                      [33mcy[31m=[32m"10"[31m
+                      [33mr[31m=[32m"3"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                  [36m<h3[31m
+                    [33mclass[31m=[32m"text-xl font-bold text-white group-hover:text-neon-purple"[31m
+                  [36m>[31m
+                    [0mTrato Directo y Local[0m
+                  [36m</h3>[31m
+                [36m</div>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"text-dark-400"[31m
+                [36m>[31m
+                  [0mSin intermediarios ni agencias impersonales. Un profesional dedicado en Madrid para que tu visi├│n se haga realidad con total transparencia.[0m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90mstdout[2m | src/features/projects/analytics/tests/dashboard.test.tsx[2m > [22m[2mDashboardPage[2m > [22m[2mshows loading skeletons initially[22m[39m
+Generating mock data for range: 7d, segment: all
+
+[90mstdout[2m | src/features/projects/analytics/tests/dashboard.test.tsx[2m > [22m[2mDashboardPage[2m > [22m[2mrenders login screen by default[22m[39m
+Generating mock data for range: 7d, segment: all
+
+stderr | src/features/projects/analytics/tests/dashboard.test.tsx > DashboardPage > shows loading skeletons initially
+Warning: React does not recognize the `layoutId` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `layoutid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at div (C:\Users\dgper\Proyectos\ZeroCode\tests\setup.tsx:4:13)
+    at button
+    at div
+    at div
+    at header
+    at div
+    at div
+[90mstdout[2m | src/features/projects/analytics/tests/dashboard.test.tsx[2m > [22m[2mDashboardPage[2m > [22m[2mrenders page structure[22m[39m
+    at DashboardPage (C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\pages\DashboardPage.tsx:36:51)
+Generating mock data for range: 7d, segment: all
+
+    at Router (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-router/dist/development/chunk-JZWAC4HX.mjs:6594:13)
+    at MemoryRouter (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-router/dist/development/chunk-JZWAC4HX.mjs:6510:3)
+    at QueryClientProvider (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:20:3)
+    at C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\tests\dashboard.test.tsx:34:13
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 7 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/sections.test.tsx > Portfolio Sections Render > Hero section renders with main heading
+TestingLibraryElementError: Unable to find an element with the text: /Web Apps y SaaS/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      class="relative flex items-start overflow-hidden pt-32 pb-20"
+      data-testid="hero-section"
+      id="hero"
+    >
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[128px] pointer-events-none"
+      />
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] pointer-events-none"
+      />
+      <div
+        class="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]"
+      />
+      <div
+        class="container-custom relative z-10"
+      >
+        <div
+          class="grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <div
+            animate="[object Object]"
+            initial="[object Object]"
+            transition="[object Object]"
+          >
+            <div
+              animate="[object Object]"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8"
+              initial="[object Object]"
+              transition="[object Object]"
+            >
+              <span
+                class="relative flex h-2 w-2"
+              >
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                />
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
+                />
+              </span>
+              Disponible para nuevos proyectos
+            </div>
+            <h1
+              animate="[object Object]"
+              class="font-outfit font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6"
+              initial="[object Object]"
+              transition="[object Object]"
+            >
+              Dise├▒o Web para
+               
+              <span
+                class="text-gradient"
+              >
+                Pymes y Aut├│nomos
+              </span>
+               en Madrid
+            </h1>
+            <div
+              animate="[object Object]"
+              class="flex items-center gap-3 text-xl md:text-2xl text-dark-400 mb-6"
+              initial="[object Object]"
+              transition="[object Object]"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-terminal w-5 h-5 text-primary-400"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 19h8"
+                />
+                <path
+                  d="m4 17 6-6-6-6"
+                />
+              </svg>
+              <span
+                class="index-module_type__E-SaG font-mono text-primary-300"
+              />
+            </div>
+            <p
+              animate="[object Object]"
+              class="text-dark-400 text-lg leading-relaxed mb-12 max-w-lg"
+              initial="[object Object]"
+              transition="[object Object]"
+            >
+              Ayudo a peque├▒os negocios a digitalizarse con webs profesionales, creadas desde cero con Inteligencia Artificial para maximizar la calidad y velocidad.
+              <br />
+              <span
+                class="text-white font-medium"
+              >
+                Dise├▒o de alto impacto
+              </span>
+               
+              en
+               
+              <span
+                class="text-accent-400 font-medium"
+              >
+                tiempo r├®cord
+              </span>
+               
+              gracias a un proceso AI-First.
+            </p>
+            <div
+              animate="[object Object]"
+              class="flex flex-wrap items-center gap-4 mb-2 lg:mb-20 lg:ml-[78px]"
+              initial="[object Object]"
+              transition="[object Object]"
+            >
+              <button
+                class="px-8 py-3.5 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-400 transition-colors duration-200 shadow-glow hover:shadow-lg"
+                whilehover="[object Object]"
+                whiletap="[object Object]"
+              >
+                <span
+                  class="flex items-center gap-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-mail w-5 h-5"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"[...
+ [32mÔ£ô[39m src/features/projects/analytics/tests/dashboard.test.tsx [2m ([22m[2m4 tests[22m[2m)[22m[90m 286[2mms[22m[39m
+
+ ÔØ» Object.getElementError node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» tests/sections.test.tsx:25:17
+     23| 
+     24|   // Current heading: "Dise├▒o y Desarrollo de Web Apps y SaaS con tecnÔÇª
+     25|   expect(screen.getByText(/Web Apps y SaaS/i)).toBeInTheDocument();
+       |                 ^
+     26|   expect(screen.getByText(/Disponible para nuevos proyectos/i)).toBeInÔÇª
+     27|  });
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/7]ÔÄ»
+
+ FAIL  tests/sections.test.tsx > Portfolio Sections Render > About section renders with correct content
+TestingLibraryElementError: Unable to find an element with the text: /AI-First Developer/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      class="section relative overflow-hidden"
+      id="about"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+      >
+        <div
+          class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-radial from-accent-500/10 to-transparent"
+        />
+        <div
+          class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-primary-500/10 to-transparent"
+        />
+      </div>
+      <div
+        class="container-custom relative z-10"
+      >
+        <div
+          class="text-center mb-12"
+          initial="hidden"
+          variants="[object Object]"
+          viewport="[object Object]"
+          whileinview="visible"
+        >
+          <h2
+            class="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
+          >
+            Sobre 
+            <span
+              class="text-gradient"
+            >
+              M├¡
+            </span>
+          </h2>
+          <p
+            class="text-xl text-dark-300 font-medium"
+          >
+            Un desarrollador diferente con un enfoque innovador
+          </p>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+        >
+          <div
+            class="w-full lg:w-1/2"
+            initial="hidden"
+            variants="[object Object]"
+            viewport="[object Object]"
+            whileinview="visible"
+          >
+            <div
+              class="relative group"
+            >
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-br from-primary-500 to-accent-500 rounded-[2rem] opacity-50 blur-lg group-hover:opacity-75 transition duration-500"
+              />
+              <div
+                class="relative bg-dark-900/90 backdrop-blur-xl border border-dark-700/50 rounded-[2rem] p-8 overflow-hidden"
+              >
+                <div
+                  class="flex items-center gap-5 mb-8"
+                >
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/20"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="lucide lucide-bot w-8 h-8 text-white"
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 8V4H8"
+                      />
+                      <rect
+                        height="12"
+                        rx="2"
+                        width="16"
+                        x="4"
+                        y="8"
+                      />
+                      <path
+                        d="M2 14h2"
+                      />
+                      <path
+                        d="M20 14h2"
+                      />
+                      <path
+                        d="M15 13v2"
+                      />
+                      <path
+                        d="M9 13v2"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3
+                      class="text-2xl font-bold text-white font-outfit"
+                    >
+                      ZeroCode
+                    </h3>
+                    <p
+                      class="text-primary-400 font-medium"
+                    >
+                      AI-First Development
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="grid grid-cols-2 gap-4"
+                >
+                  <div
+                    class="bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"
+                  >
+                    <div
+                      class="text-3xl font-bold text-neon-cyan mb-1 group-hover/item:scale-110 transition-transform origin-left"
+                    >
+                      100%
+                    </div>
+                    <div
+                      class="text-sm text-dark-400 font-medium"
+                    >
+                      Personalizado
+                    </div>
+                  </div>
+                  <div
+                    class="bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"
+                  >
+                    <div
+                      class="text-3xl font-bold text-neon-purple mb-1 group-hover/item:scale-110 transition-transform origin-left"
+                    >
+                      AI
+                    </div>
+                    <div
+                      class="text-sm text-dark-400 font-medium"
+                    >
+                      Potenciado
+                    </div>
+                  </div>
+                  <div
+                    class="bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"
+                  >
+                    <div
+                      class="text-3xl font-bold text-emerald-400 mb-1 group-hover/item:scale-110 transition-transform origin-left"
+                    >
+                      Rivas
+                    </div>
+                    <div
+                      class="text-sm text-dark-400 font-medium"
+                    >
+                      Ubicaci├│n
+                    </div>
+                  </div>
+                  <div
+                    class="bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item"
+                  >
+                    <div
+                      class="text-3xl font-bold text-amber-400 mb-1 group-hover/item:scale-110 transition-transform origin-left"
+                    >
+                      Quick
+                    </div>
+                    <div
+                      class="text-sm text-dark-400 font-medium"
+                    >
+                      Lanzamiento
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full lg:w-1/2"
+            initial="hidden"
+            variants="[object Object]"
+            viewport="[object Object]"
+            whileinview="visible"
+          >
+            <div
+              class="space-y-6"
+            >
+              <div
+                class="bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all group"
+              >
+                <div
+                  class="flex items-center gap-3 mb-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-globe w-5 h-5 text-primary-400"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                    />
+                    <path
+                      d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+                    />
+                    <path
+                      d="M2 12h20"
+                    />
+                  </svg>
+                  <h3
+                    class="text-xl font-bold text-white group-hover:text-primary-400"
+                  >
+                    Presencia Digital de ├ëlite
+                  </h3>
+                </div>
+                <p
+                  class="text-dark-400"
+                >
+                  Dise├▒amos webs que no solo son est├®ticamente impecables, sino que est├ín construidas para convertir visitantes en clientes desde el primer d├¡a.
+                </p>
+              </div>
+              <div
+                class="bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-accent-500/30 transition-all group"
+              >
+                <div
+                  class="flex items-center gap-3 mb-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-zap w-5 h-5 text-accent-400"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                    />
+                  </svg>
+                  <h3
+                    class="text-xl font-bold text-white group-hover:text-accent-400"
+                  >
+                    Desarrollo Potenciado por IA
+                  </h3>
+                </div>
+                <p
+                  class="text-dark-400"
+                >
+                  Utilizamos Inteligencia Artificial para acelerar el proceso creativo y t├®cnico, entregando resultados de alta gama en una fracci├│n del tiempo habitual.
+                </p>
+              </div>
+              <div
+                class="bg-dark-800/50 p-6 rounded-2xl border border-dark-700/50 hover:border-neon-purple/30 transition-all group"
+              >
+                <div
+                  class="flex items-center gap-3 mb-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="lucide lucide-map-pin w-5 h-5 text-neon-purple"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                    />
+                    <circle
+                      cx="12"
+                      cy="10"
+                      r="3"
+                    />
+                  </svg>
+                  <h3
+                    class="text-xl font-bold text-white group-hover:text-neon-purple"
+                  >
+                    Trato Directo y Local
+                  </h3>
+                </div>
+                <p
+                  class="text-dark-400"
+                >
+                  Sin intermediarios ni agencias impersonales. Un profesional dedicado en Madrid para que tu visi├│n se haga realidad con total transparencia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+ ÔØ» Object.getElementError node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ÔØ» node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» tests/sections.test.tsx:38:17
+     36|   // "Sobre" and "M├¡" are in separate elements, so match partial text
+     37|   expect(screen.getByText(/Sobre/i)).toBeInTheDocument();
+     38|   expect(screen.getByText(/AI-First Developer/i)).toBeInTheDocument();
+       |                 ^
+     39|  });
+     40| 
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/7]ÔÄ»
+
+ FAIL  apps/zerodelay/tests/unit/components/Footer.test.tsx > Footer Component > renders company information
+ FAIL  apps/zerodelay/tests/unit/components/Footer.test.tsx > Footer Component > renders contact information
+ FAIL  apps/zerodelay/tests/unit/components/Footer.test.tsx > Footer Component > renders legal links
+ FAIL  apps/zerodelay/tests/unit/components/Header.test.tsx > Header Component > renders logo and navigation links
+ FAIL  apps/zerodelay/tests/unit/components/Header.test.tsx > Header Component > mobile menu toggles when button is clicked
+Error: A React Element from an older version of React was rendered. This is not supported. It can happen if:
+- Multiple copies of the "react" package is used.
+- A library pre-bundled an old copy of "react" or "react/jsx-runtime".
+- A compiler tries to "inline" JSX instead of using the runtime.
+ ÔØ» throwOnInvalidObjectTypeImpl apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:6095:15
+ ÔØ» throwOnInvalidObjectType apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:6113:11
+ ÔØ» reconcileChildFibersImpl apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:7058:11
+ ÔØ» apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:7098:33
+ ÔØ» reconcileChildren apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:9702:13
+ ÔØ» beginWork apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:11899:15
+ ÔØ» runWithFiberInDEV apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:874:13
+ ÔØ» performUnitOfWork apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:17641:22
+ ÔØ» workLoopSync apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:17469:41
+ ÔØ» renderRootSync apps/zerodelay/node_modules/react-dom/cjs/react-dom-client.development.js:17450:11
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[3/7]ÔÄ»
+
+[2m Test Files [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (11)[39m
+[2m      Tests [22m [1m[31m7 failed[39m[22m[2m | [22m[1m[32m33 passed[39m[22m[90m (40)[39m
+[2m   Start at [22m 17:25:20
+[2m   Duration [22m 4.26s[2m (transform 1.11s, setup 8.87s, collect 4.32s, tests 1.06s, environment 15.18s, prepare 2.71s)[22m
+

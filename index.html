@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
@@ -8,16 +8,16 @@
       ((w, d, s, l, i) => {
         w[l] = w[l] || [];
         w[l].push({
-          "gtm.start": Date.now(),
-          event: "gtm.js",
+          'gtm.start': Date.now(),
+          event: 'gtm.js',
         });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l === "dataLayer" ? "" : "&l=" + l;
+          dl = l === 'dataLayer' ? '' : `&l=${l}`;
         j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        j.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dl}`;
         f.parentNode.insertBefore(j, f);
-      })(globalThis, document, "script", "dataLayer", "GTM-P8CDP9X6");
+      })(globalThis, document, 'script', 'dataLayer', 'GTM-P8CDP9X6');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -46,6 +46,7 @@
           https://fonts.gstatic.com
           wss://stream.binance.com:443
           https://vwdsnolwerskjjhmrsut.supabase.co
+          https://api.emailjs.com
           wss://vwdsnolwerskjjhmrsut.supabase.co;
         base-uri 'self';
         form-action 'self';
@@ -63,8 +64,7 @@
     <meta name="author" content="David G." />
     <meta name="theme-color" content="#0f172a" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://zerocode-devops.web.app" />
+    <!-- Canonical URL managed by React for better SEO -->
 
     <!-- Open Graph -->
     <meta
@@ -102,24 +102,32 @@
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
-    <noscript><link
+    <noscript
+      ><link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      /></noscript>
+    /></noscript>
 
-    <title>Diseño y Desarrollo de Productos Digitales (SaaS & Web Apps) | ZeroCode</title>
+    <title>
+      Diseño y Desarrollo de Productos Digitales (SaaS & Web Apps) | ZeroCode
+    </title>
   </head>
   <body class="bg-dark-950 text-dark-100">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe
+    <noscript
+      ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-P8CDP9X6"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
         title="Google Tag Manager"
-      ></iframe></noscript>
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root">
       <style>
@@ -152,16 +160,31 @@
           animation: slideLeft 1.5s infinite alternate ease-in-out;
         }
         @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.8; transform: scale(0.95); }
+          0%,
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: scale(0.95);
+          }
         }
         @keyframes slideRight {
-          from { transform: translateX(0); }
-          to { transform: translateX(10px); }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(10px);
+          }
         }
         @keyframes slideLeft {
-          from { transform: translateX(0); }
-          to { transform: translateX(-10px); }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-10px);
+          }
         }
       </style>
       <div class="initial-loader">

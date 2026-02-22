@@ -45,7 +45,7 @@ export default function CategoryStep({
 			</div>
 
 			<div className="grid grid-cols-2 gap-4">
-				{categories.map((cat, idx) => (
+				{categories.map((cat, _idx) => (
 					<button
 						key={cat}
 						onClick={() => setCategory(cat)}

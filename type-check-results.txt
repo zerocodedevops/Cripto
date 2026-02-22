@@ -1,0 +1,8 @@
+
+> zerocode-portfolio@0.1.0 type-check
+> tsc --noEmit
+
+src/features/projects/ecommerce/store/__tests__/slices.test.ts(55,3): error TS2578: Unused '@ts-expect-error' directive.
+src/features/projects/ecommerce/store/__tests__/slices.test.ts(72,3): error TS2578: Unused '@ts-expect-error' directive.
+src/features/projects/mudanzas-coral/src/main.tsx(4,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+src/features/projects/salon/src/pages/AdminLogin.tsx(14,2): error TS2578: Unused '@ts-expect-error' directive.

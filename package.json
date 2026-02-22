@@ -3,10 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
+	"workspaces": [
+		"apps/*"
+	],
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
-		"Build": "vite build",
+		"build:portfolio": "vite build",
+		"build:zerodelay": "vite build apps/zerodelay --outDir ../../dist/zerodelay --base /zerodelay/ --emptyOutDir",
+		"build:devops-shop": "vite build apps/devops-shop --outDir ../../dist/devops-shop --base /devops-shop/ --emptyOutDir",
+		"build": "npm run build:portfolio && npm run build:zerodelay && npm run build:devops-shop",
 		"preview": "vite preview",
 		"lint": "eslint .",
 		"type-check": "tsc --noEmit",

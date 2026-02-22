@@ -5,7 +5,7 @@ export interface TimeSlot {
 	available: boolean;
 }
 
-export async function getBeforeAndAfterDates(date: Date) {
+export async function getBeforeAndAfterDates(_date: Date) {
 	return [];
 }
 
@@ -36,7 +36,7 @@ export async function createBooking(data: {
 	return {
 		success: true,
 		booking: {
-			id: "MOCK-" + Math.random().toString(36).substr(2, 9),
+			id: `MOCK-${Math.random().toString(36).substr(2, 9)}`,
 			...data,
 		},
 	};

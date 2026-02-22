@@ -1,21 +1,16 @@
-import { motion } from "framer-motion";
 import {
 	ArrowLeft,
 	ChevronRight,
-	Heart,
 	Home,
 	RefreshCw,
-	Share2,
 	ShieldCheck,
 	ShoppingBag,
-	ShoppingCart,
 	Star,
 	Truck,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import OptimizedImage from "../components/OptimizedImage";
 import ReviewForm from "../components/ReviewForm";
 import ReviewList from "../components/ReviewList";
 import { useGetProductByIdQuery } from "../services/productsApi";

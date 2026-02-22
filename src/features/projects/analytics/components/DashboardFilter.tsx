@@ -6,7 +6,6 @@ import {
 	premiumColors,
 	premiumEffects,
 	premiumLayout,
-	premiumTypography,
 } from "../utils/premiumTheme";
 import { DateRangePicker } from "./DateRangePicker";
 import { ExportMenu } from "./ExportMenu";

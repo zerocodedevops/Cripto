@@ -174,5 +174,5 @@ function generateSparklinePath(data: number[]): string {
 		d += ` C ${midX},${p0[1]} ${midX},${p1[1]} ${p1[0]},${p1[1]}`;
 	}
 
-	return d + ` L 100,105 L 0,105 Z`;
+	return `${d} L 100,105 L 0,105 Z`;
 }

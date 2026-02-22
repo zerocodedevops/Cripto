@@ -1,5 +1,5 @@
+import path from "node:path";
 import { chromium } from "@playwright/test";
-import path from "path";
 
 async function verifySalon() {
 	console.log("Starting visual verification on PREVIEW...");

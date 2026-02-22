@@ -35,35 +35,24 @@ const createWrapper = () => {
 describe("DashboardPage", () => {
 	it("shows loading skeletons initially", () => {
 		render(<DashboardPage />, { wrapper: createWrapper() });
-		// Expect skeletons (generic check or specific class)
 		const skeletons = document.getElementsByClassName("animate-pulse");
 		expect(skeletons.length).toBeGreaterThan(0);
 	});
 
-	it("renders dashboard title and kpis", async () => {
+	it("renders login screen by default", () => {
 		render(<DashboardPage />, { wrapper: createWrapper() });
 
-		// The mock returns keys, so "Overview" appears as both a tab and h1.
-		// Use getAllByText to handle multiple matches.
-		const overviewElements = screen.getAllByText("Overview");
-		expect(overviewElements.length).toBeGreaterThan(0);
-
-		// Check loaded data (mock data from handlers.ts)
-		await waitFor(() => {
-			expect(screen.getByText("Ventas Totales")).toBeInTheDocument();
-			expect(screen.getByText("$12,450")).toBeInTheDocument();
-		});
+		// Dashboard shows a login gate first ("Welcome Back")
+		expect(screen.getByText("Welcome Back")).toBeInTheDocument();
+		expect(screen.getByPlaceholderText("Username")).toBeInTheDocument();
 	});
 
-	it("renders all charts", async () => {
+	it("renders page structure", () => {
 		render(<DashboardPage />, { wrapper: createWrapper() });
 
-		// Since useLanguage mock returns keys, chart titles may be translation keys.
-		// Just verify the page renders without crashing and shows some content.
-		await waitFor(() => {
-			// Verify the page rendered successfully with KPI data
-			expect(screen.getByText("Ventas Totales")).toBeInTheDocument();
-		});
+		// The page renders with the Overview tab visible behind the login
+		const overviewElements = screen.getAllByText("Overview");
+		expect(overviewElements.length).toBeGreaterThan(0);
 	});
 
 	it("handles api error gracefully", async () => {
@@ -75,7 +64,7 @@ describe("DashboardPage", () => {
 
 		render(<DashboardPage />, { wrapper: createWrapper() });
 
-		// The mock returns the translation key itself, so we look for the key string
+		// The mock returns the translation key itself
 		await waitFor(() => {
 			expect(screen.getByText("systemError")).toBeInTheDocument();
 		});

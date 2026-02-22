@@ -1,12 +1,6 @@
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import {
-	Calendar,
-	Clock,
-	CreditCard,
-	Loader2,
-	Scissors,
-} from "lucide-react";
+import { Calendar, Clock, CreditCard, Loader2, Scissors } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -84,12 +78,13 @@ export default function MyBookings() {
 						</p>
 					</div>
 					<div
-						className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${booking.status === "approved"
-							? "bg-emerald-900/30 text-emerald-400 border-emerald-800/50"
-							: booking.status === "pending"
-								? "bg-amber-900/30 text-amber-400 border-amber-800/50"
-								: "bg-red-900/30 text-red-400 border-red-800/50"
-							}`}
+						className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${
+							booking.status === "approved"
+								? "bg-emerald-900/30 text-emerald-400 border-emerald-800/50"
+								: booking.status === "pending"
+									? "bg-amber-900/30 text-amber-400 border-amber-800/50"
+									: "bg-red-900/30 text-red-400 border-red-800/50"
+						}`}
 					>
 						{booking.status === "approved"
 							? "Confirmada"

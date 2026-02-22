@@ -1,0 +1,1133 @@
+
+> zerocode-portfolio@0.1.0 check:biome
+> biome check .
+
+apps\devops-shop\src\components\CartSidebar.tsx:4:8 lint/style/useImportType  FIXABLE  ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! All these imports are only used as types.
+  
+    2 Ôöé import { useSelector, useDispatch } from 'react-redux';
+    3 Ôöé import { X, Plus, Minus, Trash2, CreditCard } from 'lucide-react';
+  > 4 Ôöé import { RootState } from '../store/store';
+      Ôöé        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    5 Ôöé import { toggleCart, removeFromCart, updateQuantity } from '../store/cartSlice'; // Keep clearCart check checking import
+    6 Ôöé import { Link } from 'react-router-dom';
+  
+  i Importing the types with import type ensures that they are removed by the compilers and avoids loading unnecessary modules.
+  
+  i Safe fix: Use import type.
+  
+    4 Ôöé import┬Àtype┬À{┬ÀRootState┬À}┬Àfrom┬À'../store/store';ÔÉì
+      Ôöé        +++++                                    
+
+apps\devops-shop\.eslintrc.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ┬À┬À"root":┬Àtrue,ÔÉì
+     3    Ôöé - ┬À┬À"env":┬À{┬À"browser":┬Àtrue,┬À"es2020":┬Àtrue┬À},ÔÉì
+     4    Ôöé - ┬À┬À"extends":┬À[ÔÉì
+     5    Ôöé - ┬À┬À┬À┬À"eslint:recommended",ÔÉì
+     6    Ôöé - ┬À┬À┬À┬À"plugin:@typescript-eslint/recommended",ÔÉì
+     7    Ôöé - ┬À┬À┬À┬À"prettier"ÔÉì
+     8    Ôöé - ┬À┬À],ÔÉì
+     9    Ôöé - ┬À┬À"ignorePatterns":┬À["dist",┬À".eslintrc.json"],ÔÉì
+    10    Ôöé - ┬À┬À"parser":┬À"@typescript-eslint/parser",ÔÉì
+    11    Ôöé - ┬À┬À"plugins":┬À["@typescript-eslint"],ÔÉì
+    12    Ôöé - ┬À┬À"rules":┬À{ÔÉì
+    13    Ôöé - ┬À┬À┬À┬À"no-unused-vars":┬À"off",ÔÉì
+    14    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/no-unused-vars":┬À"warn",ÔÉì
+    15    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/no-explicit-any":┬À"warn"ÔÉì
+    16    Ôöé - ┬À┬À}ÔÉì
+    17    Ôöé - }ÔÉì
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "root":┬Àtrue,
+        3 Ôöé + ÔåÆ "env":┬À{┬À"browser":┬Àtrue,┬À"es2020":┬Àtrue┬À},
+        4 Ôöé + ÔåÆ "extends":┬À[
+        5 Ôöé + ÔåÆ ÔåÆ "eslint:recommended",
+        6 Ôöé + ÔåÆ ÔåÆ "plugin:@typescript-eslint/recommended",
+        7 Ôöé + ÔåÆ ÔåÆ "prettier"
+        8 Ôöé + ÔåÆ ],
+        9 Ôöé + ÔåÆ "ignorePatterns":┬À["dist",┬À".eslintrc.json"],
+       10 Ôöé + ÔåÆ "parser":┬À"@typescript-eslint/parser",
+       11 Ôöé + ÔåÆ "plugins":┬À["@typescript-eslint"],
+       12 Ôöé + ÔåÆ "rules":┬À{
+       13 Ôöé + ÔåÆ ÔåÆ "no-unused-vars":┬À"off",
+       14 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/no-unused-vars":┬À"warn",
+       15 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/no-explicit-any":┬À"warn"
+       16 Ôöé + ÔåÆ }
+       17 Ôöé + }
+    18 18 Ôöé   
+  
+
+apps\devops-shop\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ┬À┬À"name":┬À"devops-shop",ÔÉì
+     3    Ôöé - ┬À┬À"version":┬À"1.0.0",ÔÉì
+     4    Ôöé - ┬À┬À"description":┬À"E-commerce┬Àmoderno┬Àcon┬ÀReact,┬ÀRedux,┬ÀStripe┬Ày┬Àfuncionalidades┬ÀAI┬À(Voice┬ÀSearch)",ÔÉì
+     5    Ôöé - ┬À┬À"type":┬À"module",ÔÉì
+     6    Ôöé - ┬À┬À"scripts":┬À{ÔÉì
+     7    Ôöé - ┬À┬À┬À┬À"dev":┬À"vite",ÔÉì
+     8    Ôöé - ┬À┬À┬À┬À"build":┬À"vite┬Àbuild",ÔÉì
+     9    Ôöé - ┬À┬À┬À┬À"preview":┬À"vite┬Àpreview",ÔÉì
+    10    Ôöé - ┬À┬À┬À┬À"lint":┬À"eslint┬À.┬À--ext┬À.ts,.tsx",ÔÉì
+    11    Ôöé - ┬À┬À┬À┬À"test":┬À"vitest",ÔÉì
+    12    Ôöé - ┬À┬À┬À┬À"test:ui":┬À"vitest┬À--ui"ÔÉì
+    13    Ôöé - ┬À┬À},ÔÉì
+    14    Ôöé - ┬À┬À"keywords":┬À[ÔÉì
+    15    Ôöé - ┬À┬À┬À┬À"ecommerce",ÔÉì
+    16    Ôöé - ┬À┬À┬À┬À"react",ÔÉì
+    17    Ôöé - ┬À┬À┬À┬À"redux",ÔÉì
+    18    Ôöé - ┬À┬À┬À┬À"stripe",ÔÉì
+    19    Ôöé - ┬À┬À┬À┬À"voice-search",ÔÉì
+    20    Ôöé - ┬À┬À┬À┬À"ai",ÔÉì
+    21    Ôöé - ┬À┬À┬À┬À"dark-mode"ÔÉì
+    22    Ôöé - ┬À┬À],ÔÉì
+    23    Ôöé - ┬À┬À"author":┬À"ZeroCode┬ÀDevOps",ÔÉì
+    24    Ôöé - ┬À┬À"license":┬À"MIT",ÔÉì
+    25    Ôöé - ┬À┬À"repository":┬À{ÔÉì
+    26    Ôöé - ┬À┬À┬À┬À"type":┬À"git",ÔÉì
+    27    Ôöé - ┬À┬À┬À┬À"url":┬À"https://github.com/zerocodedevops/DevOps.Shop"ÔÉì
+    28    Ôöé - ┬À┬À},ÔÉì
+    29    Ôöé - ┬À┬À"dependencies":┬À{ÔÉì
+    30    Ôöé - ┬À┬À┬À┬À"@reduxjs/toolkit":┬À"^2.11.2",ÔÉì
+    31    Ôöé - ┬À┬À┬À┬À"@stripe/react-stripe-js":┬À"^5.4.1",ÔÉì
+    32    Ôöé - ┬À┬À┬À┬À"@stripe/stripe-js":┬À"^8.6.0",ÔÉì
+    33    Ôöé - ┬À┬À┬À┬À"framer-motion":┬À"^12.23.26",ÔÉì
+    34    Ôöé - ┬À┬À┬À┬À"i18next":┬À"^25.7.3",ÔÉì
+    35    Ôöé - ┬À┬À┬À┬À"i18next-browser-languagedetector":┬À"^8.2.0",ÔÉì
+    36    Ôöé - ┬À┬À┬À┬À"lucide-react":┬À"^0.562.0",ÔÉì
+    37    Ôöé - ┬À┬À┬À┬À"react":┬À"^18.2.0",ÔÉì
+    38    Ôöé - ┬À┬À┬À┬À"react-dom":┬À"^18.2.0",ÔÉì
+    39    Ôöé - ┬À┬À┬À┬À"react-i18next":┬À"^16.5.1",ÔÉì
+    40    Ôöé - ┬À┬À┬À┬À"react-redux":┬À"^9.2.0",ÔÉì
+    41    Ôöé - ┬À┬À┬À┬À"react-router-dom":┬À"^7.11.0"ÔÉì
+    42    Ôöé - ┬À┬À},ÔÉì
+    43    Ôöé - ┬À┬À"devDependencies":┬À{ÔÉì
+    44    Ôöé - ┬À┬À┬À┬À"@testing-library/jest-dom":┬À"^6.4.5",ÔÉì
+    45    Ôöé - ┬À┬À┬À┬À"@testing-library/react":┬À"^14.3.1",ÔÉì
+    46    Ôöé - ┬À┬À┬À┬À"@testing-library/user-event":┬À"^14.5.2",ÔÉì
+    47    Ôöé - ┬À┬À┬À┬À"@types/node":┬À"^25.0.3",ÔÉì
+    48    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/eslint-plugin":┬À"^8.13.0",ÔÉì
+    49    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/parser":┬À"^8.13.0",ÔÉì
+    50    Ôöé - ┬À┬À┬À┬À"@vitejs/plugin-react":┬À"^4.2.0",ÔÉì
+    51    Ôöé - ┬À┬À┬À┬À"autoprefixer":┬À"^10.4.23",ÔÉì
+    52    Ôöé - ┬À┬À┬À┬À"eslint":┬À"^8.57.1",ÔÉì
+    53    Ôöé - ┬À┬À┬À┬À"eslint-config-prettier":┬À"^9.1.0",ÔÉì
+    54    Ôöé - ┬À┬À┬À┬À"jsdom":┬À"^24.0.0",ÔÉì
+    55    Ôöé - ┬À┬À┬À┬À"postcss":┬À"^8.4.35",ÔÉì
+    56    Ôöé - ┬À┬À┬À┬À"prettier":┬À"^3.2.5",ÔÉì
+    57    Ôöé - ┬À┬À┬À┬À"tailwindcss":┬À"^3.4.13",ÔÉì
+    58    Ôöé - ┬À┬À┬À┬À"typescript":┬À"^5.9.3",ÔÉì
+    59    Ôöé - ┬À┬À┬À┬À"vite":┬À"^5.0.10",ÔÉì
+    60    Ôöé - ┬À┬À┬À┬À"vitest":┬À"^1.6.0"ÔÉì
+    61    Ôöé - ┬À┬À}ÔÉì
+    62    Ôöé - }ÔÉì
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "name":┬À"devops-shop",
+        3 Ôöé + ÔåÆ "version":┬À"1.0.0",
+        4 Ôöé + ÔåÆ "description":┬À"E-commerce┬Àmoderno┬Àcon┬ÀReact,┬ÀRedux,┬ÀStripe┬Ày┬Àfuncionalidades┬ÀAI┬À(Voice┬ÀSearch)",
+        5 Ôöé + ÔåÆ "type":┬À"module",
+        6 Ôöé + ÔåÆ "scripts":┬À{
+        7 Ôöé + ÔåÆ ÔåÆ "dev":┬À"vite",
+        8 Ôöé + ÔåÆ ÔåÆ "build":┬À"vite┬Àbuild",
+        9 Ôöé + ÔåÆ ÔåÆ "preview":┬À"vite┬Àpreview",
+       10 Ôöé + ÔåÆ ÔåÆ "lint":┬À"eslint┬À.┬À--ext┬À.ts,.tsx",
+       11 Ôöé + ÔåÆ ÔåÆ "test":┬À"vitest",
+       12 Ôöé + ÔåÆ ÔåÆ "test:ui":┬À"vitest┬À--ui"
+       13 Ôöé + ÔåÆ },
+       14 Ôöé + ÔåÆ "keywords":┬À[
+       15 Ôöé + ÔåÆ ÔåÆ "ecommerce",
+       16 Ôöé + ÔåÆ ÔåÆ "react",
+       17 Ôöé + ÔåÆ ÔåÆ "redux",
+       18 Ôöé + ÔåÆ ÔåÆ "stripe",
+       19 Ôöé + ÔåÆ ÔåÆ "voice-search",
+       20 Ôöé + ÔåÆ ÔåÆ "ai",
+       21 Ôöé + ÔåÆ ÔåÆ "dark-mode"
+       22 Ôöé + ÔåÆ ],
+       23 Ôöé + ÔåÆ "author":┬À"ZeroCode┬ÀDevOps",
+       24 Ôöé + ÔåÆ "license":┬À"MIT",
+       25 Ôöé + ÔåÆ "repository":┬À{
+       26 Ôöé + ÔåÆ ÔåÆ "type":┬À"git",
+       27 Ôöé + ÔåÆ ÔåÆ "url":┬À"https://github.com/zerocodedevops/DevOps.Shop"
+       28 Ôöé + ÔåÆ },
+       29 Ôöé + ÔåÆ "dependencies":┬À{
+       30 Ôöé + ÔåÆ ÔåÆ "@reduxjs/toolkit":┬À"^2.11.2",
+       31 Ôöé + ÔåÆ ÔåÆ "@stripe/react-stripe-js":┬À"^5.4.1",
+       32 Ôöé + ÔåÆ ÔåÆ "@stripe/stripe-js":┬À"^8.6.0",
+       33 Ôöé + ÔåÆ ÔåÆ "framer-motion":┬À"^12.23.26",
+       34 Ôöé + ÔåÆ ÔåÆ "i18next":┬À"^25.7.3",
+       35 Ôöé + ÔåÆ ÔåÆ "i18next-browser-languagedetector":┬À"^8.2.0",
+       36 Ôöé + ÔåÆ ÔåÆ "lucide-react":┬À"^0.562.0",
+       37 Ôöé + ÔåÆ ÔåÆ "react":┬À"^18.2.0",
+       38 Ôöé + ÔåÆ ÔåÆ "react-dom":┬À"^18.2.0",
+       39 Ôöé + ÔåÆ ÔåÆ "react-i18next":┬À"^16.5.1",
+       40 Ôöé + ÔåÆ ÔåÆ "react-redux":┬À"^9.2.0",
+       41 Ôöé + ÔåÆ ÔåÆ "react-router-dom":┬À"^7.11.0"
+       42 Ôöé + ÔåÆ },
+       43 Ôöé + ÔåÆ "devDependencies":┬À{
+       44 Ôöé + ÔåÆ ÔåÆ "@testing-library/jest-dom":┬À"^6.4.5",
+       45 Ôöé + ÔåÆ ÔåÆ "@testing-library/react":┬À"^14.3.1",
+       46 Ôöé + ÔåÆ ÔåÆ "@testing-library/user-event":┬À"^14.5.2",
+       47 Ôöé + ÔåÆ ÔåÆ "@types/node":┬À"^25.0.3",
+       48 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/eslint-plugin":┬À"^8.13.0",
+       49 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/parser":┬À"^8.13.0",
+       50 Ôöé + ÔåÆ ÔåÆ "@vitejs/plugin-react":┬À"^4.2.0",
+       51 Ôöé + ÔåÆ ÔåÆ "autoprefixer":┬À"^10.4.23",
+       52 Ôöé + ÔåÆ ÔåÆ "eslint":┬À"^8.57.1",
+       53 Ôöé + ÔåÆ ÔåÆ "eslint-config-prettier":┬À"^9.1.0",
+       54 Ôöé + ÔåÆ ÔåÆ "jsdom":┬À"^24.0.0",
+       55 Ôöé + ÔåÆ ÔåÆ "postcss":┬À"^8.4.35",
+       56 Ôöé + ÔåÆ ÔåÆ "prettier":┬À"^3.2.5",
+       57 Ôöé + ÔåÆ ÔåÆ "tailwindcss":┬À"^3.4.13",
+       58 Ôöé + ÔåÆ ÔåÆ "typescript":┬À"^5.9.3",
+       59 Ôöé + ÔåÆ ÔåÆ "vite":┬À"^5.0.10",
+       60 Ôöé + ÔåÆ ÔåÆ "vitest":┬À"^1.6.0"
+       61 Ôöé + ÔåÆ }
+       62 Ôöé + }
+    63 63 Ôöé   
+  
+
+apps\devops-shop\postcss.config.mjs:1:1 assist/source/organizeImports  FIXABLE  ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The imports and exports are not sorted.
+  
+  > 1 Ôöé import tailwindcss from 'tailwindcss';
+      Ôöé ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 Ôöé import autoprefixer from 'autoprefixer';
+    3 Ôöé 
+  
+  i Safe fix: Organize Imports (Biome)
+  
+    1   Ôöé - import┬Àtailwindcss┬Àfrom┬À'tailwindcss';ÔÉì
+    2   Ôöé - import┬Àautoprefixer┬Àfrom┬À'autoprefixer';ÔÉì
+      1 Ôöé + import┬Àautoprefixer┬Àfrom┬À'autoprefixer';
+      2 Ôöé + import┬Àtailwindcss┬Àfrom┬À'tailwindcss';ÔÉì
+    3 3 Ôöé   ÔÉì
+    4 4 Ôöé   export default {ÔÉì
+  
+
+apps\devops-shop\postcss.config.mjs format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+    1   Ôöé - import┬Àtailwindcss┬Àfrom┬À'tailwindcss';ÔÉì
+    2   Ôöé - import┬Àautoprefixer┬Àfrom┬À'autoprefixer';ÔÉì
+    3   Ôöé - ÔÉì
+    4   Ôöé - export┬Àdefault┬À{ÔÉì
+    5   Ôöé - ┬À┬Àplugins:┬À[tailwindcss,┬Àautoprefixer],ÔÉì
+    6   Ôöé - };ÔÉì
+      1 Ôöé + import┬Àtailwindcss┬Àfrom┬À"tailwindcss";
+      2 Ôöé + import┬Àautoprefixer┬Àfrom┬À"autoprefixer";
+      3 Ôöé + 
+      4 Ôöé + export┬Àdefault┬À{
+      5 Ôöé + ÔåÆ plugins:┬À[tailwindcss,┬Àautoprefixer],
+      6 Ôöé + };
+    7 7 Ôöé   
+  
+
+apps\devops-shop\src\App.tsx:1:1 assist/source/organizeImports  FIXABLE  ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The imports and exports are not sorted.
+  
+  > 1 Ôöé import { Provider } from 'react-redux';
+      Ôöé ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 Ôöé import { RouterProvider } from 'react-router-dom';
+    3 Ôöé import { store } from './store/store';
+  
+  i Safe fix: Organize Imports (Biome)
+  
+     1  1 Ôöé   import { Provider } from 'react-redux';ÔÉì
+     2  2 Ôöé   import { RouterProvider } from 'react-router-dom';ÔÉì
+     3    Ôöé - import┬À{┬Àstore┬À}┬Àfrom┬À'./store/store';ÔÉì
+     4    Ôöé - import┬À{┬Àrouter┬À}┬Àfrom┬À'./routes';ÔÉì
+        3 Ôöé + import┬À{┬Àrouter┬À}┬Àfrom┬À'./routes';ÔÉì
+        4 Ôöé + import┬À{┬Àstore┬À}┬Àfrom┬À'./store/store';ÔÉì
+     5  5 Ôöé   ÔÉì
+     6  6 Ôöé   function App() {ÔÉì
+  
+
+apps\devops-shop\src\App.tsx format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - import┬À{┬ÀProvider┬À}┬Àfrom┬À'react-redux';ÔÉì
+     2    Ôöé - import┬À{┬ÀRouterProvider┬À}┬Àfrom┬À'react-router-dom';ÔÉì
+     3    Ôöé - import┬À{┬Àstore┬À}┬Àfrom┬À'./store/store';ÔÉì
+     4    Ôöé - import┬À{┬Àrouter┬À}┬Àfrom┬À'./routes';ÔÉì
+     5    Ôöé - ÔÉì
+     6    Ôöé - function┬ÀApp()┬À{ÔÉì
+     7    Ôöé - ┬À┬Àreturn┬À(ÔÉì
+     8    Ôöé - ┬À┬À┬À┬À<Provider┬Àstore={store}>ÔÉì
+     9    Ôöé - ┬À┬À┬À┬À┬À┬À<RouterProvider┬Àrouter={router}┬À/>ÔÉì
+    10    Ôöé - ┬À┬À┬À┬À</Provider>ÔÉì
+    11    Ôöé - ┬À┬À);ÔÉì
+    12    Ôöé - }ÔÉì
+    13    Ôöé - ÔÉì
+    14    Ôöé - export┬Àdefault┬ÀApp;ÔÉì
+        1 Ôöé + import┬À{┬ÀProvider┬À}┬Àfrom┬À"react-redux";
+        2 Ôöé + import┬À{┬ÀRouterProvider┬À}┬Àfrom┬À"react-router-dom";
+        3 Ôöé + import┬À{┬Àstore┬À}┬Àfrom┬À"./store/store";
+        4 Ôöé + import┬À{┬Àrouter┬À}┬Àfrom┬À"./routes";
+        5 Ôöé + 
+        6 Ôöé + function┬ÀApp()┬À{
+        7 Ôöé + ÔåÆ return┬À(
+        8 Ôöé + ÔåÆ ÔåÆ <Provider┬Àstore={store}>
+        9 Ôöé + ÔåÆ ÔåÆ ÔåÆ <RouterProvider┬Àrouter={router}┬À/>
+       10 Ôöé + ÔåÆ ÔåÆ </Provider>
+       11 Ôöé + ÔåÆ );
+       12 Ôöé + }
+       13 Ôöé + 
+       14 Ôöé + export┬Àdefault┬ÀApp;
+    15 15 Ôöé   
+  
+
+apps\devops-shop\src\components\CartSidebar.tsx:1:1 assist/source/organizeImports  FIXABLE  ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The imports and exports are not sorted.
+  
+  > 1 Ôöé import { motion, AnimatePresence } from 'framer-motion';
+      Ôöé ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 Ôöé import { useSelector, useDispatch } from 'react-redux';
+    3 Ôöé import { X, Plus, Minus, Trash2, CreditCard } from 'lucide-react';
+  
+  i Safe fix: Organize Imports (Biome)
+  
+      1   1 Ôöé   import { motion, AnimatePresence } from 'framer-motion';ÔÉì
+      2     Ôöé - import┬À{┬ÀuseSelector,┬ÀuseDispatch┬À}┬Àfrom┬À'react-redux';ÔÉì
+      3     Ôöé - import┬À{┬ÀX,┬ÀPlus,┬ÀMinus,┬ÀTrash2,┬ÀCreditCard┬À}┬Àfrom┬À'lucide-react';ÔÉì
+      4     Ôöé - import┬À{┬ÀRootState┬À}┬Àfrom┬À'../store/store';ÔÉì
+          2 Ôöé + import┬À{┬ÀCreditCard,┬ÀMinus,┬ÀPlus,┬ÀTrash2,┬ÀX┬À}┬Àfrom┬À'lucide-react';ÔÉì
+          3 Ôöé + import┬À{┬ÀuseDispatch,┬ÀuseSelector┬À}┬Àfrom┬À'react-redux';ÔÉì
+          4 Ôöé + import┬À{┬ÀLink┬À}┬Àfrom┬À'react-router-dom';ÔÉì
+      5   5 Ôöé   import { toggleCart, removeFromCart, updateQuantity } from '../store/cartSlice'; // Keep clearCart check checking importÔÉì
+      6     Ôöé - import┬À{┬ÀLink┬À}┬Àfrom┬À'react-router-dom';ÔÉì
+          6 Ôöé + import┬À{┬ÀRootState┬À}┬Àfrom┬À'../store/store';ÔÉì
+      7   7 Ôöé   ÔÉì
+      8   8 Ôöé   export default function CartSidebar() {ÔÉì
+  
+
+apps\devops-shop\tsconfig.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ┬À┬À"compilerOptions":┬À{ÔÉì
+     3    Ôöé - ┬À┬À┬À┬À"target":┬À"ES2020",ÔÉì
+     4    Ôöé - ┬À┬À┬À┬À"useDefineForClassFields":┬Àtrue,ÔÉì
+     5    Ôöé - ┬À┬À┬À┬À"lib":┬À["ES2020",┬À"DOM",┬À"DOM.Iterable"],ÔÉì
+     6    Ôöé - ┬À┬À┬À┬À"module":┬À"ESNext",ÔÉì
+     7    Ôöé - ┬À┬À┬À┬À"skipLibCheck":┬Àtrue,ÔÉì
+     8    Ôöé - ┬À┬À┬À┬À"moduleResolution":┬À"bundler",ÔÉì
+     9    Ôöé - ┬À┬À┬À┬À"allowImportingTsExtensions":┬Àtrue,ÔÉì
+    10    Ôöé - ┬À┬À┬À┬À"resolveJsonModule":┬Àtrue,ÔÉì
+    11    Ôöé - ┬À┬À┬À┬À"isolatedModules":┬Àtrue,ÔÉì
+    12    Ôöé - ┬À┬À┬À┬À"noEmit":┬Àtrue,ÔÉì
+    13    Ôöé - ┬À┬À┬À┬À"jsx":┬À"react-jsx",ÔÉì
+    14    Ôöé - ┬À┬À┬À┬À"strict":┬Àtrue,ÔÉì
+    15    Ôöé - ┬À┬À┬À┬À"noUnusedLocals":┬Àtrue,ÔÉì
+    16    Ôöé - ┬À┬À┬À┬À"noUnusedParameters":┬Àtrue,ÔÉì
+    17    Ôöé - ┬À┬À┬À┬À"noFallthroughCasesInSwitch":┬ÀtrueÔÉì
+    18    Ôöé - ┬À┬À},ÔÉì
+    19    Ôöé - ┬À┬À"include":┬À["src"],ÔÉì
+    20    Ôöé - ┬À┬À"references":┬À[{┬À"path":┬À"./tsconfig.node.json"┬À}]ÔÉì
+    21    Ôöé - }ÔÉì
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "compilerOptions":┬À{
+        3 Ôöé + ÔåÆ ÔåÆ "target":┬À"ES2020",
+        4 Ôöé + ÔåÆ ÔåÆ "useDefineForClassFields":┬Àtrue,
+        5 Ôöé + ÔåÆ ÔåÆ "lib":┬À["ES2020",┬À"DOM",┬À"DOM.Iterable"],
+        6 Ôöé + ÔåÆ ÔåÆ "module":┬À"ESNext",
+        7 Ôöé + ÔåÆ ÔåÆ "skipLibCheck":┬Àtrue,
+        8 Ôöé + ÔåÆ ÔåÆ "moduleResolution":┬À"bundler",
+        9 Ôöé + ÔåÆ ÔåÆ "allowImportingTsExtensions":┬Àtrue,
+       10 Ôöé + ÔåÆ ÔåÆ "resolveJsonModule":┬Àtrue,
+       11 Ôöé + ÔåÆ ÔåÆ "isolatedModules":┬Àtrue,
+       12 Ôöé + ÔåÆ ÔåÆ "noEmit":┬Àtrue,
+       13 Ôöé + ÔåÆ ÔåÆ "jsx":┬À"react-jsx",
+       14 Ôöé + ÔåÆ ÔåÆ "strict":┬Àtrue,
+       15 Ôöé + ÔåÆ ÔåÆ "noUnusedLocals":┬Àtrue,
+       16 Ôöé + ÔåÆ ÔåÆ "noUnusedParameters":┬Àtrue,
+       17 Ôöé + ÔåÆ ÔåÆ "noFallthroughCasesInSwitch":┬Àtrue
+       18 Ôöé + ÔåÆ },
+       19 Ôöé + ÔåÆ "include":┬À["src"],
+       20 Ôöé + ÔåÆ "references":┬À[{┬À"path":┬À"./tsconfig.node.json"┬À}]
+       21 Ôöé + }
+    22 22 Ôöé   
+  
+
+apps\zerodelay\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ┬À┬À"name":┬À"mudanzas-coral",ÔÉì
+     3    Ôöé - ┬À┬À"private":┬Àtrue,ÔÉì
+     4    Ôöé - ┬À┬À"version":┬À"0.0.0",ÔÉì
+     5    Ôöé - ┬À┬À"type":┬À"module",ÔÉì
+     6    Ôöé - ┬À┬À"scripts":┬À{ÔÉì
+     7    Ôöé - ┬À┬À┬À┬À"dev":┬À"vite",ÔÉì
+     8    Ôöé - ┬À┬À┬À┬À"build":┬À"tsc┬À-b┬À&&┬Àvite┬Àbuild",ÔÉì
+     9    Ôöé - ┬À┬À┬À┬À"preview":┬À"vite┬Àpreview",ÔÉì
+    10    Ôöé - ┬À┬À┬À┬À"lint":┬À"eslint┬Àsrc┬À--ext┬Àts,tsx┬À--report-unused-disable-directives┬À--max-warnings┬À0",ÔÉì
+    11    Ôöé - ┬À┬À┬À┬À"lint:fix":┬À"eslint┬À.┬À--ext┬Àts,tsx┬À--fix",ÔÉì
+    12    Ôöé - ┬À┬À┬À┬À"format":┬À"prettier┬À--write┬À\"src/**/*.{ts,tsx,css}\"",ÔÉì
+    13    Ôöé - ┬À┬À┬À┬À"test":┬À"vitest",ÔÉì
+    14    Ôöé - ┬À┬À┬À┬À"test:ui":┬À"vitest┬À--ui",ÔÉì
+    15    Ôöé - ┬À┬À┬À┬À"test:coverage":┬À"vitest┬À--coverage",ÔÉì
+    16    Ôöé - ┬À┬À┬À┬À"test:e2e":┬À"playwright┬Àtest",ÔÉì
+    17    Ôöé - ┬À┬À┬À┬À"test:e2e:ui":┬À"playwright┬Àtest┬À--ui",ÔÉì
+    18    Ôöé - ┬À┬À┬À┬À"type-check":┬À"tsc┬À--noEmit",ÔÉì
+    19    Ôöé - ┬À┬À┬À┬À"deploy":┬À"npm┬Àrun┬Àbuild┬À&&┬Àfirebase┬Àdeploy┬À--only┬Àhosting:zerodelay"ÔÉì
+    20    Ôöé - ┬À┬À},ÔÉì
+    21    Ôöé - ┬À┬À"dependencies":┬À{ÔÉì
+    22    Ôöé - ┬À┬À┬À┬À"@headlessui/react":┬À"^2.2.9",ÔÉì
+    23    Ôöé - ┬À┬À┬À┬À"@heroicons/react":┬À"^2.2.0",ÔÉì
+    24    Ôöé - ┬À┬À┬À┬À"@hookform/resolvers":┬À"^5.2.2",ÔÉì
+    25    Ôöé - ┬À┬À┬À┬À"react":┬À"^19.2.0",ÔÉì
+    26    Ôöé - ┬À┬À┬À┬À"react-dom":┬À"^19.2.0",ÔÉì
+    27    Ôöé - ┬À┬À┬À┬À"react-helmet-async":┬À"^2.0.5",ÔÉì
+    28    Ôöé - ┬À┬À┬À┬À"react-hook-form":┬À"^7.71.1",ÔÉì
+    29    Ôöé - ┬À┬À┬À┬À"react-router-dom":┬À"^7.13.0",ÔÉì
+    30    Ôöé - ┬À┬À┬À┬À"zod":┬À"^4.3.6"ÔÉì
+    31    Ôöé - ┬À┬À},ÔÉì
+    32    Ôöé - ┬À┬À"devDependencies":┬À{ÔÉì
+    33    Ôöé - ┬À┬À┬À┬À"@eslint/js":┬À"^9.39.1",ÔÉì
+    34    Ôöé - ┬À┬À┬À┬À"@playwright/test":┬À"^1.58.2",ÔÉì
+    35    Ôöé - ┬À┬À┬À┬À"@tailwindcss/postcss":┬À"^4.1.18",ÔÉì
+    36    Ôöé - ┬À┬À┬À┬À"@testing-library/jest-dom":┬À"^6.9.1",ÔÉì
+    37    Ôöé - ┬À┬À┬À┬À"@testing-library/react":┬À"^16.3.2",ÔÉì
+    38    Ôöé - ┬À┬À┬À┬À"@testing-library/user-event":┬À"^14.6.1",ÔÉì
+    39    Ôöé - ┬À┬À┬À┬À"@types/node":┬À"^24.10.1",ÔÉì
+    40    Ôöé - ┬À┬À┬À┬À"@types/react":┬À"^19.2.5",ÔÉì
+    41    Ôöé - ┬À┬À┬À┬À"@types/react-dom":┬À"^19.2.3",ÔÉì
+    42    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/eslint-plugin":┬À"^8.54.0",ÔÉì
+    43    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/parser":┬À"^8.54.0",ÔÉì
+    44    Ôöé - ┬À┬À┬À┬À"@vitejs/plugin-react":┬À"^5.1.1",ÔÉì
+    45    Ôöé - ┬À┬À┬À┬À"@vitest/ui":┬À"^4.0.18",ÔÉì
+    46    Ôöé - ┬À┬À┬À┬À"autoprefixer":┬À"^10.4.24",ÔÉì
+    47    Ôöé - ┬À┬À┬À┬À"eslint":┬À"^9.39.2",ÔÉì
+    48    Ôöé - ┬À┬À┬À┬À"eslint-config-prettier":┬À"^10.1.8",ÔÉì
+    49    Ôöé - ┬À┬À┬À┬À"eslint-plugin-prettier":┬À"^5.5.5",ÔÉì
+    50    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react":┬À"^7.37.5",ÔÉì
+    51    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react-hooks":┬À"^7.0.1",ÔÉì
+    52    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react-refresh":┬À"^0.4.24",ÔÉì
+    53    Ôöé - ┬À┬À┬À┬À"globals":┬À"^16.5.0",ÔÉì
+    54    Ôöé - ┬À┬À┬À┬À"jsdom":┬À"^28.0.0",ÔÉì
+    55    Ôöé - ┬À┬À┬À┬À"postcss":┬À"^8.5.6",ÔÉì
+    56    Ôöé - ┬À┬À┬À┬À"prettier":┬À"^3.8.1",ÔÉì
+    57    Ôöé - ┬À┬À┬À┬À"tailwindcss":┬À"^4.1.18",ÔÉì
+    58    Ôöé - ┬À┬À┬À┬À"typescript":┬À"~5.9.3",ÔÉì
+    59    Ôöé - ┬À┬À┬À┬À"typescript-eslint":┬À"^8.46.4",ÔÉì
+    60    Ôöé - ┬À┬À┬À┬À"vite":┬À"^7.2.4",ÔÉì
+    61    Ôöé - ┬À┬À┬À┬À"vitest":┬À"^4.0.18"ÔÉì
+    62    Ôöé - ┬À┬À}ÔÉì
+    63    Ôöé - }
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "name":┬À"mudanzas-coral",
+        3 Ôöé + ÔåÆ "private":┬Àtrue,
+        4 Ôöé + ÔåÆ "version":┬À"0.0.0",
+        5 Ôöé + ÔåÆ "type":┬À"module",
+        6 Ôöé + ÔåÆ "scripts":┬À{
+        7 Ôöé + ÔåÆ ÔåÆ "dev":┬À"vite",
+        8 Ôöé + ÔåÆ ÔåÆ "build":┬À"tsc┬À-b┬À&&┬Àvite┬Àbuild",
+        9 Ôöé + ÔåÆ ÔåÆ "preview":┬À"vite┬Àpreview",
+       10 Ôöé + ÔåÆ ÔåÆ "lint":┬À"eslint┬Àsrc┬À--ext┬Àts,tsx┬À--report-unused-disable-directives┬À--max-warnings┬À0",
+       11 Ôöé + ÔåÆ ÔåÆ "lint:fix":┬À"eslint┬À.┬À--ext┬Àts,tsx┬À--fix",
+       12 Ôöé + ÔåÆ ÔåÆ "format":┬À"prettier┬À--write┬À\"src/**/*.{ts,tsx,css}\"",
+       13 Ôöé + ÔåÆ ÔåÆ "test":┬À"vitest",
+       14 Ôöé + ÔåÆ ÔåÆ "test:ui":┬À"vitest┬À--ui",
+       15 Ôöé + ÔåÆ ÔåÆ "test:coverage":┬À"vitest┬À--coverage",
+       16 Ôöé + ÔåÆ ÔåÆ "test:e2e":┬À"playwright┬Àtest",
+       17 Ôöé + ÔåÆ ÔåÆ "test:e2e:ui":┬À"playwright┬Àtest┬À--ui",
+       18 Ôöé + ÔåÆ ÔåÆ "type-check":┬À"tsc┬À--noEmit",
+       19 Ôöé + ÔåÆ ÔåÆ "deploy":┬À"npm┬Àrun┬Àbuild┬À&&┬Àfirebase┬Àdeploy┬À--only┬Àhosting:zerodelay"
+       20 Ôöé + ÔåÆ },
+       21 Ôöé + ÔåÆ "dependencies":┬À{
+       22 Ôöé + ÔåÆ ÔåÆ "@headlessui/react":┬À"^2.2.9",
+       23 Ôöé + ÔåÆ ÔåÆ "@heroicons/react":┬À"^2.2.0",
+       24 Ôöé + ÔåÆ ÔåÆ "@hookform/resolvers":┬À"^5.2.2",
+       25 Ôöé + ÔåÆ ÔåÆ "react":┬À"^19.2.0",
+       26 Ôöé + ÔåÆ ÔåÆ "react-dom":┬À"^19.2.0",
+       27 Ôöé + ÔåÆ ÔåÆ "react-helmet-async":┬À"^2.0.5",
+       28 Ôöé + ÔåÆ ÔåÆ "react-hook-form":┬À"^7.71.1",
+       29 Ôöé + ÔåÆ ÔåÆ "react-router-dom":┬À"^7.13.0",
+       30 Ôöé + ÔåÆ ÔåÆ "zod":┬À"^4.3.6"
+       31 Ôöé + ÔåÆ },
+       32 Ôöé + ÔåÆ "devDependencies":┬À{
+       33 Ôöé + ÔåÆ ÔåÆ "@eslint/js":┬À"^9.39.1",
+       34 Ôöé + ÔåÆ ÔåÆ "@playwright/test":┬À"^1.58.2",
+       35 Ôöé + ÔåÆ ÔåÆ "@tailwindcss/postcss":┬À"^4.1.18",
+       36 Ôöé + ÔåÆ ÔåÆ "@testing-library/jest-dom":┬À"^6.9.1",
+       37 Ôöé + ÔåÆ ÔåÆ "@testing-library/react":┬À"^16.3.2",
+       38 Ôöé + ÔåÆ ÔåÆ "@testing-library/user-event":┬À"^14.6.1",
+       39 Ôöé + ÔåÆ ÔåÆ "@types/node":┬À"^24.10.1",
+       40 Ôöé + ÔåÆ ÔåÆ "@types/react":┬À"^19.2.5",
+       41 Ôöé + ÔåÆ ÔåÆ "@types/react-dom":┬À"^19.2.3",
+       42 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/eslint-plugin":┬À"^8.54.0",
+       43 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/parser":┬À"^8.54.0",
+       44 Ôöé + ÔåÆ ÔåÆ "@vitejs/plugin-react":┬À"^5.1.1",
+       45 Ôöé + ÔåÆ ÔåÆ "@vitest/ui":┬À"^4.0.18",
+       46 Ôöé + ÔåÆ ÔåÆ "autoprefixer":┬À"^10.4.24",
+       47 Ôöé + ÔåÆ ÔåÆ "eslint":┬À"^9.39.2",
+       48 Ôöé + ÔåÆ ÔåÆ "eslint-config-prettier":┬À"^10.1.8",
+       49 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-prettier":┬À"^5.5.5",
+       50 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react":┬À"^7.37.5",
+       51 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react-hooks":┬À"^7.0.1",
+       52 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react-refresh":┬À"^0.4.24",
+       53 Ôöé + ÔåÆ ÔåÆ "globals":┬À"^16.5.0",
+       54 Ôöé + ÔåÆ ÔåÆ "jsdom":┬À"^28.0.0",
+       55 Ôöé + ÔåÆ ÔåÆ "postcss":┬À"^8.5.6",
+       56 Ôöé + ÔåÆ ÔåÆ "prettier":┬À"^3.8.1",
+       57 Ôöé + ÔåÆ ÔåÆ "tailwindcss":┬À"^4.1.18",
+       58 Ôöé + ÔåÆ ÔåÆ "typescript":┬À"~5.9.3",
+       59 Ôöé + ÔåÆ ÔåÆ "typescript-eslint":┬À"^8.46.4",
+       60 Ôöé + ÔåÆ ÔåÆ "vite":┬À"^7.2.4",
+       61 Ôöé + ÔåÆ ÔåÆ "vitest":┬À"^4.0.18"
+       62 Ôöé + ÔåÆ }
+       63 Ôöé + }
+       64 Ôöé + 
+  
+
+apps\zerodelay\tsconfig.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+    1   Ôöé - {ÔÉì
+    2   Ôöé - ┬À┬À"files":┬À[],ÔÉì
+    3   Ôöé - ┬À┬À"references":┬À[ÔÉì
+    4   Ôöé - ┬À┬À┬À┬À{┬À"path":┬À"./tsconfig.app.json"┬À},ÔÉì
+    5   Ôöé - ┬À┬À┬À┬À{┬À"path":┬À"./tsconfig.node.json"┬À}ÔÉì
+    6   Ôöé - ┬À┬À]ÔÉì
+    7   Ôöé - }ÔÉì
+      1 Ôöé + {
+      2 Ôöé + ÔåÆ "files":┬À[],
+      3 Ôöé + ÔåÆ "references":┬À[
+      4 Ôöé + ÔåÆ ÔåÆ {┬À"path":┬À"./tsconfig.app.json"┬À},
+      5 Ôöé + ÔåÆ ÔåÆ {┬À"path":┬À"./tsconfig.node.json"┬À}
+      6 Ôöé + ÔåÆ ]
+      7 Ôöé + }
+    8 8 Ôöé   
+  
+
+biome.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ÔåÆ "$schema":┬À"https://biomejs.dev/schemas/2.3.14/schema.json",ÔÉì
+     3    Ôöé - ÔåÆ "vcs":┬À{ÔÉì
+     4    Ôöé - ÔåÆ ÔåÆ "enabled":┬Àtrue,ÔÉì
+     5    Ôöé - ÔåÆ ÔåÆ "clientKind":┬À"git",ÔÉì
+     6    Ôöé - ÔåÆ ÔåÆ "useIgnoreFile":┬ÀtrueÔÉì
+     7    Ôöé - ÔåÆ },ÔÉì
+     8    Ôöé - ÔåÆ "files":┬À{ÔÉì
+     9    Ôöé - ÔåÆ ÔåÆ "includes":┬À[ÔÉì
+    10    Ôöé - ÔåÆ ÔåÆ ÔåÆ "**",ÔÉì
+    11    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/dist",ÔÉì
+    12    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/.next",ÔÉì
+    13    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/coverage",ÔÉì
+    14    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/.unlighthouse",ÔÉì
+    15    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/build",ÔÉì
+    16    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/node_modules",ÔÉì
+    17    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/playwright-report",ÔÉì
+    18    Ôöé - ÔåÆ ÔåÆ ÔåÆ "!!**/*.css"ÔÉì
+    19    Ôöé - ÔåÆ ÔåÆ ]ÔÉì
+    20    Ôöé - ÔåÆ },ÔÉì
+    21    Ôöé - ÔåÆ "formatter":┬À{ÔÉì
+    22    Ôöé - ÔåÆ ÔåÆ "enabled":┬Àtrue,ÔÉì
+    23    Ôöé - ÔåÆ ÔåÆ "indentStyle":┬À"tab"ÔÉì
+    24    Ôöé - ÔåÆ },ÔÉì
+    25    Ôöé - ÔåÆ "linter":┬À{ÔÉì
+    26    Ôöé - ÔåÆ ÔåÆ "enabled":┬Àtrue,ÔÉì
+    27    Ôöé - ÔåÆ ÔåÆ "rules":┬À{ÔÉì
+    28    Ôöé - ÔåÆ ÔåÆ ÔåÆ "recommended":┬ÀtrueÔÉì
+    29    Ôöé - ÔåÆ ÔåÆ }ÔÉì
+    30    Ôöé - ÔåÆ },ÔÉì
+    31    Ôöé - ÔåÆ "javascript":┬À{ÔÉì
+    32    Ôöé - ÔåÆ ÔåÆ "formatter":┬À{ÔÉì
+    33    Ôöé - ÔåÆ ÔåÆ ÔåÆ "quoteStyle":┬À"double"ÔÉì
+    34    Ôöé - ÔåÆ ÔåÆ }ÔÉì
+    35    Ôöé - ÔåÆ },ÔÉì
+    36    Ôöé - ÔåÆ "assist":┬À{ÔÉì
+    37    Ôöé - ÔåÆ ÔåÆ "enabled":┬Àtrue,ÔÉì
+    38    Ôöé - ÔåÆ ÔåÆ "actions":┬À{ÔÉì
+    39    Ôöé - ÔåÆ ÔåÆ ÔåÆ "source":┬À{ÔÉì
+    40    Ôöé - ÔåÆ ÔåÆ ÔåÆ ÔåÆ "organizeImports":┬À"on"ÔÉì
+    41    Ôöé - ÔåÆ ÔåÆ ÔåÆ }ÔÉì
+    42    Ôöé - ÔåÆ ÔåÆ }ÔÉì
+    43    Ôöé - ÔåÆ }ÔÉì
+    44    Ôöé - }ÔÉì
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "$schema":┬À"https://biomejs.dev/schemas/2.3.14/schema.json",
+        3 Ôöé + ÔåÆ "vcs":┬À{
+        4 Ôöé + ÔåÆ ÔåÆ "enabled":┬Àtrue,
+        5 Ôöé + ÔåÆ ÔåÆ "clientKind":┬À"git",
+        6 Ôöé + ÔåÆ ÔåÆ "useIgnoreFile":┬Àtrue
+        7 Ôöé + ÔåÆ },
+        8 Ôöé + ÔåÆ "files":┬À{
+        9 Ôöé + ÔåÆ ÔåÆ "includes":┬À[
+       10 Ôöé + ÔåÆ ÔåÆ ÔåÆ "**",
+       11 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/dist",
+       12 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/.next",
+       13 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/coverage",
+       14 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/.unlighthouse",
+       15 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/build",
+       16 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/node_modules",
+       17 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/playwright-report",
+       18 Ôöé + ÔåÆ ÔåÆ ÔåÆ "!!**/*.css"
+       19 Ôöé + ÔåÆ ÔåÆ ]
+       20 Ôöé + ÔåÆ },
+       21 Ôöé + ÔåÆ "formatter":┬À{
+       22 Ôöé + ÔåÆ ÔåÆ "enabled":┬Àtrue,
+       23 Ôöé + ÔåÆ ÔåÆ "indentStyle":┬À"tab"
+       24 Ôöé + ÔåÆ },
+       25 Ôöé + ÔåÆ "linter":┬À{
+       26 Ôöé + ÔåÆ ÔåÆ "enabled":┬Àtrue,
+       27 Ôöé + ÔåÆ ÔåÆ "rules":┬À{
+       28 Ôöé + ÔåÆ ÔåÆ ÔåÆ "recommended":┬Àtrue
+       29 Ôöé + ÔåÆ ÔåÆ }
+       30 Ôöé + ÔåÆ },
+       31 Ôöé + ÔåÆ "javascript":┬À{
+       32 Ôöé + ÔåÆ ÔåÆ "formatter":┬À{
+       33 Ôöé + ÔåÆ ÔåÆ ÔåÆ "quoteStyle":┬À"double"
+       34 Ôöé + ÔåÆ ÔåÆ }
+       35 Ôöé + ÔåÆ },
+       36 Ôöé + ÔåÆ "assist":┬À{
+       37 Ôöé + ÔåÆ ÔåÆ "enabled":┬Àtrue,
+       38 Ôöé + ÔåÆ ÔåÆ "actions":┬À{
+       39 Ôöé + ÔåÆ ÔåÆ ÔåÆ "source":┬À{
+       40 Ôöé + ÔåÆ ÔåÆ ÔåÆ ÔåÆ "organizeImports":┬À"on"
+       41 Ôöé + ÔåÆ ÔåÆ ÔåÆ }
+       42 Ôöé + ÔåÆ ÔåÆ }
+       43 Ôöé + ÔåÆ }
+       44 Ôöé + }
+    45 45 Ôöé   
+  
+
+package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+      1     Ôöé - {ÔÉì
+      2     Ôöé - ÔåÆ "name":┬À"zerocode-portfolio",ÔÉì
+      3     Ôöé - ÔåÆ "version":┬À"0.1.0",ÔÉì
+      4     Ôöé - ÔåÆ "private":┬Àtrue,ÔÉì
+      5     Ôöé - ÔåÆ "type":┬À"module",ÔÉì
+      6     Ôöé - ÔåÆ "workspaces":┬À[ÔÉì
+      7     Ôöé - ÔåÆ ÔåÆ "apps/*"ÔÉì
+      8     Ôöé - ÔåÆ ],ÔÉì
+      9     Ôöé - ÔåÆ "scripts":┬À{ÔÉì
+     10     Ôöé - ÔåÆ ÔåÆ "dev":┬À"vite",ÔÉì
+     11     Ôöé - ÔåÆ ÔåÆ "build:portfolio":┬À"vite┬Àbuild",ÔÉì
+     12     Ôöé - ÔåÆ ÔåÆ "build:zerodelay":┬À"vite┬Àbuild┬Àapps/zerodelay┬À--outDir┬À../../dist/zerodelay┬À--base┬À/zerodelay/┬À--emptyOutDir",ÔÉì
+     13     Ôöé - ÔåÆ ÔåÆ "build:devops-shop":┬À"vite┬Àbuild┬Àapps/devops-shop┬À--outDir┬À../../dist/devops-shop┬À--base┬À/devops-shop/┬À--emptyOutDir",ÔÉì
+     14     Ôöé - ÔåÆ ÔåÆ "build":┬À"npm┬Àrun┬Àbuild:portfolio┬À&&┬Ànpm┬Àrun┬Àbuild:zerodelay┬À&&┬Ànpm┬Àrun┬Àbuild:devops-shop",ÔÉì
+     15     Ôöé - ÔåÆ ÔåÆ "preview":┬À"vite┬Àpreview",ÔÉì
+     16     Ôöé - ÔåÆ ÔåÆ "lint":┬À"eslint┬À.",ÔÉì
+     17     Ôöé - ÔåÆ ÔåÆ "type-check":┬À"tsc┬À--noEmit",ÔÉì
+     18     Ôöé - ÔåÆ ÔåÆ "check:biome":┬À"biome┬Àcheck┬À.",ÔÉì
+     19     Ôöé - ÔåÆ ÔåÆ "format:biome":┬À"biome┬Àformat┬À.┬À--write",ÔÉì
+     20     Ôöé - ÔåÆ ÔåÆ "lint:biome":┬À"biome┬Àlint┬À.",ÔÉì
+     21     Ôöé - ÔåÆ ÔåÆ "test":┬À"vitest",ÔÉì
+     22     Ôöé - ÔåÆ ÔåÆ "test:ui":┬À"vitest┬À--ui",ÔÉì
+     23     Ôöé - ÔåÆ ÔåÆ "test:e2e":┬À"playwright┬Àtest",ÔÉì
+     24     Ôöé - ÔåÆ ÔåÆ "format":┬À"prettier┬À--write┬À.",ÔÉì
+     25     Ôöé - ÔåÆ ÔåÆ "analyze":┬À"vite┬Àbuild"ÔÉì
+     26     Ôöé - ÔåÆ },ÔÉì
+     27     Ôöé - ÔåÆ "dependencies":┬À{ÔÉì
+     28     Ôöé - ÔåÆ ÔåÆ "@dataconnect/generated":┬À"file:src/dataconnect-generated",ÔÉì
+     29     Ôöé - ÔåÆ ÔåÆ "@emailjs/browser":┬À"^4.4.1",ÔÉì
+     30     Ôöé - ÔåÆ ÔåÆ "@hookform/resolvers":┬À"^5.2.2",ÔÉì
+     31     Ôöé - ÔåÆ ÔåÆ "@radix-ui/react-label":┬À"^2.1.8",ÔÉì
+     32     Ôöé - ÔåÆ ÔåÆ "@radix-ui/react-select":┬À"^2.2.6",ÔÉì
+     33     Ôöé - ÔåÆ ÔåÆ "@radix-ui/react-slot":┬À"^1.2.4",ÔÉì
+     34     Ôöé - ÔåÆ ÔåÆ "@react-pdf/renderer":┬À"^4.3.2",ÔÉì
+     35     Ôöé - ÔåÆ ÔåÆ "@reduxjs/toolkit":┬À"^2.11.2",ÔÉì
+     36     Ôöé - ÔåÆ ÔåÆ "@stripe/react-stripe-js":┬À"^5.4.1",ÔÉì
+     37     Ôöé - ÔåÆ ÔåÆ "@stripe/stripe-js":┬À"^8.6.0",ÔÉì
+     38     Ôöé - ÔåÆ ÔåÆ "@supabase/supabase-js":┬À"^2.93.3",ÔÉì
+     39     Ôöé - ÔåÆ ÔåÆ "@tanstack/react-query":┬À"^5.90.16",ÔÉì
+     40     Ôöé - ÔåÆ ÔåÆ "@types/canvas-confetti":┬À"^1.9.0",ÔÉì
+     41     Ôöé - ÔåÆ ÔåÆ "@types/react-big-calendar":┬À"^1.16.3",ÔÉì
+     42     Ôöé - ÔåÆ ÔåÆ "canvas-confetti":┬À"^1.9.4",ÔÉì
+     43     Ôöé - ÔåÆ ÔåÆ "class-variance-authority":┬À"^0.7.1",ÔÉì
+     44     Ôöé - ÔåÆ ÔåÆ "clsx":┬À"^2.1.1",ÔÉì
+     45     Ôöé - ÔåÆ ÔåÆ "date-fns":┬À"^4.1.0",ÔÉì
+     46     Ôöé - ÔåÆ ÔåÆ "dayjs":┬À"^1.11.11",ÔÉì
+     47     Ôöé - ÔåÆ ÔåÆ "firebase":┬À"^12.7.0",ÔÉì
+     48     Ôöé - ÔåÆ ÔåÆ "framer-motion":┬À"^12.23.26",ÔÉì
+     49     Ôöé - ÔåÆ ÔåÆ "fuse.js":┬À"^7.1.0",ÔÉì
+     50     Ôöé - ÔåÆ ÔåÆ "html2canvas":┬À"^1.4.1",ÔÉì
+     51     Ôöé - ÔåÆ ÔåÆ "i18next":┬À"^25.7.3",ÔÉì
+     52     Ôöé - ÔåÆ ÔåÆ "i18next-browser-languagedetector":┬À"^8.2.0",ÔÉì
+     53     Ôöé - ÔåÆ ÔåÆ "jspdf":┬À"^4.0.0",ÔÉì
+     54     Ôöé - ÔåÆ ÔåÆ "lucide-react":┬À"^0.562.0",ÔÉì
+     55     Ôöé - ÔåÆ ÔåÆ "msw":┬À"^2.12.7",ÔÉì
+     56     Ôöé - ÔåÆ ÔåÆ "react":┬À"^18.2.0",ÔÉì
+     57     Ôöé - ÔåÆ ÔåÆ "react-big-calendar":┬À"^1.19.4",ÔÉì
+     58     Ôöé - ÔåÆ ÔåÆ "react-dom":┬À"^18.2.0",ÔÉì
+     59     Ôöé - ÔåÆ ÔåÆ "react-ga4":┬À"^2.1.0",ÔÉì
+     60     Ôöé - ÔåÆ ÔåÆ "react-helmet-async":┬À"^2.0.5",ÔÉì
+     61     Ôöé - ÔåÆ ÔåÆ "react-hook-form":┬À"^7.51.5",ÔÉì
+     62     Ôöé - ÔåÆ ÔåÆ "react-i18next":┬À"^16.5.1",ÔÉì
+     63     Ôöé - ÔåÆ ÔåÆ "react-redux":┬À"^9.2.0",ÔÉì
+     64     Ôöé - ÔåÆ ÔåÆ "react-router-dom":┬À"^7.11.0",ÔÉì
+     65     Ôöé - ÔåÆ ÔåÆ "react-sparklines":┬À"^1.7.0",ÔÉì
+     66     Ôöé - ÔåÆ ÔåÆ "react-type-animation":┬À"^3.2.0",ÔÉì
+     67     Ôöé - ÔåÆ ÔåÆ "recharts":┬À"^3.6.0",ÔÉì
+     68     Ôöé - ÔåÆ ÔåÆ "recharts-to-png":┬À"^3.0.1",ÔÉì
+     69     Ôöé - ÔåÆ ÔåÆ "redux-persist":┬À"^6.0.0",ÔÉì
+     70     Ôöé - ÔåÆ ÔåÆ "tailwind-merge":┬À"^3.4.0",ÔÉì
+     71     Ôöé - ÔåÆ ÔåÆ "vite-plugin-pwa":┬À"^1.2.0",ÔÉì
+     72     Ôöé - ÔåÆ ÔåÆ "zod":┬À"^3.23.8",ÔÉì
+     73     Ôöé - ÔåÆ ÔåÆ "zustand":┬À"^5.0.11"ÔÉì
+     74     Ôöé - ÔåÆ },ÔÉì
+     75     Ôöé - ÔåÆ "devDependencies":┬À{ÔÉì
+     76     Ôöé - ÔåÆ ÔåÆ "@biomejs/biome":┬À"2.3.14",ÔÉì
+     77     Ôöé - ÔåÆ ÔåÆ "@lhci/cli":┬À"^0.15.1",ÔÉì
+     78     Ôöé - ÔåÆ ÔåÆ "@playwright/test":┬À"^1.57.0",ÔÉì
+     79     Ôöé - ÔåÆ ÔåÆ "@tailwindcss/typography":┬À"^0.5.19",ÔÉì
+     80     Ôöé - ÔåÆ ÔåÆ "@testing-library/jest-dom":┬À"^6.4.5",ÔÉì
+     81     Ôöé - ÔåÆ ÔåÆ "@testing-library/react":┬À"^14.3.1",ÔÉì
+     82     Ôöé - ÔåÆ ÔåÆ "@testing-library/user-event":┬À"^14.5.2",ÔÉì
+     83     Ôöé - ÔåÆ ÔåÆ "@types/node":┬À"^25.0.3",ÔÉì
+     84     Ôöé - ÔåÆ ÔåÆ "@typescript-eslint/eslint-plugin":┬À"^8.13.0",ÔÉì
+     85     Ôöé - ÔåÆ ÔåÆ "@typescript-eslint/parser":┬À"^8.13.0",ÔÉì
+     86     Ôöé - ÔåÆ ÔåÆ "@vercel/node":┬À"^5.5.16",ÔÉì
+     87     Ôöé - ÔåÆ ÔåÆ "@vitejs/plugin-react":┬À"^4.2.0",ÔÉì
+     88     Ôöé - ÔåÆ ÔåÆ "autoprefixer":┬À"^10.4.19",ÔÉì
+     89     Ôöé - ÔåÆ ÔåÆ "eslint":┬À"^8.57.1",ÔÉì
+     90     Ôöé - ÔåÆ ÔåÆ "eslint-config-prettier":┬À"^9.1.0",ÔÉì
+     91     Ôöé - ÔåÆ ÔåÆ "jsdom":┬À"^24.0.0",ÔÉì
+     92     Ôöé - ÔåÆ ÔåÆ "postcss":┬À"^8.4.35",ÔÉì
+     93     Ôöé - ÔåÆ ÔåÆ "prettier":┬À"^3.2.5",ÔÉì
+     94     Ôöé - ÔåÆ ÔåÆ "rollup-plugin-visualizer":┬À"^5.11.0",ÔÉì
+     95     Ôöé - ÔåÆ ÔåÆ "sharp":┬À"^0.34.5",ÔÉì
+     96     Ôöé - ÔåÆ ÔåÆ "tailwindcss":┬À"^3.4.13",ÔÉì
+     97     Ôöé - ÔåÆ ÔåÆ "ts-node":┬À"^10.9.2",ÔÉì
+     98     Ôöé - ÔåÆ ÔåÆ "typescript":┬À"^5.9.3",ÔÉì
+     99     Ôöé - ÔåÆ ÔåÆ "vite":┬À"^5.0.10",ÔÉì
+    100     Ôöé - ÔåÆ ÔåÆ "vitest":┬À"^1.6.0"ÔÉì
+    101     Ôöé - ÔåÆ }ÔÉì
+    102     Ôöé - }ÔÉì
+          1 Ôöé + {
+          2 Ôöé + ÔåÆ "name":┬À"zerocode-portfolio",
+          3 Ôöé + ÔåÆ "version":┬À"0.1.0",
+          4 Ôöé + ÔåÆ "private":┬Àtrue,
+          5 Ôöé + ÔåÆ "type":┬À"module",
+          6 Ôöé + ÔåÆ "workspaces":┬À[
+          7 Ôöé + ÔåÆ ÔåÆ "apps/*"
+          8 Ôöé + ÔåÆ ],
+          9 Ôöé + ÔåÆ "scripts":┬À{
+         10 Ôöé + ÔåÆ ÔåÆ "dev":┬À"vite",
+         11 Ôöé + ÔåÆ ÔåÆ "build:portfolio":┬À"vite┬Àbuild",
+         12 Ôöé + ÔåÆ ÔåÆ "build:zerodelay":┬À"vite┬Àbuild┬Àapps/zerodelay┬À--outDir┬À../../dist/zerodelay┬À--base┬À/zerodelay/┬À--emptyOutDir",
+         13 Ôöé + ÔåÆ ÔåÆ "build:devops-shop":┬À"vite┬Àbuild┬Àapps/devops-shop┬À--outDir┬À../../dist/devops-shop┬À--base┬À/devops-shop/┬À--emptyOutDir",
+         14 Ôöé + ÔåÆ ÔåÆ "build":┬À"npm┬Àrun┬Àbuild:portfolio┬À&&┬Ànpm┬Àrun┬Àbuild:zerodelay┬À&&┬Ànpm┬Àrun┬Àbuild:devops-shop",
+         15 Ôöé + ÔåÆ ÔåÆ "preview":┬À"vite┬Àpreview",
+         16 Ôöé + ÔåÆ ÔåÆ "lint":┬À"eslint┬À.",
+         17 Ôöé + ÔåÆ ÔåÆ "type-check":┬À"tsc┬À--noEmit",
+         18 Ôöé + ÔåÆ ÔåÆ "check:biome":┬À"biome┬Àcheck┬À.",
+         19 Ôöé + ÔåÆ ÔåÆ "format:biome":┬À"biome┬Àformat┬À.┬À--write",
+         20 Ôöé + ÔåÆ ÔåÆ "lint:biome":┬À"biome┬Àlint┬À.",
+         21 Ôöé + ÔåÆ ÔåÆ "test":┬À"vitest",
+         22 Ôöé + ÔåÆ ÔåÆ "test:ui":┬À"vitest┬À--ui",
+         23 Ôöé + ÔåÆ ÔåÆ "test:e2e":┬À"playwright┬Àtest",
+         24 Ôöé + ÔåÆ ÔåÆ "format":┬À"prettier┬À--write┬À.",
+         25 Ôöé + ÔåÆ ÔåÆ "analyze":┬À"vite┬Àbuild"
+         26 Ôöé + ÔåÆ },
+         27 Ôöé + ÔåÆ "dependencies":┬À{
+         28 Ôöé + ÔåÆ ÔåÆ "@dataconnect/generated":┬À"file:src/dataconnect-generated",
+         29 Ôöé + ÔåÆ ÔåÆ "@emailjs/browser":┬À"^4.4.1",
+         30 Ôöé + ÔåÆ ÔåÆ "@hookform/resolvers":┬À"^5.2.2",
+         31 Ôöé + ÔåÆ ÔåÆ "@radix-ui/react-label":┬À"^2.1.8",
+         32 Ôöé + ÔåÆ ÔåÆ "@radix-ui/react-select":┬À"^2.2.6",
+         33 Ôöé + ÔåÆ ÔåÆ "@radix-ui/react-slot":┬À"^1.2.4",
+         34 Ôöé + ÔåÆ ÔåÆ "@react-pdf/renderer":┬À"^4.3.2",
+         35 Ôöé + ÔåÆ ÔåÆ "@reduxjs/toolkit":┬À"^2.11.2",
+         36 Ôöé + ÔåÆ ÔåÆ "@stripe/react-stripe-js":┬À"^5.4.1",
+         37 Ôöé + ÔåÆ ÔåÆ "@stripe/stripe-js":┬À"^8.6.0",
+         38 Ôöé + ÔåÆ ÔåÆ "@supabase/supabase-js":┬À"^2.93.3",
+         39 Ôöé + ÔåÆ ÔåÆ "@tanstack/react-query":┬À"^5.90.16",
+         40 Ôöé + ÔåÆ ÔåÆ "@types/canvas-confetti":┬À"^1.9.0",
+         41 Ôöé + ÔåÆ ÔåÆ "@types/react-big-calendar":┬À"^1.16.3",
+         42 Ôöé + ÔåÆ ÔåÆ "canvas-confetti":┬À"^1.9.4",
+         43 Ôöé + ÔåÆ ÔåÆ "class-variance-authority":┬À"^0.7.1",
+         44 Ôöé + ÔåÆ ÔåÆ "clsx":┬À"^2.1.1",
+         45 Ôöé + ÔåÆ ÔåÆ "date-fns":┬À"^4.1.0",
+         46 Ôöé + ÔåÆ ÔåÆ "dayjs":┬À"^1.11.11",
+         47 Ôöé + ÔåÆ ÔåÆ "firebase":┬À"^12.7.0",
+         48 Ôöé + ÔåÆ ÔåÆ "framer-motion":┬À"^12.23.26",
+  55 more lines truncated
+  
+
+src\dataconnect-generated\esm\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+    1   Ôöé - {"type":"module"}
+      1 Ôöé + {
+      2 Ôöé + ÔåÆ "type":┬À"module"
+      3 Ôöé + }
+      4 Ôöé + 
+  
+
+src\dataconnect-generated\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1  1 Ôöé   {
+     2    Ôöé - ┬À┬À"name":┬À"@dataconnect/generated",
+     3    Ôöé - ┬À┬À"version":┬À"1.0.0",
+     4    Ôöé - ┬À┬À"author":┬À"Firebase┬À<firebase-support@google.com>┬À(https://firebase.google.com/)",
+     5    Ôöé - ┬À┬À"description":┬À"Generated┬ÀSDK┬ÀFor┬Àexample",
+     6    Ôöé - ┬À┬À"license":┬À"Apache-2.0",
+     7    Ôöé - ┬À┬À"engines":┬À{
+     8    Ôöé - ┬À┬À┬À┬À"node":┬À"┬À>=18.0"
+     9    Ôöé - ┬À┬À},
+    10    Ôöé - ┬À┬À"typings":┬À"index.d.ts",
+    11    Ôöé - ┬À┬À"module":┬À"esm/index.esm.js",
+    12    Ôöé - ┬À┬À"main":┬À"index.cjs.js",
+    13    Ôöé - ┬À┬À"browser":┬À"esm/index.esm.js",
+    14    Ôöé - ┬À┬À"exports":┬À{
+    15    Ôöé - ┬À┬À┬À┬À".":┬À{
+    16    Ôöé - ┬À┬À┬À┬À┬À┬À"types":┬À"./index.d.ts",
+    17    Ôöé - ┬À┬À┬À┬À┬À┬À"require":┬À"./index.cjs.js",
+    18    Ôöé - ┬À┬À┬À┬À┬À┬À"default":┬À"./esm/index.esm.js"
+    19    Ôöé - ┬À┬À┬À┬À},
+    20    Ôöé - ┬À┬À┬À┬À"./react":┬À{
+    21    Ôöé - ┬À┬À┬À┬À┬À┬À"types":┬À"./react/index.d.ts",
+    22    Ôöé - ┬À┬À┬À┬À┬À┬À"require":┬À"./react/index.cjs.js",
+    23    Ôöé - ┬À┬À┬À┬À┬À┬À"import":┬À"./react/esm/index.esm.js",
+    24    Ôöé - ┬À┬À┬À┬À┬À┬À"default":┬À"./react/esm/index.esm.js"
+    25    Ôöé - ┬À┬À┬À┬À},
+    26    Ôöé - ┬À┬À┬À┬À"./package.json":┬À"./package.json"
+    27    Ôöé - ┬À┬À},
+    28    Ôöé - ┬À┬À"peerDependencies":┬À{
+    29    Ôöé - ┬À┬À┬À┬À"firebase":┬À"^11.3.0┬À||┬À^12.0.0",
+    30    Ôöé - ┬À┬À┬À┬À"@tanstack-query-firebase/react":┬À"^2.0.0"
+    31    Ôöé - ┬À┬À}
+    32    Ôöé - }
+        2 Ôöé + ÔåÆ "name":┬À"@dataconnect/generated",
+        3 Ôöé + ÔåÆ "version":┬À"1.0.0",
+        4 Ôöé + ÔåÆ "author":┬À"Firebase┬À<firebase-support@google.com>┬À(https://firebase.google.com/)",
+        5 Ôöé + ÔåÆ "description":┬À"Generated┬ÀSDK┬ÀFor┬Àexample",
+        6 Ôöé + ÔåÆ "license":┬À"Apache-2.0",
+        7 Ôöé + ÔåÆ "engines":┬À{
+        8 Ôöé + ÔåÆ ÔåÆ "node":┬À"┬À>=18.0"
+        9 Ôöé + ÔåÆ },
+       10 Ôöé + ÔåÆ "typings":┬À"index.d.ts",
+       11 Ôöé + ÔåÆ "module":┬À"esm/index.esm.js",
+       12 Ôöé + ÔåÆ "main":┬À"index.cjs.js",
+       13 Ôöé + ÔåÆ "browser":┬À"esm/index.esm.js",
+       14 Ôöé + ÔåÆ "exports":┬À{
+       15 Ôöé + ÔåÆ ÔåÆ ".":┬À{
+       16 Ôöé + ÔåÆ ÔåÆ ÔåÆ "types":┬À"./index.d.ts",
+       17 Ôöé + ÔåÆ ÔåÆ ÔåÆ "require":┬À"./index.cjs.js",
+       18 Ôöé + ÔåÆ ÔåÆ ÔåÆ "default":┬À"./esm/index.esm.js"
+       19 Ôöé + ÔåÆ ÔåÆ },
+       20 Ôöé + ÔåÆ ÔåÆ "./react":┬À{
+       21 Ôöé + ÔåÆ ÔåÆ ÔåÆ "types":┬À"./react/index.d.ts",
+       22 Ôöé + ÔåÆ ÔåÆ ÔåÆ "require":┬À"./react/index.cjs.js",
+       23 Ôöé + ÔåÆ ÔåÆ ÔåÆ "import":┬À"./react/esm/index.esm.js",
+       24 Ôöé + ÔåÆ ÔåÆ ÔåÆ "default":┬À"./react/esm/index.esm.js"
+       25 Ôöé + ÔåÆ ÔåÆ },
+       26 Ôöé + ÔåÆ ÔåÆ "./package.json":┬À"./package.json"
+       27 Ôöé + ÔåÆ },
+       28 Ôöé + ÔåÆ "peerDependencies":┬À{
+       29 Ôöé + ÔåÆ ÔåÆ "firebase":┬À"^11.3.0┬À||┬À^12.0.0",
+       30 Ôöé + ÔåÆ ÔåÆ "@tanstack-query-firebase/react":┬À"^2.0.0"
+       31 Ôöé + ÔåÆ }
+       32 Ôöé + }
+       33 Ôöé + 
+  
+
+src\dataconnect-generated\react\esm\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+    1   Ôöé - {"type":"module"}
+      1 Ôöé + {
+      2 Ôöé + ÔåÆ "type":┬À"module"
+      3 Ôöé + }
+      4 Ôöé + 
+  
+
+src\dataconnect-generated\react\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1  1 Ôöé   {
+     2    Ôöé - ┬À┬À"name":┬À"@dataconnect/generated-react",
+     3    Ôöé - ┬À┬À"version":┬À"1.0.0",
+     4    Ôöé - ┬À┬À"author":┬À"Firebase┬À<firebase-support@google.com>┬À(https://firebase.google.com/)",
+     5    Ôöé - ┬À┬À"description":┬À"Generated┬ÀSDK┬ÀFor┬Àexample",
+     6    Ôöé - ┬À┬À"license":┬À"Apache-2.0",
+     7    Ôöé - ┬À┬À"engines":┬À{
+     8    Ôöé - ┬À┬À┬À┬À"node":┬À"┬À>=18.0"
+     9    Ôöé - ┬À┬À},
+    10    Ôöé - ┬À┬À"typings":┬À"index.d.ts",
+    11    Ôöé - ┬À┬À"main":┬À"index.cjs.js",
+    12    Ôöé - ┬À┬À"module":┬À"esm/index.esm.js",
+    13    Ôöé - ┬À┬À"browser":┬À"esm/index.esm.js",
+    14    Ôöé - ┬À┬À"peerDependencies":┬À{
+    15    Ôöé - ┬À┬À┬À┬À"@tanstack-query-firebase/react":┬À"^2.0.0"
+    16    Ôöé - ┬À┬À}
+    17    Ôöé - }
+        2 Ôöé + ÔåÆ "name":┬À"@dataconnect/generated-react",
+        3 Ôöé + ÔåÆ "version":┬À"1.0.0",
+        4 Ôöé + ÔåÆ "author":┬À"Firebase┬À<firebase-support@google.com>┬À(https://firebase.google.com/)",
+        5 Ôöé + ÔåÆ "description":┬À"Generated┬ÀSDK┬ÀFor┬Àexample",
+        6 Ôöé + ÔåÆ "license":┬À"Apache-2.0",
+        7 Ôöé + ÔåÆ "engines":┬À{
+        8 Ôöé + ÔåÆ ÔåÆ "node":┬À"┬À>=18.0"
+        9 Ôöé + ÔåÆ },
+       10 Ôöé + ÔåÆ "typings":┬À"index.d.ts",
+       11 Ôöé + ÔåÆ "main":┬À"index.cjs.js",
+       12 Ôöé + ÔåÆ "module":┬À"esm/index.esm.js",
+       13 Ôöé + ÔåÆ "browser":┬À"esm/index.esm.js",
+       14 Ôöé + ÔåÆ "peerDependencies":┬À{
+       15 Ôöé + ÔåÆ ÔåÆ "@tanstack-query-firebase/react":┬À"^2.0.0"
+       16 Ôöé + ÔåÆ }
+       17 Ôöé + }
+       18 Ôöé + 
+  
+
+src\features\projects\mudanzas-coral\package.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1  1 Ôöé   {
+     2    Ôöé - ┬À┬À"name":┬À"mudanzas-coral",
+     3    Ôöé - ┬À┬À"private":┬Àtrue,
+     4    Ôöé - ┬À┬À"version":┬À"0.0.0",
+     5    Ôöé - ┬À┬À"type":┬À"module",
+     6    Ôöé - ┬À┬À"scripts":┬À{
+     7    Ôöé - ┬À┬À┬À┬À"dev":┬À"vite",
+     8    Ôöé - ┬À┬À┬À┬À"build":┬À"tsc┬À-b┬À&&┬Àvite┬Àbuild",
+     9    Ôöé - ┬À┬À┬À┬À"preview":┬À"vite┬Àpreview",
+    10    Ôöé - ┬À┬À┬À┬À"lint":┬À"eslint┬Àsrc┬À--ext┬Àts,tsx┬À--report-unused-disable-directives┬À--max-warnings┬À0",
+    11    Ôöé - ┬À┬À┬À┬À"lint:fix":┬À"eslint┬À.┬À--ext┬Àts,tsx┬À--fix",
+    12    Ôöé - ┬À┬À┬À┬À"format":┬À"prettier┬À--write┬À\"src/**/*.{ts,tsx,css}\"",
+    13    Ôöé - ┬À┬À┬À┬À"test":┬À"vitest",
+    14    Ôöé - ┬À┬À┬À┬À"test:ui":┬À"vitest┬À--ui",
+    15    Ôöé - ┬À┬À┬À┬À"test:coverage":┬À"vitest┬À--coverage",
+    16    Ôöé - ┬À┬À┬À┬À"test:e2e":┬À"playwright┬Àtest",
+    17    Ôöé - ┬À┬À┬À┬À"test:e2e:ui":┬À"playwright┬Àtest┬À--ui",
+    18    Ôöé - ┬À┬À┬À┬À"type-check":┬À"tsc┬À--noEmit"
+    19    Ôöé - ┬À┬À},
+    20    Ôöé - ┬À┬À"dependencies":┬À{
+    21    Ôöé - ┬À┬À┬À┬À"@headlessui/react":┬À"^2.2.9",
+    22    Ôöé - ┬À┬À┬À┬À"@heroicons/react":┬À"^2.2.0",
+    23    Ôöé - ┬À┬À┬À┬À"@hookform/resolvers":┬À"^5.2.2",
+    24    Ôöé - ┬À┬À┬À┬À"react":┬À"^19.2.0",
+    25    Ôöé - ┬À┬À┬À┬À"react-dom":┬À"^19.2.0",
+    26    Ôöé - ┬À┬À┬À┬À"react-helmet-async":┬À"^2.0.5",
+    27    Ôöé - ┬À┬À┬À┬À"react-hook-form":┬À"^7.71.1",
+    28    Ôöé - ┬À┬À┬À┬À"react-router-dom":┬À"^7.13.0",
+    29    Ôöé - ┬À┬À┬À┬À"zod":┬À"^4.3.6"
+    30    Ôöé - ┬À┬À},
+    31    Ôöé - ┬À┬À"devDependencies":┬À{
+    32    Ôöé - ┬À┬À┬À┬À"@eslint/js":┬À"^9.39.1",
+    33    Ôöé - ┬À┬À┬À┬À"@playwright/test":┬À"^1.58.2",
+    34    Ôöé - ┬À┬À┬À┬À"@tailwindcss/postcss":┬À"^4.1.18",
+    35    Ôöé - ┬À┬À┬À┬À"@testing-library/jest-dom":┬À"^6.9.1",
+    36    Ôöé - ┬À┬À┬À┬À"@testing-library/react":┬À"^16.3.2",
+    37    Ôöé - ┬À┬À┬À┬À"@testing-library/user-event":┬À"^14.6.1",
+    38    Ôöé - ┬À┬À┬À┬À"@types/node":┬À"^24.10.1",
+    39    Ôöé - ┬À┬À┬À┬À"@types/react":┬À"^19.2.5",
+    40    Ôöé - ┬À┬À┬À┬À"@types/react-dom":┬À"^19.2.3",
+    41    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/eslint-plugin":┬À"^8.54.0",
+    42    Ôöé - ┬À┬À┬À┬À"@typescript-eslint/parser":┬À"^8.54.0",
+    43    Ôöé - ┬À┬À┬À┬À"@vitejs/plugin-react":┬À"^5.1.1",
+    44    Ôöé - ┬À┬À┬À┬À"@vitest/ui":┬À"^4.0.18",
+    45    Ôöé - ┬À┬À┬À┬À"autoprefixer":┬À"^10.4.24",
+    46    Ôöé - ┬À┬À┬À┬À"eslint":┬À"^9.39.2",
+    47    Ôöé - ┬À┬À┬À┬À"eslint-config-prettier":┬À"^10.1.8",
+    48    Ôöé - ┬À┬À┬À┬À"eslint-plugin-prettier":┬À"^5.5.5",
+    49    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react":┬À"^7.37.5",
+    50    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react-hooks":┬À"^7.0.1",
+    51    Ôöé - ┬À┬À┬À┬À"eslint-plugin-react-refresh":┬À"^0.4.24",
+    52    Ôöé - ┬À┬À┬À┬À"globals":┬À"^16.5.0",
+    53    Ôöé - ┬À┬À┬À┬À"jsdom":┬À"^28.0.0",
+    54    Ôöé - ┬À┬À┬À┬À"postcss":┬À"^8.5.6",
+    55    Ôöé - ┬À┬À┬À┬À"prettier":┬À"^3.8.1",
+    56    Ôöé - ┬À┬À┬À┬À"tailwindcss":┬À"^4.1.18",
+    57    Ôöé - ┬À┬À┬À┬À"typescript":┬À"~5.9.3",
+    58    Ôöé - ┬À┬À┬À┬À"typescript-eslint":┬À"^8.46.4",
+    59    Ôöé - ┬À┬À┬À┬À"vite":┬À"^7.2.4",
+    60    Ôöé - ┬À┬À┬À┬À"vitest":┬À"^4.0.18"
+    61    Ôöé - ┬À┬À}
+    62    Ôöé - }
+        2 Ôöé + ÔåÆ "name":┬À"mudanzas-coral",
+        3 Ôöé + ÔåÆ "private":┬Àtrue,
+        4 Ôöé + ÔåÆ "version":┬À"0.0.0",
+        5 Ôöé + ÔåÆ "type":┬À"module",
+        6 Ôöé + ÔåÆ "scripts":┬À{
+        7 Ôöé + ÔåÆ ÔåÆ "dev":┬À"vite",
+        8 Ôöé + ÔåÆ ÔåÆ "build":┬À"tsc┬À-b┬À&&┬Àvite┬Àbuild",
+        9 Ôöé + ÔåÆ ÔåÆ "preview":┬À"vite┬Àpreview",
+       10 Ôöé + ÔåÆ ÔåÆ "lint":┬À"eslint┬Àsrc┬À--ext┬Àts,tsx┬À--report-unused-disable-directives┬À--max-warnings┬À0",
+       11 Ôöé + ÔåÆ ÔåÆ "lint:fix":┬À"eslint┬À.┬À--ext┬Àts,tsx┬À--fix",
+       12 Ôöé + ÔåÆ ÔåÆ "format":┬À"prettier┬À--write┬À\"src/**/*.{ts,tsx,css}\"",
+       13 Ôöé + ÔåÆ ÔåÆ "test":┬À"vitest",
+       14 Ôöé + ÔåÆ ÔåÆ "test:ui":┬À"vitest┬À--ui",
+       15 Ôöé + ÔåÆ ÔåÆ "test:coverage":┬À"vitest┬À--coverage",
+       16 Ôöé + ÔåÆ ÔåÆ "test:e2e":┬À"playwright┬Àtest",
+       17 Ôöé + ÔåÆ ÔåÆ "test:e2e:ui":┬À"playwright┬Àtest┬À--ui",
+       18 Ôöé + ÔåÆ ÔåÆ "type-check":┬À"tsc┬À--noEmit"
+       19 Ôöé + ÔåÆ },
+       20 Ôöé + ÔåÆ "dependencies":┬À{
+       21 Ôöé + ÔåÆ ÔåÆ "@headlessui/react":┬À"^2.2.9",
+       22 Ôöé + ÔåÆ ÔåÆ "@heroicons/react":┬À"^2.2.0",
+       23 Ôöé + ÔåÆ ÔåÆ "@hookform/resolvers":┬À"^5.2.2",
+       24 Ôöé + ÔåÆ ÔåÆ "react":┬À"^19.2.0",
+       25 Ôöé + ÔåÆ ÔåÆ "react-dom":┬À"^19.2.0",
+       26 Ôöé + ÔåÆ ÔåÆ "react-helmet-async":┬À"^2.0.5",
+       27 Ôöé + ÔåÆ ÔåÆ "react-hook-form":┬À"^7.71.1",
+       28 Ôöé + ÔåÆ ÔåÆ "react-router-dom":┬À"^7.13.0",
+       29 Ôöé + ÔåÆ ÔåÆ "zod":┬À"^4.3.6"
+       30 Ôöé + ÔåÆ },
+       31 Ôöé + ÔåÆ "devDependencies":┬À{
+       32 Ôöé + ÔåÆ ÔåÆ "@eslint/js":┬À"^9.39.1",
+       33 Ôöé + ÔåÆ ÔåÆ "@playwright/test":┬À"^1.58.2",
+       34 Ôöé + ÔåÆ ÔåÆ "@tailwindcss/postcss":┬À"^4.1.18",
+       35 Ôöé + ÔåÆ ÔåÆ "@testing-library/jest-dom":┬À"^6.9.1",
+       36 Ôöé + ÔåÆ ÔåÆ "@testing-library/react":┬À"^16.3.2",
+       37 Ôöé + ÔåÆ ÔåÆ "@testing-library/user-event":┬À"^14.6.1",
+       38 Ôöé + ÔåÆ ÔåÆ "@types/node":┬À"^24.10.1",
+       39 Ôöé + ÔåÆ ÔåÆ "@types/react":┬À"^19.2.5",
+       40 Ôöé + ÔåÆ ÔåÆ "@types/react-dom":┬À"^19.2.3",
+       41 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/eslint-plugin":┬À"^8.54.0",
+       42 Ôöé + ÔåÆ ÔåÆ "@typescript-eslint/parser":┬À"^8.54.0",
+       43 Ôöé + ÔåÆ ÔåÆ "@vitejs/plugin-react":┬À"^5.1.1",
+       44 Ôöé + ÔåÆ ÔåÆ "@vitest/ui":┬À"^4.0.18",
+       45 Ôöé + ÔåÆ ÔåÆ "autoprefixer":┬À"^10.4.24",
+       46 Ôöé + ÔåÆ ÔåÆ "eslint":┬À"^9.39.2",
+       47 Ôöé + ÔåÆ ÔåÆ "eslint-config-prettier":┬À"^10.1.8",
+       48 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-prettier":┬À"^5.5.5",
+       49 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react":┬À"^7.37.5",
+       50 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react-hooks":┬À"^7.0.1",
+       51 Ôöé + ÔåÆ ÔåÆ "eslint-plugin-react-refresh":┬À"^0.4.24",
+       52 Ôöé + ÔåÆ ÔåÆ "globals":┬À"^16.5.0",
+       53 Ôöé + ÔåÆ ÔåÆ "jsdom":┬À"^28.0.0",
+       54 Ôöé + ÔåÆ ÔåÆ "postcss":┬À"^8.5.6",
+       55 Ôöé + ÔåÆ ÔåÆ "prettier":┬À"^3.8.1",
+       56 Ôöé + ÔåÆ ÔåÆ "tailwindcss":┬À"^4.1.18",
+       57 Ôöé + ÔåÆ ÔåÆ "typescript":┬À"~5.9.3",
+       58 Ôöé + ÔåÆ ÔåÆ "typescript-eslint":┬À"^8.46.4",
+       59 Ôöé + ÔåÆ ÔåÆ "vite":┬À"^7.2.4",
+       60 Ôöé + ÔåÆ ÔåÆ "vitest":┬À"^4.0.18"
+       61 Ôöé + ÔåÆ }
+       62 Ôöé + }
+       63 Ôöé + 
+  
+
+src\features\projects\mudanzas-coral\tsconfig.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+    1 1 Ôöé   {
+    2   Ôöé - ┬À┬À"files":┬À[],
+    3   Ôöé - ┬À┬À"references":┬À[
+    4   Ôöé - ┬À┬À┬À┬À{┬À"path":┬À"./tsconfig.app.json"┬À},
+    5   Ôöé - ┬À┬À┬À┬À{┬À"path":┬À"./tsconfig.node.json"┬À}
+    6   Ôöé - ┬À┬À]
+      2 Ôöé + ÔåÆ "files":┬À[],
+      3 Ôöé + ÔåÆ "references":┬À[
+      4 Ôöé + ÔåÆ ÔåÆ {┬À"path":┬À"./tsconfig.app.json"┬À},
+      5 Ôöé + ÔåÆ ÔåÆ {┬À"path":┬À"./tsconfig.node.json"┬À}
+      6 Ôöé + ÔåÆ ]
+    7 7 Ôöé   }
+    8 8 Ôöé   
+  
+
+tsconfig.json format ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Formatter would have printed the following content:
+  
+     1    Ôöé - {ÔÉì
+     2    Ôöé - ÔåÆ "compilerOptions":┬À{ÔÉì
+     3    Ôöé - ÔåÆ ÔåÆ "target":┬À"ES2021",ÔÉì
+     4    Ôöé - ÔåÆ ÔåÆ "useDefineForClassFields":┬Àtrue,ÔÉì
+     5    Ôöé - ÔåÆ ÔåÆ "lib":┬À["ES2021",┬À"DOM",┬À"DOM.Iterable"],ÔÉì
+     6    Ôöé - ÔåÆ ÔåÆ "module":┬À"ESNext",ÔÉì
+     7    Ôöé - ÔåÆ ÔåÆ "skipLibCheck":┬Àtrue,ÔÉì
+     8    Ôöé - ÔåÆ ÔåÆ "moduleResolution":┬À"bundler",ÔÉì
+     9    Ôöé - ÔåÆ ÔåÆ "resolveJsonModule":┬Àtrue,ÔÉì
+    10    Ôöé - ÔåÆ ÔåÆ "isolatedModules":┬Àtrue,ÔÉì
+    11    Ôöé - ÔåÆ ÔåÆ "noEmit":┬Àtrue,ÔÉì
+    12    Ôöé - ÔåÆ ÔåÆ "jsx":┬À"react-jsx",ÔÉì
+    13    Ôöé - ÔåÆ ÔåÆ "baseUrl":┬À".",ÔÉì
+    14    Ôöé - ÔåÆ ÔåÆ "paths":┬À{ÔÉì
+    15    Ôöé - ÔåÆ ÔåÆ ÔåÆ "@/*":┬À["src/*"],ÔÉì
+    16    Ôöé - ÔåÆ ÔåÆ ÔåÆ "@salon/*":┬À["src/features/projects/salon/src/*"]ÔÉì
+    17    Ôöé - ÔåÆ ÔåÆ }ÔÉì
+    18    Ôöé - ÔåÆ },ÔÉì
+    19    Ôöé - ÔåÆ "include":┬À["src",┬À"tests"],ÔÉì
+    20    Ôöé - ÔåÆ "exclude":┬À[ÔÉì
+    21    Ôöé - ÔåÆ ÔåÆ "node_modules",ÔÉì
+    22    Ôöé - ÔåÆ ÔåÆ "dist",ÔÉì
+    23    Ôöé - ÔåÆ ÔåÆ "src/features/projects/salon/src/app",ÔÉì
+    24    Ôöé - ÔåÆ ÔåÆ "src/features/projects/salon/src/middleware.ts",ÔÉì
+    25    Ôöé - ÔåÆ ÔåÆ "src/features/projects/salon/src/i18n",ÔÉì
+    26    Ôöé - ÔåÆ ÔåÆ "src/features/projects/salon/src/lib/prisma.ts"ÔÉì
+    27    Ôöé - ÔåÆ ],ÔÉì
+    28    Ôöé - ÔåÆ "references":┬À[ÔÉì
+    29    Ôöé - ÔåÆ ÔåÆ {ÔÉì
+    30    Ôöé - ÔåÆ ÔåÆ ÔåÆ "path":┬À"./tsconfig.node.json"ÔÉì
+    31    Ôöé - ÔåÆ ÔåÆ }ÔÉì
+    32    Ôöé - ÔåÆ ]ÔÉì
+    33    Ôöé - }ÔÉì
+        1 Ôöé + {
+        2 Ôöé + ÔåÆ "compilerOptions":┬À{
+        3 Ôöé + ÔåÆ ÔåÆ "target":┬À"ES2021",
+        4 Ôöé + ÔåÆ ÔåÆ "useDefineForClassFields":┬Àtrue,
+        5 Ôöé + ÔåÆ ÔåÆ "lib":┬À["ES2021",┬À"DOM",┬À"DOM.Iterable"],
+        6 Ôöé + ÔåÆ ÔåÆ "module":┬À"ESNext",
+        7 Ôöé + ÔåÆ ÔåÆ "skipLibCheck":┬Àtrue,
+        8 Ôöé + ÔåÆ ÔåÆ "moduleResolution":┬À"bundler",
+        9 Ôöé + ÔåÆ ÔåÆ "resolveJsonModule":┬Àtrue,
+       10 Ôöé + ÔåÆ ÔåÆ "isolatedModules":┬Àtrue,
+       11 Ôöé + ÔåÆ ÔåÆ "noEmit":┬Àtrue,
+       12 Ôöé + ÔåÆ ÔåÆ "jsx":┬À"react-jsx",
+       13 Ôöé + ÔåÆ ÔåÆ "baseUrl":┬À".",
+       14 Ôöé + ÔåÆ ÔåÆ "paths":┬À{
+       15 Ôöé + ÔåÆ ÔåÆ ÔåÆ "@/*":┬À["src/*"],
+       16 Ôöé + ÔåÆ ÔåÆ ÔåÆ "@salon/*":┬À["src/features/projects/salon/src/*"]
+       17 Ôöé + ÔåÆ ÔåÆ }
+       18 Ôöé + ÔåÆ },
+       19 Ôöé + ÔåÆ "include":┬À["src",┬À"tests"],
+       20 Ôöé + ÔåÆ "exclude":┬À[
+       21 Ôöé + ÔåÆ ÔåÆ "node_modules",
+       22 Ôöé + ÔåÆ ÔåÆ "dist",
+       23 Ôöé + ÔåÆ ÔåÆ "src/features/projects/salon/src/app",
+       24 Ôöé + ÔåÆ ÔåÆ "src/features/projects/salon/src/middleware.ts",
+       25 Ôöé + ÔåÆ ÔåÆ "src/features/projects/salon/src/i18n",
+       26 Ôöé + ÔåÆ ÔåÆ "src/features/projects/salon/src/lib/prisma.ts"
+       27 Ôöé + ÔåÆ ],
+       28 Ôöé + ÔåÆ "references":┬À[
+       29 Ôöé + ÔåÆ ÔåÆ {
+       30 Ôöé + ÔåÆ ÔåÆ ÔåÆ "path":┬À"./tsconfig.node.json"
+       31 Ôöé + ÔåÆ ÔåÆ }
+       32 Ôöé + ÔåÆ ]
+       33 Ôöé + }
+    34 34 Ôöé   
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 926.
+Checked 346 files in 3s. No fixes applied.
+Found 761 errors.
+Found 162 warnings.
+Found 23 infos.
+check ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Some errors were emitted while running checks.
+  
+

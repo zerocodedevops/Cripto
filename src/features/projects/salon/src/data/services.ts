@@ -34,7 +34,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "mechas",
 				title: "Mechas",
-				description: "Nuestra famosa técnica Mix&Match, sutiles brillos que iluminan",
+				description:
+					"Nuestra famosa técnica Mix&Match, sutiles brillos que iluminan",
 				duration: "1h 55 min",
 				price: 85,
 			},
@@ -76,14 +77,16 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "puntos-luz",
 				title: "Puntos de luz PPC",
-				description: "Puntos de luz en toda la melena para dar un punto de color natural",
+				description:
+					"Puntos de luz en toda la melena para dar un punto de color natural",
 				duration: "1h 55 min",
 				price: 65,
 			},
 			{
 				id: "mechas-henna",
 				title: "Mechas y henna",
-				description: "Mechas en todo el cabello más nuestro barro/ henna para cubrir canas",
+				description:
+					"Mechas en todo el cabello más nuestro barro/ henna para cubrir canas",
 				duration: "2h 5 min",
 				price: 110,
 			},
@@ -97,7 +100,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "retoque-henna",
 				title: "Retoque de Henna",
-				description: "Retoque de raíces en media cabeza, zona superior y laterales",
+				description:
+					"Retoque de raíces en media cabeza, zona superior y laterales",
 				duration: "1h 5 min",
 				price: 50,
 			},
@@ -118,21 +122,24 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "matiz",
 				title: "Matiz",
-				description: "Coloración suave para cambiar el tono de la melena y dar brillo",
+				description:
+					"Coloración suave para cambiar el tono de la melena y dar brillo",
 				duration: "20 min",
 				price: 30,
 			},
 			{
 				id: "agua-clara",
 				title: "Agua clara",
-				description: "Clarificante para base natural que desea dar un toque más claro",
+				description:
+					"Clarificante para base natural que desea dar un toque más claro",
 				duration: "55 min",
 				price: 45,
 			},
 			{
 				id: "decoloracion",
 				title: "Decoloración",
-				description: "Decoración de raíz para dejar el pelo rubio o eliminar un tinte",
+				description:
+					"Decoración de raíz para dejar el pelo rubio o eliminar un tinte",
 				duration: "1h 20 min",
 				price: 80,
 			},
@@ -146,7 +153,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "tinte-manicura",
 				title: "Tinte y Manicura",
-				description: "Aplicación tinte y en tiempo de exposición manicura completa",
+				description:
+					"Aplicación tinte y en tiempo de exposición manicura completa",
 				duration: "1h 20 min",
 				price: 70,
 			},
@@ -214,7 +222,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "secar-frontal",
 				title: "Secar frontal",
-				description: "Secado del cabello al aire con peinado en la zona del contorno",
+				description:
+					"Secado del cabello al aire con peinado en la zona del contorno",
 				duration: "10 min",
 				price: 15,
 			},
@@ -248,7 +257,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "shift-detox",
 				title: "Shift Detoxificante",
-				description: "TRATAMIENTO DETOXIFICANTE CAPILAR, PARA UN CUERO CABELLUDO GRASO O CON CASPA",
+				description:
+					"TRATAMIENTO DETOXIFICANTE CAPILAR, PARA UN CUERO CABELLUDO GRASO O CON CASPA",
 				duration: "35 min",
 				price: 45,
 			},
@@ -269,35 +279,40 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "nourishing",
 				title: "Nourising nutrición",
-				description: "TRATAMIENTO BIFÁSICO NUTRITIVO PARA ENGROSAR Y DAR BRILLO",
+				description:
+					"TRATAMIENTO BIFÁSICO NUTRITIVO PARA ENGROSAR Y DAR BRILLO",
 				duration: "1h 15 min",
 				price: 70,
 			},
 			{
 				id: "nourishing-inner",
 				title: "Nourising Inner",
-				description: "TRATAMIENTO BIFÁSICO, COMBINA LOS INGREDIENTES MAS HUMECTANTES",
+				description:
+					"TRATAMIENTO BIFÁSICO, COMBINA LOS INGREDIENTES MAS HUMECTANTES",
 				duration: "1h",
 				price: 65,
 			},
 			{
 				id: "repumpling",
 				title: "Repumpling Hidratación",
-				description: "TRATAMIENTO BIFÁSICO HIDRATANTE Y HUMECTANTE DE ÁCIDO HIALURÓNICO",
+				description:
+					"TRATAMIENTO BIFÁSICO HIDRATANTE Y HUMECTANTE DE ÁCIDO HIALURÓNICO",
 				duration: "45 min",
 				price: 55,
 			},
 			{
 				id: "proshield",
 				title: "Proshild Proteínas",
-				description: "Tratamiento antioxidante para engrosar, dar fuerza y aportar proteínas",
+				description:
+					"Tratamiento antioxidante para engrosar, dar fuerza y aportar proteínas",
 				duration: "1h",
 				price: 55,
 			},
 			{
 				id: "stain-glass",
 				title: "Stain Glass Baño Brillo",
-				description: "BAÑO DE BRILLO efecto espejo. Cuando la luz choque contra el cabello deslumbrará",
+				description:
+					"BAÑO DE BRILLO efecto espejo. Cuando la luz choque contra el cabello deslumbrará",
 				duration: "1h",
 				price: 40,
 			},
@@ -315,7 +330,12 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 				duration: "2h 30 min",
 				price: 200,
 			},
-			{ id: "inner-promo", title: "Inner promo", duration: "40 min", price: 40 },
+			{
+				id: "inner-promo",
+				title: "Inner promo",
+				duration: "40 min",
+				price: 40,
+			},
 			{
 				id: "arkitech",
 				title: "Arkitech",
@@ -327,7 +347,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "colageno",
 				title: "Colágeno",
-				description: "Tratamiento de hidratación y fuerza, de un brillo espectacular",
+				description:
+					"Tratamiento de hidratación y fuerza, de un brillo espectacular",
 				duration: "30 min",
 				price: 45,
 			},
@@ -340,7 +361,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "manicura-expres",
 				title: "Manicura exprés",
-				description: "Limar, hidratación de cutículas y manos, esmaltado color.",
+				description:
+					"Limar, hidratación de cutículas y manos, esmaltado color.",
 				duration: "20 min",
 				price: 15,
 			},
@@ -354,16 +376,23 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "manicura",
 				title: "Manicura",
-				description: "Manicura completa by OPI. Limar, exfoliante de cutícula, retirar pieles",
+				description:
+					"Manicura completa by OPI. Limar, exfoliante de cutícula, retirar pieles",
 				duration: "30 min",
 				price: 25,
 			},
-			{ id: "manicura-hombre", title: "Manicura hombre", duration: "25 min", price: 20 },
+			{
+				id: "manicura-hombre",
+				title: "Manicura hombre",
+				duration: "25 min",
+				price: 20,
+			},
 			{ id: "gel-opi", title: "Gel Opi", duration: "20 min", price: 30 },
 			{
 				id: "pedicura-opi",
 				title: "Pedicura by OPI",
-				description: "Pedicura completa, limado de planta con la fabulosa lima de OPI",
+				description:
+					"Pedicura completa, limado de planta con la fabulosa lima de OPI",
 				duration: "1h",
 				price: 45,
 			},
@@ -387,7 +416,12 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 				duration: "55 min",
 				price: 50,
 			},
-			{ id: "limpieza-cejas", title: "Limpieza cejas", duration: "10 min", price: 10 },
+			{
+				id: "limpieza-cejas",
+				title: "Limpieza cejas",
+				duration: "10 min",
+				price: 10,
+			},
 			{ id: "labio", title: "Labio", duration: "10 min", price: 8 },
 		],
 	},
@@ -398,7 +432,8 @@ export const SERVICE_CATALOG: ServiceCategory[] = [
 			{
 				id: "poner-extensiones",
 				title: "Poner extensiones",
-				description: "Poner extensiónes. Contactar con el salón, es un servicio complejo",
+				description:
+					"Poner extensiónes. Contactar con el salón, es un servicio complejo",
 				duration: "25 min",
 				price: 100,
 			},

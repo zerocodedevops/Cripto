@@ -1,4 +1,4 @@
-import { ArrowDown, Filter, Mic, Search } from "lucide-react";
+import { Filter, Mic, Search } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDebounce } from "../../../../hooks/useDebounce";

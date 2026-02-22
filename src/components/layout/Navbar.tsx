@@ -1,27 +1,30 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { AnimatePresence, motion } from "framer-motion";
-// eslint-disable-next-line @typescript-eslint/no-deprecated
 import {
 	Code2,
-	Github,
-	Linkedin,
+	Github as GithubIcon, // NOSONAR
+	Linkedin as LinkedinIcon, // NOSONAR
 	Mail,
 	Menu,
+	MessageCircle,
 	Moon,
 	Sun,
 	X,
-	MessageCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const socialLinks = [
-	// eslint-disable-next-line @typescript-eslint/no-deprecated
-	{ icon: Github, href: "https://github.com/zerocodedevops", label: "GitHub" },
-	// eslint-disable-next-line @typescript-eslint/no-deprecated
 	{
-		icon: Linkedin,
+		icon: GithubIcon,
+		href: "https://github.com/zerocodedevops",
+		label: "GitHub",
+	}, // NOSONAR
+	{
+		icon: LinkedinIcon, // NOSONAR
 		href: "https://www.linkedin.com/in/zerocode-devops",
 		label: "LinkedIn",
 	},
@@ -30,7 +33,8 @@ const socialLinks = [
 ];
 
 export function Navbar() {
-	const { i18n, t } = useTranslation();
+	const navigate = useNavigate();
+	const { i18n } = useTranslation();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isLightMode, setIsLightMode] = useState(() => {
@@ -40,20 +44,18 @@ export function Navbar() {
 	});
 
 	const navLinks = [
-		{ label: t("nav.home"), href: "#hero" },
-		{ label: t("nav.about"), href: "#about" },
-		{ label: t("nav.skills"), href: "#skills" },
-		{ label: t("nav.projects"), href: "#projects" },
-		{ label: t("nav.blog"), href: "#blog" },
-		{ label: t("nav.contact"), href: "#contact" },
+		{ label: "Servicios", href: "/paginas-web-pymes-autonomos" },
+		{ label: "Sobre Mí", href: "/disenador-web-freelance-madrid" },
+		{ label: "Precios", href: "/precios-paginas-web" },
+		{ label: "Contacto", href: "#contact" },
 	];
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
+			setIsScrolled(globalThis.scrollY > 50);
 		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+		globalThis.addEventListener("scroll", handleScroll);
+		return () => globalThis.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	useEffect(() => {
@@ -75,8 +77,21 @@ export function Navbar() {
 
 	const handleNavClick = (href: string) => {
 		setIsMobileMenuOpen(false);
-		const element = document.querySelector(href);
-		element?.scrollIntoView({ behavior: "smooth" });
+		if (href.startsWith("#")) {
+			const element = document.querySelector(href);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			} else {
+				navigate("/");
+				// Give time for the home page to load/scroll
+				setTimeout(() => {
+					document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+				}, 100);
+			}
+		} else {
+			navigate(href);
+			globalThis.scrollTo({ top: 0, behavior: "smooth" });
+		}
 	};
 
 	return (
@@ -100,7 +115,7 @@ export function Navbar() {
 						whileHover={{ scale: 1.05 }}
 						onClick={(e) => {
 							e.preventDefault();
-							handleNavClick("#hero");
+							handleNavClick("/");
 						}}
 					>
 						<div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">

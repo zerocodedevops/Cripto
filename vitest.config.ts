@@ -10,7 +10,12 @@ export default defineConfig({
 		environment: "jsdom",
 		setupFiles: ["./tests/setup.tsx"],
 		globals: true,
-		exclude: ["**/node_modules/**", "**/dist/**", "**/tests-e2e/**"],
+		exclude: [
+			"**/node_modules/**",
+			"**/dist/**",
+			"**/tests-e2e/**",
+			"apps/zerodelay/**",
+		],
 	},
 	resolve: {
 		alias: {

@@ -1,6 +1,5 @@
 import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
-import React from "react";
 import { afterEach, vi } from "vitest";
 
 // Runs a cleanup after each test case
@@ -74,9 +73,7 @@ vi.mock("framer-motion", () => ({
 		label: ({ children, ...props }: any) => (
 			<label {...props}>{children}</label>
 		),
-		input: ({ children, ...props }: any) => (
-			<input {...props}>{children} </input>
-		),
+		input: ({ children, ...props }: any) => <input {...props} />,
 		textarea: ({ children, ...props }: any) => (
 			<textarea {...props}>{children}</textarea>
 		),

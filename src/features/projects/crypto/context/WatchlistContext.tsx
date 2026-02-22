@@ -67,7 +67,7 @@ export function WatchlistProvider({
 			removeFromWatchlist,
 			isInWatchlist,
 		}),
-		[watchlist],
+		[watchlist, addToWatchlist, isInWatchlist, removeFromWatchlist],
 	);
 
 	return (

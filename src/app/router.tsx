@@ -1,12 +1,14 @@
 import { lazy, Suspense } from "react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { PageLoader } from "@/components/ui/PageLoader";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { CurrencyProvider } from "@/features/projects/crypto/context/CurrencyContext";
 
 // Lazy Load Components
 const Home = lazy(() => import("@/features/home/Home"));
-const BlogPost = lazy(() => import("@/features/blog/BlogPost"));
+const PymesService = lazy(() => import("@/features/services/PymesService"));
+const FreelanceMadrid = lazy(() => import("@/features/about/FreelanceMadrid"));
+const Pricing = lazy(() => import("@/features/pricing/Pricing"));
 const EcommerceApp = lazy(() => import("@/features/projects/ecommerce/routes"));
 const AnalyticsApp = lazy(() => import("@/features/projects/analytics/routes"));
 const SalonApp = lazy(() => import("@salon/routes"));
@@ -15,17 +17,49 @@ const CryptoApp = lazy(() =>
 		default: m.CryptoDashboard,
 	})),
 );
-const MediaApp = lazy(() => import("@/features/projects/mudanzas-coral/src/App"));
+const MediaApp = lazy(
+	() => import("@/features/projects/mudanzas-coral/src/App"),
+);
 const NotFound = lazy(() => import("@/features/misc/NotFound"));
 
-const router = createHashRouter(
+const router = createBrowserRouter(
 	[
 		{
 			path: "/",
 			element: (
 				<PageTransition>
-					<Suspense fallback={<PageLoader text="Initializing Core..." />}>
+					<Suspense fallback={<PageLoader text="Cargando ZeroCode..." />}>
 						<Home />
+					</Suspense>
+				</PageTransition>
+			),
+		},
+		{
+			path: "/paginas-web-pymes-autonomos",
+			element: (
+				<PageTransition>
+					<Suspense fallback={<PageLoader text="Preparando soluciones..." />}>
+						<PymesService />
+					</Suspense>
+				</PageTransition>
+			),
+		},
+		{
+			path: "/disenador-web-freelance-madrid",
+			element: (
+				<PageTransition>
+					<Suspense fallback={<PageLoader text="Conociendo a David G..." />}>
+						<FreelanceMadrid />
+					</Suspense>
+				</PageTransition>
+			),
+		},
+		{
+			path: "/precios-paginas-web",
+			element: (
+				<PageTransition>
+					<Suspense fallback={<PageLoader text="Calculando valor..." />}>
+						<Pricing />
 					</Suspense>
 				</PageTransition>
 			),
@@ -78,16 +112,6 @@ const router = createHashRouter(
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
 						<MediaApp />
-					</Suspense>
-				</PageTransition>
-			),
-		},
-		{
-			path: "/blog/:id",
-			element: (
-				<PageTransition>
-					<Suspense fallback={<PageLoader text="Loading Post..." />}>
-						<BlogPost />
 					</Suspense>
 				</PageTransition>
 			),
