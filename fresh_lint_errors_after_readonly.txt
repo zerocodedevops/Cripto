@@ -1,0 +1,1653 @@
+apps\devops-shop\src\pages\CatalogPage.tsx:23:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    21 Ôöé 				globalThis as typeof globalThis & {
+    22 Ôöé 					SpeechRecognition?: any;
+  > 23 Ôöé 					webkitSpeechRecognition?: any;
+       Ôöé 					                          ^^^
+    24 Ôöé 				}
+    25 Ôöé 			).SpeechRecognition ||
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:28:26 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    26 Ôöé 			(
+    27 Ôöé 				globalThis as typeof globalThis & {
+  > 28 Ôöé 					SpeechRecognition?: any;
+       Ôöé 					                    ^^^
+    29 Ôöé 					webkitSpeechRecognition?: any;
+    30 Ôöé 				}
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:29:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    27 Ôöé 				globalThis as typeof globalThis & {
+    28 Ôöé 					SpeechRecognition?: any;
+  > 29 Ôöé 					webkitSpeechRecognition?: any;
+       Ôöé 					                          ^^^
+    30 Ôöé 				}
+    31 Ôöé 			).webkitSpeechRecognition;
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:39:35 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    37 Ôöé 			setIsListening(true);
+    38 Ôöé 
+  > 39 Ôöé 			recognition.onresult = (event: any) => {
+       Ôöé 			                               ^^^
+    40 Ôöé 				const transcript = event.results[0][0].transcript;
+    41 Ôöé 				setSearch(transcript);
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:22:26 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    20 Ôöé 			(
+    21 Ôöé 				globalThis as typeof globalThis & {
+  > 22 Ôöé 					SpeechRecognition?: any;
+       Ôöé 					                    ^^^
+    23 Ôöé 					webkitSpeechRecognition?: any;
+    24 Ôöé 				}
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\zerodelay\src\main.tsx:7:12 lint/style/noNonNullAssertion ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Forbidden non-null assertion.
+  
+    5 Ôöé import "./styles/index.css";
+    6 Ôöé 
+  > 7 Ôöé createRoot(document.getElementById("root")!).render(
+      Ôöé            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    8 Ôöé 	<StrictMode>
+    9 Ôöé 		<BrowserRouter>
+  
+
+src\components\ui\Button.tsx:64:26 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    62 Ôöé 					ref={ref as React.Ref<HTMLAnchorElement>}
+    63 Ôöé 					href={href}
+  > 64 Ôöé 					{...(commonProps as any)}
+       Ôöé 					                    ^^^
+    65 Ôöé 					// Anchor doesn't support 'disabled' attribute natively, handled via pointer-events (optional but usually btn handles it)
+    66 Ôöé 					aria-disabled={disabled || isLoading}
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:69:31 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    67 Ôöé 			<button {...props}>{children}</button>
+    68 Ôöé 		),
+  > 69 Ôöé 		a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
+       Ôöé 		                            ^^^
+    70 Ôöé 		span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
+    71 Ôöé 		img: ({ ...props }: any) => <img alt="" {...props} />,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:85:34 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    83 Ôöé 	useInView: () => true,
+    84 Ôöé 	useScroll: () => ({ scrollY: { on: vi.fn() } }),
+  > 85 Ôöé 	AnimatePresence: ({ children }: any) => <>{children}</>,
+       Ôöé 	                                ^^^
+    86 Ôöé }));
+    87 Ôöé 
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:50:33 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    48 Ôöé vi.mock("framer-motion", () => ({
+    49 Ôöé 	motion: {
+  > 50 Ôöé 		div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+       Ôöé 		                              ^^^
+    51 Ôöé 		h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
+    52 Ôöé 		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:51:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    49 Ôöé 	motion: {
+    50 Ôöé 		div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+  > 51 Ôöé 		h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
+       Ôöé 		                             ^^^
+    52 Ôöé 		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
+    53 Ôöé 		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:52:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    50 Ôöé 		div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+    51 Ôöé 		h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
+  > 52 Ôöé 		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
+       Ôöé 		                             ^^^
+    53 Ôöé 		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
+    54 Ôöé 		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:53:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    51 Ôöé 		h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
+    52 Ôöé 		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
+  > 53 Ôöé 		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
+       Ôöé 		                             ^^^
+    54 Ôöé 		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+    55 Ôöé 		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:54:31 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    52 Ôöé 		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
+    53 Ôöé 		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
+  > 54 Ôöé 		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+       Ôöé 		                            ^^^
+    55 Ôöé 		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+    56 Ôöé 		li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:55:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    53 Ôöé 		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
+    54 Ôöé 		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+  > 55 Ôöé 		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+       Ôöé 		                             ^^^
+    56 Ôöé 		li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
+    57 Ôöé 		section: ({ children, ...props }: any) => (
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:56:32 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    54 Ôöé 		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+    55 Ôöé 		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+  > 56 Ôöé 		li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
+       Ôöé 		                             ^^^
+    57 Ôöé 		section: ({ children, ...props }: any) => (
+    58 Ôöé 			<section {...props}>{children}</section>
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:57:37 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    55 Ôöé 		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+    56 Ôöé 		li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
+  > 57 Ôöé 		section: ({ children, ...props }: any) => (
+       Ôöé 		                                  ^^^
+    58 Ôöé 			<section {...props}>{children}</section>
+    59 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:60:36 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    58 Ôöé 			<section {...props}>{children}</section>
+    59 Ôöé 		),
+  > 60 Ôöé 		header: ({ children, ...props }: any) => (
+       Ôöé 		                                 ^^^
+    61 Ôöé 			<header {...props}>{children}</header>
+    62 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:63:36 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    61 Ôöé 			<header {...props}>{children}</header>
+    62 Ôöé 		),
+  > 63 Ôöé 		footer: ({ children, ...props }: any) => (
+       Ôöé 		                                 ^^^
+    64 Ôöé 			<footer {...props}>{children}</footer>
+    65 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:66:36 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    64 Ôöé 			<footer {...props}>{children}</footer>
+    65 Ôöé 		),
+  > 66 Ôöé 		button: ({ children, ...props }: any) => (
+       Ôöé 		                                 ^^^
+    67 Ôöé 			<button {...props}>{children}</button>
+    68 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:70:34 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    68 Ôöé 		),
+    69 Ôöé 		a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
+  > 70 Ôöé 		span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
+       Ôöé 		                               ^^^
+    71 Ôöé 		img: ({ ...props }: any) => <img alt="" {...props} />,
+    72 Ôöé 		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:71:23 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    69 Ôöé 		a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
+    70 Ôöé 		span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
+  > 71 Ôöé 		img: ({ ...props }: any) => <img alt="" {...props} />,
+       Ôöé 		                    ^^^
+    72 Ôöé 		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+    73 Ôöé 		label: ({ children, ...props }: any) => (
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:72:34 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    70 Ôöé 		span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
+    71 Ôöé 		img: ({ ...props }: any) => <img alt="" {...props} />,
+  > 72 Ôöé 		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+       Ôöé 		                               ^^^
+    73 Ôöé 		label: ({ children, ...props }: any) => (
+    74 Ôöé 			<label {...props}>{children}</label>
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:73:35 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    71 Ôöé 		img: ({ ...props }: any) => <img alt="" {...props} />,
+    72 Ôöé 		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+  > 73 Ôöé 		label: ({ children, ...props }: any) => (
+       Ôöé 		                                ^^^
+    74 Ôöé 			<label {...props}>{children}</label>
+    75 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:76:35 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    74 Ôöé 			<label {...props}>{children}</label>
+    75 Ôöé 		),
+  > 76 Ôöé 		input: ({ children, ...props }: any) => <input {...props} />,
+       Ôöé 		                                ^^^
+    77 Ôöé 		textarea: ({ children, ...props }: any) => (
+    78 Ôöé 			<textarea {...props}>{children}</textarea>
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:77:38 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    75 Ôöé 		),
+    76 Ôöé 		input: ({ children, ...props }: any) => <input {...props} />,
+  > 77 Ôöé 		textarea: ({ children, ...props }: any) => (
+       Ôöé 		                                   ^^^
+    78 Ôöé 			<textarea {...props}>{children}</textarea>
+    79 Ôöé 		),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+tests\setup.tsx:80:34 lint/suspicious/noExplicitAny ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ! Unexpected any. Specify a different type.
+  
+    78 Ôöé 			<textarea {...props}>{children}</textarea>
+    79 Ôöé 		),
+  > 80 Ôöé 		path: ({ children, ...props }: any) => <path {...props}>{children}</path>,
+       Ôöé 		                               ^^^
+    81 Ôöé 	},
+    82 Ôöé 	useAnimation: () => ({ start: vi.fn(), set: vi.fn() }),
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+
+apps\devops-shop\src\pages\CatalogPage.tsx:119:25 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+    117 Ôöé 					{Array.from({ length: 8 }).map((_, i) => (
+    118 Ôöé 						<div
+  > 119 Ôöé 							key={`skeleton-${i}`}
+        Ôöé 							                 ^
+    120 Ôöé 							className="bg-white dark:bg-slate-900 rounded-2xl p-4 h-[400px] animate-pulse border border-slate-100 dark:border-slate-800"
+    121 Ôöé 						>
+  
+  i This is the source of the key value.
+  
+    115 Ôöé 			{isLoading ? (
+    116 Ôöé 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  > 117 Ôöé 					{Array.from({ length: 8 }).map((_, i) => (
+        Ôöé 					                                   ^
+    118 Ôöé 						<div
+    119 Ôöé 							key={`skeleton-${i}`}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\components\common\Header.tsx:207:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    205 Ôöé 									}}
+    206 Ôöé 									onMouseOver={(e) =>
+  > 207 Ôöé 										(e.currentTarget.style.transform = "scale(1.1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    208 Ôöé 									}
+    209 Ôöé 									onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:210:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    208 Ôöé 									}
+    209 Ôöé 									onMouseOut={(e) =>
+  > 210 Ôöé 										(e.currentTarget.style.transform = "scale(1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    211 Ôöé 									}
+    212 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:213:10 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    211 Ôöé 									}
+    212 Ôöé 								>
+  > 213 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    214 Ôöé 										<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    215 Ôöé 									</svg>
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:232:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    230 Ôöé 									}}
+    231 Ôöé 									onMouseOver={(e) =>
+  > 232 Ôöé 										(e.currentTarget.style.transform = "scale(1.1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    233 Ôöé 									}
+    234 Ôöé 									onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:235:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    233 Ôöé 									}
+    234 Ôöé 									onMouseOut={(e) =>
+  > 235 Ôöé 										(e.currentTarget.style.transform = "scale(1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    236 Ôöé 									}
+    237 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:238:10 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    236 Ôöé 									}
+    237 Ôöé 								>
+  > 238 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    239 Ôöé 										<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+    240 Ôöé 									</svg>
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:334:9 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    332 Ôöé 								}}
+    333 Ôöé 							>
+  > 334 Ôöé 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        Ôöé 								^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    335 Ôöé 									<path
+    336 Ôöé 										d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:117:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    115 Ôöé 							{/* Social Icons */}
+    116 Ôöé 							<div style={{ display: "flex", gap: "0.5rem" }}>
+  > 117 Ôöé 								<a
+        Ôöé 								^^
+  > 118 Ôöé 									href="https://facebook.com"
+         ...
+  > 136 Ôöé 									}
+  > 137 Ôöé 								>
+        Ôöé 								^
+    138 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    139 Ôöé 										<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:142:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    140 Ôöé 									</svg>
+    141 Ôöé 								</a>
+  > 142 Ôöé 								<a
+        Ôöé 								^^
+  > 143 Ôöé 									href="https://instagram.com"
+         ...
+  > 161 Ôöé 									}
+  > 162 Ôöé 								>
+        Ôöé 								^
+    163 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    164 Ôöé 										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:167:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    165 Ôöé 									</svg>
+    166 Ôöé 								</a>
+  > 167 Ôöé 								<a
+        Ôöé 								^^
+  > 168 Ôöé 									href="https://youtube.com"
+         ...
+  > 186 Ôöé 									}
+  > 187 Ôöé 								>
+        Ôöé 								^
+    188 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    189 Ôöé 										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:192:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    190 Ôöé 									</svg>
+    191 Ôöé 								</a>
+  > 192 Ôöé 								<a
+        Ôöé 								^^
+  > 193 Ôöé 									href="https://linkedin.com"
+         ...
+  > 211 Ôöé 									}
+  > 212 Ôöé 								>
+        Ôöé 								^
+    213 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    214 Ôöé 										<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:217:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    215 Ôöé 									</svg>
+    216 Ôöé 								</a>
+  > 217 Ôöé 								<a
+        Ôöé 								^^
+  > 218 Ôöé 									href="https://tiktok.com"
+         ...
+  > 236 Ôöé 									}
+  > 237 Ôöé 								>
+        Ôöé 								^
+    238 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    239 Ôöé 										<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:358:7 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    356 Ôöé 					{/* Mobile Menu Button */}
+    357 Ôöé 					{isMobile && (
+  > 358 Ôöé 						<button
+        Ôöé 						^^^^^^^
+  > 359 Ôöé 							aria-label="Toggle menu"
+         ...
+  > 369 Ôöé 							}}
+  > 370 Ôöé 						>
+        Ôöé 						^
+    371 Ôöé 							<span
+    372 Ôöé 								style={{
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\Header.tsx:79:8 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    77 Ôöé 							}}
+    78 Ôöé 						>
+  > 79 Ôöé 							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+       Ôöé 							^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 Ôöé 								<path
+    81 Ôöé 									d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:132:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    130 Ôöé 									}}
+    131 Ôöé 									onMouseOver={(e) =>
+  > 132 Ôöé 										(e.currentTarget.style.transform = "scale(1.1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    133 Ôöé 									}
+    134 Ôöé 									onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:135:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    133 Ôöé 									}
+    134 Ôöé 									onMouseOut={(e) =>
+  > 135 Ôöé 										(e.currentTarget.style.transform = "scale(1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    136 Ôöé 									}
+    137 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:138:10 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    136 Ôöé 									}
+    137 Ôöé 								>
+  > 138 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    139 Ôöé 										<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    140 Ôöé 									</svg>
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:157:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    155 Ôöé 									}}
+    156 Ôöé 									onMouseOver={(e) =>
+  > 157 Ôöé 										(e.currentTarget.style.transform = "scale(1.1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    158 Ôöé 									}
+    159 Ôöé 									onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:160:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    158 Ôöé 									}
+    159 Ôöé 									onMouseOut={(e) =>
+  > 160 Ôöé 										(e.currentTarget.style.transform = "scale(1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    161 Ôöé 									}
+    162 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:163:10 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    161 Ôöé 									}
+    162 Ôöé 								>
+  > 163 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    164 Ôöé 										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    165 Ôöé 									</svg>
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:182:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    180 Ôöé 									}}
+    181 Ôöé 									onMouseOver={(e) =>
+  > 182 Ôöé 										(e.currentTarget.style.transform = "scale(1.1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    183 Ôöé 									}
+    184 Ôöé 									onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:185:12 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    183 Ôöé 									}
+    184 Ôöé 									onMouseOut={(e) =>
+  > 185 Ôöé 										(e.currentTarget.style.transform = "scale(1)")
+        Ôöé 										 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    186 Ôöé 									}
+    187 Ôöé 								>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\common\Header.tsx:188:10 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    186 Ôöé 									}
+    187 Ôöé 								>
+  > 188 Ôöé 									<svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        Ôöé 									^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    189 Ôöé 										<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    190 Ôöé 									</svg>
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:111:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    109 Ôöé 				{/* Tabs */}
+    110 Ôöé 				<div style={{ display: "flex", borderBottom: "2px solid #eee" }}>
+  > 111 Ôöé 					<button
+        Ôöé 					^^^^^^^
+  > 112 Ôöé 						onClick={() => setActiveTab("categories")}
+         ...
+  > 123 Ôöé 						}}
+  > 124 Ôöé 					>
+        Ôöé 					^
+    125 Ôöé 						Categor├¡as
+    126 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:95:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     93 Ôöé 						</p>
+     94 Ôöé 					</div>
+   > 95 Ôöé 					<button
+        Ôöé 					^^^^^^^
+   > 96 Ôöé 						onClick={onClose}
+         ...
+  > 103 Ôöé 						}}
+  > 104 Ôöé 					>
+        Ôöé 					^
+    105 Ôöé 						├ù
+    106 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:285:5 lint/a11y/noStaticElementInteractions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Static Elements should not be interactive.
+  
+    283 Ôöé 					{title}
+    284 Ôöé 				</span>
+  > 285 Ôöé 				<div
+        Ôöé 				^^^^
+  > 286 Ôöé 					onClick={!disabled ? onChange : undefined}
+         ...
+  > 295 Ôöé 					}}
+  > 296 Ôöé 				>
+        Ôöé 				^
+    297 Ôöé 					<div
+    298 Ôöé 						style={{
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:127:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    125 Ôöé 						Categor├¡as
+    126 Ôöé 					</button>
+  > 127 Ôöé 					<button
+        Ôöé 					^^^^^^^
+  > 128 Ôöé 						onClick={() => setActiveTab("services")}
+         ...
+  > 139 Ôöé 						}}
+  > 140 Ôöé 					>
+        Ôöé 					^
+    141 Ôöé 						Servicios
+    142 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:333:2 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    331 Ôöé 	fill,
+    332 Ôöé }: ActionButtonProps) => (
+  > 333 Ôöé 	<button
+        Ôöé 	^^^^^^^
+  > 334 Ôöé 		onClick={onClick}
+         ...
+  > 345 Ôöé 		}}
+  > 346 Ôöé 	>
+        Ôöé 	^
+    347 Ôöé 		{children}
+    348 Ôöé 	</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\PrivacyModal.tsx:285:5 lint/a11y/useKeyWithClickEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    283 Ôöé 					{title}
+    284 Ôöé 				</span>
+  > 285 Ôöé 				<div
+        Ôöé 				^^^^
+  > 286 Ôöé 					onClick={!disabled ? onChange : undefined}
+         ...
+  > 295 Ôöé 					}}
+  > 296 Ôöé 				>
+        Ôöé 				^
+    297 Ôöé 					<div
+    298 Ôöé 						style={{
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\common\SubFooter.tsx:70:6 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    68 Ôöé 					aria-label="Configuraci├│n de privacidad"
+    69 Ôöé 				>
+  > 70 Ôöé 					<svg
+       Ôöé 					^^^^
+  > 71 Ôöé 						width="24"
+        ...
+  > 75 Ôöé 						xmlns="http://www.w3.org/2000/svg"
+  > 76 Ôöé 					>
+       Ôöé 					^
+    77 Ôöé 						<path
+    78 Ôöé 							d="M12 2L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 2ZM12 11.99H7V10H12V7.41L15.29 10.7L12 13.99V11.99Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\components\common\SubFooter.tsx:53:5 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    51 Ôöé 			>
+    52 Ôöé 				{/* Shield Icon Trigger */}
+  > 53 Ôöé 				<button
+       Ôöé 				^^^^^^^
+  > 54 Ôöé 					onClick={() => setIsModalOpen(true)}
+        ...
+  > 68 Ôöé 					aria-label="Configuraci├│n de privacidad"
+  > 69 Ôöé 				>
+       Ôöé 				^
+    70 Ôöé 					<svg
+    71 Ôöé 						width="24"
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\common\SubFooter.tsx:99:19 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+     97 Ôöé 					<div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+     98 Ôöé 						{seoTerms.map((term, index) => (
+   > 99 Ôöé 							<span key={index}>
+        Ôöé 							           ^^^^^
+    100 Ôöé 								{term}{" "}
+    101 Ôöé 								{index < seoTerms.length - 1 && (
+  
+  i This is the source of the key value.
+  
+     96 Ôöé 				>
+     97 Ôöé 					<div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+   > 98 Ôöé 						{seoTerms.map((term, index) => (
+        Ôöé 						                     ^^^^^
+     99 Ôöé 							<span key={index}>
+    100 Ôöé 								{term}{" "}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\components\common\SubFooter.tsx:120:19 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+    118 Ôöé 					>
+    119 Ôöé 						{legalLinks.map((link, index) => (
+  > 120 Ôöé 							<span key={index}>
+        Ôöé 							           ^^^^^
+    121 Ôöé 								{link}{" "}
+    122 Ôöé 								{index < legalLinks.length - 1 && (
+  
+  i This is the source of the key value.
+  
+    117 Ôöé 						}}
+    118 Ôöé 					>
+  > 119 Ôöé 						{legalLinks.map((link, index) => (
+        Ôöé 						                       ^^^^^
+    120 Ôöé 							<span key={index}>
+    121 Ôöé 								{link}{" "}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\components\home\CTASection.tsx:67:6 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    65 Ôöé 						Solicitar Presupuesto Ahora
+    66 Ôöé 					</Link>
+  > 67 Ôöé 					<a
+       Ôöé 					^^
+  > 68 Ôöé 						href="tel:+34912345678"
+        ...
+  > 86 Ôöé 						}
+  > 87 Ôöé 					>
+       Ôöé 					^
+    88 Ôöé 						­ƒô× Llamar Ahora
+    89 Ôöé 					</a>
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\components\home\CTASection.tsx:85:9 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    83 Ôöé 						}
+    84 Ôöé 						onMouseOut={(e) =>
+  > 85 Ôöé 							(e.currentTarget.style.backgroundColor = "transparent")
+       Ôöé 							 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    86 Ôöé 						}
+    87 Ôöé 					>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\home\CTASection.tsx:82:9 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    80 Ôöé 						}}
+    81 Ôöé 						onMouseOver={(e) =>
+  > 82 Ôöé 							(e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)")
+       Ôöé 							 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    83 Ôöé 						}
+    84 Ôöé 						onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\components\home\Services.tsx:92:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+     90 Ôöé 						Empresa de Mudanzas
+     91 Ôöé 					</button>
+   > 92 Ôöé 					<button
+        Ôöé 					^^^^^^^
+   > 93 Ôöé 						style={{
+         ...
+  > 102 Ôöé 						}}
+  > 103 Ôöé 					>
+        Ôöé 					^
+    104 Ôöé 						Servicio de Mudanzas
+    105 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\home\Services.tsx:50:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    48 Ôöé 					}}
+    49 Ôöé 				>
+  > 50 Ôöé 					<button
+       Ôöé 					^^^^^^^
+  > 51 Ôöé 						style={{
+        ...
+  > 60 Ôöé 						}}
+  > 61 Ôöé 					>
+       Ôöé 					^
+    62 Ôöé 						Mudanzas y Guardamuebles
+    63 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\home\Services.tsx:64:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    62 Ôöé 						Mudanzas y Guardamuebles
+    63 Ôöé 					</button>
+  > 64 Ôöé 					<button
+       Ôöé 					^^^^^^^
+  > 65 Ôöé 						style={{
+        ...
+  > 74 Ôöé 						}}
+  > 75 Ôöé 					>
+       Ôöé 					^
+    76 Ôöé 						Mudanzas Internacionales
+    77 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\home\Services.tsx:78:6 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    76 Ôöé 						Mudanzas Internacionales
+    77 Ôöé 					</button>
+  > 78 Ôöé 					<button
+       Ôöé 					^^^^^^^
+  > 79 Ôöé 						style={{
+        ...
+  > 88 Ôöé 						}}
+  > 89 Ôöé 					>
+       Ôöé 					^
+    90 Ôöé 						Empresa de Mudanzas
+    91 Ôöé 					</button>
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+apps\zerodelay\src\components\home\Testimonials.tsx:104:16 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+    102 Ôöé 								{[...Array(testimonial.rating)].map((_, i) => (
+    103 Ôöé 									<span
+  > 104 Ôöé 										key={i}
+        Ôöé 										     ^
+    105 Ôöé 										style={{ color: "#FFC107", fontSize: "1.25rem" }}
+    106 Ôöé 									>
+  
+  i This is the source of the key value.
+  
+    100 Ôöé 								}}
+    101 Ôöé 							>
+  > 102 Ôöé 								{[...Array(testimonial.rating)].map((_, i) => (
+        Ôöé 								                                        ^
+    103 Ôöé 									<span
+    104 Ôöé 										key={i}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\pages\Contact.tsx:254:27 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    252 Ôöé 										outline: "none",
+    253 Ôöé 									}}
+  > 254 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+        Ôöé 									                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    255 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+    256 Ôöé 									placeholder="Tu nombre"
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:255:26 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    253 Ôöé 									}}
+    254 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+  > 255 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+        Ôöé 									                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    256 Ôöé 									placeholder="Tu nombre"
+    257 Ôöé 								/>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:355:27 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    353 Ôöé 										outline: "none",
+    354 Ôöé 									}}
+  > 355 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+        Ôöé 									                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    356 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+    357 Ôöé 									placeholder="Ej: Mudanza de hogar, oficina, guardamuebles..."
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:356:26 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    354 Ôöé 									}}
+    355 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+  > 356 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+        Ôöé 									                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    357 Ôöé 									placeholder="Ej: Mudanza de hogar, oficina, guardamuebles..."
+    358 Ôöé 								/>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:363:9 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    361 Ôöé 							{/* Message */}
+    362 Ôöé 							<div>
+  > 363 Ôöé 								<label
+        Ôöé 								^^^^^^
+  > 364 Ôöé 									style={{
+         ...
+  > 372 Ôöé 									Mensaje *
+  > 373 Ôöé 								</label>
+        Ôöé 								^^^^^^^^
+    374 Ôöé 								<textarea
+    375 Ôöé 									name="message"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:391:27 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    389 Ôöé 										resize: "vertical",
+    390 Ôöé 									}}
+  > 391 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+        Ôöé 									                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    392 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+    393 Ôöé 									placeholder="Cu├®ntanos los detalles de tu mudanza..."
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:392:26 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    390 Ôöé 									}}
+    391 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+  > 392 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+        Ôöé 									                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    393 Ôöé 									placeholder="Cu├®ntanos los detalles de tu mudanza..."
+    394 Ôöé 								/>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:398:8 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    397 Ôöé 							{/* Submit Button */}
+  > 398 Ôöé 							<button
+        Ôöé 							^^^^^^^
+  > 399 Ôöé 								type="submit"
+         ...
+  > 430 Ôöé 								}}
+  > 431 Ôöé 							>
+        Ôöé 							^
+    432 Ôöé 								{isSubmitting ? "Enviando..." : "Enviar"}
+    433 Ôöé 							</button>
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:262:9 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    260 Ôöé 							{/* Email */}
+    261 Ôöé 							<div>
+  > 262 Ôöé 								<label
+        Ôöé 								^^^^^^
+  > 263 Ôöé 									style={{
+         ...
+  > 271 Ôöé 									Email *
+  > 272 Ôöé 								</label>
+        Ôöé 								^^^^^^^^
+    273 Ôöé 								<input
+    274 Ôöé 									type="email"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:288:27 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    286 Ôöé 										outline: "none",
+    287 Ôöé 									}}
+  > 288 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+        Ôöé 									                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    289 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+    290 Ôöé 									placeholder="tu@email.com"
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:289:26 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    287 Ôöé 									}}
+    288 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+  > 289 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+        Ôöé 									                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    290 Ôöé 									placeholder="tu@email.com"
+    291 Ôöé 								/>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:296:9 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    294 Ôöé 							{/* Phone */}
+    295 Ôöé 							<div>
+  > 296 Ôöé 								<label
+        Ôöé 								^^^^^^
+  > 297 Ôöé 									style={{
+         ...
+  > 305 Ôöé 									Tel├®fono
+  > 306 Ôöé 								</label>
+        Ôöé 								^^^^^^^^
+    307 Ôöé 								<input
+    308 Ôöé 									type="tel"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:321:27 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    319 Ôöé 										outline: "none",
+    320 Ôöé 									}}
+  > 321 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+        Ôöé 									                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    322 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+    323 Ôöé 									placeholder="612 345 678"
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:322:26 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    320 Ôöé 									}}
+    321 Ôöé 									onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
+  > 322 Ôöé 									onBlur={(e) => (e.target.style.borderColor = "#E0E0E0")}
+        Ôöé 									                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    323 Ôöé 									placeholder="612 345 678"
+    324 Ôöé 								/>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:123:9 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    121 Ôöé 								}}
+    122 Ôöé 							>
+  > 123 Ôöé 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        Ôöé 								^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    124 Ôöé 									<path
+    125 Ôöé 										d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:154:9 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    152 Ôöé 								}}
+    153 Ôöé 							>
+  > 154 Ôöé 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        Ôöé 								^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    155 Ôöé 									<path
+    156 Ôöé 										d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:184:9 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    182 Ôöé 								}}
+    183 Ôöé 							>
+  > 184 Ôöé 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        Ôöé 								^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    185 Ôöé 									<path
+    186 Ôöé 										d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:228:9 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    226 Ôöé 							{/* Name */}
+    227 Ôöé 							<div>
+  > 228 Ôöé 								<label
+        Ôöé 								^^^^^^
+  > 229 Ôöé 									style={{
+         ...
+  > 237 Ôöé 									Nombre completo *
+  > 238 Ôöé 								</label>
+        Ôöé 								^^^^^^^^
+    239 Ôöé 								<input
+    240 Ôöé 									type="text"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\zerodelay\src\pages\Contact.tsx:329:9 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    327 Ôöé 							{/* Subject */}
+    328 Ôöé 							<div>
+  > 329 Ôöé 								<label
+        Ôöé 								^^^^^^
+  > 330 Ôöé 									style={{
+         ...
+  > 338 Ôöé 									Tipo de mudanza *
+  > 339 Ôöé 								</label>
+        Ôöé 								^^^^^^^^
+    340 Ôöé 								<input
+    341 Ôöé 									type="text"
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+apps\zerodelay\src\pages\Services.tsx:18:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    16 Ôöé 			imagePosition: "left",
+    17 Ôöé 			icon: (
+  > 18 Ôöé 				<svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+       Ôöé 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    19 Ôöé 					<path
+    20 Ôöé 						d="M19 9.3V4H17V7.6L12 3L2 12H5V20H11V14H13V20H19V12H22L19 9.3ZM17 18H15V12H9V18H7V10.19L12 5.69L17 10.19V18Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Services.tsx:41:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    39 Ôöé 			imagePosition: "right",
+    40 Ôöé 			icon: (
+  > 41 Ôöé 				<svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+       Ôöé 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    42 Ôöé 					<path
+    43 Ôöé 						d="M20 6H12L10 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6ZM20 18H4V6H9.17L11.17 8H20V18ZM7.5 16.5H16.5V15H7.5V16.5ZM7.5 13.5H16.5V12H7.5V13.5Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Services.tsx:64:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    62 Ôöé 			imagePosition: "left",
+    63 Ôöé 			icon: (
+  > 64 Ôöé 				<svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+       Ôöé 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    65 Ôöé 					<path
+    66 Ôöé 						d="M20 2H4C3 2 2 2.9 2 4V7.01C2 7.73 2.43 8.35 3 8.7V20C3 21.1 4.1 22 5 22H19C19.9 22 21 21.1 21 20V8.7C21.57 8.35 22 7.73 22 7.01V4C22 2.9 21 2 20 2ZM19 20H5V9H19V20ZM20 7H4V4H20V7Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Services.tsx:87:5 lint/a11y/noSvgWithoutTitle ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Alternative text title element cannot be empty
+  
+    85 Ôöé 			imagePosition: "right",
+    86 Ôöé 			icon: (
+  > 87 Ôöé 				<svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+       Ôöé 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    88 Ôöé 					<path
+    89 Ôöé 						d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z"
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+apps\zerodelay\src\pages\Services.tsx:306:9 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    304 Ôöé 						}}
+    305 Ôöé 						onMouseOver={(e) =>
+  > 306 Ôöé 							(e.currentTarget.style.transform = "translateY(-2px)")
+        Ôöé 							 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    307 Ôöé 						}
+    308 Ôöé 						onMouseOut={(e) =>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Services.tsx:309:9 lint/suspicious/noAssignInExpressions ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù The assignment should not be in an expression.
+  
+    307 Ôöé 						}
+    308 Ôöé 						onMouseOut={(e) =>
+  > 309 Ôöé 							(e.currentTarget.style.transform = "translateY(0)")
+        Ôöé 							 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    310 Ôöé 						}
+    311 Ôöé 					>
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+apps\zerodelay\src\pages\Services.tsx:206:17 lint/suspicious/noArrayIndexKey ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Avoid using the index of an array as key property in an element.
+  
+    204 Ôöé 									{service.features.map((feature, idx) => (
+    205 Ôöé 										<li
+  > 206 Ôöé 											key={idx}
+        Ôöé 											     ^^^
+    207 Ôöé 											style={{
+    208 Ôöé 												display: "flex",
+  
+  i This is the source of the key value.
+  
+    202 Ôöé 									}}
+    203 Ôöé 								>
+  > 204 Ôöé 									{service.features.map((feature, idx) => (
+        Ôöé 									                                ^^^
+    205 Ôöé 										<li
+    206 Ôöé 											key={idx}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+apps\zerodelay\src\pages\Services.tsx:231:9 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    230 Ôöé 								{/* CTA Button */}
+  > 231 Ôöé 								<a
+        Ôöé 								^^
+  > 232 Ôöé 									href="/proyectos/zero-delay/contacto"
+         ...
+  > 253 Ôöé 									}}
+  > 254 Ôöé 								>
+        Ôöé 								^
+    255 Ôöé 									Solicitar Presupuesto
+    256 Ôöé 								</a>
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+apps\zerodelay\src\pages\Services.tsx:292:6 lint/a11y/useKeyWithMouseEvents ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù onMouseOver must be accompanied by onFocus for accessibility.
+  
+    290 Ôöé 						Cont├íctanos y cu├®ntanos tu caso.
+    291 Ôöé 					</p>
+  > 292 Ôöé 					<a
+        Ôöé 					^^
+  > 293 Ôöé 						href="/proyectos/zero-delay/contacto"
+         ...
+  > 310 Ôöé 						}
+  > 311 Ôöé 					>
+        Ôöé 					^
+    312 Ôöé 						Contactar Ahora
+    313 Ôöé 					</a>
+  
+  i Actions triggered using mouse events should have corresponding events to account for keyboard-only navigation.
+  
+
+src\components\ErrorBoundary.tsx:64:7 lint/a11y/useButtonType ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Provide an explicit type prop for the button element.
+  
+    62 Ôöé 						)}
+    63 Ôöé 
+  > 64 Ôöé 						<button
+       Ôöé 						^^^^^^^
+  > 65 Ôöé 							onClick={this.handleReset}
+  > 66 Ôöé 							className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+  > 67 Ôöé 						>
+       Ôöé 						^
+    68 Ôöé 							<RefreshCw className="w-4 h-4" />
+    69 Ôöé 							Volver al inicio
+  
+  i The default type of a button is submit, which causes the submission of a form when placed inside a `form` element. This is likely not the behaviour that you want inside a React application.
+  
+  i Allowed button types are: submit, button or reset
+  
+
+src\components\ui\MagneticButton.tsx:22:51 lint/correctness/noUnsafeOptionalChaining ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Unsafe usage of optional chaining.
+  
+    20 Ôöé 	const handleMouse = (e: React.MouseEvent) => {
+    21 Ôöé 		const { clientX, clientY } = e;
+  > 22 Ôöé 		const { height, width, left, top } = ref.current?.getBoundingClientRect();
+       Ôöé 		                                                ^^
+    23 Ôöé 		const middleX = clientX - (left + width / 2);
+    24 Ôöé 		const middleY = clientY - (top + height / 2);
+  
+  i If it short-circuits with 'undefined' the evaluation will throw TypeError here:
+  
+    20 Ôöé 	const handleMouse = (e: React.MouseEvent) => {
+    21 Ôöé 		const { clientX, clientY } = e;
+  > 22 Ôöé 		const { height, width, left, top } = ref.current?.getBoundingClientRect();
+       Ôöé 		      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    23 Ôöé 		const middleX = clientX - (left + width / 2);
+    24 Ôöé 		const middleY = clientY - (top + height / 2);
+  
+
+tests\setup.tsx:74:4 lint/a11y/noLabelWithoutControl ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù A form label must be associated with an input.
+  
+    72 Ôöé 		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+    73 Ôöé 		label: ({ children, ...props }: any) => (
+  > 74 Ôöé 			<label {...props}>{children}</label>
+       Ôöé 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    75 Ôöé 		),
+    76 Ôöé 		input: ({ children, ...props }: any) => <input {...props} />,
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 355.
+Checked 346 files in 194ms. No fixes applied.
+Found 330 errors.
+Found 125 warnings.
+lint ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü
+
+  ├ù Some errors were emitted while running checks.
+  
+
