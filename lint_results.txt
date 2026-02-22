@@ -1,0 +1,110 @@
+
+> zerocode-portfolio@0.1.0 lint
+> eslint .
+
+
+C:\Users\dgper\Proyectos\ZeroCode\src\components\sections\About.tsx
+  3:10  warning  'Trans' is defined but never used       @typescript-eslint/no-unused-vars
+  7:10  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\components\ui\Button.tsx
+  49:9  warning  'Component' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\dataconnect-generated\index.d.ts
+  153:17  error  'createMovie' is already defined      no-redeclare
+  165:17  error  'upsertUser' is already defined       no-redeclare
+  177:17  error  'addReview' is already defined        no-redeclare
+  189:17  error  'deleteReview' is already defined     no-redeclare
+  201:17  error  'listMovies' is already defined       no-redeclare
+  213:17  error  'listUsers' is already defined        no-redeclare
+  225:17  error  'listUserReviews' is already defined  no-redeclare
+  237:17  error  'getMovieById' is already defined     no-redeclare
+  249:17  error  'searchMovie' is already defined      no-redeclare
+
+C:\Users\dgper\Proyectos\ZeroCode\src\dataconnect-generated\react\index.d.ts
+   3:10  warning  'UseQueryResult' is defined but never used     @typescript-eslint/no-unused-vars
+   3:26  warning  'UseMutationResult' is defined but never used  @typescript-eslint/no-unused-vars
+   9:17  error    'useCreateMovie' is already defined            no-redeclare
+  12:17  error    'useUpsertUser' is already defined             no-redeclare
+  15:17  error    'useAddReview' is already defined              no-redeclare
+  18:17  error    'useDeleteReview' is already defined           no-redeclare
+  21:17  error    'useListMovies' is already defined             no-redeclare
+  24:17  error    'useListUsers' is already defined              no-redeclare
+  27:17  error    'useListUserReviews' is already defined        no-redeclare
+  30:17  error    'useGetMovieById' is already defined           no-redeclare
+  33:17  error    'useSearchMovie' is already defined            no-redeclare
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\components\DashboardFilter.tsx
+  9:2  warning  'premiumTypography' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\components\ExportMenu.tsx
+  9:2  warning  'premiumTypography' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\components\LayoutControls.tsx
+  9:2  warning  'premiumTypography' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\components\PeriodComparisonToggle.tsx
+  6:2  warning  'premiumLayout' is defined but never used      @typescript-eslint/no-unused-vars
+  7:2  warning  'premiumTypography' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\analytics\tests\dashboard.test.tsx
+  17:7  warning  'MockLanguageProvider' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\crypto\components\TransactionModal.tsx
+  4:10  warning  'useTranslation' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\ecommerce\pages\CatalogPage.tsx
+  1:10  warning  'ArrowDown' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\ecommerce\pages\ProductDetailPage.tsx
+   1:10  warning  'motion' is defined but never used          @typescript-eslint/no-unused-vars
+   5:2   warning  'Heart' is defined but never used           @typescript-eslint/no-unused-vars
+   8:2   warning  'Share2' is defined but never used          @typescript-eslint/no-unused-vars
+  11:2   warning  'ShoppingCart' is defined but never used    @typescript-eslint/no-unused-vars
+  18:8   warning  'OptimizedImage' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\ecommerce\services\productsApi.ts
+  29:7  warning  'fuse' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\mudanzas-coral\playwright.config.ts
+   6:19  error  'process' is not defined  no-undef
+   7:14  error  'process' is not defined  no-undef
+   8:14  error  'process' is not defined  no-undef
+  27:31  error  'process' is not defined  no-undef
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\mudanzas-coral\vite.config.ts
+  10:25  error  '__dirname' is not defined  no-undef
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\mudanzas-coral\vitest.config.ts
+  19:31  error  '__dirname' is not defined  no-undef
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\app\admin\dashboard\page.tsx
+  5:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\components\booking\steps\CategoryStep.tsx
+  48:27  warning  'idx' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\components\payment\PaymentSimulator.tsx
+  8:10  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\features\booking\actions.ts
+  8:46  warning  'date' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\lib\prisma.ts
+  15:5  error  'process' is not defined  no-undef
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\pages\Landing.tsx
+  275:30  warning  'index' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\features\projects\salon\src\pages\auth\ClientRegister.tsx
+  34:19  warning  'profileError' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\src\mocks\handlers.ts
+  263:9   warning  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  263:12  warning  'j' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\dgper\Proyectos\ZeroCode\vite.config.ts
+  4:10  warning  'VitePWA' is defined but never used  @typescript-eslint/no-unused-vars
+
+Ô£û 53 problems (25 errors, 28 warnings)
+

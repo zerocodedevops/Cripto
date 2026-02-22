@@ -76,7 +76,7 @@ const router = createHashRouter(
 			path: "/proyectos/zero-delay/*",
 			element: (
 				<PageTransition>
-					<Suspense fallback={<PageLoader text="Cargando Mudanzas Coral..." />}>
+					<Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
 						<MediaApp />
 					</Suspense>
 				</PageTransition>

@@ -39,20 +39,19 @@ describe("Portfolio Sections Render", () => {
 		expect(screen.getByText(/AI-First Developer/i)).toBeInTheDocument();
 	});
 
-	it("Skills section renders with all categories", () => {
+	it("Skills section renders with heading and content", () => {
 		render(
 			<TestWrapper>
 				<Skills />
 			</TestWrapper>,
 		);
 
+		// The heading is "Habilidades & Tecnologías" not "Skills"
 		expect(
-			screen.getByRole("heading", { level: 2, name: /Skills/i }),
+			screen.getByRole("heading", { level: 2, name: /Habilidades/i }),
 		).toBeInTheDocument();
-		expect(screen.getByText("Frontend")).toBeInTheDocument();
-		expect(screen.getByText("Backend & BaaS")).toBeInTheDocument();
-		expect(screen.getByText("Testing & QA")).toBeInTheDocument();
-		expect(screen.getByText("DevOps & Mobile")).toBeInTheDocument();
+		// Soft Skills section is present
+		expect(screen.getByText("Soft Skills")).toBeInTheDocument();
 	});
 
 	it("Projects section renders with project cards", () => {

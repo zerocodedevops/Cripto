@@ -1,0 +1,78 @@
+On branch main
+Your branch is ahead of 'crypto/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   package-lock.json
+	modified:   package.json
+	deleted:    src/assets/blog/blog-agents.jpg
+	deleted:    src/assets/blog/blog-ai-first.jpg
+	deleted:    src/assets/blog/blog-frontend.jpg
+	deleted:    src/assets/projects/ZeroDelay.jpg
+	deleted:    src/assets/projects/featured_project_dashboard.jpg
+	deleted:    src/assets/projects/project-ai-chat.jpg
+	deleted:    src/assets/projects/project-blog.jpg
+	deleted:    src/assets/projects/project-crypto-dashboard.jpg
+	deleted:    src/assets/projects/project-devops-shop.jpg
+	deleted:    src/assets/projects/project-portfolio-dashboard.jpg
+	deleted:    src/assets/projects/project-salon.jpg
+	deleted:    src/assets/projects/project-task-management.jpg
+	deleted:    src/assets/projects/project-weather.jpg
+	modified:   src/components/ErrorBoundary.tsx
+	deleted:    src/components/ProjectDetailModal.tsx
+	deleted:    src/components/ScrollToTop.tsx
+	modified:   src/components/common/SEO.tsx
+	deleted:    src/components/layout/Footer.tsx
+	deleted:    src/components/layout/Layout.tsx
+	deleted:    src/components/layout/Navbar.tsx
+	deleted:    src/components/layout/index.ts
+	deleted:    src/components/sections/About.tsx
+	deleted:    src/components/sections/Blog.tsx
+	deleted:    src/components/sections/Contact.tsx
+	deleted:    src/components/sections/FeaturedProject.tsx
+	deleted:    src/components/sections/Hero.tsx
+	deleted:    src/components/sections/Projects.tsx
+	deleted:    src/components/sections/Skills.tsx
+	deleted:    src/components/sections/index.ts
+	deleted:    src/components/seo/SEOHead.tsx
+	deleted:    src/components/ui/Badge.tsx
+	deleted:    src/components/ui/Button.tsx
+	deleted:    src/components/ui/Card.tsx
+	deleted:    src/components/ui/MagneticButton.tsx
+	modified:   src/components/ui/PageLoader.tsx
+	modified:   src/components/ui/PageTransition.tsx
+	deleted:    src/components/ui/SectionTitle.tsx
+	deleted:    src/components/ui/index.ts
+	deleted:    src/dataconnect-generated/.guides/config.json
+	deleted:    src/dataconnect-generated/.guides/setup.md
+	deleted:    src/dataconnect-generated/.guides/usage.md
+	deleted:    src/dataconnect-generated/README.md
+	deleted:    src/dataconnect-generated/esm/index.esm.js
+	deleted:    src/dataconnect-generated/esm/package.json
+	deleted:    src/dataconnect-generated/index.cjs.js
+	deleted:    src/dataconnect-generated/index.d.ts
+	deleted:    src/dataconnect-generated/package.json
+	deleted:    src/dataconnect-generated/react/README.md
+	deleted:    src/dataconnect-generated/react/esm/index.esm.js
+	deleted:    src/dataconnect-generated/react/esm/package.json
+	deleted:    src/dataconnect-generated/react/index.cjs.js
+	deleted:    src/dataconnect-generated/react/index.d.ts
+	deleted:    src/dataconnect-generated/react/package.json
+	modified:   src/features/projects/salon/src/components/auth/RequireAuth.tsx
+	deleted:    src/hooks/useDebounce.ts
+	deleted:    src/hooks/useScrollAnimation.ts
+	modified:   src/lib/analytics.ts
+	deleted:    src/lib/queryClient.ts
+	deleted:    src/lib/supabase.ts
+	deleted:    src/lib/utils.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.husky/
+	build_debug.txt
+	build_debug_2.txt
+	git_status.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
