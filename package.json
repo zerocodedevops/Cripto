@@ -22,7 +22,9 @@
 		"test:ui": "vitest --ui",
 		"test:e2e": "playwright test",
 		"format": "prettier --write .",
-		"analyze": "vite build"
+		"analyze": "vite build",
+		"sync": "pwsh scripts/sync.ps1",
+		"push-all": "pwsh scripts/push-all.ps1"
 	},
 	"dependencies": {
 		"@dataconnect/generated": "file:src/dataconnect-generated",

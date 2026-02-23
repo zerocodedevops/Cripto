@@ -1,0 +1,9 @@
+[submodule "apps/devops-shop"]
+	path = apps/devops-shop
+	url = https://github.com/zerocodedevops/DevOps.Shop.git
+	branch = main
+
+[submodule "apps/zerodelay"]
+	path = apps/zerodelay
+	url = https://github.com/zerocodedevops/ZeroDelay.git
+	branch = main
