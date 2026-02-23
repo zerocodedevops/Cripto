@@ -41,46 +41,89 @@ const IntersectionObserverMock = vi.fn(() => ({
 vi.stubGlobal("IntersectionObserver", IntersectionObserverMock);
 
 // Mock scrollTo
-globalThis.scrollTo = vi.fn(() => {});
+globalThis.scrollTo = vi.fn(() => { });
 Element.prototype.scrollIntoView = vi.fn();
 
 // Mock framer-motion
 vi.mock("framer-motion", () => ({
 	motion: {
-		div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-		h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-		h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
-		h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
-		p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
-		ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
-		li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
-		section: ({ children, ...props }: any) => (
+		div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+			<div {...props}>{children}</div>
+		),
+		h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h1 {...props}>{children}</h1>
+		),
+		h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h2 {...props}>{children}</h2>
+		),
+		h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h3 {...props}>{children}</h3>
+		),
+		p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+			<p {...props}>{children}</p>
+		),
+		ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+			<ul {...props}>{children}</ul>
+		),
+		li: ({ children, ...props }: React.LiHTMLAttributes<HTMLLIElement>) => (
+			<li {...props}>{children}</li>
+		),
+		section: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
 			<section {...props}>{children}</section>
 		),
-		header: ({ children, ...props }: any) => (
+		header: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
 			<header {...props}>{children}</header>
 		),
-		footer: ({ children, ...props }: any) => (
+		footer: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
 			<footer {...props}>{children}</footer>
 		),
-		button: ({ children, ...props }: any) => (
+		button: ({
+			children,
+			...props
+		}: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
 			<button {...props}>{children}</button>
 		),
-		a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
-		span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
-		img: ({ ...props }: any) => <img alt="" {...props} />,
-		form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
-		label: ({ children, ...props }: any) => (
+		a: ({
+			children,
+			...props
+		}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+			<a {...props}>{children}</a>
+		),
+		span: ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
+			<span {...props}>{children}</span>
+		),
+		img: ({ ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+			<img alt="" {...props} />
+		),
+		form: ({
+			children,
+			...props
+		}: React.FormHTMLAttributes<HTMLFormElement>) => (
+			<form {...props}>{children}</form>
+		),
+		label: ({
+			children,
+			...props
+		}: React.LabelHTMLAttributes<HTMLLabelElement>) => (
 			<label {...props}>{children}</label>
 		),
-		input: ({ children, ...props }: any) => <input {...props} />,
-		textarea: ({ children, ...props }: any) => (
+		input: ({ ...props }: React.InputHTMLAttributes<HTMLInputElement>) => (
+			<input {...props} />
+		),
+		textarea: ({
+			children,
+			...props
+		}: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
 			<textarea {...props}>{children}</textarea>
 		),
-		path: ({ children, ...props }: any) => <path {...props}>{children}</path>,
+		path: ({ children, ...props }: React.SVGAttributes<SVGPathElement>) => (
+			<path {...props}>{children}</path>
+		),
 	},
 	useAnimation: () => ({ start: vi.fn(), set: vi.fn() }),
 	useInView: () => true,
 	useScroll: () => ({ scrollY: { on: vi.fn() } }),
-	AnimatePresence: ({ children }: any) => <>{children}</>,
+	AnimatePresence: ({ children }: { children: React.ReactNode }) => (
+		<>{children}</>
+	),
 }));
