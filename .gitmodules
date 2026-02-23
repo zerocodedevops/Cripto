@@ -7,3 +7,8 @@
 	path = apps/zerodelay
 	url = https://github.com/zerocodedevops/ZeroDelay.git
 	branch = main
+
+[submodule "src/features/projects/mudanzas-coral"]
+	path = src/features/projects/mudanzas-coral
+	url = https://github.com/zerocodedevops/Portfolio.git
+	branch = main

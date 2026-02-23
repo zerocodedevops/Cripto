@@ -2,7 +2,7 @@
 # Usage: pwsh scripts/push-all.ps1 "your commit message"
 
 param(
-    [Parameter(Mandatory=$true, Position=0)]
+    [Parameter(Mandatory = $true, Position = 0)]
     [string]$Message
 )
 
@@ -25,7 +25,8 @@ function Push-Repo {
             Pop-Location
             return
         }
-    } else {
+    }
+    else {
         Write-Host "`n✔️  [$Name] No changes to commit" -ForegroundColor DarkGray
     }
 
@@ -35,7 +36,8 @@ function Push-Repo {
     if ($LASTEXITCODE -ne 0) {
         Write-Host "❌ [$Name] Push failed" -ForegroundColor Red
         $script:failed = $true
-    } else {
+    }
+    else {
         Write-Host "✅ [$Name] Done!" -ForegroundColor Green
     }
 
@@ -45,15 +47,17 @@ function Push-Repo {
 Write-Host "`n🔄 Pushing all repos with message: `"$Message`"" -ForegroundColor Cyan
 
 # 1. Push submodules first (so root tracks updated commits)
-Push-Repo "DevOps.Shop" "$rootDir\apps\devops-shop"
-Push-Repo "ZeroDelay"   "$rootDir\apps\zerodelay"
+Push-Repo "DevOps.Shop"     "$rootDir\apps\devops-shop"
+Push-Repo "ZeroDelay"       "$rootDir\apps\zerodelay"
+Push-Repo "Mudanzas Coral"  "$rootDir\src\features\projects\mudanzas-coral"
 
 # 2. Push root repo last (will include updated submodule refs)
-Push-Repo "Portfolio"   $rootDir
+Push-Repo "Portfolio"       $rootDir
 
 if ($failed) {
     Write-Host "`n⚠️  Some repos had errors. Check the output above." -ForegroundColor Red
     exit 1
-} else {
+}
+else {
     Write-Host "`n🎉 All repos pushed successfully!" -ForegroundColor Green
 }
