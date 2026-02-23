@@ -24,7 +24,8 @@
 		"format": "prettier --write .",
 		"analyze": "vite build",
 		"sync": "pwsh scripts/sync.ps1",
-		"push-all": "pwsh scripts/push-all.ps1"
+		"push-all": "pwsh scripts/push-all.ps1",
+		"export-session": "pwsh scripts/export-session.ps1"
 	},
 	"dependencies": {
 		"@dataconnect/generated": "file:src/dataconnect-generated",
