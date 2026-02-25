@@ -46,6 +46,8 @@ export function Navbar() {
 	const navLinks = [
 		{ label: "Servicios", href: "/paginas-web-pymes-autonomos" },
 		{ label: "Sobre Mí", href: "/disenador-web-freelance-madrid" },
+		{ label: "Proyectos", href: "#projects" },
+		{ label: "Blog", href: "#blog" },
 		{ label: "Precios", href: "/precios-paginas-web" },
 		{ label: "Contacto", href: "#contact" },
 	];
