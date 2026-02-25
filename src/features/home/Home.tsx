@@ -2,9 +2,11 @@ import { Seo } from "@/components/common/SEO";
 import { Layout } from "@/components/layout";
 import {
 	About,
+	Blog,
 	Contact,
 	FeaturedProject,
 	Hero,
+	Projects,
 	Skills,
 } from "@/components/sections";
 
@@ -21,6 +23,8 @@ export default function Home() {
 				<About />
 				<Skills />
 				<FeaturedProject />
+				<Projects />
+				<Blog />
 				<Contact />
 			</div>
 		</Layout>
