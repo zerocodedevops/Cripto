@@ -1,5 +1,7 @@
 "use client";
 
+import { sileo } from "sileo";
+
 import { BookingService } from "@salon/services/bookingService";
 import {
 	CheckCircle,
@@ -28,7 +30,10 @@ export default function BookingActions({ booking }: { readonly booking: any }) {
 		if (res.success) {
 			globalThis.location.reload();
 		} else {
-			alert(`Error al eliminar: ${res.error || "Desconocido"}`);
+			sileo.error({
+				title: "Error al eliminar",
+				description: `No se pudo eliminar la reserva: ${res.error || "Desconocido"}`,
+			});
 		}
 	};
 

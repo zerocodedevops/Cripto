@@ -225,6 +225,8 @@ const PACKS = {
 	},
 };
 
+import { sileo } from "sileo";
+
 const contactSchema = z.object({
 	name: z.string().min(2, "El nombre es demasiado corto"),
 	email: z.string().email("Email inválido"),
@@ -330,6 +332,10 @@ export function PricingConfigurator() {
 				},
 				import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 			);
+			sileo.success({
+				title: "Solicitud enviada",
+				description: "Analizaremos tu presupuesto y te contactaremos pronto.",
+			});
 			setStatus("success");
 			setTimeout(() => {
 				setIsModalOpen(false);
@@ -337,6 +343,11 @@ export function PricingConfigurator() {
 				reset();
 			}, 2000);
 		} catch {
+			sileo.error({
+				title: "Error al enviar",
+				description:
+					"Hubo un problema al procesar tu solicitud. Inténtalo de nuevo.",
+			});
 			setStatus("error");
 		}
 	};

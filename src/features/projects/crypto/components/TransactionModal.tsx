@@ -3,6 +3,7 @@ import { Calendar, DollarSign, Wallet, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCryptoPrice } from "../hooks/useCryptoPrice";
 import { cryptoTheme } from "../utils/cryptoTheme";
+import { sileo } from "sileo";
 
 interface TransactionModalProps {
 	isOpen: boolean;
@@ -47,6 +48,11 @@ export function TransactionModal({
 			amount: Number.parseFloat(amount),
 			pricePerCoin: Number.parseFloat(price),
 			date,
+		});
+
+		sileo.success({
+			title: "Transacción registrada",
+			description: `Se ha guardado tu operación de ${type === "buy" ? "compra" : "venta"} de ${coinId}.`,
 		});
 
 		// Reset form

@@ -1,4 +1,5 @@
 import { Edit2, Loader2, Plus, Trash2, User } from "lucide-react";
+import { sileo } from "sileo";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -8,10 +9,6 @@ export default function StylistsPage() {
 	const [editingId, setEditingId] = useState<string | null>(null);
 	const [editForm, setEditForm] = useState<any>({});
 	const [isCreating, setIsCreating] = useState(false);
-
-	useEffect(() => {
-		fetchStylists();
-	}, [fetchStylists]);
 
 	const fetchStylists = async () => {
 		try {
@@ -28,6 +25,10 @@ export default function StylistsPage() {
 			setLoading(false);
 		}
 	};
+
+	useEffect(() => {
+		fetchStylists();
+	}, []);
 
 	const handleEdit = (stylist: any) => {
 		setEditingId(stylist.id);
@@ -85,7 +86,7 @@ export default function StylistsPage() {
 			setIsCreating(false);
 		} catch (error) {
 			console.error("Error saving stylist:", error);
-			alert("Error al guardar estilista");
+			sileo.error({ title: "Error al guardar estilista" });
 		}
 	};
 

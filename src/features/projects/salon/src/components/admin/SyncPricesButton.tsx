@@ -3,6 +3,7 @@ import { SERVICE_CATALOG } from "@salon/data/services";
 import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { sileo } from "sileo";
 
 export default function SyncPricesButton({
 	onSyncComplete,
@@ -87,13 +88,17 @@ export default function SyncPricesButton({
 				console.log("New services:", inserted);
 			}
 
-			alert(
-				`✅ ${updatedCount} actualizados\n➕ ${insertedCount} nuevos insertados`,
-			);
+			sileo.success({
+				title: "Sincronización completa",
+				description: `Se han actualizado ${updatedCount} servicios y se han insertado ${insertedCount} nuevos.`,
+			});
 			onSyncComplete();
 		} catch (error) {
 			console.error("Error syncing prices:", error);
-			alert("Hubo un error sincronizando los precios.");
+			sileo.error({
+				title: "Error de sincronización",
+				description: "Hubo un error sincronizando los precios con el catálogo.",
+			});
 		} finally {
 			setLoading(false);
 		}

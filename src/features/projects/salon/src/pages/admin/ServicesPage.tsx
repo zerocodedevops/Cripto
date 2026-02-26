@@ -1,4 +1,5 @@
 import { Edit2, Loader2, Save, X } from "lucide-react";
+import { sileo } from "sileo";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import SyncPricesButton from "../../components/admin/SyncPricesButton";
@@ -9,10 +10,6 @@ export default function ServicesPage() {
 	const [editingId, setEditingId] = useState<string | null>(null);
 	const [editForm, setEditForm] = useState<any>({});
 
-	useEffect(() => {
-		fetchServices();
-	}, [fetchServices]);
-
 	const fetchServices = async () => {
 		try {
 			const { data, error } = await supabase
@@ -21,13 +18,6 @@ export default function ServicesPage() {
 				.order("category", { ascending: true });
 
 			if (error) throw error;
-			console.log("📊 Services fetched:", data);
-			console.log(
-				"💰 First service price:",
-				data?.[0]?.price,
-				typeof data?.[0]?.price,
-			);
-			console.log("📋 DB Titles:", data?.map((s) => s.title).slice(0, 10));
 			setServices(data || []);
 		} catch (error) {
 			console.error("Error fetching services:", error);
@@ -35,6 +25,10 @@ export default function ServicesPage() {
 			setLoading(false);
 		}
 	};
+
+	useEffect(() => {
+		fetchServices();
+	}, []);
 
 	const handleEdit = (service: any) => {
 		setEditingId(service.id);
@@ -63,9 +57,16 @@ export default function ServicesPage() {
 				prev.map((s) => (s.id === id ? { ...s, ...editForm } : s)),
 			);
 			setEditingId(null);
+			sileo.success({
+				title: "Servicio actualizado",
+				description: "Los cambios se han guardado correctamente.",
+			});
 		} catch (error) {
 			console.error("Error updating service:", error);
-			alert("Error al guardar cambios");
+			sileo.error({
+				title: "Error al guardar",
+				description: "No se pudieron guardar los cambios del servicio.",
+			});
 		}
 	};
 

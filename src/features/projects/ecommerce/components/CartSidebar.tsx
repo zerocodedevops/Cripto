@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { sileo } from "sileo";
 import { CreditCard, Minus, Plus, Trash2, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -125,11 +126,15 @@ export default function CartSidebar() {
 													</button>
 												</div>
 												<button
-													onClick={() =>
+													onClick={() => {
 														dispatch(
 															removeFromCart({ id: item.id, size: item.size }),
-														)
-													}
+														);
+														sileo.success({
+															title: "Eliminado del carrito",
+															description: item.title,
+														});
+													}}
 													className="text-red-400 hover:text-red-500 p-1"
 												>
 													<Trash2 className="w-4 h-4" />

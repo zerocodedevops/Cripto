@@ -9,6 +9,8 @@ interface StaffListProps {
 	staff: any[];
 }
 
+import { sileo } from "sileo";
+
 export default function StaffList({ staff: initialStaff }: StaffListProps) {
 	const [staffList, setStaffList] = useState(initialStaff);
 
@@ -28,7 +30,10 @@ export default function StaffList({ staff: initialStaff }: StaffListProps) {
 					s.id === id ? { ...s, active: currentStatus } : s,
 				),
 			);
-			alert("Error updating status");
+			sileo.error({
+				title: "Error de estado",
+				description: "No se pudo actualizar el estado del empleado.",
+			});
 		}
 	};
 
@@ -61,11 +66,10 @@ export default function StaffList({ staff: initialStaff }: StaffListProps) {
 						</div>
 						<button
 							onClick={() => handleToggle(member.id, member.active)}
-							className={`p-2 rounded-full border transition-colors ${
-								member.active
+							className={`p-2 rounded-full border transition-colors ${member.active
 									? "bg-green-500/10 border-green-500/20 text-green-500 hover:bg-green-500/20"
 									: "bg-red-500/10 border-red-500/20 text-red-500 hover:bg-red-500/20"
-							}`}
+								}`}
 						>
 							{member.active ? <Check size={16} /> : <X size={16} />}
 						</button>

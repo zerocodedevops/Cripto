@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { sileo } from "sileo";
 import { es } from "date-fns/locale";
 import {
 	Calendar as CalendarIcon,
@@ -27,21 +28,8 @@ export default function AdminDashboard() {
 	const [selectedBookingForAction, setSelectedBookingForAction] =
 		useState<any>(null);
 
-	useEffect(() => {
-		console.log("AdminDashboard Component Mounted - Fetching Data");
-		fetchDashboardData();
-	}, [fetchDashboardData]);
-
-	useEffect(() => {
-		if (selectedBookingForAction) {
-			console.log("Modal Open for Booking:", selectedBookingForAction);
-		}
-	}, [selectedBookingForAction]);
-
 	const fetchDashboardData = async () => {
 		console.log("Fetching dashboard data...");
-		// ... (keep fetchDashboardData implementation same) ...
-		// ... (keep fetchDashboardData implementation same) ...
 		try {
 			// 1. Fetch Bookings
 			const { data: bookingsData, error: bookingsError } = await supabase
@@ -116,10 +104,10 @@ export default function AdminDashboard() {
 						if (!durationStr) return 0;
 						let totalMinutes = 0;
 						// Match "1h 10 min" or "45 min" format
-						const hourMatch = durationStr.match(/(\d+)h/);
-						const minMatch = durationStr.match(/(\d+)\s*min/);
-						if (hourMatch) totalMinutes += parseInt(hourMatch[1], 10) * 60;
-						if (minMatch) totalMinutes += parseInt(minMatch[1], 10);
+						const hourMatch = /(\d+)h/.exec(durationStr);
+						const minMatch = /(\d+)\s*min/.exec(durationStr);
+						if (hourMatch) totalMinutes += Number.parseInt(hourMatch[1], 10) * 60;
+						if (minMatch) totalMinutes += Number.parseInt(minMatch[1], 10);
 						return totalMinutes;
 					};
 
@@ -194,6 +182,17 @@ export default function AdminDashboard() {
 		}
 	};
 
+	useEffect(() => {
+		console.log("AdminDashboard Component Mounted - Fetching Data");
+		fetchDashboardData();
+	}, []);
+
+	useEffect(() => {
+		if (selectedBookingForAction) {
+			console.log("Modal Open for Booking:", selectedBookingForAction);
+		}
+	}, [selectedBookingForAction]);
+
 	const handleStatusUpdate = async (
 		id: string,
 		newStatus: "confirmed" | "cancelled",
@@ -211,11 +210,18 @@ export default function AdminDashboard() {
 				prev.map((b) => (b.id === id ? { ...b, status: newStatus } : b)),
 			);
 
+			sileo.success({
+				title: "Cita actualizada",
+				description: `La cita ahora está ${newStatus === "confirmed" ? "confirmada" : "cancelada"}.`,
+			});
 			// Re-calculate stats deeply or just simple adjustment (Re-fetching is safer for simple app)
 			fetchDashboardData();
 		} catch (error) {
 			console.error("Error updating status:", error);
-			alert("Error al actualizar la cita");
+			sileo.error({
+				title: "Error al actualizar",
+				description: "Hubo un problema al cambiar el estado de la cita.",
+			});
 		}
 	};
 
@@ -262,10 +268,16 @@ export default function AdminDashboard() {
 								.delete()
 								.neq("id", "00000000-0000-0000-0000-000000000000"); // Hack to delete all
 							if (error) {
-								alert(`Error al borrar: ${error.message}`);
+								sileo.error({
+									title: "Error al borrar",
+									description: error.message,
+								});
 							} else {
-								alert("Historial borrado completo.");
-								window.location.reload();
+								sileo.success({
+									title: "Historial borrado",
+									description: "Se han eliminado todas las citas con éxito.",
+								});
+								globalThis.location.reload();
 							}
 						}
 					}}
@@ -540,7 +552,7 @@ export default function AdminDashboard() {
 
 							{/* Cancel Button - Case Insensitive Check */}
 							{selectedBookingForAction.status?.toLowerCase() !==
-							"cancelled" ? (
+								"cancelled" ? (
 								<button
 									onClick={() => {
 										console.log(

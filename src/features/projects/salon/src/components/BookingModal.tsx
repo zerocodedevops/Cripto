@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { sileo } from "sileo";
 import {
 	Calendar,
 	Check,
@@ -109,9 +110,11 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 				setStylistsList(mappedStylists);
 			} catch (error) {
 				console.error("Error loading data:", error);
-				alert(
-					"Hubo un error cargando los datos del salón. Por favor intenta más tarde.",
-				);
+				sileo.error({
+					title: "Error de carga",
+					description:
+						"Hubo un error cargando los datos del salón. Por favor intenta más tarde.",
+				});
 			} finally {
 				setIsLoading(false);
 			}
@@ -193,6 +196,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 			// Wait a bit to show the "Payment Success" UI in the simulator before closing
 			setTimeout(() => {
 				onClose();
+				sileo.success({
+					title: "¡Cita reservada!",
+					description: "Tu reserva ha sido registrada correctamente.",
+				});
 				// Optionally navigate to MyBookings if logged in
 				if (user) {
 					globalThis.location.href = "/proyectos/salon/client/bookings";
@@ -200,7 +207,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 			}, 1000);
 		} catch (error: any) {
 			console.error("Booking error:", error);
-			alert(`Error al reservar: ${error.message}`);
+			sileo.error({
+				title: "Error al reservar",
+				description: error.message,
+			});
 			setIsSaving(false); // Only stop saving on error to let user retry
 		}
 	};
@@ -418,11 +428,11 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 																			{selectedServices.includes(
 																				service.id,
 																			) && (
-																				<Check
-																					size={12}
-																					className="text-black stroke-[3]"
-																				/>
-																			)}
+																					<Check
+																						size={12}
+																						className="text-black stroke-[3]"
+																					/>
+																				)}
 																		</div>
 																	</div>
 																</button>
@@ -589,40 +599,40 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 				{/* Footer Navigation */}
 				{step <
 					4 /* Hide default footer in step 4 as PaymentSimulator has its own buttons */ && (
-					<div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
-						{step > 1 ? (
-							<button
-								onClick={handleBack}
-								disabled={isSaving}
-								className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
-							>
-								<ChevronLeft size={18} /> Atrás
-							</button>
-						) : (
-							<div /> /* Spacer */
-						)}
+						<div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
+							{step > 1 ? (
+								<button
+									onClick={handleBack}
+									disabled={isSaving}
+									className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
+								>
+									<ChevronLeft size={18} /> Atrás
+								</button>
+							) : (
+								<div /> /* Spacer */
+							)}
 
-						<div className="flex items-center gap-4">
-							<span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
-								{(() => {
-									if (step === 1)
-										return `${selectedServices.length} servicios (${calculateTotal()}€)`;
-									if (step === 2) return selectedStylist?.name || "Cualquiera";
-									return `${selectedDate ? selectedDate.toLocaleDateString() : ""} ${selectedTime || ""}`;
-								})()}
-							</span>
+							<div className="flex items-center gap-4">
+								<span className="text-xs text-neutral-500 uppercase tracking-widest hidden sm:block">
+									{(() => {
+										if (step === 1)
+											return `${selectedServices.length} servicios (${calculateTotal()}€)`;
+										if (step === 2) return selectedStylist?.name || "Cualquiera";
+										return `${selectedDate ? selectedDate.toLocaleDateString() : ""} ${selectedTime || ""}`;
+									})()}
+								</span>
 
-							<button
-								onClick={handleNext}
-								disabled={isNextDisabled() || isSaving}
-								className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-							>
-								{step === 3 ? "Ir a Pagan" : "Siguiente"}{" "}
-								<ChevronRight size={16} />
-							</button>
+								<button
+									onClick={handleNext}
+									disabled={isNextDisabled() || isSaving}
+									className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+								>
+									{step === 3 ? "Ir a Pagan" : "Siguiente"}{" "}
+									<ChevronRight size={16} />
+								</button>
+							</div>
 						</div>
-					</div>
-				)}
+					)}
 			</motion.div>
 		</motion.div>
 	);

@@ -6,6 +6,7 @@ import {
 	premiumLayout,
 	premiumTypography,
 } from "../utils/premiumTheme";
+import { sileo } from "sileo";
 
 interface LoginModalProps {
 	readonly isOpen: boolean;
@@ -19,6 +20,10 @@ export function LoginModal({ isOpen, onLogin }: LoginModalProps) {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (username.trim()) {
+			sileo.success({
+				title: "Sesión iniciada",
+				description: `Bienvenido de nuevo, ${username}.`,
+			});
 			onLogin(username);
 		}
 	};

@@ -4,12 +4,12 @@ import {
 	useElements,
 	useStripe,
 } from "@stripe/react-stripe-js";
+import { sileo } from "sileo";
 import { loadStripe } from "@stripe/stripe-js";
 import { Lock, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Toast from "../components/Toast";
 import { type CartState, clearCart } from "../store/cartSlice";
 import type { RootState } from "../store/store";
 
@@ -22,7 +22,6 @@ function CheckoutForm() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const [loading, setLoading] = useState(false);
-	const [showToast, setShowToast] = useState(false);
 
 	const { items } = useSelector((state: RootState) => state.cart as CartState);
 	const total = items.reduce(
@@ -41,6 +40,10 @@ function CheckoutForm() {
 			console.log("[Demo] Payment Successful");
 			setLoading(false);
 			dispatch(clearCart());
+			sileo.success({
+				title: "¡Pedido realizado!",
+				description: "Gracias por tu compra.",
+			});
 			navigate("/proyectos/ecommerce/checkout/success");
 		}, 2000);
 	};
@@ -143,12 +146,6 @@ function CheckoutForm() {
 				</form>
 			</div>
 
-			<Toast
-				message="¡Pago procesado con éxito! Gracias por tu compra."
-				type="success"
-				isVisible={showToast}
-				onClose={() => setShowToast(false)}
-			/>
 		</div>
 	);
 }

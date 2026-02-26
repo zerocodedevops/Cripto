@@ -1,5 +1,7 @@
 "use client";
 
+import { sileo } from "sileo";
+
 import { updateAvailability } from "@salon/features/admin/staffActions";
 import { Clock, Save, Trash } from "lucide-react";
 import { useState } from "react";
@@ -29,9 +31,15 @@ export default function AvailabilityEditor({
 		const res = await updateAvailability(staffId, schedule);
 		setIsSaving(false);
 		if (res.success) {
-			alert("Horario guardado correctamente");
+			sileo.success({
+				title: "Horario guardado",
+				description: "El horario se ha actualizado correctamente.",
+			});
 		} else {
-			alert("Error al guardar horario");
+			sileo.error({
+				title: "Error al guardar",
+				description: "Hubo un problema al guardar el nuevo horario.",
+			});
 		}
 	};
 
