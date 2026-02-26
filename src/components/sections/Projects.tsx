@@ -2,15 +2,15 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Folder } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import projectAiChat from "@/assets/projects/project-ai-chat.jpg";
-import projectBlog from "@/assets/projects/project-blog.jpg";
-import projectCrypto from "@/assets/projects/project-crypto-dashboard.jpg";
-import projectDevOps from "@/assets/projects/project-devops-shop.jpg";
-import projectPortfolio from "@/assets/projects/project-portfolio-dashboard.jpg";
-import projectSalon from "@/assets/projects/project-salon.jpg";
-import projectTask from "@/assets/projects/project-task-management.jpg";
-import projectWeather from "@/assets/projects/project-weather.jpg";
-import projectZeroDelay from "@/assets/projects/ZeroDelay.jpg";
+import projectAiChat from "@/assets/projects/project-ai-chat.webp";
+import projectBlog from "@/assets/projects/project-blog.webp";
+import projectCrypto from "@/assets/projects/project-crypto-dashboard.webp";
+import projectDevOps from "@/assets/projects/project-devops-shop.webp";
+import projectPortfolio from "@/assets/projects/project-portfolio-dashboard.webp";
+import projectSalon from "@/assets/projects/project-salon.webp";
+import projectTask from "@/assets/projects/project-task-management.webp";
+import projectWeather from "@/assets/projects/project-weather.webp";
+import projectZeroDelay from "@/assets/projects/ZeroDelay.webp";
 import { Card, TechBadge } from "@/components/ui";
 import { fadeInUp, staggerContainer } from "@/hooks/useScrollAnimation";
 import { trackEvent } from "@/lib/analytics";
@@ -34,7 +34,7 @@ const projects: Project[] = [
 		title: "DevOps Shop",
 		image: projectDevOps,
 		tags: ["React", "Redux", "Stripe", "Tailwind"],
-		demoUrl: "#/proyectos/ecommerce",
+		demoUrl: "/proyectos/ecommerce",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Prototype",
 	},
@@ -43,7 +43,7 @@ const projects: Project[] = [
 		title: "Portfolio Dashboard",
 		image: projectPortfolio,
 		tags: ["React", "TanStack Query", "Recharts", "MSW"],
-		demoUrl: "#/proyectos/analytics/dashboard",
+		demoUrl: "/proyectos/analytics/dashboard",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Prototype",
 	},
@@ -52,7 +52,7 @@ const projects: Project[] = [
 		title: "Crypto Analytics Dashboard",
 		image: projectCrypto,
 		tags: ["React", "TypeScript", "Recharts", "CoinGecko API"],
-		demoUrl: "#/proyectos/crypto",
+		demoUrl: "/proyectos/crypto",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Prototype",
 	},
@@ -61,7 +61,7 @@ const projects: Project[] = [
 		title: "Zero Delay Mudanzas",
 		image: projectZeroDelay,
 		tags: ["React", "Tailwind CSS", "Vite", "Responsive"],
-		demoUrl: "#/proyectos/zero-delay",
+		demoUrl: "/proyectos/zero-delay",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Development",
 	},
@@ -90,7 +90,7 @@ const projects: Project[] = [
 		title: "Zero Vanity",
 		image: projectSalon,
 		tags: ["React", "Tailwind", "Vite", "Framer Motion"],
-		demoUrl: "#/proyectos/salon",
+		demoUrl: "/proyectos/salon",
 		repoUrl: "https://github.com/zerocodedevops/ZeroVanity",
 		status: "Development",
 	},

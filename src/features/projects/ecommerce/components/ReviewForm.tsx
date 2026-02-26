@@ -1,6 +1,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { Camera, Star, X } from "lucide-react";
+import { sileo } from "sileo";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { db, storage } from "../../../../config/firebase"; // Corrected Path (features/projects/ecommerce/components -> ../../../../config)
@@ -43,7 +44,7 @@ export default function ReviewForm({
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!user) {
-			alert("Debes iniciar sesión para publicar una reseña");
+			sileo.warning({ title: "Inicia sesión para publicar una reseña" });
 			return;
 		}
 
@@ -80,7 +81,7 @@ export default function ReviewForm({
 			onReviewAdded();
 		} catch (error) {
 			console.error("Error submitting review:", error);
-			alert("Error al publicar la reseña. Inténtalo de nuevo.");
+			sileo.error({ title: "Error al publicar la reseña", description: "Inténtalo de nuevo" });
 		} finally {
 			setIsSubmitting(false);
 		}

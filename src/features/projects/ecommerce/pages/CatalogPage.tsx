@@ -1,4 +1,5 @@
 import { Filter, Mic, Search } from "lucide-react";
+import { sileo } from "sileo";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDebounce } from "../../../../hooks/useDebounce";
@@ -60,7 +61,7 @@ export default function CatalogPage() {
 			recognition.onerror = () => setIsListening(false);
 			recognition.onend = () => setIsListening(false);
 		} else {
-			alert("Tu navegador no soporta búsqueda por voz");
+			sileo.warning({ title: "Tu navegador no soporta búsqueda por voz" });
 		}
 	};
 

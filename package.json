@@ -25,7 +25,8 @@
 		"analyze": "vite build",
 		"sync": "pwsh scripts/sync.ps1",
 		"push-all": "pwsh scripts/push-all.ps1",
-		"export-session": "pwsh scripts/export-session.ps1"
+		"export-session": "pwsh scripts/export-session.ps1",
+		"import-session": "pwsh scripts/import-session.ps1"
 	},
 	"dependencies": {
 		"@dataconnect/generated": "file:src/dataconnect-generated",
@@ -70,6 +71,7 @@
 		"recharts": "^3.6.0",
 		"recharts-to-png": "^3.0.1",
 		"redux-persist": "^6.0.0",
+		"sileo": "^0.1.5",
 		"tailwind-merge": "^3.4.0",
 		"vite-plugin-pwa": "^1.2.0",
 		"zod": "^3.23.8",

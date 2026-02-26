@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { sileo } from "sileo";
 import { ArrowRight, Lock, ShieldCheck, User, X } from "lucide-react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -33,14 +34,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 			setIsLoading(false);
 			onClose();
 
-			// Show prototype alert
-			// In a real app we'd use a toast library, but simple alert fits the "Prototype" instruction
-			// Or better, we can rely on the Navbar to show the "Logged in" state visually
-			if (isRegister) {
-				alert(
-					`✅ Registro Simulado Exitoso\n\nBienvenido al prototipo de DevOps Shop, ${username}. Esta es una simulación, no se han guardado datos reales.`,
-				);
-			}
+			sileo.success({
+				title: isRegister ? "Registro exitoso" : "Sesión iniciada",
+				description: `Bienvenido, ${username}`,
+			});
 		}, 1500);
 	};
 

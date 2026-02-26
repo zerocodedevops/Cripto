@@ -125,7 +125,7 @@ export function PremiumConversionPieChart({
 			</div>
 
 			<div className="w-full">
-				<ResponsiveContainer width="100%" height={320}>
+				<ResponsiveContainer width="100%" height={320} minWidth={0}>
 					<PieChart>
 						<Pie
 							data={data}
@@ -152,7 +152,7 @@ export function PremiumConversionPieChart({
 									key={`cell-premium-${entry.device}`}
 									fill={
 										PREMIUM_VIBRANT_COLORS[
-											data.indexOf(entry) % PREMIUM_VIBRANT_COLORS.length
+										data.indexOf(entry) % PREMIUM_VIBRANT_COLORS.length
 										]
 									}
 								/>

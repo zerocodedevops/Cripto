@@ -28,7 +28,7 @@ export function ConversionPieChart({
 				Ingresos por Dispositivo
 			</h3>
 			<div className="h-[300px] w-full">
-				<ResponsiveContainer width="100%" height="100%">
+				<ResponsiveContainer width="100%" height="100%" minWidth={0}>
 					<PieChart>
 						<Pie
 							data={data}

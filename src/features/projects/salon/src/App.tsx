@@ -4,6 +4,8 @@ import {
 	BrowserRouter as Router,
 	Routes,
 } from "react-router-dom";
+import { Toaster } from "sileo";
+import "sileo/styles.css";
 // Auth Components
 import RequireAuth from "./components/auth/RequireAuth";
 // Layouts
@@ -87,6 +89,7 @@ function App() {
 				{/* Fallback */}
 				<Route path="*" element={<Navigate to="/proyectos/salon" replace />} />
 			</Routes>
+			<Toaster position="bottom-right" theme="dark" />
 		</Router>
 	);
 }

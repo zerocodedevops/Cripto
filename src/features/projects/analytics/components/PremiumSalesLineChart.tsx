@@ -142,7 +142,7 @@ export function PremiumSalesLineChart({
 			</div>
 
 			<div className="w-full">
-				<ResponsiveContainer width="100%" height={300}>
+				<ResponsiveContainer width="100%" height={300} minWidth={0}>
 					<AreaChart
 						data={data}
 						onClick={(e: any) => {

@@ -47,7 +47,7 @@ const featuredProject = {
 	repoUrl: "https://github.com/zerocodedevops",
 };
 
-import featuredProjectImage from "@/assets/projects/featured_project_dashboard.jpg";
+import featuredProjectImage from "@/assets/projects/featured_project_dashboard.webp";
 
 export function FeaturedProject() {
 	const { t } = useTranslation();

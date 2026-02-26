@@ -8,6 +8,7 @@ import {
 	Star,
 	Truck,
 } from "lucide-react";
+import { sileo } from "sileo";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -48,6 +49,7 @@ export default function ProductDetailPage() {
 		);
 
 		// Optional: Show success feedback or navigate
+		sileo.success({ title: "Añadido al carrito", description: product.title });
 		setSelectedSize(null);
 	};
 
@@ -137,37 +139,36 @@ export default function ProductDetailPage() {
 						product.category.toLowerCase().includes("ropa") ||
 						product.category.toLowerCase().includes("shirt") ||
 						product.category.toLowerCase().includes("jacket")) && (
-						<div className="mb-8">
-							<h3 className="text-sm font-medium text-slate-900 dark:text-white mb-4">
-								Selecciona Talla
-							</h3>
-							<div className="flex gap-3">
-								{["XS", "S", "M", "L", "XL"].map((size) => (
-									<button
-										key={size}
-										onClick={() => {
-											setSelectedSize(size);
-											setShowSizeError(false);
-										}}
-										className={`w-12 h-12 rounded-xl flex items-center justify-center font-medium transition-all
-                      ${
-												selectedSize === size
+							<div className="mb-8">
+								<h3 className="text-sm font-medium text-slate-900 dark:text-white mb-4">
+									Selecciona Talla
+								</h3>
+								<div className="flex gap-3">
+									{["XS", "S", "M", "L", "XL"].map((size) => (
+										<button
+											key={size}
+											onClick={() => {
+												setSelectedSize(size);
+												setShowSizeError(false);
+											}}
+											className={`w-12 h-12 rounded-xl flex items-center justify-center font-medium transition-all
+                      ${selectedSize === size
 													? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 scale-110"
 													: "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-indigo-500 hover:text-indigo-500"
-											}
+												}
                     `}
-									>
-										{size}
-									</button>
-								))}
+										>
+											{size}
+										</button>
+									))}
+								</div>
+								{showSizeError && (
+									<p className="text-sm text-red-500 mt-2 font-medium animate-fade-in">
+										⚠️ Por favor selecciona una talla
+									</p>
+								)}
 							</div>
-							{showSizeError && (
-								<p className="text-sm text-red-500 mt-2 font-medium animate-fade-in">
-									⚠️ Por favor selecciona una talla
-								</p>
-							)}
-						</div>
-					)}
+						)}
 
 					<p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 border-t border-b border-slate-100 dark:border-slate-800 py-6">
 						{product.description}

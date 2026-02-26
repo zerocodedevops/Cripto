@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, ShoppingBag, Star } from "lucide-react";
+import { sileo } from "sileo";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -45,6 +46,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 				size: selectedSize || undefined,
 			}),
 		);
+
+		sileo.success({ title: "Añadido al carrito", description: product.title });
 
 		// Reset selection after adding
 		if (isClothing) setSelectedSize(null);
@@ -106,11 +109,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 										setShowSizeError(false);
 									}}
 									className={`w-8 h-8 rounded-full text-xs font-medium transition-all
-                     ${
-												selectedSize === size
-													? "bg-indigo-600 text-white shadow-md scale-105"
-													: "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
-											}
+                     ${selectedSize === size
+											? "bg-indigo-600 text-white shadow-md scale-105"
+											: "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+										}
                      ${showSizeError ? "ring-2 ring-red-500 animate-pulse" : ""}
                    `}
 								>

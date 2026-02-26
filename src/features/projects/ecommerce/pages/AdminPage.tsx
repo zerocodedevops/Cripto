@@ -1,4 +1,5 @@
 import { Edit, Package, Plus, Search, Trash2 } from "lucide-react";
+import { sileo } from "sileo";
 import { useState } from "react";
 import { useGetProductsQuery } from "../services/productsApi";
 
@@ -20,7 +21,7 @@ export default function AdminPage() {
 				"¿Estás seguro de que quieres eliminar este producto? (Simulación)",
 			)
 		) {
-			alert(`Producto ${id} eliminado (Simulación)`);
+			sileo.success({ title: "Producto eliminado", description: `ID: ${id} (Simulación)` });
 		}
 	};
 

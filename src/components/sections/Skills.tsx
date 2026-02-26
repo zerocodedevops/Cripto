@@ -277,7 +277,7 @@ export function Skills() {
 					>
 						<div className="absolute inset-0 bg-gradient-radial from-primary-500/5 to-transparent opacity-50" />
 						<div className="w-full h-[350px]">
-							<ResponsiveContainer width="100%" height="100%">
+							<ResponsiveContainer width="100%" height="100%" minWidth={0}>
 								<RadarChart
 									cx="50%"
 									cy="50%"

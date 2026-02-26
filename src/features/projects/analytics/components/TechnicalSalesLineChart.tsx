@@ -141,7 +141,7 @@ export function TechnicalSalesLineChart({
 
 				{/* Chart */}
 				<div className="h-[300px] w-full">
-					<ResponsiveContainer width="100%" height="100%">
+					<ResponsiveContainer width="100%" height="100%" minWidth={0}>
 						<AreaChart
 							data={data}
 							onClick={(e: any) => {
