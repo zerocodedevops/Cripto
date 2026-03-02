@@ -1,0 +1,94 @@
+
+> build
+> react-router build
+
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 141 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mbuild/client/[22m[32m.vite/manifest.json                            [39m[1m[2m  4.59 kB[22m[1m[22m[2m Ôöé gzip:  0.69 kB[22m
+[2mbuild/client/[22m[35massets/root-WTmwJRNj.css                       [39m[1m[2m 29.85 kB[22m[1m[22m[2m Ôöé gzip:  5.91 kB[22m
+[2mbuild/client/[22m[36massets/root-DarEvyuF.js                        [39m[1m[2m  0.48 kB[22m[1m[22m[2m Ôöé gzip:  0.31 kB[22m
+[2mbuild/client/[22m[36massets/reformas-banos-madrid-4KZCpmQu.js       [39m[1m[2m  0.53 kB[22m[1m[22m[2m Ôöé gzip:  0.38 kB[22m
+[2mbuild/client/[22m[36massets/reformas-cocinas-madrid-DGiufmTN.js     [39m[1m[2m  0.53 kB[22m[1m[22m[2m Ôöé gzip:  0.39 kB[22m
+[2mbuild/client/[22m[36massets/reformas-integrales-madrid-m1wUo3Q_.js  [39m[1m[2m  0.54 kB[22m[1m[22m[2m Ôöé gzip:  0.39 kB[22m
+[2mbuild/client/[22m[36massets/servicios-dGbgxgGu.js                   [39m[1m[2m  1.63 kB[22m[1m[22m[2m Ôöé gzip:  0.86 kB[22m
+[2mbuild/client/[22m[36massets/contacto-BuWzMJMj.js                    [39m[1m[2m  2.75 kB[22m[1m[22m[2m Ôöé gzip:  0.97 kB[22m
+[2mbuild/client/[22m[36massets/sobre-nosotros-DjJTF0qa.js              [39m[1m[2m  3.42 kB[22m[1m[22m[2m Ôöé gzip:  1.30 kB[22m
+[2mbuild/client/[22m[36massets/proyectos-CCzlhG-e.js                   [39m[1m[2m  3.49 kB[22m[1m[22m[2m Ôöé gzip:  1.19 kB[22m
+[2mbuild/client/[22m[36massets/reformas-madrid._barrio-BQl2BjQQ.js     [39m[1m[2m  3.95 kB[22m[1m[22m[2m Ôöé gzip:  1.52 kB[22m
+[2mbuild/client/[22m[36massets/ServiceTemplate--Mgq7lKP.js             [39m[1m[2m  5.08 kB[22m[1m[22m[2m Ôöé gzip:  1.98 kB[22m
+[2mbuild/client/[22m[36massets/_index-6pQ3Bu3K.js                      [39m[1m[2m  7.65 kB[22m[1m[22m[2m Ôöé gzip:  2.62 kB[22m
+[2mbuild/client/[22m[36massets/RootLayout-BNuDPoyv.js                  [39m[1m[2m  9.10 kB[22m[1m[22m[2m Ôöé gzip:  3.09 kB[22m
+[2mbuild/client/[22m[36massets/ContactForm-BST89F1d.js                 [39m[1m[2m 85.13 kB[22m[1m[22m[2m Ôöé gzip: 23.40 kB[22m
+[2mbuild/client/[22m[36massets/chunk-LFPYN7LY-DuTMIZyA.js              [39m[1m[2m126.73 kB[22m[1m[22m[2m Ôöé gzip: 42.59 kB[22m
+[2mbuild/client/[22m[36massets/entry.client-CUVbREe7.js                [39m[1m[2m191.51 kB[22m[1m[22m[2m Ôöé gzip: 60.25 kB[22m
+[32mÔ£ô built in 1.84s[39m
+[36mvite v6.4.1 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 32 modules transformed.
+rendering chunks...
+[2mbuild/server/[22m[32m.vite/manifest.json               [39m[1m[2m 0.23 kB[22m[1m[22m
+[2mbuild/server/[22m[35massets/server-build-WTmwJRNj.css  [39m[1m[2m29.85 kB[22m[1m[22m
+[2mbuild/server/[22m[36mindex.js                          [39m[1m[2m72.89 kB[22m[1m[22m
+
+[32mÔ£ô[39m 1 asset cleaned from React Router server build.
+[2mbuild\server\assets\server-build-WTmwJRNj.css[22m
+
+TypeError: Cannot read properties of null (reading 'useRef')
+    at Object.exports.useRef (C:\Users\dgper\Proyectos\ZeroCode\node_modules\react\cjs\react.production.min.js:26:177)
+    at useForm (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-hook-form/src/useForm.ts:51:30)
+    at ContactForm (file:///C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/build/server/index.js:396:7)
+    at renderWithHooks (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:4647:18)
+    at renderElement (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:4785:14)
+    at retryNode (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:5503:16)
+    at renderNodeDestructive (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:5297:7)
+    at renderNode (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:5864:14)
+    at renderElement (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:4849:14)
+    at retryNode (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\react-dom\cjs\react-dom-server.node.production.js:5503:16)
+[Error: Unexpected Server Error]
+Ô£ù Build failed in 380ms
+[react-router] Prerender (html): Received a 500 status code from `entry.server.tsx` while prerendering the `/` path.
+<!DOCTYPE html><html lang="es"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="modulepreload" href="/reformas/assets/manifest-396b41f2.js"/><link rel="modulepreload" href="/reformas/assets/entry.client-CUVbREe7.js"/><link rel="modulepreload" href="/reformas/assets/chunk-LFPYN7LY-DuTMIZyA.js"/><link rel="modulepreload" href="/reformas/assets/root-DarEvyuF.js"/><link rel="modulepreload" href="/reformas/assets/_index-6pQ3Bu3K.js"/><link rel="modulepreload" href="/reformas/assets/RootLayout-BNuDPoyv.js"/><link rel="modulepreload" href="/reformas/assets/ContactForm-BST89F1d.js"/><link rel="modulepreload" href="/reformas/assets/servicios-dGbgxgGu.js"/><link rel="stylesheet" href="/reformas/assets/root-WTmwJRNj.css"/></head><body class="antialiased"><h1 style="font-size:24px">Application Error</h1><pre style="padding:2rem;background:hsla(10, 50%, 50%, 0.1);color:red;overflow:auto"></pre><script>
+        console.log(
+          "­ƒÆ┐ Hey developer ­ƒæï. You can provide a way better UX than this when your app throws errors. Check out https://reactrouter.com/how-to/error-boundary for more information."
+        );
+      </script><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_optimizeDeps":false,"unstable_subResourceIntegrity":false,"unstable_trailingSlashAwareDataRequests":false,"unstable_previewServerPrerendering":false,"v8_middleware":false,"v8_splitRouteModules":false,"v8_viteEnvironmentApi":false},"routeDiscovery":{"mode":"initial"},"ssr":false,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">import "/reformas/assets/manifest-396b41f2.js";
+import * as route0 from "/reformas/assets/root-DarEvyuF.js";
+import * as route1 from "/reformas/assets/_index-6pQ3Bu3K.js";
+  
+  window.__reactRouterRouteModules = {"root":route0,"routes/_index":route1};
+
+import("/reformas/assets/entry.client-CUVbREe7.js");</script><!--$?--><template id="B:0"></template><!--/$--><script id="_R_">requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_3\":-5,\"_4\":5},\"loaderData\",{},\"actionData\",\"errors\",{\"_6\":7},\"root\",{\"_8\":9,\"_10\":-7,\"_11\":12},\"message\",\"Unexpected Server Error\",\"stack\",\"__type\",\"Error\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>
+    at prerenderRoute (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:4956:11)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at prerenderSinglePath (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:4845:7)
+    at file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/p-map/index.js:121:20 {
+  code: 'PLUGIN_ERROR',
+  plugin: 'react-router',
+  hook: 'writeBundle'
+}
+npm error Lifecycle script `build` failed with error:
+npm error code 1
+npm error path C:\Users\dgper\Proyectos\ZeroCode\apps\reformas
+npm error workspace zero-chaos
+npm error location C:\Users\dgper\Proyectos\ZeroCode\apps\reformas
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c react-router build

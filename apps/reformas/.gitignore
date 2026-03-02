@@ -1,0 +1,8 @@
+node_modules
+dist
+.react-router
+build
+.env
+.env.*
+!.env.example
+*.local

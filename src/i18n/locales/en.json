@@ -164,6 +164,9 @@
 			},
 			"9": {
 				"description": "Modern website for a moving company aimed at capturing leads. Features a quote calculator, service showcase, and a clean, responsive design optimized for conversions."
+			},
+			"10": {
+				"description": "Lead generation machine for the home renovation sector in Madrid. Premium architecture with static site generation (SSG) and extreme local SEO optimization."
 			}
 		}
 	},

@@ -1,0 +1,29 @@
+[react-router] Named export 'Helmet' not found. The requested module 'react-helmet-async' is a CommonJS module, which may not support all module.exports as named exports.
+CommonJS modules can always be imported via the default export, for example using:
+
+import pkg from 'react-helmet-async';
+const { Helmet } = pkg;
+
+file:///C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/build/server/index.js:8
+import { Helmet } from "react-helmet-async";
+         ^^^^^^
+SyntaxError: Named export 'Helmet' not found. The requested module 'react-helmet-async' is a CommonJS module, which may not support all module.exports as named exports.
+CommonJS modules can always be imported via the default export, for example using:
+
+import pkg from 'react-helmet-async';
+const { Helmet } = pkg;
+
+    at ModuleJob.#asyncInstantiate (node:internal/modules/esm/module_job:319:21)
+    at ModuleJob.run (node:internal/modules/esm/module_job:422:5)
+    at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at getPrerenderBuildAndHandler (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:4730:15)
+    at handlePrerender (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:4783:28)
+    at Object.handler (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:3930:13)
+    at async Promise.all (index 0)
+    at PluginDriver.hookParallel (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:22432:9)
+    at file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:23516:13
+    at catchUnfinishedHookActions (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:22876:16) {
+  code: 'PLUGIN_ERROR',
+  plugin: 'react-router',
+  hook: 'writeBundle'
+}

@@ -1,11 +1,19 @@
 {
 	"hosting": {
 		"public": "dist",
-		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"ignore": [
+			"firebase.json",
+			"**/.*",
+			"**/node_modules/**"
+		],
 		"rewrites": [
 			{
 				"source": "/zerodelay/**",
 				"destination": "/zerodelay/index.html"
+			},
+			{
+				"source": "/reformas/**",
+				"destination": "/reformas/index.html"
 			},
 			{
 				"source": "/devops-shop/**",

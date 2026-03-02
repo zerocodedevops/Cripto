@@ -1,0 +1,140 @@
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 150 modules transformed.
+Ô£ù Build failed in 610ms
+src/core/seo/MetaTags.tsx (1:7): "default" is not exported by "../../node_modules/react-helmet-async/lib/index.esm.js", imported by "src/core/seo/MetaTags.tsx".
+file: C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/MetaTags.tsx:1:7
+
+1: import pkg from "react-helmet-async";
+          ^
+2: const { Helmet } = pkg;
+
+    at getRollupError (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at Module.error (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:17022:16)
+    at Module.traceVariable (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:17478:29)
+    at ModuleScope.findVariable (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:15141:39)
+    at Identifier.bind (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:5462:40)
+    at VariableDeclarator.bind (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at VariableDeclaration.bind (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at Program.bind (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at Module.bindReferences (file:///C:/Users/dgper/Proyectos/ZeroCode/node_modules/rollup/dist/es/shared/node-entry.js:17001:18) {
+  binding: 'default',
+  code: 'MISSING_EXPORT',
+  exporter: 'C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-helmet-async/lib/index.esm.js',
+  id: 'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/MetaTags.tsx',
+  url: 'https://rollupjs.org/troubleshooting/#error-name-is-not-exported-by-module',
+  pos: 54,
+  loc: {
+    column: 7,
+    file: 'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/MetaTags.tsx',
+    line: 1
+  },
+  frame: '1: import pkg from "react-helmet-async";\r\n' +
+    '          ^\n' +
+    '2: const { Helmet } = pkg;\r',
+  watchFiles: [
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/root.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/reformas-madrid.$barrio.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/reformas-cocinas-madrid.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/_index.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/proyectos.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/contacto.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/sobre-nosotros.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/reformas-banos-madrid.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/reformas-integrales-madrid.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-dom/client.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react/jsx-runtime.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-router/dist/development/dom-export.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react/index.js',
+    'C:\\Users\\dgper\\Proyectos\\ZeroCode\\apps\\reformas\\package.json',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react/cjs/react.production.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react/cjs/react-jsx-runtime.production.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-dom/cjs/react-dom-client.production.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-router/dist/development/chunk-JPUPSTYD.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-dom/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-router/dist/development/chunk-LFPYN7LY.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/scheduler/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/ServiceTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/clients/madrid-zerochaos/servicios.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/ContactTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/ProjectsTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/HomeTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/app.css',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/AboutTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/clients/madrid-zerochaos/barrios.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/templates/BarrioTemplate.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/tailwindcss/index.css',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/firebase.json',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/WhatsAppButton.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/SchemaFAQ.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/build_debug.txt',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/postcss.config.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/layout/Header.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/layout/RootLayout.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/PricingTable.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/types.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/build_log_2.txt',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/package.json',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/CTAButton.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/layout/Footer.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/tsconfig.json',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/index.html',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/react-router.config.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/SchemaLocalBusiness.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/clients/madrid-zerochaos/config.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/build_log.txt',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/FAQSection.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/ContactForm.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/MetaTags.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/vite.config.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/components/ProcessSteps.tsx',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/clients/madrid-zerochaos/precios.ts',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/public/robots.txt',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-dom/cjs/react-dom.production.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/scheduler/cjs/scheduler.production.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/cookie/dist/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/set-cookie-parser/lib/set-cookie.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/apps/reformas/node_modules/react-router/dist/development/index.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-helmet-async/lib/index.esm.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/@hookform/resolvers/zod/dist/zod.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-hook-form/dist/index.esm.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/@hookform/resolvers/dist/resolvers.mjs',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/external.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/invariant/browser.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/react-fast-compare/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/shallowequal/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/parse.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/versions.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/checks.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/core.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/errors.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/util.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/regexes.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/index.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/schemas.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/doc.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/registries.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/function.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/errors.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/helpers/parseUtil.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/to-json-schema.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/api.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/helpers/typeAliases.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/ZodError.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/helpers/util.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/core/json-schema.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v3/types.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/az.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/be.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/ca.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/ar.js',
+    'C:/Users/dgper/Proyectos/ZeroCode/node_modules/zod/v4/locales/cs.js',
+    ... 36 more items
+  ],
+  Symbol(augmented): true
+}

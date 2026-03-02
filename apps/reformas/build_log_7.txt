@@ -1,0 +1,60 @@
+
+> build
+> react-router build
+
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 141 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mbuild/client/[22m[32m.vite/manifest.json                            [39m[1m[2m  4.59 kB[22m[1m[22m[2m Ôöé gzip:  0.69 kB[22m
+[2mbuild/client/[22m[35massets/root-WTmwJRNj.css                       [39m[1m[2m 29.85 kB[22m[1m[22m[2m Ôöé gzip:  5.91 kB[22m
+[2mbuild/client/[22m[36massets/root-DarEvyuF.js                        [39m[1m[2m  0.48 kB[22m[1m[22m[2m Ôöé gzip:  0.31 kB[22m
+[2mbuild/client/[22m[36massets/reformas-banos-madrid-4KZCpmQu.js       [39m[1m[2m  0.53 kB[22m[1m[22m[2m Ôöé gzip:  0.38 kB[22m
+[2mbuild/client/[22m[36massets/reformas-cocinas-madrid-DGiufmTN.js     [39m[1m[2m  0.53 kB[22m[1m[22m[2m Ôöé gzip:  0.39 kB[22m
+[2mbuild/client/[22m[36massets/reformas-integrales-madrid-m1wUo3Q_.js  [39m[1m[2m  0.54 kB[22m[1m[22m[2m Ôöé gzip:  0.39 kB[22m
+[2mbuild/client/[22m[36massets/servicios-dGbgxgGu.js                   [39m[1m[2m  1.63 kB[22m[1m[22m[2m Ôöé gzip:  0.86 kB[22m
+[2mbuild/client/[22m[36massets/contacto-BuWzMJMj.js                    [39m[1m[2m  2.75 kB[22m[1m[22m[2m Ôöé gzip:  0.97 kB[22m
+[2mbuild/client/[22m[36massets/sobre-nosotros-DjJTF0qa.js              [39m[1m[2m  3.42 kB[22m[1m[22m[2m Ôöé gzip:  1.30 kB[22m
+[2mbuild/client/[22m[36massets/proyectos-CCzlhG-e.js                   [39m[1m[2m  3.49 kB[22m[1m[22m[2m Ôöé gzip:  1.19 kB[22m
+[2mbuild/client/[22m[36massets/reformas-madrid._barrio-BQl2BjQQ.js     [39m[1m[2m  3.95 kB[22m[1m[22m[2m Ôöé gzip:  1.52 kB[22m
+[2mbuild/client/[22m[36massets/ServiceTemplate--Mgq7lKP.js             [39m[1m[2m  5.08 kB[22m[1m[22m[2m Ôöé gzip:  1.98 kB[22m
+[2mbuild/client/[22m[36massets/_index-6pQ3Bu3K.js                      [39m[1m[2m  7.65 kB[22m[1m[22m[2m Ôöé gzip:  2.62 kB[22m
+[2mbuild/client/[22m[36massets/RootLayout-BNuDPoyv.js                  [39m[1m[2m  9.10 kB[22m[1m[22m[2m Ôöé gzip:  3.09 kB[22m
+[2mbuild/client/[22m[36massets/ContactForm-BST89F1d.js                 [39m[1m[2m 85.13 kB[22m[1m[22m[2m Ôöé gzip: 23.40 kB[22m
+[2mbuild/client/[22m[36massets/chunk-LFPYN7LY-DuTMIZyA.js              [39m[1m[2m126.73 kB[22m[1m[22m[2m Ôöé gzip: 42.59 kB[22m
+[2mbuild/client/[22m[36massets/entry.client-CUVbREe7.js                [39m[1m[2m191.51 kB[22m[1m[22m[2m Ôöé gzip: 60.25 kB[22m
+[32mÔ£ô built in 1.90s[39m
+[36mvite v6.4.1 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 35 modules transformed.
+rendering chunks...
+[2mbuild/server/[22m[32m.vite/manifest.json               [39m[1m[2m  0.23 kB[22m[1m[22m
+[2mbuild/server/[22m[35massets/server-build-WTmwJRNj.css  [39m[1m[2m 29.85 kB[22m[1m[22m
+[2mbuild/server/[22m[36mindex.js                          [39m[1m[2m138.81 kB[22m[1m[22m
+
+[32mÔ£ô[39m 1 asset cleaned from React Router server build.
+[2mbuild\server\assets\server-build-WTmwJRNj.css[22m
+
+Prerender (html): / -> [1mbuild\client\index.html[22m
+Prerender (html): /reformas-integrales-madrid -> [1mbuild\client\reformas-integrales-madrid\index.html[22m
+Prerender (html): /reformas-cocinas-madrid -> [1mbuild\client\reformas-cocinas-madrid\index.html[22m
+Prerender (html): /reformas-banos-madrid -> [1mbuild\client\reformas-banos-madrid\index.html[22m
+Prerender (data): /reformas-madrid/salamanca -> [1mbuild\client\reformas-madrid\salamanca.data[22m
+Prerender (html): /reformas-madrid/salamanca -> [1mbuild\client\reformas-madrid\salamanca\index.html[22m
+Prerender (data): /reformas-madrid/chamberi -> [1mbuild\client\reformas-madrid\chamberi.data[22m
+Prerender (html): /reformas-madrid/chamberi -> [1mbuild\client\reformas-madrid\chamberi\index.html[22m
+Prerender (data): /reformas-madrid/chamartin -> [1mbuild\client\reformas-madrid\chamartin.data[22m
+Prerender (html): /reformas-madrid/chamartin -> [1mbuild\client\reformas-madrid\chamartin\index.html[22m
+Prerender (data): /reformas-madrid/retiro -> [1mbuild\client\reformas-madrid\retiro.data[22m
+Prerender (html): /reformas-madrid/retiro -> [1mbuild\client\reformas-madrid\retiro\index.html[22m
+Prerender (data): /reformas-madrid/pozuelo -> [1mbuild\client\reformas-madrid\pozuelo.data[22m
+Prerender (html): /reformas-madrid/pozuelo -> [1mbuild\client\reformas-madrid\pozuelo\index.html[22m
+Prerender (data): /reformas-madrid/majadahonda -> [1mbuild\client\reformas-madrid\majadahonda.data[22m
+Prerender (html): /reformas-madrid/majadahonda -> [1mbuild\client\reformas-madrid\majadahonda\index.html[22m
+Prerender (html): /proyectos -> [1mbuild\client\proyectos\index.html[22m
+Prerender (html): /contacto -> [1mbuild\client\contacto\index.html[22m
+Prerender (html): /sobre-nosotros -> [1mbuild\client\sobre-nosotros\index.html[22m
+Prerender (html): SPA Fallback -> [1mbuild\client\__spa-fallback.html[22m
+Removing the server build in [32mC:\Users\dgper\Proyectos\ZeroCode\apps\reformas\build\server[39m due to ssr:false
+[32mÔ£ô built in 645ms[39m

@@ -1,0 +1,10 @@
+/* Repairs SPA Integration Styles */
+:root {
+  --color-gold: #d4a853;
+  --bg-reformas: #f5f5f0;
+  --text-dark: #1c1c1e;
+}
+
+.reformas-font-inter {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}

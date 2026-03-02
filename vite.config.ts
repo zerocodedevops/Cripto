@@ -63,6 +63,7 @@ export default defineConfig({
     watch: {
       ignored: [
         '**/dist/**',
+        '**/build/**',
         '**/playwright-report/**',
         '**/test-results/**',
         '**/node_modules/**',
@@ -73,27 +74,28 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
-    chunkSizeWarningLimit: 1600,
+    chunkSizeWarningLimit: 1200,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // Large independent libs to split
-            if (id.includes('firebase')) return 'firebase';
-            if (id.includes('recharts')) return 'charts';
-            if (id.includes('@react-pdf')) return 'pdf';
-            if (id.includes('framer-motion')) return 'animation';
-            if (id.includes('lucide-react')) return 'icons';
+            // ONLY split massive independent libraries that are safe to isolate.
+            // DO NOT split react, framer-motion, lucide-react or radix-ui
+            // from the main bundle to avoid context/jsx runtime errors.
+
+            if (id.includes('firebase') || id.includes('supabase')) {
+              return 'vendor-firebase';
+            }
+            if (id.includes('recharts') || id.includes('d3')) {
+              return 'vendor-charts';
+            }
             if (
               id.includes('jspdf') ||
               id.includes('html2canvas') ||
-              id.includes('canvas-confetti')
-            )
-              return 'utils';
-
-            // Everything else stays in vendor (React, Framer, Router, i18n, etc.)
-            // This guarantees the app boots correctly.
-            return 'vendor';
+              id.includes('@react-pdf')
+            ) {
+              return 'vendor-pdf';
+            }
           }
         },
       },

@@ -1,0 +1,35 @@
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 150 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mbuild/client/[22m[32m.vite/manifest.json                            [39m[1m[2m  4.56 kB[22m[1m[22m[2m Ôöé gzip:  0.69 kB[22m
+[2mbuild/client/[22m[35massets/root-WTmwJRNj.css                       [39m[1m[2m 29.85 kB[22m[1m[22m[2m Ôöé gzip:  5.91 kB[22m
+[2mbuild/client/[22m[36massets/reformas-banos-madrid-C5taoHwJ.js       [39m[1m[2m  0.29 kB[22m[1m[22m[2m Ôöé gzip:  0.23 kB[22m
+[2mbuild/client/[22m[36massets/reformas-cocinas-madrid-BrUpiBFE.js     [39m[1m[2m  0.29 kB[22m[1m[22m[2m Ôöé gzip:  0.23 kB[22m
+[2mbuild/client/[22m[36massets/reformas-integrales-madrid-LlrFVLWW.js  [39m[1m[2m  0.29 kB[22m[1m[22m[2m Ôöé gzip:  0.24 kB[22m
+[2mbuild/client/[22m[36massets/root-DmbJMABR.js                        [39m[1m[2m  0.48 kB[22m[1m[22m[2m Ôöé gzip:  0.31 kB[22m
+[2mbuild/client/[22m[36massets/servicios-dGbgxgGu.js                   [39m[1m[2m  1.63 kB[22m[1m[22m[2m Ôöé gzip:  0.86 kB[22m
+[2mbuild/client/[22m[36massets/contacto-BZIaol8_.js                    [39m[1m[2m  2.72 kB[22m[1m[22m[2m Ôöé gzip:  0.93 kB[22m
+[2mbuild/client/[22m[36massets/sobre-nosotros-ys7hrXyE.js              [39m[1m[2m  3.38 kB[22m[1m[22m[2m Ôöé gzip:  1.26 kB[22m
+[2mbuild/client/[22m[36massets/proyectos-D6RTrdIs.js                   [39m[1m[2m  3.46 kB[22m[1m[22m[2m Ôöé gzip:  1.15 kB[22m
+[2mbuild/client/[22m[36massets/ServiceTemplate-BJY_la7l.js             [39m[1m[2m  5.30 kB[22m[1m[22m[2m Ôöé gzip:  2.05 kB[22m
+[2mbuild/client/[22m[36massets/reformas-madrid._barrio-D3w5rjNF.js     [39m[1m[2m  6.00 kB[22m[1m[22m[2m Ôöé gzip:  2.21 kB[22m
+[2mbuild/client/[22m[36massets/_index-CKitASje.js                      [39m[1m[2m  7.29 kB[22m[1m[22m[2m Ôöé gzip:  2.49 kB[22m
+[2mbuild/client/[22m[36massets/MetaTags-DS4DeQEB.js                    [39m[1m[2m 24.79 kB[22m[1m[22m[2m Ôöé gzip:  9.09 kB[22m
+[2mbuild/client/[22m[36massets/ContactForm-CAj6Vguh.js                 [39m[1m[2m 85.13 kB[22m[1m[22m[2m Ôöé gzip: 23.40 kB[22m
+[2mbuild/client/[22m[36massets/chunk-LFPYN7LY-2KN0-E0n.js              [39m[1m[2m126.75 kB[22m[1m[22m[2m Ôöé gzip: 42.60 kB[22m
+[2mbuild/client/[22m[36massets/entry.client-B6AjzveH.js                [39m[1m[2m191.51 kB[22m[1m[22m[2m Ôöé gzip: 60.25 kB[22m
+[32mÔ£ô built in 1.26s[39m
+[36mvite v6.4.1 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+The following error is a bug in React Router; please open an issue! https://github.com/remix-run/react-router/issues/new/choose
+C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:80
+    throw new Error(message);
+          ^
+
+Error: Unable to prerender path because it does not match any routes: /blog
+    at invariant (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:80:11)
+    at validateSsrFalsePrerenderExports (C:\Users\dgper\Proyectos\ZeroCode\apps\reformas\node_modules\@react-router\dev\dist\vite.js:5078:5)
+
+Node.js v24.13.1

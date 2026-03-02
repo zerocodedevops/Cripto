@@ -20,6 +20,7 @@ const CryptoApp = lazy(() =>
 const MediaApp = lazy(
 	() => import("@/features/projects/mudanzas-coral/src/App"),
 );
+const ReformsApp = lazy(() => import("@/features/projects/reformas/routes"));
 const NotFound = lazy(() => import("@/features/misc/NotFound"));
 
 const router = createBrowserRouter(
@@ -112,6 +113,16 @@ const router = createBrowserRouter(
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
 						<MediaApp />
+					</Suspense>
+				</PageTransition>
+			),
+		},
+		{
+			path: "/proyectos/reformas/*",
+			element: (
+				<PageTransition>
+					<Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
+						<ReformsApp />
 					</Suspense>
 				</PageTransition>
 			),

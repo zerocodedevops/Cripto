@@ -11,6 +11,7 @@ import projectSalon from "@/assets/projects/project-salon.webp";
 import projectTask from "@/assets/projects/project-task-management.webp";
 import projectWeather from "@/assets/projects/project-weather.webp";
 import projectZeroDelay from "@/assets/projects/ZeroDelay.webp";
+import projectZeroChaos from "@/assets/projects/zero-chaos.png";
 import { Card, TechBadge } from "@/components/ui";
 import { fadeInUp, staggerContainer } from "@/hooks/useScrollAnimation";
 import { trackEvent } from "@/lib/analytics";
@@ -64,6 +65,15 @@ const projects: Project[] = [
 		demoUrl: "/proyectos/zero-delay",
 		repoUrl: "https://github.com/zerocodedevops",
 		status: "Development",
+	},
+	{
+		id: 10,
+		title: "Zero Chaos",
+		image: projectZeroChaos,
+		tags: ["React Router v7", "Tailwind v4", "Vite", "SSG"],
+		demoUrl: "/proyectos/reformas",
+		repoUrl: "https://github.com/zerocodedevops",
+		status: "Production",
 	},
 
 	// IN DEVELOPMENT - Coming soon
