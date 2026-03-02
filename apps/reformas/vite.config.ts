@@ -7,7 +7,7 @@ export default defineConfig({
     reactRouter() as unknown as PluginOption,
     tsconfigPaths() as unknown as PluginOption,
   ],
-  base: '/proyectos/reformas/',
+  base: '/reformas/',
   resolve: {
     dedupe: ['react', 'react-dom'],
   },

@@ -12,7 +12,7 @@
 		"build:portfolio": "vite build",
 		"build:zerodelay": "vite build apps/zerodelay --outDir ../../dist/zerodelay --base /zerodelay/ --emptyOutDir",
 		"build:devops-shop": "vite build apps/devops-shop --outDir ../../dist/devops-shop --base /devops-shop/ --emptyOutDir",
-		"build:reformas": "cd apps/reformas && npx react-router build --base /reformas/ && npx shx mkdir -p ../../dist/reformas && npx shx cp -r build/client/* ../../dist/reformas/",
+		"build:reformas": "cd apps/reformas && npm run build && npx shx mkdir -p ../../dist/reformas && npx shx cp -r build/client/* ../../dist/reformas/",
 		"build": "npm run build:portfolio && npm run build:zerodelay && npm run build:devops-shop && npm run build:reformas",
 		"preview": "vite preview",
 		"lint": "eslint .",
