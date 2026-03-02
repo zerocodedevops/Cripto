@@ -1,0 +1,71 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (149,41)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (117,41)<div  />
+	[2] (165,41)<span >Zero />
+		[3] (179,41)<span >Code />
+[4] (304,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (364,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (427,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (479,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (526,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (583,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (704,41)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (732,41)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (761,41)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (790,41)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (824,41)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (859,41)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (882,41)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+Últimas
+Reflexiones
+Pensamientos sobre desarrollo, IA y el futuro de la tecnología
+[17] (231,694)<a class='block h-full' href='/blog/1' />
+	[18] (231,694)<div  />
+		[19] (231,530)<div  />
+			[20] (231,530)<div  />
+			[21] (155,442)<div  />
+				[22] (155,444)<span  />
+			[23] (320,448)<div  />
+		[24] (231,817)<div  />
+			[25] (231,695)<div  />
+				[26] (159,695)<div  />
+				[27] (194,695)<span  />
+				[28] (237,695)<span  />
+			[29] (231,758)<h3  />
+			[30] (231,850)<p  />
+			[31] (231,937)<div  />
+[32] (500,694)<a class='block h-full' href='/blog/2' />
+	[33] (500,694)<div  />
+		[34] (500,530)<div  />
+			[35] (500,530)<div  />
+			[36] (429,442)<div  />
+				[37] (429,444)<span  />
+			[38] (589,448)<div  />
+		[39] (500,817)<div  />
+			[40] (500,695)<div  />
+				[41] (427,695)<div  />
+				[42] (461,695)<span  />
+				[43] (504,695)<span  />
+			[44] (500,758)<h3  />
+			[45] (500,850)<p  />
+			[46] (500,937)<div  />
+[47] (769,694)<a class='block h-full' href='/blog/3' />
+	[48] (769,694)<div  />
+		[49] (769,530)<div  />
+			[50] (769,530)<div  />
+			[51] (696,442)<div  />
+				[52] (696,444)<span  />
+			[53] (858,448)<div  />
+		[54] (769,817)<div  />
+			[55] (769,695)<div  />
+				[56] (697,695)<div  />
+				[57] (733,695)<span  />
+				[58] (776,695)<span  />
+			[59] (769,758)<h3  />
+			[60] (769,850)<p  />
+			[61] (769,937)<div  />
+
+</current_dom>

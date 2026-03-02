@@ -1,0 +1,16 @@
+# Implementation Plan - Vite Build Optimization
+
+## Goal
+Resolve Vite/Rollup warnings about large chunks (>500 kB) by implementing manual chunk splitting and fine-tuning build configurations.
+
+## Proposed Changes
+
+### [Root] [vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/vite.config.ts)
+- Implement `build.rollupOptions.output.manualChunks` to separate large vendor libraries (e.g., `react-router-dom`, `framer-motion`, `lucide-react`).
+- Increase `chunkSizeWarningLimit` to 1000 kB.
+- Ensure `minify` is set to `terser` or `esbuild` (default) for optimal compression.
+
+## Verification Plan
+### Automated Tests
+- Run `npm run build` from the root and verify that chunk size warnings are resolved or minimized.
+- Inspect the `dist` folder to ensure chunks are distributed effectively.

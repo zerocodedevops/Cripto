@@ -6,18 +6,61 @@
 			"**/.*",
 			"**/node_modules/**"
 		],
+		"redirects": [
+			{
+				"source": "/paginas-web-pymes-autonomos",
+				"destination": "/desarrollo-web-pymes-madrid",
+				"type": 301
+			}
+		],
 		"rewrites": [
+			{
+				"source": "/zerodelay",
+				"destination": "/zerodelay/index.html"
+			},
 			{
 				"source": "/zerodelay/**",
 				"destination": "/zerodelay/index.html"
+			},
+			{
+				"source": "/reformas",
+				"destination": "/reformas/index.html"
 			},
 			{
 				"source": "/reformas/**",
 				"destination": "/reformas/index.html"
 			},
 			{
+				"source": "/devops-shop",
+				"destination": "/devops-shop/index.html"
+			},
+			{
 				"source": "/devops-shop/**",
 				"destination": "/devops-shop/index.html"
+			},
+			{
+				"source": "/proyectos/reformas",
+				"destination": "/index.html"
+			},
+			{
+				"source": "/proyectos/reformas/**",
+				"destination": "/index.html"
+			},
+			{
+				"source": "/proyectos/zero-delay",
+				"destination": "/index.html"
+			},
+			{
+				"source": "/proyectos/zero-delay/**",
+				"destination": "/index.html"
+			},
+			{
+				"source": "/desarrollo-web-pymes-madrid",
+				"destination": "/index.html"
+			},
+			{
+				"source": "/desarrollo-web-pymes-madrid/**",
+				"destination": "/index.html"
 			},
 			{
 				"source": "**",

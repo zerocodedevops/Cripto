@@ -1,0 +1,7 @@
+# Task: Verify SEO improvements and URL redirect
+
+- [ ] Confirm `https://zerocode-devops.com/desarrollo-web-pymes-madrid` loads correctly (not 404).
+- [ ] Verify Hero title contains "pymes y autónomos en Madrid".
+- [ ] Verify CTAs "Solicita presupuesto gratis" and "Consulta con nuestro experto en Madrid".
+- [ ] Confirm old URL `https://zerocode-devops.com/paginas-web-pymes-autonomos` redirects to new URL.
+- [ ] Verify "Servicios" link in Navbar points to `/desarrollo-web-pymes-madrid`.

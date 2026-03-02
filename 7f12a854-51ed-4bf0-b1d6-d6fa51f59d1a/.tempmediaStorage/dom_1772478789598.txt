@@ -1,0 +1,100 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (98,43)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (50,43)<div  />
+	[2] (121,43)<span >Zero />
+		[3] (141,42)<span >Code />
+[4] (209,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (299,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (391,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (469,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (538,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (623,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (684,43)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (727,43)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (769,43)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (812,43)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (862,43)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (914,43)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (949,43)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+[17] (180,163)<div  />
+	Zero Delay Mudanzas
+	[18] (180,136)<p >Sitio web moderno para empresa de mudanzas orientado a la captación de leads con presentación de servicios y un diseño limpio y responsive optimizado para conversiones. />
+	[19] (180,264)<div  />
+		[20] (83,241)<span >React />
+		[21] (167,241)<span >Tailwind CSS />
+		[22] (247,241)<span >Vite />
+		[23] (99,286)<span >Responsive />
+	[24] (180,338)<div  />
+		[25] (85,338)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='/proyectos/zero-delay'>Demo />
+		[26] (162,338)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[27] (500,156)<div  />
+	Zero Chaos
+	[28] (500,108)<p >Máquina de captación de leads para el sector de reformas en Madrid. Arquitectura premium con generación de sitios estáticos (SSG) y optimización SEO local extrema. />
+	[29] (500,257)<div  />
+		[30] (431,235)<span >React Router v7 />
+		[31] (539,235)<span >Tailwind v4 />
+		[32] (399,279)<span >Vite />
+		[33] (454,279)<span >SSG />
+	[34] (500,331)<div  />
+		[35] (409,331)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='/proyectos/reformas/'>Demo />
+		[36] (482,331)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[37] (820,163)<div  />
+	AI Chat Assistant
+	[38] (820,136)<p >Asistente de chat inteligente con integración de OpenAI y memoria contextual. />
+	[39] (820,264)<div  />
+		[40] (727,241)<span >Next.js />
+		[41] (809,241)<span >TypeScript />
+		[42] (892,241)<span >OpenAI />
+		[43] (736,286)<span >Supabase />
+	[44] (820,338)<div  />
+		[45] (726,338)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://example.com'>Demo />
+		[46] (803,338)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[47] (180,750)<div  />
+	[48] (180,557)<div  />
+		[49] (180,557)<div  />
+			[50] (180,557)<div  />
+				[51] (180,557)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[52] (180,869)<div  />
+		[53] (180,749)<div  />
+			[54] (130,749)<h3 >Task Management App />
+			[55] (254,699)<span >En Desarrollo />
+		[56] (180,864)<p >Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones. />
+		[57] (180,965)<div  />
+			[58] (83,942)<span >React />
+			[59] (155,942)<span >Firebase />
+			[60] (234,942)<span >Tailwind />
+			[61] (107,987)<span >Framer Motion />
+[62] (500,750)<div  />
+	[63] (500,557)<div  />
+		[64] (500,557)<div  />
+			[65] (500,557)<div  />
+				[66] (500,557)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[67] (500,869)<div  />
+		[68] (500,707)<div  />
+			[69] (440,707)<h3 >Zero Vanity />
+			[70] (575,699)<span >En Desarrollo />
+		[71] (500,821)<p >Sitio web premium para salón de belleza con animaciones fluidas, galería interactiva y diseño responsive. Migrado a React + Vite. />
+		[72] (403,942)<span >React />
+		[73] (474,942)<span >Tailwind />
+		[74] (541,942)<span >Vite />
+		Framer Motion
+[75] (820,750)<div  />
+	[76] (820,557)<div  />
+		[77] (820,557)<div  />
+			[78] (820,557)<div  />
+				[79] (820,557)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[80] (820,869)<div  />
+		[81] (820,707)<div  />
+			[82] (769,707)<h3 >Weather App />
+			[83] (895,699)<span >En Desarrollo />
+		[84] (820,821)<p >Aplicación del clima con pronósticos detallados y mapas interactivos. />
+		[85] (820,965)<div  />
+			[86] (724,942)<span >React />
+			[87] (802,942)<span >TypeScript />
+			[88] (890,942)<span >API REST />
+			[89] (731,987)<span >Tailwind />
+
+</current_dom>

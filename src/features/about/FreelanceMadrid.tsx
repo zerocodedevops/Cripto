@@ -127,7 +127,7 @@ export default function FreelanceMadrid() {
 									</button>
 									<button
 										onClick={() => {
-											navigate("/paginas-web-pymes-autonomos");
+											navigate("/desarrollo-web-pymes-madrid");
 											globalThis.scrollTo({ top: 0, behavior: "smooth" });
 										}}
 										className="px-8 py-4 bg-dark-800 hover:bg-dark-700 text-white font-bold rounded-xl border border-dark-700 transition-all"

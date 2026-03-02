@@ -1,10 +1,9 @@
-/* Repairs SPA Integration Styles */
-:root {
-  --color-gold: #d4a853;
-  --bg-reformas: #f5f5f0;
-  --text-dark: #1c1c1e;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.reformas-font-inter {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+@layer base {
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
 }

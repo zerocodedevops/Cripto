@@ -1,0 +1,14 @@
+# Task: Technical SEO Implementation
+
+- [x] Planning & Design
+  - [x] Analyze requirements for Technical SEO
+  - [x] Define LocalBusiness Schema data (Madrid address/phone)
+- [x] Implementation
+  - [x] Create/Update JSON-LD Schema component
+  - [x] Integrate Schema into Home and Service pages
+  - [x] Implement <noscript> fallback in index.html for indexability
+  - [x] Verify SSG (Prerendering) configuration for non-JS indexability
+- [x] Verification
+  - [x] Validate Schema using Google Rich Results Test (simulated)
+  - [x] Verify No-JS content rendering in index.html
+  - [x] Check performance and mobile scores

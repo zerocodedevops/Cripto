@@ -1,0 +1,14 @@
+# Task: SEO Implementation for Portfolio
+
+- [/] Planning and Research
+    - [ ] Explore codebase for router and metadata management [/]
+    - [ ] Identify location for new SEO page [/]
+- [ ] Implementation
+    - [ ] Create new SEO page component with the requested article content [ ]
+    - [ ] Update router with the new SEO route [ ]
+    - [ ] Optimize meta tags (title/description) for the main page [ ]
+    - [ ] Add internal links to the new SEO page [ ]
+- [ ] Verification
+    - [ ] Verify SEO page renders correctly [ ]
+    - [ ] Check meta tags in the document head [ ]
+    - [ ] Ensure no existing routes are broken [ ]

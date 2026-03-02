@@ -1,0 +1,7 @@
+# Task: Verify /reformas/ page loads content
+
+## Checklist
+- [ ] Navigate to https://zerocode-devops.web.app/reformas/
+- [ ] Verify if page contains content or 404 UI
+- [ ] Capture screenshot
+- [ ] Report findings

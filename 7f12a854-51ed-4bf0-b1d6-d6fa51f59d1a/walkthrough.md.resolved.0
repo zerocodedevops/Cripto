@@ -1,0 +1,62 @@
+# Walkthrough — Zero Chaos SEO Framework
+
+He completado la implementación del framework **Zero Chaos** en `apps/reformas`. Este sistema no es solo una web, es una infraestructura diseñada para escalar y dominar el SEO local de reformas.
+
+## 🚀 Logros Principales
+
+1.  **Arquitectura SILO Impecable**: Estructura de URLs optimizada para captar tráfico de servicios y barrios específicos de Madrid.
+2.  **Generación Estática (SSG)**: Configurado con React Router v7 Framework Mode para generar HTML estático real de cada landing en build time.
+3.  **Sistema de Datos Desacoplado**: Los componentes (`core/`) están separados de los datos del cliente (`clients/`), permitiendo clonar la estrategia para otras ciudades en minutos.
+4.  **Diseño Premium (Tailwind v4)**: Estética oscura de autoridad en zonas clave (Hero) alternada con fondos claros para máxima legibilidad y conversión SEO.
+
+---
+
+## 📂 Estructura del Proyecto
+
+- `app/routes/`: Definición de rutas basadas en archivos (Home, Servicios, Barrios dinámicos).
+- `src/core/`: Componentes UI, Layouts, SEO (MetaTags, JSON-LD Schema) y Tracking.
+- `src/clients/madrid-zerochaos/`: Configuración, barrios, servicios y precios específicos de Madrid.
+- `src/templates/`: Plantillas maestras reutilizables.
+
+---
+
+## 🛠️ Rutas Implementadas (V1 Madrid)
+
+| página | URL | Objetivo |
+| :--- | :--- | :--- |
+| **Home** | `/` | Captación general y autoridad |
+| **Integrales** | `/reformas-integrales-madrid` | Lead de alto ticket |
+| **Cocinas** | `/reformas-cocinas-madrid` | Lead transaccional medio |
+| **Baños** | `/reformas-banos-madrid` | Lead transaccional rápido |
+| **Barrios (×6)** | `/reformas-madrid/[barrio]` | SEO Local agresivo (Salamanca, Chamberí, Pozuelo...) |
+| **Proyectos** | `/proyectos` | Prueba social activa |
+| **Contacto** | `/contacto` | Cierre de conversión |
+
+---
+
+## 🔍 SEO y Performance
+
+- **MetaTags Dinámicos**: Cada página tiene su propio Título y Descripción optimizados.
+- **JSON-LD Schema**:
+  - `LocalBusiness` en la Home.
+  - `FAQPage` en servicios y barrios.
+- **SSG**: Prerenderizado nativo en `react-router.config.ts`.
+- **Mobile-First**: Componentes optimizados para carga rápida en móviles (WhatsApp flotante, formularios cortos).
+
+---
+
+## 📸 Componentes Visuales Creados
+
+- `CTAButton`: Botonera premium con acento ámbar.
+- `ProcessSteps`: Explicación del sistema "Zero Chaos" en 5 pasos.
+- `PricingTable`: Transparencia total de precios.
+- `ContactForm`: Formulario de alta conversión con validación Zod.
+- `MetaTags` & `Schema`: El cerebro SEO del sitio.
+
+---
+
+## ✅ Siguientes Pasos Recomendados
+
+1.  **Imágenes Reales**: Sustituir los placeholders de IA por fotos reales de obras realizadas.
+2.  **Blog**: Empezar a publicar artículos tipo "Precio reforma integral Madrid 2026" usando el template preparado.
+3.  **Build Final**: Ejecutar `npm run build` en el entorno de despliegue para generar el estático final.

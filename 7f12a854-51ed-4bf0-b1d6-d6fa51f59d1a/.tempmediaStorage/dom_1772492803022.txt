@@ -1,0 +1,7 @@
+[0] (500,500)<div >Saltar al contenido principal />
+	Saltar al contenido principal
+	404
+	Página no encontrada
+	Parece que la IA no ha generado esta ruta todavía, o te has desviado del camino.
+	[1] (500,741)<a href='/' />
+		[2] (500,736)<button class='btn btn-primary px-6 py-3 text-base'>Volver al inicio />

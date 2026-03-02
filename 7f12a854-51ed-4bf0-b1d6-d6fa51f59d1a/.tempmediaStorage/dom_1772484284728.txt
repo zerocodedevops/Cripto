@@ -1,0 +1,33 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Saltar al contenido principal
+Av/ ZeroCode 83
+[0] (734,36)<a href='/proyectos/zero-delay/contacto'>Pide Presupuesto />
+[1] (810,36)<a href='https://facebook.com' />
+[2] (836,36)<a href='https://instagram.com' />
+[3] (862,36)<a href='https://youtube.com' />
+[4] (888,36)<a href='https://linkedin.com' />
+[5] (914,36)<a href='https://tiktok.com' />
+[6] (105,152)<a href='/proyectos/zero-delay' />
+	[7] (105,152)<img  />
+[8] (355,152)<a href='/proyectos/zero-delay'>QUIENES SOMOS />
+[9] (453,152)<a href='/proyectos/zero-delay/servicios'>SERVICIOS />
+[10] (522,152)<a href='/proyectos/zero-delay/blog'>BLOG />
+[11] (591,152)<a href='/proyectos/zero-delay/contacto'>CONTACTO />
+[12] (861,136)<a href='tel:912622712'>91 262 27 12 />
+[13] (864,182)<a href='mailto:info@madrimudanzas.com'>✉ info@madrimudanzas.com />
+mudanzas
+profesionales
+⚡ Mudanzas Nacionales e Internacionales • 📦 Guardamuebles • 👥 Grupajes
+Mudanzas de Hogar y Oficina,
+con todas las Garantías
+Realizamos Servicios a nivel Nacional e Internacional.
+Disponemos de Guardamuebles (20.000m²).
+Pide Presupuesto
+[14] (586,990)<a href='/proyectos/zero-delay/servicios'>Ver Servicios />
+[15] (960,920)<a href='https://wa.me/+34912622712?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20mudanzas.' />
+	[16] (960,920)<div  />
+
+</current_dom>

@@ -1,0 +1,13 @@
+# Progress Tracker
+
+## Task: Verify the Reformas project loads in the Portfolio SPA
+
+- [ ] Navigate to `http://localhost:4177/proyectos/reformas`
+- [ ] Check for the ZeroCode logo during loading
+- [ ] Verify Reformed content appears
+- [ ] Check for any 404 errors in the console
+- [ ] Verify subroute `/proyectos/reformas/cocinas` (or similar)
+- [ ] Take a screenshot of the result
+
+## Findings
+- 

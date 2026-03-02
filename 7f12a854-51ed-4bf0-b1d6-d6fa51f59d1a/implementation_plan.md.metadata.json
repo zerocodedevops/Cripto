@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Full architecture plan for Zero Chaos, a scalable SEO framework for renovation companies. Uses React Router v7 Framework Mode with native SSG prerendering for static HTML generation. Architecture separates core UI components from client-specific data (barrios, precios, contenido SEO). Includes 12+ routes with full SEO content, Schema JSON-LD, tracking hooks, and mobile-first premium design system. First client: Zero Chaos Madrid with 6 barrios.",
+  "updatedAt":  "2026-03-02T15:23:35.618253900Z"
+}

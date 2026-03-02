@@ -1,0 +1,28 @@
+# Integrating Zero Chaos into Portfolio
+
+The user wants to add the "Zero Chaos" (reformas) project to the main portfolio's project showcase, alongside existing projects like DevOps Shop and Zero Delay.
+
+## Proposed Changes
+
+### Assets
+Move the generated thumbnail to:
+- [NEW] `src/assets/projects/zero-chaos.png` (converted from the generated image)
+
+### [MODIFY] [Projects.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/components/sections/Projects.tsx)
+- Import the new thumbnail.
+- Add project ID 10 to the `projects` array with:
+    - Title: "Zero Chaos"
+    - Tags: ["React", "React Router v7", "Tailwind v4", "Vite", "SSG"]
+    - demoUrl: "/reformas/"
+    - status: "Production"
+
+### [MODIFY] [es.json](file:///c:/Users/dgper/Proyectos/ZeroCode/src/i18n/locales/es.json)
+- Add description for project 10: "Máquina de captación de leads para el sector de reformas en Madrid. Arquitectura premium con generación de sitios estáticos (SSG) y optimización SEO local extrema."
+
+### [MODIFY] [en.json](file:///c:/Users/dgper/Proyectos/ZeroCode/src/i18n/locales/en.json)
+- Add description for project 10: "Lead generation machine for the home renovation sector in Madrid. Premium architecture with static site generation (SSG) and extreme local SEO optimization."
+
+## Verification Plan
+- Build the portfolio.
+- Verify the new card appears in the "Digital Products" section.
+- Ensure the link leads to `/reformas/`.

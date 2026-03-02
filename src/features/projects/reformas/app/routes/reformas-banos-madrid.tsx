@@ -1,9 +1,9 @@
-import type { MetaFunction } from "react-router-dom";
+import type { MetaFunction } from "react-router";
 import { ServiceTemplate } from "../../src/templates/ServiceTemplate";
 import { servicios } from "../../src/clients/madrid-zerochaos/servicios";
 import { config } from "../../src/clients/madrid-zerochaos/config";
 
-const service = servicios.find(s => s.id === "banos");
+const service = servicios.find(s => s.id === "banos")!;
 
 export const meta: MetaFunction = () => {
     return [

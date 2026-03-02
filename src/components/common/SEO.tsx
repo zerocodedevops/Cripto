@@ -6,6 +6,7 @@ interface SEOProps {
 	keywords?: string;
 	image?: string;
 	url?: string;
+	jsonLd?: Record<string, any>;
 }
 
 export function Seo({
@@ -14,6 +15,7 @@ export function Seo({
 	keywords,
 	image = "https://zerocode-devops.web.app/og-image.png",
 	url = globalThis.location?.href || "https://zerocode-devops.web.app",
+	jsonLd,
 }: Readonly<SEOProps>) {
 	const siteTitle = "ZeroCode | David G. - AI-First Developer";
 
@@ -44,6 +46,11 @@ export function Seo({
 			<meta name="twitter:image" content={image} />
 
 			<link rel="canonical" href={url} />
+			{jsonLd && (
+				<script type="application/ld+json">
+					{JSON.stringify(jsonLd)}
+				</script>
+			)}
 		</Helmet>
 	);
 }

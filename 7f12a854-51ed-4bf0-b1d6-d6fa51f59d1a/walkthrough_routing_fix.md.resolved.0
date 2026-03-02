@@ -1,0 +1,29 @@
+# Walkthrough — Arreglo de Rutas en Producción (Reformas)
+
+## Resultado Final ✅
+La web de reformas ya es accesible desde el Portfolio de forma integrada. Se han corregido los errores 404 mediante reglas de reescritura más robustas en Firebase.
+
+### Captura de Éxito en Producción
+![Reformas Integrales en Producción](file:///C:/Users/dgper/.gemini/antigravity/brain/7f12a854-51ed-4bf0-b1d6-d6fa51f59d1a/reformas_proyectos_route_1772486910247.png)
+*La ruta `/proyectos/reformas/` carga correctamente el contenido integrado.*
+
+## Cambios Realizados
+
+### 1. Robustez en Firebase Hosting ([firebase.json](file:///c:/Users/dgper/Proyectos/ZeroCode/firebase.json))
+Se han duplicado las reglas de `rewrites` para asegurar que las rutas funcionen tanto con barra diagonal (`/`) como sin ella:
+- `/proyectos/reformas` → [/index.html](file:///c:/Users/dgper/Proyectos/ZeroCode/dist/index.html)
+- `/proyectos/reformas/**` → [/index.html](file:///c:/Users/dgper/Proyectos/ZeroCode/dist/index.html)
+- `/reformas` → [/reformas/index.html](file:///c:/Users/dgper/Proyectos/ZeroCode/dist/reformas/index.html)
+- `/reformas/**` → [/reformas/index.html](file:///c:/Users/dgper/Proyectos/ZeroCode/dist/reformas/index.html)
+
+### 2. Sincronización de Código
+Se ha sincronizado el código fuente de `apps/reformas/` con la feature integrada en el Portfolio (`src/features/projects/reformas/`), asegurando que ambos usen la misma lógica optimizada.
+
+### 3. Compatibilidad de Tailwind v3/v4
+Se ha ajustado el CSS de la versión integrada para que sea compatible con el build engine del Portfolio (Tailwind v3), eliminando errores de compilación que impedían el despliegue correcto.
+
+## Enlaces Verificados
+- **Portfolio (Cards)**: [https://zerocode-devops.web.app/](https://zerocode-devops.web.app/)
+- **Reformas (Integrado)**: [https://zerocode-devops.web.app/proyectos/reformas](https://zerocode-devops.web.app/proyectos/reformas)
+- **Zero Delay (Integrado)**: [https://zerocode-devops.web.app/proyectos/zero-delay](https://zerocode-devops.web.app/proyectos/zero-delay)
+- **Reformas (Standalone)**: [https://zerocode-devops.web.app/reformas/](https://zerocode-devops.web.app/reformas/)

@@ -1,0 +1,31 @@
+# Walkthrough - Zero Chaos Madrid (Native SPA Integration)
+
+## 1. Unified SPA Architecture
+We have successfully integrated the "Repairs" project (Zero Chaos) as a native feature within the main portfolio SPA. This eliminates the need for proxies and secondary servers, providing the most stable and performant experience.
+
+- **URL:** `http://localhost:5173/proyectos/reformas/`
+- **Pattern:** Same as Mudanzas (Zero Delay), using `src/features/projects/reformas/`.
+- **Router:** Managed by the root `src/app/router.tsx`, loading `ReformsRoutes` lazily.
+
+## 2. Dev Environment (Single Command)
+The complexity of dual servers and proxies on Windows has been removed:
+
+- **Single Process:** Now only `npm run dev` (running `vite`) is required.
+- **No 404s:** Since it's a native route, all sub-paths (integrales, cocinas, etc.) are handled by React Router.
+- **No Proxy Errors:** No more `ECONNREFUSED` because there's no secondary server to connect to.
+
+## 3. Standardized Codebase
+- **Imports:** Unified all `react-router` imports to `react-router-dom` to match the root project.
+- **Links:** All internal navigation now uses SPA-safe `<Link>` components with absolute portfolio paths.
+- **Cleanup:** Removed obsolete `apps/reformas` build output and root proxy configurations.
+
+## 4. Commands for the User
+From the root directory:
+
+- **Start Development:** `npm run dev`
+- **Build & Deploy:** `npm run build && firebase deploy --only hosting`
+
+---
+
+### Status: ARCHITECTURE UNIFIED 🏆
+The Reforms project is now a first-class citizen of the ZeroCode portfolio.

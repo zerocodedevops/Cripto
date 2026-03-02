@@ -1,0 +1,27 @@
+# Implementation Plan - Repairs Framework Finalization
+
+## 1. Blog System
+
+- **Data Layer:** Define `BlogPost` interface and create `blog.ts` with 5 SEO-optimized entries.
+- **Templates:**
+  - `BlogTemplate.tsx`: List view with cards and categories.
+  - `BlogPostTemplate.tsx`: Reading view with rich typography (Inter), breadcrumbs, and related posts.
+- **Routing:** Add `/blog` and `/blog/:slug` to `routes.tsx`.
+
+## 2. "Before & After" Cases (Proyectos)
+
+- **Data Layer:** Expand `ProjectConfig` to include `beforeImage`, `afterImage`, and `workDetails`.
+- **Template:** Update `ProjectsTemplate.tsx` with a premium slider or side-by-side comparison UI.
+- **Content:** Generate 2 detailed examples (e.g., Chamberí apartment, Retiro kitchen).
+
+## 3. Tracking & UX Layer
+
+- **Hooks:** Create `useTracking.ts` to log GA4 events (WhatsApp click, Scroll 50%, CTA click).
+- **Integration:**
+  - Floating WhatsApp button.
+  - Tracking listeners on all `CTAButton` instances.
+
+## 4. Design System (Polish)
+
+- Ensure consistent use of `#1C1C1E` (Carbon) and `#D4A853` (Amber).
+- Verify Typography hierarchy (Inter) across all new templates.

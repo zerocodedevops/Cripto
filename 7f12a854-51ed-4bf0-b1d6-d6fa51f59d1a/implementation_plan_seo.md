@@ -1,0 +1,55 @@
+# Implementation Plan - SEO Optimization & Local Landing Page
+
+This plan outlines the steps to implement a new SEO-optimized article page and improve general meta tags for the portfolio, targeting commercial searches in Madrid.
+
+## User Review Required
+
+> [!IMPORTANT]
+> A new route `/servicios/desarrollo-web-madrid-pymes` will be added. This page is purely for SEO and lead generation, following the specific content structure requested by the user.
+
+## Proposed Changes
+
+### 1. New SEO Landing Page
+
+#### [NEW] [WebPymesMadrid.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/services/WebPymesMadrid.tsx)
+
+- Create a new component implementing the requested article: "Desarrollo web profesional para pymes y autónomos en Madrid".
+- Sections will include:
+  - H1: Principal Keyword (Madrid/Pymes).
+  - H2/H3: Specific sub-topics (Benefits, Pricing, FAQ, Local Neighborhoods).
+  - Blocks for statistics, SEO technical advice, and CTA.
+  - Integration with the `Seo` component for specific meta tags.
+
+### 2. Router Configuration
+
+#### [MODIFY] [router.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/app/router.tsx)
+
+- Import the new `WebPymesMadrid` component (lazy loaded).
+- Add the route: `/servicios/desarrollo-web-madrid-pymes`.
+
+### 3. Metadata Optimization
+
+#### [MODIFY] [Home.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/home/Home.tsx)
+
+- Update `<Seo />` properties:
+  - `title`: "Diseño Web Madrid | Desarrollo para Pymes y Autónomos"
+  - `description`: More persuasive and keyword-rich description as requested.
+
+### 4. Internal Linking
+
+#### [MODIFY] [Footer.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/components/layout/Footer.tsx)
+
+- Add a new link to the SEO article in the specific "SEO Keywords" footer section to ensure search engine discovery.
+
+#### [MODIFY] [PymesService.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/services/PymesService.tsx)
+
+- Add a "Leer más" or "Guía completa" link pointing to the new article to strengthen internal linking silo.
+
+## Verification Plan
+
+### Manual Verification
+
+1. Navigate to `/servicios/desarrollo-web-madrid-pymes` and verify all content segments (H1, FAQ, Stats, etc.) are present.
+2. Inspect the `<head>` of the Home and and the new page to verify `title` and `meta description` are correctly set.
+3. Verify that the footer link works and navigates to the new page.
+4. Run a local build (`npm run build`) to ensure no regressions or broken paths.

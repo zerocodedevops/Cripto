@@ -1,0 +1,10 @@
+# Task: Verify SEO improvements and URL redirect
+
+- [x] Confirm `https://zerocode-devops.com/desarrollo-web-pymes-madrid` loads correctly (not 404). -> **FAILED (404)**
+- [x] Verify Hero title contains "pymes y autónomos en Madrid". -> **SUCCESS (on old URL)**
+- [x] Verify CTAs "Solicita presupuesto gratis" and "Consulta con nuestro experto en Madrid". -> **FAILED (Found "Pide presupuesto hoy mismo" instead)**
+- [x] Confirm old URL `https://zerocode-devops.com/paginas-web-pymes-autonomos` redirects to new URL. -> **FAILED (No redirect)**
+- [x] Verify "Servicios" link in Navbar points to `/desarrollo-web-pymes-madrid`. -> **FAILED (Points to `/paginas-web-pymes-autonomos`)**
+
+**Observations:**
+- The content updates are live on the OLD URL, but the routing and CTA wording changes are missing from the deployment.

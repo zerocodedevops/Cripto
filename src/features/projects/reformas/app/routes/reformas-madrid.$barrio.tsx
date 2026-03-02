@@ -1,21 +1,23 @@
-import { useParams } from "react-router-dom";
+import type { MetaFunction } from "react-router";
 import { BarrioTemplate } from "../../src/templates/BarrioTemplate";
 import { barrios } from "../../src/clients/madrid-zerochaos/barrios";
+import { config } from "../../src/clients/madrid-zerochaos/config";
 
-export default function Barrio() {
-    const { barrio: slug } = useParams();
-    const barrio = barrios.find((b) => b.slug === slug);
+export function loader({ params }: { params: { barrio: string } }) {
+    const barrio = barrios.find((b) => b.slug === params.barrio);
+    if (!barrio) throw new Response("Not Found", { status: 404 });
+    return { barrio };
+}
 
-    if (!barrio) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-[#F5F5F0]">
-                <div className="text-center">
-                    <h1 className="text-4xl font-black text-[#1C1C1E] mb-4 uppercase tracking-tighter">Barrio no encontrado</h1>
-                    <p className="text-gray-500">Lo sentimos, no hemos podido encontrar el barrio solicitado.</p>
-                </div>
-            </div>
-        );
-    }
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+    if (!data) return [{ title: `Reformas Integrales Madrid | ${config.name}` }];
+    const { barrio } = data;
+    return [
+        { title: `Reformas Integrales en ${barrio.name} | ${config.name}` },
+        { name: "description", content: `${barrio.description} L├¡deres en reformas en ${barrio.name} con presupuesto sin sorpresas y plazos garantizados.` },
+    ];
+};
 
-    return <BarrioTemplate barrio={barrio} />;
+export default function Barrio({ loaderData }: { loaderData: { barrio: any } }) {
+    return <BarrioTemplate barrio={loaderData.barrio} />;
 }

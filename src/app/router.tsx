@@ -36,7 +36,7 @@ const router = createBrowserRouter(
 			),
 		},
 		{
-			path: "/paginas-web-pymes-autonomos",
+			path: "/desarrollo-web-pymes-madrid",
 			element: (
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Preparando soluciones..." />}>

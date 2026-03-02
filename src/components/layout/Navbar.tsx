@@ -44,7 +44,7 @@ export function Navbar() {
 	});
 
 	const navLinks = [
-		{ label: "Servicios", href: "/paginas-web-pymes-autonomos" },
+		{ label: "Servicios", href: "/desarrollo-web-pymes-madrid" },
 		{ label: "Sobre Mí", href: "/disenador-web-freelance-madrid" },
 		{ label: "Proyectos", href: "#projects" },
 		{ label: "Blog", href: "#blog" },

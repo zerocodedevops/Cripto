@@ -1,0 +1,19 @@
+# Implementation Plan - Fix Production Build Error
+
+## Goal
+Resolve the runtime error `TypeError: Cannot read properties of undefined (reading 'createContext')` in the production build caused by incorrect chunk splitting of core dependencies.
+
+## Proposed Changes
+
+### [Root] [vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/vite.config.ts)
+- Revert the separation of `vendor-react` and `vendor-ui`.
+- Consolidate React, React-DOM, React-Router, Framer Motion, and Lucide React into a single `vendor` chunk.
+- Keep only truly massive and independent libraries like `firebase`, `pdf`, and `charts` in separate chunks.
+
+### [Sub-Apps] [apps/reformas/vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/reformas/vite.config.ts) & [apps/zerodelay/vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/zerodelay/vite.config.ts)
+- Apply the same consolidation strategy to ensure library consistency.
+
+## Verification Plan
+### Automated Tests
+- Run `npm run build` and then `npx vite preview` (or check the firebase hosting if deployed) to verify the fix.
+- Ensure no console errors occur on boot.

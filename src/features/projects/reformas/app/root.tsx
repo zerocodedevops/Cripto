@@ -4,7 +4,7 @@ import {
     Outlet,
     Scripts,
     ScrollRestoration,
-} from "react-router-dom";
+} from "react-router";
 import "./app.css";
 
 export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {

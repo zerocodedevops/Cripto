@@ -34,9 +34,36 @@ export default function Home() {
 	return (
 		<Layout>
 			<Seo
-				title="Home"
-				description="Diseño web profesional para pymes y autónomos en Madrid. Especialista en crear páginas web rápidas, optimizadas para SEO y con automatización IA para captar más clientes."
-				keywords="diseño web pymes, paginas web autonomos madrid, programador web freelance, desarrollo web rivas vaciamadrid, diseño web negocios"
+				title="Diseño Web Madrid | Desarrollo para Pymes y Autónomos"
+				description="Creamos páginas web profesionales para pymes y autónomos en Madrid con diseño responsive, SEO local y enfoque en ventas."
+				keywords="diseño web pymes madrid, paginas web autonomos madrid, programador web freelance madrid, desarrollo web madrid, diseño web negocios"
+				jsonLd={{
+					"@context": "https://schema.org",
+					"@type": "LocalBusiness",
+					"name": "ZeroCode",
+					"image": "https://zerocode-devops.web.app/og-image.png",
+					"@id": "https://zerocode-devops.web.app/#localbusiness",
+					"url": "https://zerocode-devops.web.app",
+					"telephone": "+34 912 622 712",
+					"address": {
+						"@type": "PostalAddress",
+						"streetAddress": "Madrid, Spain",
+						"addressLocality": "Madrid",
+						"postalCode": "28001",
+						"addressCountry": "ES"
+					},
+					"geo": {
+						"@type": "GeoCoordinates",
+						"latitude": 40.416775,
+						"longitude": -3.703790
+					},
+					"openingHoursSpecification": {
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+						"opens": "09:00",
+						"closes": "20:00"
+					}
+				}}
 			/>
 			<div id="main-content">
 				{/* Above the fold — load immediately */}

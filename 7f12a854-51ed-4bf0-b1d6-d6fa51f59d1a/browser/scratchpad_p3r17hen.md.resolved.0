@@ -1,0 +1,8 @@
+# Task: Debug Localhost Build
+
+## Checklist
+- [ ] Open http://localhost:4173/
+- [ ] Check console logs for 'createContext' or React-related errors
+- [ ] Capture screenshot of the page
+- [ ] Verify if the portfolio loads correctly
+- [ ] Report findings

@@ -37,7 +37,7 @@ export function Footer() {
 	const footerLinks = [
 		{ label: "Inicio", href: "/" },
 		{ label: "Sobre Mí", href: "/disenador-web-freelance-madrid" },
-		{ label: "Servicios", href: "/paginas-web-pymes-autonomos" },
+		{ label: "Servicios", href: "/desarrollo-web-pymes-madrid" },
 		{ label: "Precios", href: "/precios-paginas-web" },
 		{ label: "Contacto", href: "#contact" },
 	];
@@ -153,6 +153,18 @@ export function Footer() {
 
 					{/* SEO Keywords */}
 					<div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-2 text-xs text-dark-600">
+						<a
+							href="/desarrollo-web-pymes-madrid"
+							className="hover:text-primary-400 transition-colors font-semibold"
+							onClick={(e) => {
+								e.preventDefault();
+								navigate("/desarrollo-web-pymes-madrid");
+								window.scrollTo({ top: 0, behavior: "smooth" });
+							}}
+						>
+							Desarrollo Web Pymes Madrid
+						</a>
+						<span>|</span>
 						<a
 							href="https://wa.me/34912622712"
 							target="_blank"

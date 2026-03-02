@@ -1,0 +1,58 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,137)<div  />
+	[1] (98,43)<a class='flex items-center gap-2 group' href='#hero' />
+		[2] (50,43)<div  />
+		[3] (121,43)<span >Zero />
+			[4] (141,42)<span >Code />
+	[5] (209,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+	[6] (299,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+	[7] (391,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+	[8] (469,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+	[9] (538,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+	[10] (623,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+	[11] (684,43)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+	[12] (727,43)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+	[13] (769,43)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+	[14] (812,43)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+	[15] (862,43)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+	[16] (914,43)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+	[17] (949,43)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+	Ver Demo
+	Ver Código
+	Productos Digitales
+	Una selección de proyectos que demuestran mis habilidades
+	[18] (180,823)<div  />
+		[19] (180,629)<div  />
+			[20] (180,629)<div  />
+				[21] (180,629)<div  />
+					[22] (180,629)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+		[23] (180,941)<div  />
+			[24] (180,779)<div  />
+				[25] (131,779)<h3 >DevOps Shop />
+				[26] (266,772)<span >PROTOTYPE />
+			[27] (180,894)<p >Tienda online completa con Auth simulado, carrito persistente y checkout. />
+	[28] (500,823)<div  />
+		[29] (500,629)<div  />
+			[30] (500,629)<div  />
+				[31] (500,629)<div  />
+					[32] (500,629)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+		[33] (500,941)<div  />
+			[34] (500,801)<div  />
+				[35] (461,801)<h3 >Portfolio Dashboard />
+				[36] (586,772)<span >PROTOTYPE />
+			[37] (500,915)<p >Dashboard analítico para visualizar métricas de portafolio de inversiones. />
+	[38] (820,823)<div  />
+		[39] (820,629)<div  />
+			[40] (820,629)<div  />
+				[41] (820,629)<div  />
+					[42] (820,629)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+		[43] (820,941)<div  />
+			[44] (820,822)<div  />
+				[45] (782,822)<h3 >Crypto Analytics Dashboard />
+				[46] (907,772)<span >PROTOTYPE />
+			[47] (820,937)<p >Dashboard analítico de criptomonedas con datos en tiempo real, gráficos interactivos y market heatmap. />
+
+</current_dom>

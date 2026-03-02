@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan to fix production 404 errors for the Reforms route and sub-apps. Includes explicit Firebase rewrites, base path alignment, and code verification.",
+  "updatedAt":  "2026-03-02T20:47:02.576838600Z"
+}

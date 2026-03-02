@@ -1,0 +1,123 @@
+# 🔍 Análisis del Prompt — Zero Chaos (Reformas Madrid)
+
+He estudiado el brief completo y el patrón de las apps existentes (`zerodelay`, `devops-shop`). Antes de tocar una sola línea de código, aquí van mis **observaciones, decisiones propuestas y preguntas**.
+
+---
+
+## ✅ Lo que tengo claro y asumo
+
+### Stack (confirmado por patrón del monorepo)
+- **React 19 + Vite 7 + TypeScript + Tailwind v4**
+- `react-router-dom` v7 para routing
+- `react-helmet-async` para meta dinámico por página (SEO)
+- `react-hook-form` + `zod` para formularios (contacto/presupuesto)
+- Estructura: `src/components/`, `src/pages/`, `src/layout/`
+- `vite.config.ts` con `base: "/reformas/"`
+
+### Segmento (propuesta)
+- **Gama media-alta**: ni low cost ni ultra premium. Calidad profesional con transparencia absoluta en precios y plazos. Esto encaja con el nombre "Zero Chaos" (orden, control, profesionalidad → no caos).
+
+### Cliente ideal (propuesta)
+- Edad: **30-55 años**, propietarios de piso en Madrid
+- Presupuesto: **15.000€ – 80.000€** (reforma parcial a integral)
+- Motivaciones: mejorar su vivienda, han comprado segunda mano y quieren personalizar
+- Perfil digital: buscan en Google, comparan, valoran reseñas y transparencia
+
+### Tono (propuesta)
+- **Cercano + profesional**: ni excesivamente técnico ni coloquial. Directo, honesto, sin jerga innecesaria. El tono "Zero Chaos" es: *"Sabemos lo que hacemos y lo demostramos con hechos"*.
+
+---
+
+## 🎯 Respuestas a las preguntas estratégicas del brief
+
+### ¿Por qué elegir Zero Chaos frente a otras 20 empresas?
+1. **Presupuesto cerrado sin sobrecostes** — contrato blindado
+2. **Proceso 100% transparente** — el cliente sabe en qué fase está su obra
+3. **Garantía por escrito** — no promesas vacías
+4. **Portfolios antes/después** con detalle de problemática → solución → resultado
+
+### ¿Qué problema emocional resolvemos?
+**El miedo al caos**: retrasos, operarios que no aparecen, facturas sorpresa, vivir en una obra sin fecha final. Zero Chaos elimina la ansiedad del proceso de reforma.
+
+---
+
+## 🏗️ Arquitectura de URLs / páginas propuestas
+
+| Ruta | Página | Tipo |
+|------|--------|------|
+| `/` | Home | Landing principal |
+| `/reformas-integrales-madrid` | Reformas Integrales | Landing servicio |
+| `/reformas-cocinas-madrid` | Reformas de Cocinas | Landing servicio |
+| `/reformas-banos-madrid` | Reformas de Baños | Landing servicio |
+| `/reformas-madrid/chamartin` | Barrio: Chamartín | Landing local |
+| `/reformas-madrid/salamanca` | Barrio: Salamanca | Landing local |
+| `/reformas-madrid/chamberi` | Barrio: Chamberí | Landing local |
+| `/reformas-madrid/retiro` | Barrio: Retiro | Landing local |
+| `/reformas-madrid/arganzuela` | Barrio: Arganzuela | Landing local |
+| `/proyectos` | Proyectos (Antes/Después) | Portfolio |
+| `/blog` | Blog | Hub de artículos |
+| `/blog/:slug` | Artículo individual | Post |
+| `/contacto` | Contacto / Presupuesto | Formulario |
+| `/sobre-nosotros` | Sobre nosotros | Corporativa |
+
+---
+
+## ❓ Preguntas y decisiones que necesito antes de empezar
+
+### 1. 🎨 Paleta de colores
+Propongo una paleta **oscura premium con acento cálido** que transmita profesionalidad:
+- **Primario**: Gris carbón / antracita (#1C1C1E)
+- **Acento**: Ámbar/dorado cálido (#D4A853) → transmite calidad sin ser agresivo
+- **Secundario**: Blanco roto (#F5F5F0) para fondos
+- **Texto**: Gris claro sobre oscuro, gris oscuro sobre claro
+
+¿Te gusta esta dirección o prefieres algo diferente (ej: azul profesional, verde confianza)?
+
+### 2. 📍 Barrios: ¿Cuáles incluimos en la V1?
+He propuesto 5 barrios iniciales (Chamartín, Salamanca, Chamberí, Retiro, Arganzuela). ¿Quieres más, menos, u otros específicos?
+
+### 3. 📸 Fotografías
+El prompt pide "uso fuerte de fotografía real". Como no tenemos fotos reales de proyectos, voy a:
+- Generar imágenes con IA de reformas realistas (cocinas, baños, salones antes/después)
+- Marcarlas como placeholder para que en producción se sustituyan por fotos reales
+
+¿Te parece bien o prefieres otro enfoque?
+
+### 4. 📝 Contenido SEO extenso
+El prompt pide **900+ palabras por landing**. Esto es mucho contenido. ¿Quieres que genere contenido SEO realista completo para cada landing, o prefieres contenido placeholder con la estructura correcta (H1, H2, FAQ) pero más corto, para rellenar después?
+
+### 5. 📊 Tracking (GA4/Hotjar)
+¿Tienes ya IDs de Google Analytics, Search Console, o Hotjar? Si no, prepararé los hooks y componentes para que solo haya que meter los IDs cuando estén disponibles.
+
+### 6. 📱 WhatsApp
+¿Hay número de WhatsApp Business de Zero Chaos? Si no, pongo un placeholder configurable.
+
+### 7. 🔗 Blog
+¿El blog será estático (datos hardcoded/JSON como los proyectos) o planeas conectar un CMS como Strapi (ya tienes Strapi en el proyecto principal)?
+
+---
+
+## 📋 Scope de la V1 (propuesta)
+
+Para entregar algo funcional y completo sin tiempos infinitos, propongo este scope:
+
+### Incluido en V1
+- [x] Home con Hero + prueba social + proceso + garantías + CTAs
+- [x] 3 landings de servicio (integrales, cocinas, baños) con contenido SEO
+- [x] 2-3 landings de barrio (Chamartín, Salamanca, Chamberí)
+- [x] Página de proyectos con galería antes/después
+- [x] Página de contacto con formulario (nombre + tel + tipo reforma)
+- [x] Página sobre nosotros
+- [x] Botón WhatsApp flotante
+- [x] SEO: meta dinámico, Schema LocalBusiness, FAQ schema
+- [x] Mobile-first responsive
+- [x] Performance optimizada (lazy loading, code splitting)
+
+### Diferido a V2
+- [ ] Blog completo con artículos
+- [ ] Más barrios
+- [ ] Integración real GA4/Hotjar (solo preparar hooks)
+- [ ] Slider interactivo antes/después (V1 usa galería estática)
+- [ ] Sitemap dinámico y robots.txt (para despliegue real)
+
+¿Estás de acuerdo con este scope?

@@ -1,4 +1,4 @@
-import type { MetaFunction } from "react-router-dom";
+import type { MetaFunction } from "react-router";
 import { HomeTemplate } from "../../src/templates/HomeTemplate";
 import { config } from "../../src/clients/madrid-zerochaos/config";
 

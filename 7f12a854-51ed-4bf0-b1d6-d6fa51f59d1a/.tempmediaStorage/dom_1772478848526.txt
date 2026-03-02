@@ -1,0 +1,99 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (98,43)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (50,43)<div  />
+	[2] (121,43)<span >Zero />
+		[3] (141,42)<span >Code />
+[4] (209,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (299,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (391,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (469,40)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (538,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (623,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (684,43)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (727,43)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (769,43)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (812,43)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (862,43)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (914,43)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (949,43)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+[17] (180,142)<div  />
+	[18] (180,95)<p >Tienda online completa con Auth simulado, carrito persistente y checkout. />
+	[19] (180,238)<div  />
+		[20] (83,216)<span >React />
+		[21] (148,216)<span >Redux />
+		[22] (215,216)<span >Stripe />
+		[23] (90,261)<span >Tailwind />
+	[24] (180,312)<div  />
+		[25] (85,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='/proyectos/ecommerce'>Demo />
+		[26] (162,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[27] (500,142)<div  />
+	Portfolio Dashboard
+	[28] (500,116)<p >Dashboard analítico para visualizar métricas de portafolio de inversiones. />
+	[29] (500,238)<div  />
+		[30] (403,216)<span >React />
+		[31] (496,216)<span >TanStack Query />
+		[32] (412,261)<span >Recharts />
+		[33] (484,261)<span >MSW />
+	[34] (500,312)<div  />
+		[35] (406,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='/proyectos/analytics/dashboard'>Demo />
+		[36] (482,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[37] (820,142)<div  />
+	Crypto Analytics Dashboard
+	[38] (820,138)<p >Dashboard analítico de criptomonedas con datos en tiempo real, gráficos interactivos y market heatmap. />
+	[39] (820,238)<div  />
+		[40] (724,216)<span >React />
+		[41] (802,216)<span >TypeScript />
+		[42] (889,216)<span >Recharts />
+		[43] (749,261)<span >CoinGecko API />
+	[44] (820,312)<div  />
+		[45] (726,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='/proyectos/crypto'>Demo />
+		[46] (803,312)<a class='flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops'>Código />
+[47] (180,730)<div  />
+	[48] (180,531)<div  />
+		[49] (180,531)<div  />
+			[50] (180,531)<div  />
+				[51] (180,531)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[52] (180,849)<div  />
+		[53] (180,703)<div  />
+			[54] (130,703)<h3 >Zero Delay Mudanzas />
+			[55] (254,674)<span >En Desarrollo />
+		[56] (180,822)<p >Sitio web moderno para empresa de mudanzas orientado a la captación de leads con presentación de servicios y un diseño limpio y responsive optimizado para conversiones. />
+		[57] (180,950)<div  />
+			[58] (83,927)<span >React />
+			[59] (167,927)<span >Tailwind CSS />
+			[60] (247,927)<span >Vite />
+			[61] (99,972)<span >Responsive />
+[62] (500,730)<div  />
+	[63] (500,531)<div  />
+		[64] (500,531)<div  />
+			[65] (500,531)<div  />
+				[66] (500,531)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[67] (500,849)<div  />
+		[68] (500,681)<div  />
+			[69] (440,681)<h3 >Zero Chaos />
+			[70] (574,674)<span >En Producción />
+		[71] (500,801)<p >Máquina de captación de leads para el sector de reformas en Madrid. Arquitectura premium con generación de sitios estáticos (SSG) y optimización SEO local extrema. />
+		[72] (431,927)<span >React Router v7 />
+		[73] (539,927)<span >Tailwind v4 />
+		Vite
+		SSG
+[74] (820,730)<div  />
+	[75] (820,531)<div  />
+		[76] (820,531)<div  />
+			[77] (820,531)<div  />
+				[78] (820,531)<button class='px-4 py-2 bg-white/90 text-dark-900 rounded-full text-sm font-bold hover:bg-white transform hover:scale-105 transition-all shadow-lg' />
+	[79] (820,849)<div  />
+		[80] (820,703)<div  />
+			[81] (771,703)<h3 >AI Chat Assistant />
+			[82] (895,674)<span >En Desarrollo />
+		[83] (820,822)<p >Asistente de chat inteligente con integración de OpenAI y memoria contextual. />
+		[84] (820,950)<div  />
+			[85] (727,927)<span >Next.js />
+			[86] (809,927)<span >TypeScript />
+			[87] (892,927)<span >OpenAI />
+			[88] (736,972)<span >Supabase />
+
+</current_dom>

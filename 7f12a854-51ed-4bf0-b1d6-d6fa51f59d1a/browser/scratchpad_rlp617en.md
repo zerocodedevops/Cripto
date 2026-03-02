@@ -1,0 +1,29 @@
+# Task: Verify `http://localhost:5173/desarrollo-web-pymes-madrid`
+
+## Goals:
+
+- [ ] Verify Hero with CTAs: "Solicita presupuesto gratis" and "Consulta con nuestro experto en Madrid".
+- [ ] Verify Pricing/Services section: "Landing Pages", "Web Corporativa", "Tienda Online".
+- [ ] Verify Testimonials: Chamberí and Retiro.
+- [ ] Verify FAQ section.
+- [ ] Verify Sidebar: "Presencia en Madrid" with neighborhood list.
+
+## Status/Blockers:
+
+- **Local Server Down**: `localhost:5173` is not responding. Port guessing (5174, 4173, 3000) failed.
+- **Production Outdated**: `zerocode-devops.com/desarrollo-web-pymes-madrid` is 404.
+- **Action Required**: Need to start the local dev server or wait for deployment propagation.
+
+## Goals:
+
+- [ ] Verify Hero with CTAs: "Solicita presupuesto gratis" and "Consulta con nuestro experto en Madrid".
+- [ ] Verify Pricing/Services section: "Landing Pages", "Web Corporativa", "Tienda Online".
+- [ ] Verify Testimonials: Chamberí and Retiro.
+- [ ] Verify FAQ section.
+- [ ] Verify Sidebar: "Presencia en Madrid" with neighborhood list.
+
+## Plan:
+
+1. Open `http://localhost:5173/desarrollo-web-pymes-madrid`.
+2. Capture screenshot and DOM for verifying Hero and sidebar.
+3. Scroll down for verifying other sections.

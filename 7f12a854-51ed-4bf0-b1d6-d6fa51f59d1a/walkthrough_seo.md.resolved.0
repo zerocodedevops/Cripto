@@ -1,0 +1,38 @@
+# Walkthrough - Mejoras de SEO y Nueva Página de Aterrizaje
+
+Se han implementado una serie de mejoras de SEO estratégico para posicionar el portfolio en búsquedas comerciales de Madrid, incluyendo la creación de un nuevo artículo especializado y la optimización de los metadatos globales.
+
+## Cambios Realizados ✅
+
+### 1. Nueva Página de Aterrizaje (SEO Artículo)
+Se ha creado una nueva página optimizada para captar clientes en Madrid: `/servicios/desarrollo-web-madrid-pymes`.
+
+- **Título**: "Desarrollo web profesional para pymes y autónomos en Madrid – Guía, precios y beneficios".
+- **Contenido**: 
+  - Estructura de encabezados (H1, H2, H3) con palabras clave de alta intención.
+  - Bloques de estadísticas y consejos de SEO técnico.
+  - Sección de FAQ específica para autónomos.
+  - Menciones a barrios locales (Salamanca, Chamberí, Tetuán, etc.).
+- **Diseño**: Alineado con la estética premium del portfolio, con efectos de glassmorphism y animaciones suaves.
+
+![Nueva Página SEO](file:///C:/Users/dgper/.gemini/antigravity/brain/7f12a854-51ed-4bf0-b1d6-d6fa51f59d1a/seo_optimized_article_page_1772489728997.png)
+
+### 2. Optimización de Metadatos
+Se han actualizado las etiquetas meta en la página de inicio para mejorar el CTR (Click-Through Rate) en Google:
+
+- **Antes**: "Home"
+- **Ahora**: "Diseño Web Madrid | Desarrollo para Pymes y Autónomos"
+- **Descripción**: Reforzada con una propuesta de valor clara y llamadas a la acción locales.
+
+### 3. Estrategia de Enlazado Interno
+Para asegurar que Google indexe y valore la nueva página, se han añadido enlaces internos en:
+- **Footer**: En la sección de "Keywords SEO".
+- **Páginas de Servicio**: Link directo desde la sección de Pymes para guiar al usuario a la guía completa.
+
+## Enlaces Verificados 🔗
+
+- **Inicio Optimizado**: [http://localhost:5173/](http://localhost:5173/)
+- **Nuevo Artículo SEO**: [http://localhost:5173/servicios/desarrollo-web-madrid-pymes](http://localhost:5173/servicios/desarrollo-web-madrid-pymes)
+
+---
+*Nota: Todos los cambios mantienen la integridad de las rutas y secciones existentes.*

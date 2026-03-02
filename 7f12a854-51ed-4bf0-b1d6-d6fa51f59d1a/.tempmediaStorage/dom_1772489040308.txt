@@ -1,0 +1,36 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (62,67)<a class='flex items-center space-x-2 group' href='/' />
+	[1] (62,67)<span >Zero />
+		[2] (83,67)<span >Chaos />
+[3] (467,67)<a class='text-sm font-semibold uppercase tracking-widest hover:text-[#D4A853] transition-colors text-white' href='/reformas-integrales-madrid'>Integrales />
+[4] (541,67)<a class='text-sm font-semibold uppercase tracking-widest hover:text-[#D4A853] transition-colors text-white' href='/reformas-cocinas-madrid'>Cocinas />
+[5] (602,67)<a class='text-sm font-semibold uppercase tracking-widest hover:text-[#D4A853] transition-colors text-white' href='/reformas-banos-madrid'>Baños />
+[6] (669,67)<a class='text-sm font-semibold uppercase tracking-widest hover:text-[#D4A853] transition-colors text-white' href='/proyectos'>Proyectos />
+[7] (765,67)<a class='text-sm font-semibold uppercase tracking-widest hover:text-[#D4A853] transition-colors text-white' href='/sobre-nosotros'>Sobre Nosotros />
+[8] (903,67)<a class='inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-all duration-300 rounded-sm uppercase tracking-wider bg-[#D4A853] text-white hover:bg-[#B88E3E] shadow-lg hover:shadow-xl py-2 px-6' href='/contacto'>Pide Presupuesto />
+Reformas integrales
+sin el caos
+de siempre.
+Especialistas en Madrid. Presupuesto cerrado por contrato y gestión técnica impecable. Convertimos tu obra en una inversión, no en un problema.
+[9] (102,808)<a class='inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-all duration-300 rounded-sm uppercase tracking-wider bg-[#D4A853] text-white hover:bg-[#B88E3E] shadow-lg hover:shadow-xl ' href='/contacto'>Pide Presupuesto real />
+[10] (269,808)<a class='inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-all duration-300 rounded-sm uppercase tracking-wider border-2 border-[#D4A853] text-[#D4A853] hover:bg-[#D4A853] hover:text-white ' href='/proyectos'>Ver Proyectos />
++250
+Proyectos realizados
+10Añ
+Garantía por escrito
+Solicita presupuesto
+en 24h
+[11] (808,351)<label class='block text-sm font-medium text-gray-700 mb-1'>Nombre completo />
+[12] (808,401)<input class='w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all' placeholder='Tu nombre' />
+[13] (808,467)<label class='block text-sm font-medium text-gray-700 mb-1'>Teléfono de contacto />
+[14] (808,517)<input class='w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all' placeholder='600 000 000' />
+[15] (808,582)<label class='block text-sm font-medium text-gray-700 mb-1'>Tipo de reforma />
+[16] (808,632)<select class='w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all bg-white' />
+[17] (808,740)<button class='inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-all duration-300 rounded-sm uppercase tracking-wider bg-[#D4A853] text-white hover:bg-[#B88E3E] shadow-lg hover:shadow-xl w-full mt-4'>Solicitar presupuesto />
+Al enviar aceptas nuestra política de privacidad. Te llamaremos para una visita técnica gratuita.
+[18] (956,933)<a aria-label='Contactar por WhatsApp' class='fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 animate-bounce-subtle' href='https://wa.me/+34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20para%20una%20reforma.' />
+
+</current_dom>

@@ -1,0 +1,66 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Saltar al contenido principal
+[0] (98,53)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (50,53)<div  />
+	[2] (121,53)<span >Zero />
+		[3] (141,53)<span >Code />
+[4] (209,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (299,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (391,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (469,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (538,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (623,53)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (684,53)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (727,53)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (769,53)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (812,53)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (862,53)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (914,53)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (949,53)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+Disponible para nuevos proyectos
+Diseño Web para
+Pymes y Autónomos
+en Madrid
+Más
+Ayudo a pequeños negocios a digitalizarse con webs profesionales, creadas desde cero con Inteligencia Artificial para maximizar la calidad y velocidad.
+Diseño de alto impacto
+en
+tiempo récord
+gracias a un proceso AI-First.
+developer.js
+1
+const
+developer
+=
+{
+2
+name
+:
+"David G."
+,
+3
+role
+:
+"Fullstack Developer"
+,
+4
+approach
+:
+"AI-First"
+,
+5
+passion
+:
+Infinity
+,
+6
+available
+:
+true
+7
+}
+
+</current_dom>

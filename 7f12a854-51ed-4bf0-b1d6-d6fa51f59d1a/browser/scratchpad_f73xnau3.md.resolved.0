@@ -1,0 +1,12 @@
+# Task: Verify deployed sub-apps
+
+## URLs to check:
+- [ ] https://zerocode-devops.web.app/
+- [ ] https://zerocode-devops.web.app/proyectos/zero-delay
+- [ ] https://zerocode-devops.web.app/proyectos/reformas
+
+## Plan:
+1. Navigate to each URL.
+2. Check for 404s, blank pages, or loading issues.
+3. Check console logs for /proyectos/reformas if it fails.
+4. Record findings.

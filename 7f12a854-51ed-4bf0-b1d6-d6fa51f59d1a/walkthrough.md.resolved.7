@@ -1,0 +1,32 @@
+# Walkthrough - Zero Chaos Madrid (Optimized & Stable)
+
+## 1. Production Stability & Fixes 🚀
+We have resolved the critical `createContext` and `jsx` runtime errors that were breaking the production build.
+- **React Alignment:** All monorepo modules are now strictly aligned to **React 18.3.1**. This prevents the version mismatches that caused the application to crash upon initialization.
+- **Dependency Deduplication:** Ran a comprehensive deduplication and sync using `--legacy-peer-deps` to ensure a single, consistent React instance.
+
+## 2. Chunk Size Optimization 📦
+The build now satisfies the 1000kB size constraint for all chunks:
+- **`index-[hash].js` (Main):** ~370kB (Includes React + Router + UI context)
+- **`vendor-firebase-[hash].js`:** ~585kB
+- **`vendor-charts-[hash].js`:** ~571kB
+- **Other assets:** All effectively split into smaller, manageable chunks.
+
+This was achieved by keeping the core React/UI ecosystem together for stability while isolating massive, independent service libraries.
+
+## 3. Verified Performance
+The application has been verified in production preview mode (`npm run preview`):
+- **Initial Load:** Transitions smoothly from the "CARGANDO ZEROCODE..." screen.
+- **Console:** 0 fatal errors.
+- **Navigation:** All internal SPA routes and section scrolls are functional.
+
+![Portfolio Funcionando](file:///C:/Users/dgper/.gemini/antigravity/brain/7f12a854-51ed-4bf0-b1d6-d6fa51f59d1a/zero_code_portfolio_hero_1772480252488.png)
+
+## 4. Build & Deploy Commands
+From the root directory:
+- **Build & Deploy:** `npm run build && firebase deploy --only hosting`
+
+---
+
+### Status: MISSION COMPLETE, OPTIMIZED & STABLE 🏆
+The Reforms framework is fully integrated, the build is optimized under 1MB chunks, and the production site is rock-solid.

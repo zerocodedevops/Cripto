@@ -1,0 +1,39 @@
+# Walkthrough - Zero Chaos Madrid
+
+## 1. Strategy & Visual Identity
+- **Segment:** Priority on Local SEO Lead Gen with Premium Execution.
+- **Colors:** `#1C1C1E` (Charcoal) for Authority, `#D4A853` (Amber) for Action, `#F5F5F0` for readability.
+- **Goal:** Beat 90% of the competition in performance and trust.
+
+## 2. Architecture
+- **Framework:** React Router v7 (Framework Mode).
+- **Styling:** Tailwind CSS v4.
+- **Data:** Decoupled `src/clients` for easy scaling to other cities.
+
+## 3. SEO Implementation (Refactored)
+We moved away from `react-helmet-async` to solve SSR/Prerender conflicts on Windows.
+- **Native Meta:** Every route uses the React Router [meta](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/reformas/app/routes/contacto.tsx#5-11) export for baked-in SEO.
+- **Schema:** [SchemaLocalBusiness](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/SchemaLocalBusiness.tsx#13-50) and [SchemaFAQ](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/reformas/src/core/seo/SchemaFAQ.tsx#10-31) now rendered via standard JSON-LD script tags.
+- **SSG:** Fully configured via [react-router.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/reformas/react-router.config.ts).
+
+## 4. Build Success
+The project now builds perfectly with full **Static Site Generation**.
+```bash
+cd apps/reformas
+npm run build
+```
+- **Generated Routes:** Home, Integrales, Cocinas, Ba├▒os, and 6 Local Barrios (Salamanca, Chamber├¡, Retiro, etc.).
+
+## 5. Firebase Deployment (Fixing EPERM)
+We identified an `EPERM` error in your logs:
+> `Error: EPERM, Permission denied: ...\dataconnect-emulator-3.1.4.exe`
+
+**Solution:**
+1. **Close all Firebase terminals.**
+2. **Delete the emulator cache:**
+   `rm -Recurse -Force C:\Users\dgper\.cache\firebase\emulators`
+3. **Deploy again:**
+   `firebase deploy --only hosting:reformas`
+
+---
+### Final Status: READY FOR LAUNCH 🚀

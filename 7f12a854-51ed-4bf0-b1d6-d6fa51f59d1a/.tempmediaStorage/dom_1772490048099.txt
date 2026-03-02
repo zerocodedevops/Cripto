@@ -1,0 +1,45 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (149,41)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (117,41)<div  />
+	[2] (165,41)<span >Zero />
+		[3] (179,41)<span >Code />
+[4] (304,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (364,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (427,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (479,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (526,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (583,41)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (704,41)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (732,41)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (761,41)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (790,41)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (824,41)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (859,41)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (882,41)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+Cómo elegir un proveedor de desarrollo web en Madrid
+Para un
+diseño web Madrid pymes
+exitoso debes fijarte en la transparencia, el portfolio real y el enfoque en ventas, no solo estética. La proximidad en barrios como Chamberí o Arganzuela permite una mejor comunicación.
+Preguntas frecuentes (FAQ)
+¿Cuánto tarda en estar lista?
+Una creación de página web autónomos Madrid suele tardar entre 2 y 4 semanas, dependiendo del contenido.
+¿Tengo que saber de informática para gestionar mi web?
+Para nada. Te entregamos la web lista y te damos una formación básica para que seas autónomo al 100%.
+¿La web será mía al 100%?
+Sí. Siempre recomendamos que el dominio y el hosting estén a tu nombre. Tú eres el dueño legal de todo.
+Estadísticas Clave
+88%
+de consumidores investigan online antes de comprar localmente.
+53%
+abandona una web que tarda más de 3 segundos en cargar.
+Consejo SEO Técnico
+Optimiza tus "Core Web Vitals". Un buen
+servicios de diseño web
+garantiza que Google favorezca tu sitio.
+Presencia en Madrid
+Damos servicio en: Centro, Salamanca, Chamberí, Retiro, Tetuán, Moncloa, Arganzuela y más.
+
+</current_dom>

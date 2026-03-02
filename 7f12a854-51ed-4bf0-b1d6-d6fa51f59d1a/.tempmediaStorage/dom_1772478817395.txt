@@ -1,0 +1,54 @@
+[0] (98,43)<a class='flex items-center gap-2 group' href='#hero' />
+	[1] (50,43)<div  />
+	[2] (121,43)<span >Zero />
+		[3] (141,42)<span >Code />
+[4] (209,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/paginas-web-pymes-autonomos'>Servicios />
+[5] (299,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/disenador-web-freelance-madrid'>Sobre Mí />
+[6] (391,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#projects'>Proyectos />
+[7] (469,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#blog'>Blog />
+[8] (538,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='/precios-paginas-web'>Precios />
+[9] (623,43)<a class='text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium' href='#contact'>Contacto />
+[10] (684,43)<a aria-label='GitHub' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://github.com/zerocodedevops' />
+[11] (727,43)<a aria-label='LinkedIn' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://www.linkedin.com/in/zerocode-devops' />
+[12] (769,43)<a aria-label='Email' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='mailto:zerocode.devops@gmail.com' />
+[13] (812,43)<a aria-label='WhatsApp' class='p-2 text-dark-400 hover:text-primary-400 transition-colors' href='https://wa.me/34912622712' />
+[14] (862,43)<button aria-label='Activar modo claro' class='p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50' title='Modo Claro' />
+[15] (914,43)<button aria-label='Cambiar a Español' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>ES />
+[16] (949,43)<button aria-label='Switch to English' class='px-2 py-1 text-xs font-medium rounded transition-colors text-dark-400 hover:text-primary-400'>EN />
+[17] (180,155)<div >Por qué "AI-First" no es solo un Buzzword />
+	Ene 2026
+	•
+	5 min
+	de lectura
+	Por qué "AI-First" no es solo un Buzzword
+	[18] (180,189)<p >Cómo la inteligencia artificial está redefiniendo la arquitectura de software, desde el diseño hasta el despliegue, y por qué los desarrolladores deben adaptarse. />
+	[19] (180,296)<div >Leer más />
+[20] (500,155)<div >Más allá de Copilot: Agentes Autónomos />
+	Dic 2025
+	•
+	7 min
+	de lectura
+	Más allá de Copilot: Agentes Autónomos
+	[21] (500,189)<p >La evolución de los asistentes de código hacia compañeros proactivos capaces de entender el contexto completo del negocio y tomar decisiones arquitectónicas. />
+	[22] (500,296)<div >Leer más />
+[23] (820,155)<div  />
+	Nov 2025
+	•
+	4 min
+	de lectura
+	[24] (820,94)<h3 >El fin del "Boilerplate" en el Frontend />
+	[25] (820,205)<p >Analizando cómo las nuevas herramientas de generación de UI están eliminando el trabajo repetitivo y permitiéndonos centrarnos en la lógica de negocio pura. />
+	[26] (820,296)<div >Leer más />
+Hablemos de tu
+Proyecto
+¿Tienes una idea en mente? Me encantaría escucharla
+¿Listo para colaborar?
+Estoy abierto a colaborar en proyectos que valoren la
+innovación
+, la
+transparencia
+y el uso estratégico de
+IA
+.
+[27] (746,905)<label class='label'>Nombre />
+[28] (746,962)<input class='input' id='name' placeholder='Tu nombre' />

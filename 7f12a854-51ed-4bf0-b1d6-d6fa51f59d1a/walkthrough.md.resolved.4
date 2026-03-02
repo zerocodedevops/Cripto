@@ -1,0 +1,30 @@
+# Walkthrough - Zero Chaos Madrid (Native SPA Framework)
+
+## 1. Unified SPA Architecture
+We have successfully integrated the "Repairs" project (Zero Chaos) as a native feature within the main portfolio SPA. This eliminates proxies and secondary servers, providing a stable and performant experience.
+
+- **URL:** `http://localhost:5173/proyectos/reformas/`
+- **Pattern:** Same as Mudanzas (Zero Delay), using `src/features/projects/reformas/`.
+- **Router:** Managed by the root `src/app/router.tsx`, loading `ReformsRoutes` lazily.
+
+## 2. New Premium Features
+- **Blog Engine:** 5 SEO-optimized entries in `blog.ts` with a dedicated reading layout (`BlogPostTemplate.tsx`).
+- **Before & After Gallery:** Interactive project comparisons in `ProjectsTemplate.tsx` with professional descriptions and tags.
+- **Conversion Tracking:** `useTracking` hook integrated across all CTAs and a new floating WhatsApp button.
+- **Typography:** Consistent use of **Inter** and modular spacing for a high-end feel.
+
+## 3. Standardized Codebase
+- **Imports:** Fixed all internal relative imports and standardized on `react-router-dom`.
+- **Hooks:** Universal tracking layer for GA4 and WhatsApp conversion events.
+- **Cleanup:** All obsolete components and configurations removed.
+
+## 4. Commands for the User
+From the root directory:
+
+- **Start Development:** `npm run dev`
+- **Build & Deploy:** `npm run build && firebase deploy --only hosting`
+
+---
+
+### Status: MISSION COMPLETE 🏁
+The Repairs framework is now a modular, tracking-ready machine, ready for high-volume deployment.

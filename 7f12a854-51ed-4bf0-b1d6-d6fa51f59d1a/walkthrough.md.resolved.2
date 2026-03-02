@@ -1,0 +1,25 @@
+# Walkthrough - Zero Chaos Madrid (Final Integration)
+
+## 1. Unified Monorepo Architecture
+We have successfully integrated the Reforms project into the main portfolio monorepo.
+- **Path:** `http://localhost:5173/proyectos/reformas/`
+- **Hosting:** Primary Firebase site (`zerocode-devops`).
+
+## 2. Dev Environment (One-Command)
+We fixed the "ECONNREFUSED" and "404" errors by:
+- **Concurrently:** Running both the Portfolio (Vite) and Reforms (RRv7) servers simultaneously.
+- **Proxy:** Root server now correctly redirects `/proyectos/reformas` to the sub-app server.
+- **Stability:** Forced `strictPort: 5174` and `127.0.0.1` binding to prevent Windows port shifting.
+
+## 3. Build & Deployment
+- **Cross-Platform Building:** Used `shx` for reliable file operations on Windows.
+- **Unified Dist:** All projects now build into a single `dist` folder with path-based routing.
+- **Firebase:** Simplified [firebase.json](file:///c:/Users/dgper/Proyectos/ZeroCode/firebase.json) for a single-site deploy.
+
+## 4. Commands for the User
+From the root directory:
+- **Dev:** `npm run dev`
+- **Build & Deploy:** `npm run build && firebase deploy --only hosting`
+
+---
+### Status: MISSION ACCOMPLISHED 🚀
