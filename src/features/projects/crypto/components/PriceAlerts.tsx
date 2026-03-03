@@ -29,6 +29,12 @@ export function PriceAlerts() {
 		localStorage.setItem("crypto-alerts", JSON.stringify(alerts));
 	}, [alerts]);
 
+	const toggleAlert = (id: string) => {
+		setAlerts((prev) =>
+			prev.map((a) => (a.id === id ? { ...a, isActive: !a.isActive } : a)),
+		);
+	};
+
 	// Check alerts logic
 	useEffect(() => {
 		if (!coins) return;
@@ -68,15 +74,9 @@ export function PriceAlerts() {
 	}, [
 		coins,
 		alerts,
-		formatCurrency, // Disable alert to prevent notification spam
+		formatCurrency,
 		toggleAlert,
 	]);
-
-	const toggleAlert = (id: string) => {
-		setAlerts((prev) =>
-			prev.map((a) => (a.id === id ? { ...a, isActive: !a.isActive } : a)),
-		);
-	};
 
 	const addAlert = (e: React.FormEvent) => {
 		e.preventDefault();

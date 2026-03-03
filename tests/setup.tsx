@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import React from "react";
 import { cleanup } from "@testing-library/react";
 import { afterEach, vi } from "vitest";
 
@@ -44,82 +45,38 @@ vi.stubGlobal("IntersectionObserver", IntersectionObserverMock);
 globalThis.scrollTo = vi.fn(() => { });
 Element.prototype.scrollIntoView = vi.fn();
 
-// Mock framer-motion
+// Mock framer-motion — strip motion-specific props to avoid React DOM warnings
+const MOTION_PROPS = new Set([
+	"initial", "animate", "exit", "transition", "variants", "layout", "layoutId",
+	"whileHover", "whileTap", "whileFocus", "whileDrag", "whileInView",
+	"drag", "dragConstraints", "dragElastic", "dragMomentum", "dragTransition",
+	"dragSnapToOrigin", "dragPropagation", "onDrag", "onDragStart", "onDragEnd",
+	"onAnimationStart", "onAnimationComplete", "onLayoutAnimationStart", "onLayoutAnimationComplete",
+	"viewport", "custom",
+]);
+
+function stripMotionProps(props: Record<string, unknown>) {
+	const cleaned: Record<string, unknown> = {};
+	for (const [key, value] of Object.entries(props)) {
+		if (!MOTION_PROPS.has(key)) {
+			cleaned[key] = value;
+		}
+	}
+	return cleaned;
+}
+
+function createMotionComponent(tag: string) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return ({ children, ...props }: any) => {
+		const cleanProps = stripMotionProps(props);
+		return React.createElement(tag, cleanProps, children);
+	};
+}
+
 vi.mock("framer-motion", () => ({
-	motion: {
-		div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-			<div {...props}>{children}</div>
-		),
-		h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-			<h1 {...props}>{children}</h1>
-		),
-		h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-			<h2 {...props}>{children}</h2>
-		),
-		h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-			<h3 {...props}>{children}</h3>
-		),
-		p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-			<p {...props}>{children}</p>
-		),
-		ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-			<ul {...props}>{children}</ul>
-		),
-		li: ({ children, ...props }: React.LiHTMLAttributes<HTMLLIElement>) => (
-			<li {...props}>{children}</li>
-		),
-		section: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<section {...props}>{children}</section>
-		),
-		header: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<header {...props}>{children}</header>
-		),
-		footer: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<footer {...props}>{children}</footer>
-		),
-		button: ({
-			children,
-			...props
-		}: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-			<button {...props}>{children}</button>
-		),
-		a: ({
-			children,
-			...props
-		}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-			<a {...props}>{children}</a>
-		),
-		span: ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
-			<span {...props}>{children}</span>
-		),
-		img: ({ ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-			<img alt="" {...props} />
-		),
-		form: ({
-			children,
-			...props
-		}: React.FormHTMLAttributes<HTMLFormElement>) => (
-			<form {...props}>{children}</form>
-		),
-		label: ({
-			children,
-			...props
-		}: React.LabelHTMLAttributes<HTMLLabelElement>) => (
-			<label {...props}>{children}</label>
-		),
-		input: ({ ...props }: React.InputHTMLAttributes<HTMLInputElement>) => (
-			<input {...props} />
-		),
-		textarea: ({
-			children,
-			...props
-		}: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
-			<textarea {...props}>{children}</textarea>
-		),
-		path: ({ children, ...props }: React.SVGAttributes<SVGPathElement>) => (
-			<path {...props}>{children}</path>
-		),
-	},
+	motion: new Proxy({}, {
+		get: (_target, prop: string) => createMotionComponent(prop),
+	}),
 	useAnimation: () => ({ start: vi.fn(), set: vi.fn() }),
 	useInView: () => true,
 	useScroll: () => ({ scrollY: { on: vi.fn() } }),

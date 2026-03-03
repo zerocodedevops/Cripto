@@ -17,9 +17,7 @@ const CryptoApp = lazy(() =>
 		default: m.CryptoDashboard,
 	})),
 );
-const MediaApp = lazy(
-	() => import("@/features/projects/mudanzas-coral/src/App"),
-);
+const MediaApp = lazy(() => import("@/features/projects/mudanzas-coral/src/App"));
 const ReformsApp = lazy(() => import("@/features/projects/reformas/routes"));
 const NotFound = lazy(() => import("@/features/misc/NotFound"));
 

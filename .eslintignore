@@ -1,0 +1,4 @@
+src/dataconnect-generated/**
+node_modules/**
+dist/**
+.git/**

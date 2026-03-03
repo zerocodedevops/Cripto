@@ -16,12 +16,6 @@ export default function ConfirmationStep() {
 	>("idle");
 	const [bookingRef, setBookingRef] = useState("");
 
-	useEffect(() => {
-		if (status === "idle" && date) {
-			confirmBooking();
-		}
-	}, [status, date, confirmBooking]);
-
 	const confirmBooking = async () => {
 		setStatus("processing");
 		try {
@@ -42,6 +36,12 @@ export default function ConfirmationStep() {
 			setStatus("error");
 		}
 	};
+
+	useEffect(() => {
+		if (status === "idle" && date) {
+			confirmBooking();
+		}
+	}, [status, date, confirmBooking]);
 
 	if (status === "error") {
 		return (

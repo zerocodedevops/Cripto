@@ -31,7 +31,7 @@ export default function ClientRegister() {
 			if (signUpError) throw signUpError;
 
 			// Optional: Create entry in public clients table if needed
-			const { error: profileError } = await supabase
+			const { error: _profileError } = await supabase
 				.from("stylists") // Using stylists table? No, we need a clients table or just rely on metadata for now.
 				// Ideally we should have a 'clients' table as per plan, but let's stick to auth metadata for Minimum Viable Module
 				.select()

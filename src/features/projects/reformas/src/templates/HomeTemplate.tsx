@@ -12,6 +12,7 @@ export const HomeTemplate = () => {
         <RootLayout>
             <SchemaLocalBusiness
                 name={config.name}
+                description={config.seo.mainDescription}
                 address={config.contact.address}
                 phone={config.contact.phone}
                 email={config.contact.email}
